@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=39FF14&center=true&vCenter=true&width=650&lines=29+proyectos+reales+en+GitHub;Causal+Inference+%C2%B7+MLOps+%C2%B7+Ingenier%C3%ADa+Polig+lota;De+datos+operacionales+a+modelos+en+producci%C3%B3n">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=39FF14&center=true&vCenter=true&width=650&lines=29+proyectos%2C+reproducibles+de+punta+a+punta;Causal+Inference+%C2%B7+Quant+%C2%B7+Ingenier%C3%ADa+Polig+lota;Baselines+honestos+%C2%B7+sin+fuga+de+datos+%C2%B7+sin+mocks">
 </p>
 
 <div align="center">
@@ -19,11 +19,19 @@
 
 <a name="-español"></a>
 # ¡Hola! Soy Pablo Reyes
-### Data Scientist | Python · SQL · ML aplicado a Minería & Energía
+### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Ruby · Julia
 
-Científico de Datos titulado de la Universidad Mayor, especializado en **analítica industrial para minería, energía y finanzas cuantitativas**. Construyo soluciones *end-to-end*: desde pipelines ETL y limpieza de datos ruidosos, pasando por modelos predictivos y causales, hasta motores de optimización y APIs en producción — todo validado con datos reales o simulaciones honestas, sin métricas infladas.
+Científico de Datos titulado de la Universidad Mayor, especializado en **analítica industrial para minería, energía y finanzas cuantitativas**. Construyo soluciones *end-to-end* — ETL, modelos predictivos y causales, motores de optimización, APIs en producción — con el mismo estándar con el que se evalúa código de producción, no un notebook de portafolio: reproducibilidad, tests automatizados, prevención de fuga de datos y resultados honestos, incluidos los negativos.
 
-Cada repo de este perfil corre de principio a fin (`python -m src.pipeline` o equivalente), reporta resultados reales de esa corrida, y documenta los fallos encontrados en el camino en vez de esconderlos.
+Cada repo corre completo con un solo comando (`python -m src.pipeline` o equivalente), reporta los números de esa corrida — no de una versión anterior — y documenta en el propio README los bugs reales que aparecieron en el camino.
+
+### Cómo evalúo mi propio trabajo
+
+* **Reproducibilidad real.** Sin resultados pegados a mano: cada tabla del README sale de una corrida ejecutable del pipeline, con seed fijo donde aplica.
+* **Testing que importa, no cobertura de vitrina.** Suites reales, mayormente sin mocks: **190 tests** en `Limpieza_Datos`, **194** en `credit-risk-scoring-lab`, **95/95** en el motor de order book en C++, **60** en el motor políglota de fraude, **43/43** en el agente de operaciones con *tool-calling*.
+* **Fuga de datos, tratada como bug de producción, no como detalle académico.** Splits estrictamente cronológicos (nunca `GridSearchCV` con su shuffle por defecto), detección de leakage por relación determinística fila a fila — no por nombre de columna —, e integridad referencial de joins verificada con `safe_merge` en vez de confiar en que `pd.merge` no multiplique filas en silencio.
+* **Baselines honestos, aunque le ganen al modelo.** El LSTM del proyecto de riesgo sistémico fintech (51.2%) no supera la clase mayoritaria (53.6%); el baseline de persistencia le gana a los modelos de volatilidad de mercado en el horizonte de 30s; en `Limpieza_Datos`, dos de cuatro dominios tienen R² negativo en el baseline y el drift medido explica esa caída hasta la cuarta decimal — no es un bug, es la distribución moviéndose.
+* **Fallos reales, encontrados y corregidos en público.** Colapso *dying ReLU* en `Limpieza_Datos` (R² de hasta **-8746** antes de cambiar a `LeakyReLU`), bug de escala temporal en la predicción de falla de rodamientos (`failure-prediction-signal-lab`), y un dato corrupto en una fuente gubernamental detectado por un detector de saltos de nivel por mediana móvil construido específicamente para ese caso.
 
 ## 🛠️ Stack Tecnológico
 
@@ -32,7 +40,9 @@ Cada repo de este perfil corre de principio a fin (`python -m src.pipeline` o eq
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![Julia](https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
 ![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-EB5E28?style=flat-square)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
@@ -47,10 +57,10 @@ Cada repo de este perfil corre de principio a fin (`python -m src.pipeline` o eq
 Analítica industrial aplicada a operaciones mineras y energéticas de alta escala.
 
 * **[Optimización Geometalúrgica en Flotación (Cu/Mo)](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre):** Ensamble XGBoost+CatBoost sin fuga temporal, dos motores de optimización (Algoritmo Genético + `scipy.optimize`) validados cruzados entre sí **[Mejora de recuperación +2.4%]**.
-* **[Impacto Causal en Flota Minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact):** Estimación del impacto causal real de mantenimiento predictivo mediante *Doubly Robust Learners* (DRLearner) y *Causal Forest* con análisis de sensibilidad de tendencias paralelas **[Reducción de downtime estimado ~14%]**.
+* **[Impacto Causal en Flota Minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact):** Estimación del impacto causal real de mantenimiento predictivo mediante *Doubly Robust Learners* (DRLearner) y *Causal Forest*, con análisis de sensibilidad de tendencias paralelas para el estimador de diferencias-en-diferencias **[Reducción de downtime estimado ~14%; 41 tests]**.
 * **[Gemelo Digital SAG (Eficiencia Energética)](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin):** *Kalman Filter* para *soft-sensing* de dureza de mineral + modelos de supervivencia (CoxPH) para estimación de RUL y optimización prescriptiva de *setpoints* **[Ahorro de energía en molienda ~8.5%]**.
 * **[Data Warehouse Analítico de Minería](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile):** Arquitectura dbt + DuckDB (staging → marts, 83 tests de calidad) unificando flotación, mantenimiento CAEX y seguridad **[Latencia de consulta <50ms]**.
-* **[Mantenimiento Predictivo y RUL](https://github.com/Rxyxs/chile-mining-predictive-maintenance):** Redes neuronales multitarea en PyTorch y análisis de supervivencia para predicción de Vida Útil Restante **[MAE < 12 hrs en predicción RUL]**.
+* **[Mantenimiento Predictivo y RUL](https://github.com/Rxyxs/chile-mining-predictive-maintenance):** Redes neuronales multitarea en PyTorch y análisis de supervivencia (CoxPH) para predicción de Vida Útil Restante de flota CAEX **[MAE < 12 hrs en predicción RUL; 47 tests]**.
 * **[Calidad de Tronadura/Ley (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet):** Pipeline ML.NET en C# comparando SDCA vs. FastTree para predecir calidad de ley post-tronadura **[R² = 0.860 SDCA vs. 0.833 FastTree]**.
 * **[Pronóstico de Red Eléctrica (Costo Marginal)](https://github.com/Rxyxs/chile-energy-grid-forecasting):** Comparación baseline/ensamble/MLP PyTorch (loss Huber) con activación Swish ganadora sobre LightGBM y XGBoost **[WAPE = 5.42% MLP vs. 6.26% LightGBM vs. 7.06% XGBoost]**.
 * **[Pronóstico de Red Eléctrica en R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r):** Variante en R del pronóstico de costo marginal, comparando cuatro enfoques estadísticos (ARIMA/SARIMAX/TBATS/ETS/GARCH) con validación cruzada rolling.
@@ -61,9 +71,9 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 ## 🕵️ Fraude, AML & Riesgo Crediticio
 
 * **[Laboratorio de Detección de Fraude & AML](https://github.com/Rxyxs/fraud-detection-techniques-lab):** Cuatro técnicas en un repo, cada una en su carpeta con pipeline propio — pipeline multi-lenguaje sobre 568k transacciones reales (LogReg+SMOTE, CatBoost, XGBoost, MLP PyTorch con Focal Loss, validación adversaria de splits, calibración de umbral por matriz de costo, export a ONNX), *scoring* de fraude e-commerce en tiempo real, AML no supervisado sobre grafos temporales (NetworkX) con explicabilidad SHAP en vivo, y Autoencoder/VAE/Deep SVDD frente a XGBoost supervisado **[Reducción de costo = 44.7% vs. umbral 0.5; latencia p99 < 15ms]**.
-* **[Laboratorio de Scoring de Riesgo Crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab):** Ocho técnicas, cada una con pipeline de un comando y su propia suite de tests (~200 en total) — scorecard políglota R+Python+C, interoperabilidad bidireccional R↔Python (`reticulate`/`rpy2`), Cox PH implementado desde cero (Breslow/Efron, Newton-Raphson amortiguado, test PH de Schoenfeld) para estructura temporal de PD bajo IFRS 9, muestreo de Gibbs jerárquico sobre aumentación Pólya-Gamma, restricciones monotónicas auditadas por contrafactuales + decisión conformal de Mondrian, *binning* óptimo resuelto por programación dinámica exacta, auditoría de sesgo en préstamo justo, y DP-SGD con contador RDP desde cero validado por ataque de membresía **[AUC test = 0.733 scorecard R vs. 0.715 MLP]**.
-* **[Motor de Fraude Políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine):** Arquitectura híbrida de baja latencia con C para el *hot-path* de *scoring*, Ruby para el motor de reglas y Python para la inferencia ML **[Throughput > 10,000 req/s]**.
-* **[Riesgo Sistémico Fintech Chile (Políglota)](https://github.com/Rxyxs/chile-fintech-systemic-risk):** Arquitectura de 6 lenguajes sobre el mercado financiero chileno — ETL Python+DuckDB con indicadores reales del Banco Central, PD con XGBoost+SHAP, LSTM PyTorch, econometría en R (cointegración/Granger/GARCH), clustering en Julia, motor Monte Carlo C++/OpenMP para VaR, y microservicio Go **[1M trayectorias Monte Carlo en 14.4ms; hallazgo honesto: el LSTM (51.2%) no supera el baseline de clase mayoritaria (53.6%)]**.
+* **[Laboratorio de Scoring de Riesgo Crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab):** Ocho técnicas, cada una con pipeline de un comando y su propia suite de tests (**194 tests** en las técnicas 03-08) — scorecard políglota R+Python+C, interoperabilidad bidireccional R↔Python (`reticulate`/`rpy2`), Cox PH implementado desde cero (Breslow/Efron, Newton-Raphson amortiguado, test PH de Schoenfeld) para estructura temporal de PD bajo IFRS 9, muestreo de Gibbs jerárquico sobre aumentación Pólya-Gamma, restricciones monotónicas auditadas por contrafactuales + decisión conformal de Mondrian, *binning* óptimo resuelto por programación dinámica exacta, auditoría de sesgo en préstamo justo (reconstruir género desde las propias features del modelo, AUC 0.768), y DP-SGD con contador RDP desde cero validado por ataque de membresía **[AUC test = 0.733 scorecard R vs. 0.715 MLP]**.
+* **[Motor de Fraude Políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine):** Arquitectura híbrida de baja latencia — C para el *hot-path* de *scoring* vía feature store en memoria mapeada, Ruby como motor de reglas, Python para la inferencia ML — con cada capa perfilada por separado (Prometheus/Grafana) para identificar el cuello de botella real **[Feature store ~568k req/s; capa Ruby ~12-14k req/s; 60 tests en C+RSpec+pytest]**.
+* **[Riesgo Sistémico Fintech Chile (Políglota)](https://github.com/Rxyxs/chile-fintech-systemic-risk):** Arquitectura de 6 lenguajes sobre el mercado financiero chileno — ETL Python+DuckDB con indicadores reales del Banco Central, PD con XGBoost+SHAP, LSTM PyTorch, econometría en R (cointegración/Granger/GARCH), clustering en Julia, motor Monte Carlo C++/OpenMP para VaR, y microservicio Go sirviendo las predicciones ya calculadas **[1M trayectorias Monte Carlo en 14.4ms; hallazgo honesto: el LSTM (51.2%) no supera el baseline de clase mayoritaria (53.6%)]**.
 * **[Detección de Fraude Bancario (PaySim)](https://github.com/Rxyxs/Proyectos_ML_anomalias):** Isolation Forest/LOF vs. baseline MAD-z vs. Autoencoder PyTorch sobre transacciones simuladas PaySim.
 
 ## 📈 Quant & Trading Sistemático
@@ -78,9 +88,10 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 
 ## 🔬 Ciencia de Datos Aplicada
 
+* **[Laboratorio de Experimentación Fintech (A/B Testing)](https://github.com/Rxyxs/chile-fintech-experimentation-lab):** Toolkit de diseño y análisis de experimentos — cálculo de tamaño de muestra, detección de Sample Ratio Mismatch, reducción de varianza con CUPED, corrección BH-FDR entre métricas de guardrail, chequeo de efecto de novedad — validado con un arnés de calibración Monte Carlo que mide si cada regla de detención controla de verdad la tasa de error que promete **[Hallazgo honesto: el peeking diario ingenuo infla el falso-positivo de 5% nominal a 24.2%, y una regla de detención bayesiana asumida "segura" casi no mejora (20.5%); 29 tests, ninguno mockeado]**.
+* **[Limpieza_Datos: Toolkit + 4 Dominios Reales](https://github.com/Rxyxs/Limpieza_Datos):** Toolkit reusable de limpieza y modelamiento (`src/toolkit/`, 18 módulos) probado sin cambios contra 4 bases de datos públicas reales e independientes — finanzas (Banco Central de Chile), minería del cobre (COCHILCO), agricultura (Banco Mundial), y un Excel de 80MB del Banco Mundial transformado en un data warehouse real (DuckDB). Cada modelo entrena un mínimo de 100 épocas reales, **190 tests** (148 unitarios + smoke tests reales por dominio, ninguno mockeado), y tres bugs reales encontrados y corregidos en el camino: un dato corrupto en la fuente detectado por un detector de saltos de nivel por mediana móvil, y dos colapsos *dying ReLU* distintos (R² de hasta -8746 antes del fix). El propio toolkit audita los cuatro dominios: `drift.target_shift` reproduce el R² negativo del baseline hasta la cuarta decimal en dos de ellos, y `keys`/`leakage` verifican integridad referencial y fuga de datos con evidencia determinística, no con umbrales arbitrarios.
 * **[Laboratorio de Clasificación Científica](https://github.com/Rxyxs/scientific-classification-lab):** Dos problemas de clasificación en ciencias físicas — eventos de colisión ATLAS/CERN (818k eventos, imputación con causa física por multiplicidad de jets, CatBoost/LightGBM/PyTorch optimizados para la métrica AMS del challenge original) y tránsitos de exoplanetas Kepler (9.564 objetos vía la API pública del NASA Exoplanet Archive, XGBoost+SHAP vs. ablación PyTorch ReLU/GELU/Swish) **[AMS = 3.58 honesto vs. 3.8-3.9 del leaderboard histórico; Accuracy = 79.3% XGBoost vs. 49.8% baseline en Kepler]**.
 * **[Laboratorio de Predicción de Falla desde Señal](https://github.com/Rxyxs/failure-prediction-signal-lab):** Tres dominios de predicción de tiempo hasta falla desde señal continua — RUL multitarea de flota minera, vibración real de rodamientos (NASA/IMS, 3 bancos run-to-failure, FFT + features espectrales, GroupKFold leave-one-experiment-out) y señal acústica sísmica (LANL) **[MAE = 21.6% de vida restante en rodamientos, tras corregir un bug real de escala temporal]**.
-* **[Limpieza_Datos: Toolkit + 4 Dominios Reales](https://github.com/Rxyxs/Limpieza_Datos):** Toolkit reusable de limpieza/modelamiento (`src/toolkit/`) probado contra 4 bases de datos públicas reales e independientes -- finanzas (Banco Central de Chile), minería del cobre (COCHILCO), agricultura (Banco Mundial), y un Excel de 80MB del Banco Mundial transformado en data warehouse real (DuckDB). >=100 épocas por modelo, 91 tests reales, 3 bugs reales encontrados y corregidos (dato corrupto de fuente, dos colapsos "dying ReLU" distintos), cada gráfico comentado con los números concretos detrás.
 
 ## 🤖 Agentes & LLM
 
@@ -89,7 +100,7 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 ## 🧠 Deep Learning & Edge AI
 
 * **[Eficiencia de YOLOv8 en Edge AI (Tesis)](https://github.com/Rxyxs/yolov8-separable-convolutions):** Rediseño del *head* de YOLOv8 con *Depthwise Separable Convolutions*, entrenado desde cero sobre COCO2017 y medido en GPU, CPU y Raspberry Pi 4 bajo el mismo protocolo — **68% menos parámetros (3.99M → 1.26M)** y **~10x más rápido en Raspberry Pi** **[0.68 vs. 0.07 FPS y 1.48s vs. 13.93s por imagen en RPi 4; costo honesto: mAP50 0.175 vs. 0.212]**.
-* **[Plataforma MLOps de Churn](https://github.com/Rxyxs/customer-churn-mlops-platform):** Pipeline de retención en tiempo real contenerizado con Docker, calibración de umbral ponderado por LTV, FastAPI y dashboard ROI en Streamlit **[Retención optimizada +18%]**.
+* **[Plataforma MLOps de Churn](https://github.com/Rxyxs/customer-churn-mlops-platform):** Predicción de churn con LightGBM + MLflow, calibración de umbral por costo/LTV en vez de por AUC a secas, API de inferencia FastAPI y simulador de ROI en Streamlit, validado en un holdout nunca visto durante entrenamiento ni optimización de umbral **[Contactar a todos: +US$42,717 · umbral óptimo del modelo: +US$75,847 contactando solo 78.6% — casi el doble de retorno, con menos gente contactada]**.
 
 ## 📞 Contacto
 
@@ -101,11 +112,19 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 
 <a name="-english"></a>
 # Hi there! I'm Pablo Reyes
-### Data Scientist | Python · SQL · ML applied to Mining & Energy
+### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Ruby · Julia
 
-Data Scientist graduated from Universidad Mayor, specialized in **industrial analytics for mining and energy**. I build end-to-end solutions: from ETL pipelines and noisy-data cleaning, through predictive and causal models, to optimization engines and production APIs — all validated with real data or honest simulations, no inflated metrics.
+Data Scientist graduated from Universidad Mayor, specialized in **industrial analytics for mining, energy, and quantitative finance**. I build end-to-end solutions — ETL, predictive and causal models, optimization engines, production APIs — held to the standard used to evaluate production code, not a portfolio notebook: reproducibility, automated tests, leakage prevention, and honestly reported results, negative ones included.
 
-Every repo on this profile runs end to end (`python -m src.pipeline` or equivalent), reports real results from that run, and documents the bugs found along the way instead of hiding them.
+Every repo runs end to end from a single command (`python -m src.pipeline` or equivalent), reports the numbers from that run — not from an earlier one — and documents the real bugs found along the way in the README itself.
+
+### How I hold my own work to account
+
+* **Real reproducibility.** No hand-pasted numbers: every table in every README comes from an executable pipeline run, seeded where it matters.
+* **Testing that matters, not coverage theater.** Real suites, mostly unmocked: **190 tests** in `Limpieza_Datos`, **194** in `credit-risk-scoring-lab`, **95/95** in the C++ order-book engine, **60** in the polyglot fraud engine, **43/43** in the tool-calling operations agent.
+* **Data leakage treated as a production bug, not an academic footnote.** Strictly chronological splits (never `GridSearchCV`, whose default shuffle trains on rows that come after the ones it scores), leakage detection by row-by-row deterministic relation — not by column name — and join referential integrity checked with `safe_merge` instead of trusting `pd.merge` not to silently multiply rows.
+* **Honest baselines, even when they win.** The fintech systemic-risk LSTM (51.2%) doesn't beat the majority-class baseline (53.6%); the persistence baseline beats the models on 30-second market-volatility forecasts; in `Limpieza_Datos`, two of four domains show a negative baseline R², and the measured distribution drift accounts for that drop to four decimal places — not a bug, the distribution actually moved.
+* **Real failures, found and fixed in the open.** A "dying ReLU" collapse in `Limpieza_Datos` (R² as low as **-8746** before switching to `LeakyReLU`), a time-scale bug in bearing failure prediction (`failure-prediction-signal-lab`), and a corrupted value from a government data source, caught by a rolling-median level-jump detector built specifically for that case.
 
 ## 🛠️ Stack
 
@@ -114,11 +133,14 @@ Every repo on this profile runs end to end (`python -m src.pipeline` or equivale
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![Julia](https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
 ![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-EB5E28?style=flat-square)
 ![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
+![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
@@ -127,11 +149,11 @@ Every repo on this profile runs end to end (`python -m src.pipeline` or equivale
 
 My core specialization — industrial analytics applied to real Chilean mining and energy operations.
 
-* **[Geometallurgical Flotation Optimization (Cu/Mo)](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre):** Leak-free XGBoost+CatBoost ensemble, two optimization engines (Genetic Algorithm + `scipy.optimize`) cross-validated against each other.
-* **[Mining Fleet Causal Impact](https://github.com/Rxyxs/chile-mining-fleet-causal-impact):** Real causal impact (not just correlation) of a predictive-maintenance program: Doubly Robust Learners, Causal Forest, sensitivity analysis.
-* **[SAG Digital Twin (Energy Efficiency)](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin):** Kalman Filter for ore-hardness soft-sensing + energy-demand forecasting for SAG milling.
-* **[Mining Analytics Data Warehouse](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile):** dbt + DuckDB (staging → marts, 83 tests), unifying flotation, CAEX maintenance, and safety data.
-* **[Predictive Maintenance & RUL](https://github.com/Rxyxs/chile-mining-predictive-maintenance):** Survival Analysis (CoxPH) and Gradient Boosting for haul-truck Remaining Useful Life.
+* **[Geometallurgical Flotation Optimization (Cu/Mo)](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre):** Leak-free XGBoost+CatBoost ensemble, two optimization engines (Genetic Algorithm + `scipy.optimize`) cross-validated against each other **[+2.4% recovery]**.
+* **[Mining Fleet Causal Impact](https://github.com/Rxyxs/chile-mining-fleet-causal-impact):** Real causal impact — not just correlation — of a predictive-maintenance program: Doubly Robust Learners, Causal Forest, and a dedicated sensitivity analysis for the difference-in-differences estimator's parallel-trends assumption **[~14% estimated downtime reduction; 41 tests]**.
+* **[SAG Digital Twin (Energy Efficiency)](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin):** Kalman Filter for ore-hardness soft-sensing + survival analysis (CoxPH) for RUL estimation and prescriptive setpoint optimization **[~8.5% grinding energy savings]**.
+* **[Mining Analytics Data Warehouse](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile):** dbt + DuckDB architecture (staging → marts, 83 data-quality tests), unifying flotation, CAEX maintenance, and safety data **[<50ms query latency]**.
+* **[Predictive Maintenance & RUL](https://github.com/Rxyxs/chile-mining-predictive-maintenance):** Multi-task PyTorch neural networks and survival analysis (CoxPH) for haul-truck Remaining Useful Life **[MAE < 12 hrs on RUL prediction; 47 tests]**.
 * **[Blast/Grade Quality (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet):** ML.NET pipeline in C# comparing SDCA vs. FastTree to predict post-blast ore grade quality **[R² = 0.860 SDCA vs. 0.833 FastTree]**.
 * **[Power Grid Forecasting (Marginal Cost)](https://github.com/Rxyxs/chile-energy-grid-forecasting):** Baseline/ensemble/PyTorch MLP comparison (Huber loss) with Swish winning over LightGBM and XGBoost **[WAPE = 5.42% MLP vs. 6.26% LightGBM vs. 7.06% XGBoost]**.
 * **[Power Grid Forecasting in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r):** R variant of the marginal-cost forecast, comparing four statistical approaches (ARIMA/SARIMAX/TBATS/ETS/GARCH) with rolling cross-validation.
@@ -142,26 +164,26 @@ My core specialization — industrial analytics applied to real Chilean mining a
 ## 🕵️ Fraud, AML & Credit Risk
 
 * **[Fraud & AML Detection Lab](https://github.com/Rxyxs/fraud-detection-techniques-lab):** Four techniques in one repo, each in its own folder with its own pipeline — a multi-language pipeline over 568k real transactions (LogReg+SMOTE, CatBoost, XGBoost, PyTorch MLP with Focal Loss, adversarial split validation, cost-matrix threshold calibration, ONNX export), real-time e-commerce fraud scoring, unsupervised AML over temporal graphs (NetworkX) with live SHAP explainability, and Autoencoder/VAE/Deep SVDD against supervised XGBoost **[44.7% cost reduction vs. a 0.5 threshold; p99 latency < 15ms]**.
-* **[Credit Risk Scoring Lab](https://github.com/Rxyxs/credit-risk-scoring-lab):** Eight techniques, each with a one-command pipeline and its own test suite (~200 tests total) — polyglot R+Python+C scorecard, bidirectional R↔Python interop (`reticulate`/`rpy2`), Cox PH implemented from scratch (Breslow/Efron, damped Newton-Raphson, Schoenfeld PH test) for an IFRS 9 PD term structure, hierarchical Bayesian Gibbs sampling on Pólya-Gamma augmentation, monotonic constraints audited by counterfactual perturbation + Mondrian conformal decisioning, optimal binning solved by exact dynamic programming, fair-lending bias audit, and DP-SGD with a from-scratch RDP accountant validated by a membership-inference attack **[Test AUC = 0.733 R scorecard vs. 0.715 MLP]**.
-* **[Polyglot Fraud Engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine):** C for the scoring hot-path, Ruby as the rules engine, Python for the final model — 45 end-to-end tests.
-* **[Chile Fintech Systemic Risk (Polyglot)](https://github.com/Rxyxs/chile-fintech-systemic-risk):** 6-language architecture over the Chilean financial market — Python+DuckDB ETL on real Central Bank indicators, XGBoost+SHAP PD model, PyTorch LSTM, R econometrics (cointegration/Granger/GARCH), Julia clustering, a C++/OpenMP Monte Carlo VaR engine, and a Go microservice **[1M Monte Carlo paths in 14.4ms; honest finding: the LSTM (51.2%) doesn't beat the majority-class baseline (53.6%)]**.
+* **[Credit Risk Scoring Lab](https://github.com/Rxyxs/credit-risk-scoring-lab):** Eight techniques, each with a one-command pipeline and its own test suite (**194 tests** across techniques 03-08) — polyglot R+Python+C scorecard, bidirectional R↔Python interop (`reticulate`/`rpy2`), Cox PH implemented from scratch (Breslow/Efron, damped Newton-Raphson, Schoenfeld PH test) for an IFRS 9 PD term structure, hierarchical Bayesian Gibbs sampling on Pólya-Gamma augmentation, monotonic constraints audited by counterfactual perturbation + Mondrian conformal decisioning, optimal binning solved by exact dynamic programming, a fair-lending bias audit (gender reconstructed from the model's own features at AUC 0.768), and DP-SGD with a from-scratch RDP accountant validated by a membership-inference attack **[Test AUC = 0.733 R scorecard vs. 0.715 MLP]**.
+* **[Polyglot Fraud Engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine):** Low-latency hybrid architecture — C for the scoring hot-path via a memory-mapped feature store, Ruby as the rules engine, Python for ML inference — with each layer profiled independently (Prometheus/Grafana) to find the real bottleneck **[Feature store ~568k req/s; Ruby rules layer ~12-14k req/s; 60 tests across C+RSpec+pytest]**.
+* **[Chile Fintech Systemic Risk (Polyglot)](https://github.com/Rxyxs/chile-fintech-systemic-risk):** 6-language architecture over the Chilean financial market — Python+DuckDB ETL on real Central Bank indicators, XGBoost+SHAP PD model, PyTorch LSTM, R econometrics (cointegration/Granger/GARCH), Julia clustering, a C++/OpenMP Monte Carlo VaR engine, and a Go microservice serving the precomputed predictions **[1M Monte Carlo paths in 14.4ms; honest finding: the LSTM (51.2%) doesn't beat the majority-class baseline (53.6%)]**.
 * **[Bank Fraud Detection (PaySim)](https://github.com/Rxyxs/Proyectos_ML_anomalias):** Isolation Forest/LOF vs. MAD-z baseline vs. PyTorch Autoencoder over simulated PaySim transactions.
 
 ## 📈 Quant & Systematic Trading
 
 * **[Crypto Quant Techniques Lab](https://github.com/Rxyxs/crypto-quant-techniques-lab):** Eight quantitative techniques over real Binance data, each in its own folder — direction classification with deep learning (Dense NN and Conv1D-Attention), liquidity and price impact (Ridge/XGBoost/Huber MLP), cointegrated pairs with Engle-Granger and a Kalman-filtered dynamic hedge ratio, mean-variance portfolio optimization, regime detection by clustering, sentiment screening with FinBERT vs. TF-IDF, order-book spoofing detection, and a backtesting framework persisting to DuckDB **[Sharpe Ratio = 1.84 backtested on the cointegrated pair]**.
 * **[Pension Fund Switching Cost](https://github.com/Rxyxs/chile-pension-fund-switching-cost):** What panic-switching pension funds during a drawdown actually costs, measured on real daily data from Chile's Superintendencia de Pensiones (2002-2026, ~278k rows).
-* **[Monte Carlo Options Pricing in C++](https://github.com/Rxyxs/copper-options-montecarlo-cpp):** Multi-threaded Monte Carlo engine in pure C++, Schwartz (1997) mean-reverting model for copper Asian options.
-* **[Reading Market Turbulence](https://github.com/Rxyxs/reading-market-turbulence):** Realized volatility forecasting on 24.8M real Binance trades (BTC/ETH), MLP with symbol embeddings, honest finding: the persistence baseline beats the models at a 30s horizon.
+* **[Monte Carlo Options Pricing in C++](https://github.com/Rxyxs/copper-options-montecarlo-cpp):** Multi-threaded Monte Carlo engine in C++20 (OpenMP), Schwartz (1997) mean-reverting model for copper Asian options **[1M paths in <250ms]**.
+* **[Reading Market Turbulence](https://github.com/Rxyxs/reading-market-turbulence):** Realized volatility forecasting on 24.8M real Binance trades (BTC/ETH), MLP with symbol embeddings, honest finding: the persistence baseline beats the models at a 30s horizon **[RMSPE = 4.58 baseline]**.
 * **[Copper Volatility Forecaster](https://github.com/Rxyxs/copper-volatility-forecaster):** Realized copper volatility forecasting with a PyTorch MLP (Huber + RMSPE) against a statistical baseline.
 * **[Lithium Order Book Imbalance (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp):** Low-overhead C++ engine for order book imbalance **[95/95 tests passing]**.
 * **[Market Tick Anomaly Engine (C++)](https://github.com/Rxyxs/market-tick-anomaly-engine-cpp):** Tick-level anomaly detection with EWMA-zscore, CUSUM, and ensemble **[~7.26M ticks/sec throughput]**.
 
 ## 🔬 Applied Data Science
 
+* **[Limpieza_Datos: Toolkit + 4 Real Domains](https://github.com/Rxyxs/Limpieza_Datos):** A reusable cleaning-and-modeling toolkit (`src/toolkit/`, 18 modules) proven unchanged against 4 real, independent public datasets — Chilean finance (Banco Central de Chile), copper mining (COCHILCO), agriculture (World Bank), and an 80MB World Bank Excel turned into a real DuckDB warehouse. Every model trains a minimum of 100 real epochs, **190 tests** (148 unit tests plus real per-domain smoke tests, none mocked), and three real bugs found and fixed along the way: a corrupted source value caught by a rolling-median level-jump detector, and two distinct "dying ReLU" collapses (R² as low as -8746 before the fix). The toolkit audits all four domains on its own: `drift.target_shift` reproduces the baseline's negative R² to four decimal places in two of them, and `keys`/`leakage` verify referential integrity and data leakage on deterministic evidence, not arbitrary thresholds.
 * **[Scientific Classification Lab](https://github.com/Rxyxs/scientific-classification-lab):** Two classification problems from the physical sciences — ATLAS/CERN collision events (818k events, physically-caused missing-value imputation by jet multiplicity, CatBoost/LightGBM/PyTorch optimized for the challenge's own AMS metric) and Kepler exoplanet transits (9,564 objects via NASA's public Exoplanet Archive API, XGBoost+SHAP vs. a PyTorch ReLU/GELU/Swish ablation) **[AMS = 3.58 honest vs. 3.8-3.9 on the historical leaderboard; 79.3% accuracy XGBoost vs. 49.8% baseline on Kepler]**.
 * **[Failure Prediction from Signal Lab](https://github.com/Rxyxs/failure-prediction-signal-lab):** Three domains of time-to-failure prediction from continuous signal — multi-task mining-fleet RUL, real bearing vibration (NASA/IMS, 3 run-to-failure rigs, FFT + spectral features, leave-one-experiment-out GroupKFold), and acoustic seismic signal (LANL) **[MAE = 21.6% of remaining life on bearings, after fixing a real time-scale bug]**.
-* **[Limpieza_Datos: Toolkit + 4 Real Domains](https://github.com/Rxyxs/Limpieza_Datos):** Reusable cleaning/modeling toolkit (`src/toolkit/`) proven against 4 real, independent public datasets -- Chilean finance (Banco Central de Chile), copper mining (COCHILCO), agriculture (World Bank), and an 80MB World Bank Excel turned into a real DuckDB warehouse. >=100 epochs per model, 91 real tests, 3 real bugs found and fixed (a corrupted source data point, two distinct "dying ReLU" collapses), every chart captioned with the concrete numbers behind it.
 
 ## 🤖 Agents & LLM
 
@@ -170,7 +192,7 @@ My core specialization — industrial analytics applied to real Chilean mining a
 ## 🧠 Deep Learning & Edge AI
 
 * **[YOLOv8 Edge AI Efficiency Benchmark (Thesis)](https://github.com/Rxyxs/yolov8-separable-convolutions):** Redesigned the YOLOv8 Head with Depthwise Separable Convolutions, trained from scratch on COCO2017 and benchmarked on GPU, CPU and Raspberry Pi 4 under one protocol — **68% fewer parameters (3.99M → 1.26M)** and **~10x faster on Raspberry Pi** **[0.68 vs. 0.07 FPS and 1.48s vs. 13.93s per image on the RPi 4; honest cost: mAP50 0.175 vs. 0.212]**.
-* **[Customer Churn MLOps Platform](https://github.com/Rxyxs/customer-churn-mlops-platform):** Real-time retention engine with MLflow tracking, FastAPI inference, and a Streamlit ROI simulator.
+* **[Customer Churn MLOps Platform](https://github.com/Rxyxs/customer-churn-mlops-platform):** Churn prediction with LightGBM + MLflow, cost/LTV-weighted threshold calibration instead of a bare AUC cutoff, FastAPI inference, and a Streamlit ROI simulator — evaluated on a holdout never seen during training or threshold optimization **[Contact everyone: +$42,717 · model's optimal threshold: +$75,847 while contacting only 78.6% — nearly double the return, to fewer people]**.
 
 ## 📞 Connect with Me
 
