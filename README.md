@@ -25,14 +25,6 @@ Científico de Datos titulado de la Universidad Mayor, especializado en **analí
 
 Cada repo corre completo con un solo comando (`python -m src.pipeline` o equivalente), reporta los números de esa corrida — no de una versión anterior — y documenta en el propio README los bugs reales que aparecieron en el camino.
 
-### Cómo evalúo mi propio trabajo
-
-* **Reproducibilidad real.** Sin resultados pegados a mano: cada tabla del README sale de una corrida ejecutable del pipeline, con seed fijo donde aplica.
-* **Testing que importa, no cobertura de vitrina.** Suites reales, mayormente sin mocks: **190 tests** en `Limpieza_Datos`, **194** en `credit-risk-scoring-lab`, **95/95** en el motor de order book en C++, **60** en el motor políglota de fraude, **43/43** en el agente de operaciones con *tool-calling*.
-* **Fuga de datos, tratada como bug de producción, no como detalle académico.** Splits estrictamente cronológicos (nunca `GridSearchCV` con su shuffle por defecto), detección de leakage por relación determinística fila a fila — no por nombre de columna —, e integridad referencial de joins verificada con `safe_merge` en vez de confiar en que `pd.merge` no multiplique filas en silencio.
-* **Baselines honestos, aunque le ganen al modelo.** El LSTM del proyecto de riesgo sistémico fintech (51.2%) no supera la clase mayoritaria (53.6%); el baseline de persistencia le gana a los modelos de volatilidad de mercado en el horizonte de 30s; en `Limpieza_Datos`, dos de cuatro dominios tienen R² negativo en el baseline y el drift medido explica esa caída hasta la cuarta decimal — no es un bug, es la distribución moviéndose.
-* **Fallos reales, encontrados y corregidos en público.** Colapso *dying ReLU* en `Limpieza_Datos` (R² de hasta **-8746** antes de cambiar a `LeakyReLU`), bug de escala temporal en la predicción de falla de rodamientos (`failure-prediction-signal-lab`), y un dato corrupto en una fuente gubernamental detectado por un detector de saltos de nivel por mediana móvil construido específicamente para ese caso.
-
 ## 🛠️ Stack Tecnológico
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -117,14 +109,6 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 Data Scientist graduated from Universidad Mayor, specialized in **industrial analytics for mining, energy, and quantitative finance**. I build end-to-end solutions — ETL, predictive and causal models, optimization engines, production APIs — held to the standard used to evaluate production code, not a portfolio notebook: reproducibility, automated tests, leakage prevention, and honestly reported results, negative ones included.
 
 Every repo runs end to end from a single command (`python -m src.pipeline` or equivalent), reports the numbers from that run — not from an earlier one — and documents the real bugs found along the way in the README itself.
-
-### How I hold my own work to account
-
-* **Real reproducibility.** No hand-pasted numbers: every table in every README comes from an executable pipeline run, seeded where it matters.
-* **Testing that matters, not coverage theater.** Real suites, mostly unmocked: **190 tests** in `Limpieza_Datos`, **194** in `credit-risk-scoring-lab`, **95/95** in the C++ order-book engine, **60** in the polyglot fraud engine, **43/43** in the tool-calling operations agent.
-* **Data leakage treated as a production bug, not an academic footnote.** Strictly chronological splits (never `GridSearchCV`, whose default shuffle trains on rows that come after the ones it scores), leakage detection by row-by-row deterministic relation — not by column name — and join referential integrity checked with `safe_merge` instead of trusting `pd.merge` not to silently multiply rows.
-* **Honest baselines, even when they win.** The fintech systemic-risk LSTM (51.2%) doesn't beat the majority-class baseline (53.6%); the persistence baseline beats the models on 30-second market-volatility forecasts; in `Limpieza_Datos`, two of four domains show a negative baseline R², and the measured distribution drift accounts for that drop to four decimal places — not a bug, the distribution actually moved.
-* **Real failures, found and fixed in the open.** A "dying ReLU" collapse in `Limpieza_Datos` (R² as low as **-8746** before switching to `LeakyReLU`), a time-scale bug in bearing failure prediction (`failure-prediction-signal-lab`), and a corrupted value from a government data source, caught by a rolling-median level-jump detector built specifically for that case.
 
 ## 🛠️ Stack
 
