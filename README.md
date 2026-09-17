@@ -1,12 +1,14 @@
 ![Portada](assets/banner.png)
 
 <p align="center">
-<a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-<a href="mailto:preyesp09@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
+<a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
+<a href="mailto:preyesp09@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=00FF66" alt="Email"></a>
+<img src="https://img.shields.io/badge/Santiago%2C%20Chile-0D1117?style=for-the-badge&logo=googlemaps&logoColor=00FF66" alt="Ubicación: Santiago, Chile">
+<a href="https://github.com/Rxyxs"><img src="https://img.shields.io/badge/GitHub%20Stats-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="GitHub Stats"></a>
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=39FF14&center=true&vCenter=true&width=650&lines=29+proyectos%2C+reproducibles+de+punta+a+punta;Causal+Inference+%C2%B7+Quant+%C2%B7+Ingenier%C3%ADa+Polig+lota;Baselines+honestos+%C2%B7+sin+fuga+de+datos+%C2%B7+sin+mocks">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00FF66&center=true&vCenter=true&width=700&lines=Data+Science+%C2%B7+31+Proyectos+Reproducibles;Baselines+Honestos+%C2%B7+Sin+Data+Leakage;Finanzas+Cuantitativas+%C2%B7+Anal%C3%ADtica+Industrial+%C2%B7+MLOps">
 </p>
 
 <div align="center">
@@ -19,7 +21,7 @@
 
 <a name="-español"></a>
 # ¡Hola! Soy Pablo Reyes
-### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Ruby · Julia
+### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Julia · Go
 
 Científico de Datos titulado de la Universidad Mayor, especializado en **analítica industrial para minería, energía y finanzas cuantitativas**. Construyo soluciones *end-to-end* — ETL, modelos predictivos y causales, motores de optimización, APIs en producción — con el mismo estándar con el que se evalúa código de producción, no un notebook de portafolio: reproducibilidad, tests automatizados, prevención de fuga de datos y resultados honestos, incluidos los negativos.
 
@@ -27,22 +29,47 @@ Cada repo corre completo con un solo comando (`python -m src.pipeline` o equival
 
 ## Stack Tecnológico
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![Julia](https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-EB5E28?style=flat-square)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=00FF66)
+![SQL](https://img.shields.io/badge/SQL-0D1117?style=flat-square&logo=postgresql&logoColor=00FF66)
+![R](https://img.shields.io/badge/R-0D1117?style=flat-square&logo=r&logoColor=00FF66)
+![C++](https://img.shields.io/badge/C++-0D1117?style=flat-square&logo=cplusplus&logoColor=00FF66)
+![C#](https://img.shields.io/badge/C%23-0D1117?style=flat-square&logo=csharp&logoColor=00FF66)
+![Julia](https://img.shields.io/badge/Julia-0D1117?style=flat-square&logo=julia&logoColor=00FF66)
+![Go](https://img.shields.io/badge/Go-0D1117?style=flat-square&logo=go&logoColor=00FF66)
+
+**Data & ML**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-0D1117?style=flat-square&logo=pytorch&logoColor=00FF66)
+![DuckDB](https://img.shields.io/badge/DuckDB-0D1117?style=flat-square&logo=duckdb&logoColor=00FF66)
+![Polars](https://img.shields.io/badge/Polars-0D1117?style=flat-square&logo=polars&logoColor=00FF66)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-0D1117?style=flat-square&logo=scikitlearn&logoColor=00FF66)
+![LightGBM](https://img.shields.io/badge/LightGBM-0D1117?style=flat-square&logo=lightgbm&logoColor=00FF66)
+![FastAPI](https://img.shields.io/badge/FastAPI-0D1117?style=flat-square&logo=fastapi&logoColor=00FF66)
+
+**Ops & Tools**
+
+![Docker](https://img.shields.io/badge/Docker-0D1117?style=flat-square&logo=docker&logoColor=00FF66)
+![Git](https://img.shields.io/badge/Git-0D1117?style=flat-square&logo=git&logoColor=00FF66)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-0D1117?style=flat-square&logo=githubactions&logoColor=00FF66)
+![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Rxyxs&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF66&icon_color=00FF66&text_color=c9d1d9&count_private=false" alt="Estadísticas de GitHub" height="165">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rxyxs&layout=compact&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=c9d1d9" alt="Lenguajes principales" height="165">
+</p>
+
+## Repositorios Destacados de Alto Impacto
+
+<p align="center">
+<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=slm-industrial-gateway&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="slm-industrial-gateway"></a>
+<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=reading-market-turbulence&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="reading-market-turbulence"></a>
+<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=credit-risk-scoring-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="credit-risk-scoring-lab"></a>
+<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=fraud-detection-techniques-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="fraud-detection-techniques-lab"></a>
+<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=chile-fintech-systemic-risk&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="chile-fintech-systemic-risk"></a>
+<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=Limpieza_Datos&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="Limpieza_Datos"></a>
+</p>
 
 ## Minería & Energía
 
@@ -87,6 +114,7 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 
 ## Agentes & LLM
 
+* **[Gateway SLM Industrial (Motor de Inferencia Local)](https://github.com/Rxyxs/slm-industrial-gateway):** Motor de inferencia local GGUF/llama.cpp con fallback dinámico GPU→CPU, gateway HTTP compatible con OpenAI que orquesta validación de entrada, ejecución de herramientas analíticas (DuckDB, detección de anomalías, cálculo de RUL) y guardrails de seguridad, evaluación de fidelidad/alucinación con DeepEval, y pipeline de fine-tuning QLoRA (Unsloth + TRL) sobre un dataset sintético de telemetría industrial y minera.
 * **[Agente de Operaciones Mineras (Tool-Calling)](https://github.com/Rxyxs/chile-mining-ops-agent):** Agente con el SDK de OpenAI que despacha herramientas Python reales (consultas a warehouse DuckDB, scoring de riesgo, detección de anomalías) en vez de responder desde texto libre, con gráficos de evaluación reales (ROC/PR, scores de anomalía) generados a partir de las mismas tools **[43/43 tests, incl. dispatch con cliente OpenAI mockeado]**.
 
 ## Deep Learning & Edge AI
@@ -104,7 +132,7 @@ Analítica industrial aplicada a operaciones mineras y energéticas de alta esca
 
 <a name="-english"></a>
 # Hi there! I'm Pablo Reyes
-### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Ruby · Julia
+### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Julia · Go
 
 Data Scientist graduated from Universidad Mayor, specialized in **industrial analytics for mining, energy, and quantitative finance**. I build end-to-end solutions — ETL, predictive and causal models, optimization engines, production APIs — held to the standard used to evaluate production code, not a portfolio notebook: reproducibility, automated tests, leakage prevention, and honestly reported results, negative ones included.
 
@@ -112,22 +140,47 @@ Every repo runs end to end from a single command (`python -m src.pipeline` or eq
 
 ## Stack
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![Julia](https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-EB5E28?style=flat-square)
-![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=00FF66)
+![SQL](https://img.shields.io/badge/SQL-0D1117?style=flat-square&logo=postgresql&logoColor=00FF66)
+![R](https://img.shields.io/badge/R-0D1117?style=flat-square&logo=r&logoColor=00FF66)
+![C++](https://img.shields.io/badge/C++-0D1117?style=flat-square&logo=cplusplus&logoColor=00FF66)
+![C#](https://img.shields.io/badge/C%23-0D1117?style=flat-square&logo=csharp&logoColor=00FF66)
+![Julia](https://img.shields.io/badge/Julia-0D1117?style=flat-square&logo=julia&logoColor=00FF66)
+![Go](https://img.shields.io/badge/Go-0D1117?style=flat-square&logo=go&logoColor=00FF66)
+
+**Data & ML**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-0D1117?style=flat-square&logo=pytorch&logoColor=00FF66)
+![DuckDB](https://img.shields.io/badge/DuckDB-0D1117?style=flat-square&logo=duckdb&logoColor=00FF66)
+![Polars](https://img.shields.io/badge/Polars-0D1117?style=flat-square&logo=polars&logoColor=00FF66)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-0D1117?style=flat-square&logo=scikitlearn&logoColor=00FF66)
+![LightGBM](https://img.shields.io/badge/LightGBM-0D1117?style=flat-square&logo=lightgbm&logoColor=00FF66)
+![FastAPI](https://img.shields.io/badge/FastAPI-0D1117?style=flat-square&logo=fastapi&logoColor=00FF66)
+
+**Ops & Tools**
+
+![Docker](https://img.shields.io/badge/Docker-0D1117?style=flat-square&logo=docker&logoColor=00FF66)
+![Git](https://img.shields.io/badge/Git-0D1117?style=flat-square&logo=git&logoColor=00FF66)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-0D1117?style=flat-square&logo=githubactions&logoColor=00FF66)
+![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Rxyxs&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF66&icon_color=00FF66&text_color=c9d1d9&count_private=false" alt="GitHub Stats" height="165">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rxyxs&layout=compact&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=c9d1d9" alt="Top Languages" height="165">
+</p>
+
+## Featured High-Impact Repositories
+
+<p align="center">
+<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=slm-industrial-gateway&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="slm-industrial-gateway"></a>
+<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=reading-market-turbulence&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="reading-market-turbulence"></a>
+<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=credit-risk-scoring-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="credit-risk-scoring-lab"></a>
+<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=fraud-detection-techniques-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="fraud-detection-techniques-lab"></a>
+<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=chile-fintech-systemic-risk&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="chile-fintech-systemic-risk"></a>
+<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=Limpieza_Datos&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="Limpieza_Datos"></a>
+</p>
 
 ## Mining & Energy
 
@@ -172,6 +225,7 @@ My core specialization — industrial analytics applied to real Chilean mining a
 
 ## Agents & LLM
 
+* **[Industrial SLM Gateway (Local Inference Engine)](https://github.com/Rxyxs/slm-industrial-gateway):** Local GGUF/llama.cpp inference engine with dynamic GPU→CPU fallback, an OpenAI-compatible HTTP gateway orchestrating input validation, analytics tool execution (DuckDB, anomaly detection, RUL estimation) and security guardrails, faithfulness/hallucination evaluation with DeepEval, and a QLoRA fine-tuning pipeline (Unsloth + TRL) over a synthetic industrial/mining telemetry dataset.
 * **[Mining Ops Tool-Calling Agent](https://github.com/Rxyxs/chile-mining-ops-agent):** OpenAI SDK agent that dispatches real Python tools (DuckDB warehouse queries, credit-risk scoring, anomaly detection) instead of answering from free text, with real evaluation plots (ROC/PR, anomaly scores) generated from those same tools **[43/43 tests, incl. tool dispatch with a mocked OpenAI client]**.
 
 ## Deep Learning & Edge AI
