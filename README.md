@@ -55,10 +55,6 @@ Cada repo corre completo con un solo comando (`python -m src.pipeline` o equival
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-0D1117?style=flat-square&logo=githubactions&logoColor=00FF66)
 ![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
 
-<p align="center">
-<img src="https://img.shields.io/github/followers/Rxyxs?style=for-the-badge&logo=github&logoColor=00FF66&labelColor=0D1117&color=0D1117" alt="Seguidores en GitHub">
-</p>
-
 ## Repositorios Destacados de Alto Impacto
 
 <p align="center">
@@ -165,10 +161,6 @@ Every repo runs end to end from a single command (`python -m src.pipeline` or eq
 ![Git](https://img.shields.io/badge/Git-0D1117?style=flat-square&logo=git&logoColor=00FF66)
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-0D1117?style=flat-square&logo=githubactions&logoColor=00FF66)
 ![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
-
-<p align="center">
-<img src="https://img.shields.io/github/followers/Rxyxs?style=for-the-badge&logo=github&logoColor=00FF66&labelColor=0D1117&color=0D1117" alt="GitHub Followers">
-</p>
 
 ## Featured High-Impact Repositories
 
