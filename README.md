@@ -56,19 +56,19 @@ Cada repo corre completo con un solo comando (`python -m src.pipeline` o equival
 ![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=Rxyxs&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF66&icon_color=00FF66&text_color=c9d1d9&count_private=false" alt="Estadísticas de GitHub" height="165">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rxyxs&layout=compact&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=c9d1d9" alt="Lenguajes principales" height="165">
+<img src="https://img.shields.io/github/followers/Rxyxs?style=for-the-badge&logo=github&logoColor=00FF66&labelColor=0D1117&color=0D1117" alt="Seguidores en GitHub">
 </p>
 
 ## Repositorios Destacados de Alto Impacto
 
 <p align="center">
-<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=slm-industrial-gateway&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="slm-industrial-gateway"></a>
-<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=reading-market-turbulence&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="reading-market-turbulence"></a>
-<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=credit-risk-scoring-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="credit-risk-scoring-lab"></a>
-<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=fraud-detection-techniques-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="fraud-detection-techniques-lab"></a>
-<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=chile-fintech-systemic-risk&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="chile-fintech-systemic-risk"></a>
-<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=Limpieza_Datos&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="Limpieza_Datos"></a>
+<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://img.shields.io/badge/slm--industrial--gateway-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="slm-industrial-gateway"></a>
+<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://img.shields.io/badge/reading--market--turbulence-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="reading-market-turbulence"></a>
+<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://img.shields.io/badge/credit--risk--scoring--lab-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="credit-risk-scoring-lab"></a>
+<br>
+<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://img.shields.io/badge/fraud--detection--techniques--lab-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="fraud-detection-techniques-lab"></a>
+<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://img.shields.io/badge/chile--fintech--systemic--risk-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="chile-fintech-systemic-risk"></a>
+<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://img.shields.io/badge/Limpieza_Datos-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="Limpieza_Datos"></a>
 </p>
 
 ## Minería & Energía
@@ -167,19 +167,19 @@ Every repo runs end to end from a single command (`python -m src.pipeline` or eq
 ![Linux](https://img.shields.io/badge/Linux-0D1117?style=flat-square&logo=linux&logoColor=00FF66)
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=Rxyxs&show_icons=true&hide_border=true&bg_color=0D1117&title_color=00FF66&icon_color=00FF66&text_color=c9d1d9&count_private=false" alt="GitHub Stats" height="165">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rxyxs&layout=compact&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=c9d1d9" alt="Top Languages" height="165">
+<img src="https://img.shields.io/github/followers/Rxyxs?style=for-the-badge&logo=github&logoColor=00FF66&labelColor=0D1117&color=0D1117" alt="GitHub Followers">
 </p>
 
 ## Featured High-Impact Repositories
 
 <p align="center">
-<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=slm-industrial-gateway&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="slm-industrial-gateway"></a>
-<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=reading-market-turbulence&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="reading-market-turbulence"></a>
-<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=credit-risk-scoring-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="credit-risk-scoring-lab"></a>
-<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=fraud-detection-techniques-lab&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="fraud-detection-techniques-lab"></a>
-<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=chile-fintech-systemic-risk&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="chile-fintech-systemic-risk"></a>
-<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Rxyxs&repo=Limpieza_Datos&title_color=00FF66&text_color=c9d1d9&bg_color=0D1117&icon_color=00FF66&border_color=00FF66" alt="Limpieza_Datos"></a>
+<a href="https://github.com/Rxyxs/slm-industrial-gateway"><img src="https://img.shields.io/badge/slm--industrial--gateway-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="slm-industrial-gateway"></a>
+<a href="https://github.com/Rxyxs/reading-market-turbulence"><img src="https://img.shields.io/badge/reading--market--turbulence-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="reading-market-turbulence"></a>
+<a href="https://github.com/Rxyxs/credit-risk-scoring-lab"><img src="https://img.shields.io/badge/credit--risk--scoring--lab-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="credit-risk-scoring-lab"></a>
+<br>
+<a href="https://github.com/Rxyxs/fraud-detection-techniques-lab"><img src="https://img.shields.io/badge/fraud--detection--techniques--lab-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="fraud-detection-techniques-lab"></a>
+<a href="https://github.com/Rxyxs/chile-fintech-systemic-risk"><img src="https://img.shields.io/badge/chile--fintech--systemic--risk-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="chile-fintech-systemic-risk"></a>
+<a href="https://github.com/Rxyxs/Limpieza_Datos"><img src="https://img.shields.io/badge/Limpieza_Datos-0D1117?style=for-the-badge&logo=github&logoColor=00FF66" alt="Limpieza_Datos"></a>
 </p>
 
 ## Mining & Energy
