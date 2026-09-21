@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00FF66&center=true&vCenter=true&width=700&lines=Data+Science+%C2%B7+31+Proyectos+Reproducibles;Baselines+Honestos+%C2%B7+Sin+Data+Leakage;Finanzas+Cuantitativas+%C2%B7+Anal%C3%ADtica+Industrial+%C2%B7+MLOps">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=00FF66&center=true&vCenter=true&width=500&lines=Data+Science;Big+Data;Machine+Learning;Deep+Learning">
 </p>
 
 <div align="center">
