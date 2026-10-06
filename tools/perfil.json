@@ -226,10 +226,10 @@
       "Volatilidad del cobre",
       "Copper volatility"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "CatBoost+Optuna contra GARCH(1,1) y HAR-RV: gana GARCH, y se explica por qué.",
-      "CatBoost+Optuna against GARCH(1,1) and HAR-RV: GARCH wins, and the reason is explained."
+      "14 años de precios reales de la LME: GARCH(1,1) tiene el mejor QLIKE y solo HAR-X, con el VIX y el dólar, lo empata. CatBoost ajustado en cada fold no le gana.",
+      "14 years of real LME prices: GARCH(1,1) has the best QLIKE and only HAR-X, with the VIX and the dollar, ties it. CatBoost re-tuned in every fold does not beat it."
      ],
      "tags": [
       "garch",
