@@ -27,7 +27,7 @@ En todos sigo las mismas reglas: el código corre de principio a fin, las cifras
 <td width="50%" valign="top">
 <h3><a href="https://github.com/Rxyxs/chile-pension-fund-switching-cost">Cambiarse de fondo de pensiones en pánico</a></h3>
 <sub>datos reales · <a href="https://rxyxs.github.io/chile-pension-fund-switching-cost/">página</a></sub>
-<p>24 años de valores cuota diarios. Cambiarse al fondo E en el piso de una caída pierde plata en <b>97%</b> de 2.000 historias; con una regla que alguien podría seguir de verdad, en <b>59%</b>: casi una moneda al aire.</p>
+<p>24 años de valores cuota diarios, en UF. Cambiarse al fondo E en el piso de una caída resta <b>1,9 puntos</b> de rentabilidad real al año; cambiarse antes logra el <b>mismo Sharpe</b> que una mezcla fija: no es acertar el momento, es tener menos renta variable.</p>
 <code>duckdb</code> <code>counterfactual-analysis</code> <code>behavioral-finance</code>
 </td>
 <td width="50%" valign="top">
@@ -55,15 +55,15 @@ En todos sigo las mismas reglas: el código corre de principio a fin, las cifras
 
 ## Herramienta abierta
 
-**[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
+**[cordillera: datos públicos de Chile en una línea](https://github.com/Rxyxs/cordillera)**  
 Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.
 
 ```python
-import datoschile as dc
+import cordillera as co
 
-dc.indicadores.uf(desde=2020)
-dc.pensiones.indice(fondos="A", desde=2008, real=True)
-dc.cmf.morosidad(solo_sistema=True)
+co.indicadores.uf(desde=2020)
+co.pensiones.indice(fondos="A", desde=2008, real=True)
+co.cmf.morosidad(solo_sistema=True)
 ```
 
 ## Experiencia
@@ -122,7 +122,7 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 |---|---|---|
 | **[Impacto causal en flota minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift y DiD escalonado; el ATT coincide con una implementación de referencia en un panel real. | `causal-inference` `econml` `uplift-modeling` |
 | **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
-| **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año pierde 0,2% fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
+| **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año empata en Sharpe con una mezcla fija fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 
 </details>
 

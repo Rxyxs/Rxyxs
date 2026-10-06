@@ -139,6 +139,7 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 @media (max-width:520px){.feat,.grid{grid-template-columns:minmax(0,1fr)}.lang{float:none;margin-bottom:8px}}
 .card{min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column}
 .card img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;border-radius:6px;border:1px solid var(--line);background:#fff;margin-bottom:12px}
+.card img.contain{object-fit:contain}
 .card h3{font-size:1.02rem;margin:0 0 2px;line-height:1.3}
 .card h3 a{color:var(--ink);text-decoration:none}
 .card h3 a:hover{color:var(--accent)}
@@ -172,7 +173,9 @@ def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
     if it.get("page"):
         acts.append(f'<a href="{PAGE}{it["repo"]}/">{t(L, "Ver página", "View page")}</a>')
     acts.append(f'<a href="{GH}{it["repo"]}">{t(L, "Código", "Code")}</a>')
-    pic = (f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy">' if img and it.get("img") else "")
+    # "img_fit": "contain" muestra el gráfico entero en vez de recortarlo al formato de la tarjeta.
+    fit = ' class="contain"' if it.get("img_fit") == "contain" else ""
+    pic = (f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy"{fit}>' if img and it.get("img") else "")
     tags = "".join(f"<code>{html.escape(x)}</code>" for x in it["tags"])
     return (f'<article class="card {cls}">{pic}<h3><a href="{GH}{it["repo"]}">{h(it["name"][L])}</a></h3>'
             f'<div class="data">{h(label(it, L))}</div><p>{h(it["res"][L])}</p>'
@@ -187,7 +190,7 @@ def site(L: int) -> str:
     body = [f'<header><div class="lang">{other}</div><h1>{h(p["name"])}</h1><p class="role">{h(p["role"][L])}</p>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>',
-            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div></header>',
+            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">cordillera</a></div></header>',
             f'<h2>{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L, img=True) for f in D["featured"]) + "</div>",

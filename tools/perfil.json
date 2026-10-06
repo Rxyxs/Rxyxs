@@ -50,8 +50,8 @@
    ],
    "data": "real",
    "res": [
-    "24 años de valores cuota diarios. Cambiarse al fondo E en el piso de una caída pierde plata en <b>97%</b> de 2.000 historias; con una regla que alguien podría seguir de verdad, en <b>59%</b>: casi una moneda al aire.",
-    "24 years of daily unit values. Switching to Fund E at the bottom of a crash loses money in <b>97%</b> of 2,000 histories; with a rule someone could actually follow, in <b>59%</b>: close to a coin flip."
+    "24 años de valores cuota diarios, en UF. Cambiarse al fondo E en el piso de una caída resta <b>1,9 puntos</b> de rentabilidad real al año; cambiarse antes logra el <b>mismo Sharpe</b> que una mezcla fija: no es acertar el momento, es tener menos renta variable.",
+    "24 years of daily unit values, in UF. Switching to Fund E at the bottom of a crash costs <b>1.9 points</b> of real return a year; switching earlier gets the <b>same Sharpe</b> as a static mix: there is no timing, there is less equity."
    ],
    "tags": [
     "duckdb",
@@ -59,7 +59,8 @@
     "behavioral-finance"
    ],
    "page": true,
-   "img": "figures/bootstrap_reglas.png"
+   "img": "figures/kpis_bootstrap.png",
+   "img_fit": "contain"
   },
   {
    "repo": "chile-mining-fleet-causal-impact",
@@ -78,7 +79,8 @@
     "difference-in-differences"
    ],
    "page": true,
-   "img": "figures/real_did_estimators.png"
+   "img": "figures/real_did_estimators.png",
+   "img_fit": "contain"
   },
   {
    "repo": "retail-demand-forecasting-favorita",
@@ -483,8 +485,8 @@
      ],
      "data": "real",
      "res": [
-      "Una señal de régimen que \"ganaba\" 1,4–2,3% al año pierde 0,2% fuera de muestra. En UF, 2021–23 cayó 26%.",
-      "A regime signal that \"earned\" 1.4–2.3% a year loses 0.2% out of sample. In real terms, 2021–23 fell 26%."
+      "Una señal de régimen que \"ganaba\" 1,4–2,3% al año empata en Sharpe con una mezcla fija fuera de muestra. En UF, 2021–23 cayó 26%.",
+      "A regime signal that \"earned\" 1.4–2.3% a year ties a static mix on Sharpe out of sample. In real terms, 2021–23 fell 26%."
      ],
      "tags": [
       "duckdb",
@@ -1027,16 +1029,16 @@
   }
  ],
  "library": {
-  "repo": "datoschile",
+  "repo": "cordillera",
   "name": [
-   "datoschile: datos públicos de Chile en una línea",
-   "datoschile: Chilean public data in one line"
+   "cordillera: datos públicos de Chile en una línea",
+   "cordillera: Chilean public data in one line"
   ],
   "res": [
    "Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.",
    "A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed."
   ],
-  "code": "import datoschile as dc\n\ndc.indicadores.uf(desde=2020)\ndc.pensiones.indice(fondos=\"A\", desde=2008, real=True)\ndc.cmf.morosidad(solo_sistema=True)",
+  "code": "import cordillera as co\n\nco.indicadores.uf(desde=2020)\nco.pensiones.indice(fondos=\"A\", desde=2008, real=True)\nco.cmf.morosidad(solo_sistema=True)",
   "tags": [
    "python",
    "pandas",

@@ -27,7 +27,7 @@ The same rules apply throughout: the code runs end to end, the numbers come from
 <td width="50%" valign="top">
 <h3><a href="https://github.com/Rxyxs/chile-pension-fund-switching-cost">Panic-switching pension funds</a></h3>
 <sub>real data · <a href="https://rxyxs.github.io/chile-pension-fund-switching-cost/">page</a></sub>
-<p>24 years of daily unit values. Switching to Fund E at the bottom of a crash loses money in <b>97%</b> of 2,000 histories; with a rule someone could actually follow, in <b>59%</b>: close to a coin flip.</p>
+<p>24 years of daily unit values, in UF. Switching to Fund E at the bottom of a crash costs <b>1.9 points</b> of real return a year; switching earlier gets the <b>same Sharpe</b> as a static mix: there is no timing, there is less equity.</p>
 <code>duckdb</code> <code>counterfactual-analysis</code> <code>behavioral-finance</code>
 </td>
 <td width="50%" valign="top">
@@ -55,15 +55,15 @@ The same rules apply throughout: the code runs end to end, the numbers come from
 
 ## Open-source tool
 
-**[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
+**[cordillera: Chilean public data in one line](https://github.com/Rxyxs/cordillera)**  
 A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed.
 
 ```python
-import datoschile as dc
+import cordillera as co
 
-dc.indicadores.uf(desde=2020)
-dc.pensiones.indice(fondos="A", desde=2008, real=True)
-dc.cmf.morosidad(solo_sistema=True)
+co.indicadores.uf(desde=2020)
+co.pensiones.indice(fondos="A", desde=2008, real=True)
+co.cmf.morosidad(solo_sistema=True)
 ```
 
 ## Experience
@@ -122,7 +122,7 @@ Each depot logged its fuel loads in its own Excel file. The tool merges them, co
 |---|---|---|
 | **[Mining fleet causal impact](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift and staggered DiD; the ATT matches a reference implementation on a real panel. | `causal-inference` `econml` `uplift-modeling` |
 | **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [page](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Sample size, SRM, CUPED and multiple testing, with a harness that checks each rule's error rate. | `ab-testing` `cuped` `power-analysis` |
-| **[Pension funds](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>real data · [page](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | A regime signal that "earned" 1.4–2.3% a year loses 0.2% out of sample. In real terms, 2021–23 fell 26%. | `duckdb` `counterfactual-analysis` `pensions` |
+| **[Pension funds](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>real data · [page](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | A regime signal that "earned" 1.4–2.3% a year ties a static mix on Sharpe out of sample. In real terms, 2021–23 fell 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 
 </details>
 
