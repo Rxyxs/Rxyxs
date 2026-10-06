@@ -23,7 +23,7 @@
 # ¡Hola! Soy Pablo Reyes
 ### Data Scientist / ML Engineer | Python · R · SQL · C++ · C# · Julia · Go
 
-Científico de Datos titulado de la Universidad Mayor, especializado en **analítica industrial para minería, energía y finanzas cuantitativas**. Construyo soluciones *end-to-end* — ETL, modelos predictivos y causales, motores de optimización, APIs en producción — con el mismo estándar con el que se evalúa código de producción, no un notebook de portafolio: reproducibilidad, tests automatizados, prevención de fuga de datos y resultados honestos, incluidos los negativos.
+Científico de Datos titulado de la Universidad Mayor, hago proyectos en el entorno de la  **analítica industrial para minería, energía y finanzas cuantitativas**. Construyo soluciones *end-to-end* — ETL, modelos predictivos y causales, motores de optimización, APIs en producción — con el mismo estándar con el que se evalúa código de producción, no un notebook de portafolio: reproducibilidad, tests automatizados, prevención de fuga de datos y resultados honestos, incluidos los negativos.
 
 Cada repo corre completo con un solo comando (`python -m src.pipeline` o equivalente), reporta los números de esa corrida — no de una versión anterior — y documenta en el propio README los bugs reales que aparecieron en el camino.
 
