@@ -68,9 +68,9 @@ co.cmf.morosidad(solo_sistema=True)
 
 ## Experience
 
-**[Fuel efficiency for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
-Each depot logged its fuel loads in its own Excel file. The tool merges them, computes each bus's km per litre against its previous reading (even if it refuelled at another depot) and flags loads outside the range for its model and emissions standard, in a report with live formulas. While reviewing it I fixed a bug that miscomputed km whenever loads crossed a month boundary.  
-`pandas` `openpyxl` `excel` `data-cleaning`
+**[Fuel control for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
+Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed two bugs that kept the report from flagging buses that were out of range.  
+`python` `pandas` `appsheet` `excel` `data-cleaning`
 
 ## Projects by kind of problem
 

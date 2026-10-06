@@ -124,17 +124,18 @@
  "work": {
   "repo": "bus-fleet-fuel-efficiency",
   "name": [
-   "Rendimiento de combustible de una flota de buses",
-   "Fuel efficiency for a bus fleet"
+   "Control de combustible de una flota de buses",
+   "Fuel control for a bus fleet"
   ],
   "data": "work",
   "res": [
-   "Cada terminal registraba sus cargas de combustible en su propio Excel. La herramienta los une, calcula los km por litro de cada bus contra su lectura anterior (aunque haya cargado en otro terminal) y marca las cargas fuera del rango de su modelo y norma, en un reporte con fórmulas vivas. Al revisarla corregí un bug que calculaba mal los km cuando las cargas cruzaban un cambio de mes.",
-   "Each depot logged its fuel loads in its own Excel file. The tool merges them, computes each bus's km per litre against its previous reading (even if it refuelled at another depot) and flags loads outside the range for its model and emissions standard, in a report with live formulas. While reviewing it I fixed a bug that miscomputed km whenever loads crossed a month boundary."
+   "Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí dos errores que hacían que el reporte no marcara buses que sí estaban fuera de rango.",
+   "Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed two bugs that kept the report from flagging buses that were out of range."
   ],
   "tags": [
+   "python",
    "pandas",
-   "openpyxl",
+   "appsheet",
    "excel",
    "data-cleaning"
   ],
