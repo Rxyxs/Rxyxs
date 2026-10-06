@@ -36,6 +36,10 @@ En todos sigo las mismas reglas: el código corre de principio a fin, las cifras
 
 **[Laboratorio de experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)** · *simulación Monte Carlo* — revisar un test A/B todos los días infla el falso positivo de 5% a **24,2%**, y la regla bayesiana que se suele asumir "segura" casi no ayuda (**20,5%**).
 
+## Experiencia
+
+* **[Rendimiento de combustible de una flota de buses](https://github.com/Rxyxs/Trabajo-Vule)** · *trabajo para una empresa de buses* — cada terminal registraba sus cargas de combustible en su propio Excel. La herramienta los une, calcula los km por litro de cada bus contra su lectura anterior (aunque haya cargado en otro terminal) y marca las cargas fuera del rango de su modelo y norma, en un reporte con fórmulas vivas. Al revisarla encontré y corregí un bug: ordenaba las fechas como texto y calculaba mal los km cuando las cargas cruzaban un cambio de mes.
+
 ## Proyectos por tipo de problema
 
 ### 1. Pronosticar lo que viene
@@ -128,6 +132,10 @@ The same rules apply throughout: the code runs end to end, the numbers come from
 **[Demand forecasting as an inventory decision](https://github.com/Rxyxs/retail-demand-forecasting-favorita)** · *real data* — 3,000,888 rows of grocery sales. A quarter of the "zero demand" was **stores that had not opened yet**, and the model with the best metric leaves a stockout on **41%** of store-days. [Page](https://rxyxs.github.io/retail-demand-forecasting-favorita/).
 
 **[A/B experimentation lab](https://github.com/Rxyxs/chile-fintech-experimentation-lab)** · *Monte Carlo simulation* — checking an A/B test every day inflates the false-positive rate from 5% to **24.2%**, and the Bayesian rule usually assumed "safe" barely helps (**20.5%**).
+
+## Experience
+
+* **[Fuel efficiency for a bus fleet](https://github.com/Rxyxs/Trabajo-Vule)** · *work for a bus company* — each depot logged its fuel loads in its own Excel file. The tool merges them, computes each bus's km per litre against its previous reading (even if it refuelled at another depot) and flags loads outside the range for its model and emissions standard, in a report with live formulas. While reviewing it I found and fixed a bug: it sorted dates as text and miscomputed km whenever loads crossed a month boundary.
 
 ## Projects by kind of problem
 
