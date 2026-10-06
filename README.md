@@ -1,4 +1,4 @@
- **Español** · [English](https://github.com/Rxyxs/Rxyxs/blob/main/README.en.md)
+**Español** · [English](https://github.com/Rxyxs/Rxyxs/blob/main/README.en.md)
 
 ![Portada](assets/banner.png)
 
@@ -8,6 +8,7 @@
 
 **Científico de Datos · Universidad Mayor · Santiago, Chile**
 
+<a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portafolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portafolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
 <a href="mailto:preyesp09@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=00FF66" alt="Email"></a>
 
@@ -45,22 +46,35 @@ En todos sigo las mismas reglas: el código corre de principio a fin, las cifras
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/Rxyxs/chile-fintech-experimentation-lab">Laboratorio de experimentación A/B</a></h3>
-<sub>Monte Carlo</sub>
+<sub>Monte Carlo · <a href="https://rxyxs.github.io/chile-fintech-experimentation-lab/">página</a></sub>
 <p>Revisar un test A/B todos los días infla el falso positivo de 5% a <b>24,2%</b>, y la regla bayesiana que se suele asumir "segura" casi no ayuda (<b>20,5%</b>).</p>
 <code>ab-testing</code> <code>cuped</code> <code>sequential-testing</code>
 </td>
 </tr>
 </table>
 
+## Herramienta abierta
+
+**[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
+Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.
+
+```python
+import datoschile as dc
+
+dc.indicadores.uf(desde=2020)
+dc.pensiones.indice(fondos="A", desde=2008, real=True)
+dc.cmf.morosidad(solo_sistema=True)
+```
+
 ## Experiencia
 
-**[Rendimiento de combustible de una flota de buses](https://github.com/Rxyxs/Trabajo-Vule)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
+**[Rendimiento de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
 Cada terminal registraba sus cargas de combustible en su propio Excel. La herramienta los une, calcula los km por litro de cada bus contra su lectura anterior (aunque haya cargado en otro terminal) y marca las cargas fuera del rango de su modelo y norma, en un reporte con fórmulas vivas. Al revisarla corregí un bug que calculaba mal los km cuando las cargas cruzaban un cambio de mes.  
 `pandas` `openpyxl` `excel` `data-cleaning`
 
 ## Proyectos por tipo de problema
 
-34 proyectos en 9 tipos de problema. Cada uno indica si usa datos reales o simulados; haz clic en una categoría para abrirla.
+34 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 6 proyectos</summary>
@@ -70,9 +84,9 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 | **[Demanda retail (Favorita)](https://github.com/Rxyxs/retail-demand-forecasting-favorita)**<br><sub>datos reales · [página](https://rxyxs.github.io/retail-demand-forecasting-favorita/)</sub> | Pronóstico evaluado como decisión de compra: los cuantiles solo convienen sobre una razón de costos ~3:1. | `lightgbm` `quantile-regression` `newsvendor` |
 | **[Morosidad bancaria en Chile (CMF)](https://github.com/Rxyxs/chile-banking-delinquency-cmf)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-banking-delinquency-cmf/)</sub> | Panel desde 128 Excel de la CMF. Solo ARIMA a 3 meses le gana al ingenuo; sumar desempleo, TPM e IMACEC lo empeora. | `time-series` `forecasting` `credit-risk` |
 | **[Sistema Eléctrico Nacional, horario](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>simulado</sub> | Solar, eólica, demanda y costo marginal en 5 barras. Solar: WAPE 3,64% vs 26,95% del ingenuo; en eólica gana el ingenuo. | `lightgbm` `optuna` `time-series` |
-| **[Sistema Eléctrico Nacional, en R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>simulado</sub> | TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling. | `r` `arima` `garch` |
-| **[Volatilidad del cobre](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>simulado</sub> | CatBoost+Optuna contra GARCH(1,1) y HAR-RV: gana GARCH, y se explica por qué. | `garch` `catboost` `shap` |
-| **[Volatilidad de alta frecuencia](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>datos reales</sub> | 24,8 M de trades de Binance: a 30 s, la persistencia (RMSPE 4,58) le gana a LightGBM y a la red neuronal. | `high-frequency-trading` `lightgbm` `duckdb` |
+| **[Sistema Eléctrico Nacional, en R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling. | `r` `arima` `garch` |
+| **[Volatilidad del cobre](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>simulado · [página](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | CatBoost+Optuna contra GARCH(1,1) y HAR-RV: gana GARCH, y se explica por qué. | `garch` `catboost` `shap` |
+| **[Volatilidad de alta frecuencia](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>datos reales · [página](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24,8 M de trades de Binance: a 30 s, la persistencia (RMSPE 4,58) le gana a LightGBM y a la red neuronal. | `high-frequency-trading` `lightgbm` `duckdb` |
 
 </details>
 
@@ -81,12 +95,12 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Laboratorio de fraude y AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulado</sub> | El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893. | `fraud-detection` `aml` `xgboost` |
-| **[16 detectores sobre fraude móvil](https://github.com/Rxyxs/Proyectos_ML_anomalias)**<br><sub>simulado</sub> | El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
+| **[Laboratorio de fraude y AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulado · [página](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893. | `fraud-detection` `aml` `xgboost` |
+| **[16 detectores sobre fraude móvil](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>simulado · [página](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Facturas anómalas en compras mineras](https://github.com/Rxyxs/mining-procurement-anomaly-engine)**<br><sub>simulado</sub> | Revisando solo el 5% de las facturas, el autoencoder encuentra el 37,3% de las anómalas: ~7,5× el azar. | `autoencoder` `pytorch` `unsupervised-learning` |
-| **[Motor de fraude políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulado</sub> | C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa. | `c` `ruby` `prometheus` |
+| **[Motor de fraude políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa. | `c` `ruby` `prometheus` |
 | **[Anomalías en ticks de mercado (C++)](https://github.com/Rxyxs/market-tick-anomaly-engine-cpp)**<br><sub>datos reales</sub> | EWMA y CUSUM validados contra el crash cripto de marzo 2020, a 7,26 M ticks/s. | `cpp` `cusum` `ewma` |
-| **[Order flow en acciones de litio (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>simulado</sub> | Cero falsos positivos fuera del shock inyectado en 43.200 ventanas. | `cpp` `order-flow` `market-microstructure` |
+| **[Order flow en acciones de litio (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>simulado · [página](https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/)</sub> | Cero falsos positivos fuera del shock inyectado en 43.200 ventanas. | `cpp` `order-flow` `market-microstructure` |
 
 </details>
 
@@ -97,7 +111,7 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 |---|---|---|
 | **[Mantenimiento predictivo (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>datos reales · [página](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23.550 camiones: −31% del costo oficial en test, pero el ahorro se agota si la visita cuesta el doble, porque el modelo exagera el riesgo. | `predictive-maintenance` `survival-analysis` `shap` |
 | **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulado</sub> | Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN. | `remaining-useful-life` `signal-processing` `fft` |
-| **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>simulado</sub> | Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters. | `digital-twin` `kalman-filter` `lightgbm` |
+| **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters. | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
 
@@ -107,7 +121,7 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Impacto causal en flota minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift y DiD escalonado; el ATT coincide con una implementación de referencia en un panel real. | `causal-inference` `econml` `uplift-modeling` |
-| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
+| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
 | **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año pierde 0,2% fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 
 </details>
@@ -118,8 +132,8 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Flotación de cobre](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre)**<br><sub>simulado</sub> | Reactivos y pH por bloque: +27,6 pp de recuperación en los 150 peores bloques, con dos optimizadores que coinciden. | `genetic-algorithm` `nsga-ii` `shap` |
-| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
-| **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulado</sub> | Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos. | `mlflow` `fastapi` `docker` |
+| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
+| **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulado · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos. | `mlflow` `fastapi` `docker` |
 
 </details>
 
@@ -128,10 +142,10 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>macro real, cartera simulada</sub> | 26 técnicas: scorecard R+Python+C a 270,6 M filas/s, PD para IFRS 9, auditoría de sesgo y ciclo shadow/canary/reentrenamiento. | `scorecard` `ifrs9` `mlops` |
-| **[Riesgo sistémico en Chile](https://github.com/Rxyxs/chile-fintech-systemic-risk)**<br><sub>datos reales</sub> | Seis lenguajes sobre datos del Banco Central. El LSTM (51,0%) no le gana a la clase mayoritaria (53,6%). | `julia` `r` `cplusplus` |
-| **[Laboratorio cuantitativo cripto](https://github.com/Rxyxs/crypto-quant-techniques-lab)**<br><sub>datos reales</sub> | Ocho técnicas. Las cinco estrategias pierden tras costos; la detección de spoofing sí funciona (precisión 0,92). | `quantitative-finance` `cointegration` `nlp` |
-| **[Opciones asiáticas sobre cobre (C++)](https://github.com/Rxyxs/copper-options-montecarlo-cpp)**<br><sub>modelo de precios</sub> | Monte Carlo C++20 bajo GBM, Schwartz y Heston: 9,64× con 16 hilos y un sesgo real corregido. | `cpp20` `monte-carlo` `heston-model` |
+| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>macro real, cartera simulada · [página](https://rxyxs.github.io/credit-risk-scoring-lab/)</sub> | 26 técnicas: scorecard R+Python+C a 270,6 M filas/s, PD para IFRS 9, auditoría de sesgo y ciclo shadow/canary/reentrenamiento. | `scorecard` `ifrs9` `mlops` |
+| **[Riesgo sistémico en Chile](https://github.com/Rxyxs/chile-fintech-systemic-risk)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-fintech-systemic-risk/)</sub> | Seis lenguajes sobre datos del Banco Central. El LSTM (51,0%) no le gana a la clase mayoritaria (53,6%). | `julia` `r` `cplusplus` |
+| **[Laboratorio cuantitativo cripto](https://github.com/Rxyxs/crypto-quant-techniques-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/crypto-quant-techniques-lab/)</sub> | Ocho técnicas. Las cinco estrategias pierden tras costos; la detección de spoofing sí funciona (precisión 0,92). | `quantitative-finance` `cointegration` `nlp` |
+| **[Opciones asiáticas sobre cobre (C++)](https://github.com/Rxyxs/copper-options-montecarlo-cpp)**<br><sub>modelo de precios · [página](https://rxyxs.github.io/copper-options-montecarlo-cpp/)</sub> | Monte Carlo C++20 bajo GBM, Schwartz y Heston: 9,64× con 16 hilos y un sesgo real corregido. | `cpp20` `monte-carlo` `heston-model` |
 
 </details>
 
@@ -140,9 +154,9 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Toolkit de limpieza en 4 dominios](https://github.com/Rxyxs/Limpieza_Datos)**<br><sub>datos reales</sub> | El mismo toolkit sobre Banco Central, COCHILCO y Banco Mundial; detectó un dato corrupto en la fuente. | `data-quality` `pydantic` `pytest` |
-| **[Data warehouse minero](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile)**<br><sub>simulado</sub> | dbt + DuckDB de staging a marts, 83 tests de calidad y vistas listas para modelar. | `dbt` `duckdb` `star-schema` |
-| **[Lakehouse de e-commerce](https://github.com/Rxyxs/ecommerce-lakehouse-duckdb)**<br><sub>simulado</sub> | Polars + DuckDB sobre Parquet; repetir el benchmark 7 veces cambió la conclusión. | `polars` `duckdb` `parquet` |
+| **[Toolkit de limpieza en 4 dominios](https://github.com/Rxyxs/data-cleaning-toolkit)**<br><sub>datos reales · [página](https://rxyxs.github.io/data-cleaning-toolkit/)</sub> | El mismo toolkit sobre Banco Central, COCHILCO y Banco Mundial; detectó un dato corrupto en la fuente. | `data-quality` `pydantic` `pytest` |
+| **[Data warehouse minero](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile)**<br><sub>simulado · [página](https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/)</sub> | dbt + DuckDB de staging a marts, 83 tests de calidad y vistas listas para modelar. | `dbt` `duckdb` `star-schema` |
+| **[Lakehouse de e-commerce](https://github.com/Rxyxs/ecommerce-lakehouse-duckdb)**<br><sub>simulado · [página](https://rxyxs.github.io/ecommerce-lakehouse-duckdb/)</sub> | Polars + DuckDB sobre Parquet; repetir el benchmark 7 veces cambió la conclusión. | `polars` `duckdb` `parquet` |
 
 </details>
 
@@ -151,8 +165,8 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Clasificación científica](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>datos reales</sub> | Bosón de Higgs (AMS 3,64 vs 3,8–3,9 de los ganadores) y exoplanetas Kepler (79,3% vs 49,8%). | `gradient-boosting` `pytorch` `astronomy` |
-| **[Ley y fragmentación (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>simulado</sub> | ML.NET + ONNX en app de escritorio: P80 con R² 0,957. | `csharp` `ml-net` `onnx` |
+| **[Clasificación científica](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/scientific-classification-lab/)</sub> | Bosón de Higgs (AMS 3,64 vs 3,8–3,9 de los ganadores) y exoplanetas Kepler (79,3% vs 49,8%). | `gradient-boosting` `pytorch` `astronomy` |
+| **[Ley y fragmentación (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX en app de escritorio: P80 con R² 0,957. | `csharp` `ml-net` `onnx` |
 
 </details>
 
@@ -161,10 +175,10 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[RAG de seguridad minera](https://github.com/Rxyxs/rag-seguridad-minera-chile)**<br><sub>normativa real</sub> | Búsqueda híbrida sobre el DS 132; el re-ranking sube el MRR de 0,920 a 0,981. | `rag` `hybrid-search` `cross-encoder` |
-| **[Agente de operaciones mineras](https://github.com/Rxyxs/chile-mining-ops-agent)**<br><sub>simulado</sub> | Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números. | `llm-agent` `tool-calling` `duckdb` |
-| **[Modelo de lenguaje local para industria](https://github.com/Rxyxs/slm-industrial-gateway)**<br><sub>simulado</sub> | Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts. | `llama-cpp` `qlora` `guardrails` |
-| **[YOLOv8 en Raspberry Pi (tesis)](https://github.com/Rxyxs/yolov8-separable-convolutions)**<br><sub>datos reales (COCO)</sub> | 68% menos parámetros y ~10× más rápido en Raspberry Pi, a cambio de mAP50 0,175 vs 0,212. | `yolov8` `computer-vision` `edge-computing` |
+| **[RAG de seguridad minera](https://github.com/Rxyxs/rag-seguridad-minera-chile)**<br><sub>normativa real · [página](https://rxyxs.github.io/rag-seguridad-minera-chile/)</sub> | Búsqueda híbrida sobre el DS 132; el re-ranking sube el MRR de 0,920 a 0,981. | `rag` `hybrid-search` `cross-encoder` |
+| **[Agente de operaciones mineras](https://github.com/Rxyxs/chile-mining-ops-agent)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-ops-agent/)</sub> | Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números. | `llm-agent` `tool-calling` `duckdb` |
+| **[Modelo de lenguaje local para industria](https://github.com/Rxyxs/slm-industrial-gateway)**<br><sub>simulado · [página](https://rxyxs.github.io/slm-industrial-gateway/)</sub> | Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts. | `llama-cpp` `qlora` `guardrails` |
+| **[YOLOv8 en Raspberry Pi (tesis)](https://github.com/Rxyxs/yolov8-separable-convolutions)**<br><sub>datos reales (COCO) · [página](https://rxyxs.github.io/yolov8-separable-convolutions/)</sub> | 68% menos parámetros y ~10× más rápido en Raspberry Pi, a cambio de mAP50 0,175 vs 0,212. | `yolov8` `computer-vision` `edge-computing` |
 
 </details>
 
@@ -181,5 +195,5 @@ Cada terminal registraba sus cargas de combustible en su propio Excel. La herram
 ---
 
 <div align="center">
-<sub><a href="https://www.linkedin.com/in/pablo-reyes-pino">LinkedIn</a> · preyesp09@gmail.com · Santiago, Chile</sub>
+<sub><a href="https://rxyxs.github.io/">Portafolio</a> · <a href="https://www.linkedin.com/in/pablo-reyes-pino">LinkedIn</a> · preyesp09@gmail.com · Santiago, Chile</sub>
 </div>

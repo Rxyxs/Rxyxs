@@ -1,0 +1,1068 @@
+{
+ "data_labels": {
+  "real": [
+   "datos reales",
+   "real data"
+  ],
+  "sim": [
+   "simulado",
+   "simulated"
+  ],
+  "mix": [
+   "real + simulado",
+   "real + simulated"
+  ],
+  "mc": [
+   "Monte Carlo",
+   "Monte Carlo"
+  ],
+  "macro": [
+   "macro real, cartera simulada",
+   "real macro, simulated portfolio"
+  ],
+  "reg": [
+   "normativa real",
+   "real regulation"
+  ],
+  "comunas": [
+   "comunas reales, demanda simulada",
+   "real districts, simulated demand"
+  ],
+  "model": [
+   "modelo de precios",
+   "pricing model"
+  ],
+  "coco": [
+   "datos reales (COCO)",
+   "real data (COCO)"
+  ],
+  "work": [
+   "trabajo real, datos de ejemplo ficticios",
+   "real job, fictitious sample data"
+  ]
+ },
+ "featured": [
+  {
+   "repo": "chile-pension-fund-switching-cost",
+   "name": [
+    "Cambiarse de fondo de pensiones en pánico",
+    "Panic-switching pension funds"
+   ],
+   "data": "real",
+   "res": [
+    "24 años de valores cuota diarios. Cambiarse al fondo E en el piso de una caída pierde plata en <b>97%</b> de 2.000 historias; con una regla que alguien podría seguir de verdad, en <b>59%</b>: casi una moneda al aire.",
+    "24 years of daily unit values. Switching to Fund E at the bottom of a crash loses money in <b>97%</b> of 2,000 histories; with a rule someone could actually follow, in <b>59%</b>: close to a coin flip."
+   ],
+   "tags": [
+    "duckdb",
+    "counterfactual-analysis",
+    "behavioral-finance"
+   ],
+   "page": true,
+   "img": "figures/bootstrap_reglas.png"
+  },
+  {
+   "repo": "chile-mining-fleet-causal-impact",
+   "name": [
+    "Impacto causal en una flota minera",
+    "Causal impact in a mining fleet"
+   ],
+   "data": "mix",
+   "res": [
+    "¿Funcionó el programa de mantenimiento, y en qué camiones? Con sensores reales de 60.000 camiones Scania, <b>el DRLearner por defecto colapsa (r = −0,01)</b>; se aisló la causa y se recupera a 0,61–0,79.",
+    "Did the maintenance program work, and on which trucks? On real sensor data from 60,000 Scania trucks, <b>the default DRLearner collapses (r = −0.01)</b>; the cause was isolated and it recovers to 0.61–0.79."
+   ],
+   "tags": [
+    "causal-inference",
+    "econml",
+    "difference-in-differences"
+   ],
+   "page": true,
+   "img": "figures/real_did_estimators.png"
+  },
+  {
+   "repo": "retail-demand-forecasting-favorita",
+   "name": [
+    "Demanda retail como decisión de inventario",
+    "Retail demand as an inventory decision"
+   ],
+   "data": "real",
+   "res": [
+    "3.000.888 filas de ventas. Un cuarto de la \"demanda cero\" eran <b>locales que aún no abrían</b>, y el modelo con mejor métrica deja quiebre de stock en <b>41%</b> de los días-local.",
+    "3,000,888 sales rows. A quarter of the \"zero demand\" was <b>stores that had not opened yet</b>, and the model with the best metric leaves a stockout on <b>41%</b> of store-days."
+   ],
+   "tags": [
+    "demand-forecasting",
+    "lightgbm",
+    "quantile-regression"
+   ],
+   "page": true,
+   "img": "figures/accuracy_vs_decision.png"
+  },
+  {
+   "repo": "chile-fintech-experimentation-lab",
+   "name": [
+    "Laboratorio de experimentación A/B",
+    "A/B experimentation lab"
+   ],
+   "data": "mc",
+   "res": [
+    "Revisar un test A/B todos los días infla el falso positivo de 5% a <b>24,2%</b>, y la regla bayesiana que se suele asumir \"segura\" casi no ayuda (<b>20,5%</b>).",
+    "Checking an A/B test every day inflates the false-positive rate from 5% to <b>24.2%</b>, and the Bayesian rule usually assumed \"safe\" barely helps (<b>20.5%</b>)."
+   ],
+   "tags": [
+    "ab-testing",
+    "cuped",
+    "sequential-testing"
+   ],
+   "page": true,
+   "img": "figures/peeking_inflation_curve.png"
+  }
+ ],
+ "work": {
+  "repo": "bus-fleet-fuel-efficiency",
+  "name": [
+   "Rendimiento de combustible de una flota de buses",
+   "Fuel efficiency for a bus fleet"
+  ],
+  "data": "work",
+  "res": [
+   "Cada terminal registraba sus cargas de combustible en su propio Excel. La herramienta los une, calcula los km por litro de cada bus contra su lectura anterior (aunque haya cargado en otro terminal) y marca las cargas fuera del rango de su modelo y norma, en un reporte con fórmulas vivas. Al revisarla corregí un bug que calculaba mal los km cuando las cargas cruzaban un cambio de mes.",
+   "Each depot logged its fuel loads in its own Excel file. The tool merges them, computes each bus's km per litre against its previous reading (even if it refuelled at another depot) and flags loads outside the range for its model and emissions standard, in a report with live formulas. While reviewing it I fixed a bug that miscomputed km whenever loads crossed a month boundary."
+  ],
+  "tags": [
+   "pandas",
+   "openpyxl",
+   "excel",
+   "data-cleaning"
+  ],
+  "page": false
+ },
+ "categories": [
+  {
+   "name": [
+    "Pronosticar lo que viene",
+    "Forecasting what comes next"
+   ],
+   "items": [
+    {
+     "repo": "retail-demand-forecasting-favorita",
+     "name": [
+      "Demanda retail (Favorita)",
+      "Retail demand (Favorita)"
+     ],
+     "data": "real",
+     "res": [
+      "Pronóstico evaluado como decisión de compra: los cuantiles solo convienen sobre una razón de costos ~3:1.",
+      "Forecast scored as a purchase decision: quantiles only pay above a ~3:1 cost ratio."
+     ],
+     "tags": [
+      "lightgbm",
+      "quantile-regression",
+      "newsvendor"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-banking-delinquency-cmf",
+     "name": [
+      "Morosidad bancaria en Chile (CMF)",
+      "Chilean bank delinquency (CMF)"
+     ],
+     "data": "real",
+     "res": [
+      "Panel desde 128 Excel de la CMF. Solo ARIMA a 3 meses le gana al ingenuo; sumar desempleo, TPM e IMACEC lo empeora.",
+      "Panel from 128 CMF Excel files. Only ARIMA at 3 months beats naive; adding unemployment, policy rate and IMACEC makes it worse."
+     ],
+     "tags": [
+      "time-series",
+      "forecasting",
+      "credit-risk"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-energy-grid-forecasting",
+     "name": [
+      "Sistema Eléctrico Nacional, horario",
+      "Chile's power grid, hourly"
+     ],
+     "data": "sim",
+     "res": [
+      "Solar, eólica, demanda y costo marginal en 5 barras. Solar: WAPE 3,64% vs 26,95% del ingenuo; en eólica gana el ingenuo.",
+      "Solar, wind, demand and marginal cost at 5 nodes. Solar: 3.64% WAPE vs 26.95% naive; on wind, naive wins."
+     ],
+     "tags": [
+      "lightgbm",
+      "optuna",
+      "time-series"
+     ],
+     "page": false
+    },
+    {
+     "repo": "chile-energy-grid-forecasting-r",
+     "name": [
+      "Sistema Eléctrico Nacional, en R",
+      "Chile's power grid, in R"
+     ],
+     "data": "sim",
+     "res": [
+      "TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling.",
+      "TBATS: 2.47% MAPE vs 6.54% seasonal naive; ETS's edge only shows under rolling validation."
+     ],
+     "tags": [
+      "r",
+      "arima",
+      "garch"
+     ],
+     "page": true
+    },
+    {
+     "repo": "copper-volatility-forecaster",
+     "name": [
+      "Volatilidad del cobre",
+      "Copper volatility"
+     ],
+     "data": "sim",
+     "res": [
+      "CatBoost+Optuna contra GARCH(1,1) y HAR-RV: gana GARCH, y se explica por qué.",
+      "CatBoost+Optuna against GARCH(1,1) and HAR-RV: GARCH wins, and the reason is explained."
+     ],
+     "tags": [
+      "garch",
+      "catboost",
+      "shap"
+     ],
+     "page": true
+    },
+    {
+     "repo": "reading-market-turbulence",
+     "name": [
+      "Volatilidad de alta frecuencia",
+      "High-frequency volatility"
+     ],
+     "data": "real",
+     "res": [
+      "24,8 M de trades de Binance: a 30 s, la persistencia (RMSPE 4,58) le gana a LightGBM y a la red neuronal.",
+      "24.8M Binance trades: at 30 s, persistence (RMSPE 4.58) beats LightGBM and the neural net."
+     ],
+     "tags": [
+      "high-frequency-trading",
+      "lightgbm",
+      "duckdb"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Detectar fraude y anomalías",
+    "Catching fraud and anomalies"
+   ],
+   "items": [
+    {
+     "repo": "fraud-detection-techniques-lab",
+     "name": [
+      "Laboratorio de fraude y AML",
+      "Fraud and AML lab"
+     ],
+     "data": "mix",
+     "res": [
+      "El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
+      "ROC-AUC makes a model with 3.4× worse PR-AUC look almost equal (0.931 vs 0.965); label-free graph AML: ROC-AUC 0.893."
+     ],
+     "tags": [
+      "fraud-detection",
+      "aml",
+      "xgboost"
+     ],
+     "page": true
+    },
+    {
+     "repo": "paysim-anomaly-detection-benchmark",
+     "name": [
+      "16 detectores sobre fraude móvil",
+      "16 detectors on mobile-money fraud"
+     ],
+     "data": "sim",
+     "res": [
+      "El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests.",
+      "The statistical baseline lands below chance (ROC-AUC 0.383) and ensembles don't win. 266 tests."
+     ],
+     "tags": [
+      "isolation-forest",
+      "local-outlier-factor",
+      "imbalanced-data"
+     ],
+     "page": true
+    },
+    {
+     "repo": "mining-procurement-anomaly-engine",
+     "name": [
+      "Facturas anómalas en compras mineras",
+      "Anomalous mining procurement invoices"
+     ],
+     "data": "sim",
+     "res": [
+      "Revisando solo el 5% de las facturas, el autoencoder encuentra el 37,3% de las anómalas: ~7,5× el azar.",
+      "Reviewing only 5% of invoices, the autoencoder finds 37.3% of anomalies: ~7.5× chance."
+     ],
+     "tags": [
+      "autoencoder",
+      "pytorch",
+      "unsupervised-learning"
+     ],
+     "page": false
+    },
+    {
+     "repo": "chile-polyglot-fraud-engine",
+     "name": [
+      "Motor de fraude políglota",
+      "Polyglot fraud engine"
+     ],
+     "data": "sim",
+     "res": [
+      "C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa.",
+      "C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end."
+     ],
+     "tags": [
+      "c",
+      "ruby",
+      "prometheus"
+     ],
+     "page": true
+    },
+    {
+     "repo": "market-tick-anomaly-engine-cpp",
+     "name": [
+      "Anomalías en ticks de mercado (C++)",
+      "Market tick anomalies (C++)"
+     ],
+     "data": "real",
+     "res": [
+      "EWMA y CUSUM validados contra el crash cripto de marzo 2020, a 7,26 M ticks/s.",
+      "EWMA and CUSUM validated on the March 2020 crypto crash, at 7.26M ticks/s."
+     ],
+     "tags": [
+      "cpp",
+      "cusum",
+      "ewma"
+     ],
+     "page": false
+    },
+    {
+     "repo": "lithium-orderbook-imbalance-cpp",
+     "name": [
+      "Order flow en acciones de litio (C++)",
+      "Lithium order-flow imbalance (C++)"
+     ],
+     "data": "sim",
+     "res": [
+      "Cero falsos positivos fuera del shock inyectado en 43.200 ventanas.",
+      "Zero false positives outside the injected shock across 43,200 windows."
+     ],
+     "tags": [
+      "cpp",
+      "order-flow",
+      "market-microstructure"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Anticipar fallas de equipos",
+    "Anticipating equipment failure"
+   ],
+   "items": [
+    {
+     "repo": "heavy-truck-predictive-maintenance",
+     "name": [
+      "Mantenimiento predictivo (SCANIA)",
+      "Predictive maintenance (SCANIA)"
+     ],
+     "data": "real",
+     "res": [
+      "23.550 camiones: −31% del costo oficial en test, pero el ahorro se agota si la visita cuesta el doble, porque el modelo exagera el riesgo.",
+      "23,550 trucks: −31% official cost on test, but the saving runs out if a visit costs double, because the model overstates risk."
+     ],
+     "tags": [
+      "predictive-maintenance",
+      "survival-analysis",
+      "shap"
+     ],
+     "page": true
+    },
+    {
+     "repo": "failure-prediction-signal-lab",
+     "name": [
+      "Falla desde señal continua",
+      "Failure from continuous signal"
+     ],
+     "data": "mix",
+     "res": [
+      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN.",
+      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.7×."
+     ],
+     "tags": [
+      "remaining-useful-life",
+      "signal-processing",
+      "fft"
+     ],
+     "page": false
+    },
+    {
+     "repo": "chile-mining-sag-energy-digital-twin",
+     "name": [
+      "Gemelo digital de molino SAG",
+      "SAG mill digital twin"
+     ],
+     "data": "sim",
+     "res": [
+      "Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters.",
+      "Kalman estimates ore hardness with 79% less error; 24 h energy forecast 27.6% better than Holt-Winters."
+     ],
+     "tags": [
+      "digital-twin",
+      "kalman-filter",
+      "lightgbm"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Medir causas y evaluar decisiones",
+    "Measuring causes and evaluating decisions"
+   ],
+   "items": [
+    {
+     "repo": "chile-mining-fleet-causal-impact",
+     "name": [
+      "Impacto causal en flota minera",
+      "Mining fleet causal impact"
+     ],
+     "data": "mix",
+     "res": [
+      "Uplift y DiD escalonado; el ATT coincide con una implementación de referencia en un panel real.",
+      "Uplift and staggered DiD; the ATT matches a reference implementation on a real panel."
+     ],
+     "tags": [
+      "causal-inference",
+      "econml",
+      "uplift-modeling"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-fintech-experimentation-lab",
+     "name": [
+      "Experimentación A/B",
+      "A/B experimentation"
+     ],
+     "data": "mc",
+     "res": [
+      "Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla.",
+      "Sample size, SRM, CUPED and multiple testing, with a harness that checks each rule's error rate."
+     ],
+     "tags": [
+      "ab-testing",
+      "cuped",
+      "power-analysis"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-pension-fund-switching-cost",
+     "name": [
+      "Fondos de pensiones",
+      "Pension funds"
+     ],
+     "data": "real",
+     "res": [
+      "Una señal de régimen que \"ganaba\" 1,4–2,3% al año pierde 0,2% fuera de muestra. En UF, 2021–23 cayó 26%.",
+      "A regime signal that \"earned\" 1.4–2.3% a year loses 0.2% out of sample. In real terms, 2021–23 fell 26%."
+     ],
+     "tags": [
+      "duckdb",
+      "counterfactual-analysis",
+      "pensions"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Optimizar operaciones",
+    "Optimizing operations"
+   ],
+   "items": [
+    {
+     "repo": "optimizacion-geometalurgica-flotacion-cobre",
+     "name": [
+      "Flotación de cobre",
+      "Copper flotation"
+     ],
+     "data": "sim",
+     "res": [
+      "Reactivos y pH por bloque: +27,6 pp de recuperación en los 150 peores bloques, con dos optimizadores que coinciden.",
+      "Reagents and pH per block: +27.6 pp recovery on the 150 worst blocks, with two optimizers that agree."
+     ],
+     "tags": [
+      "genetic-algorithm",
+      "nsga-ii",
+      "shap"
+     ],
+     "page": false
+    },
+    {
+     "repo": "chile-spatial-logistics-opt",
+     "name": [
+      "Logística de última milla",
+      "Last-mile logistics"
+     ],
+     "data": "comunas",
+     "res": [
+      "Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender.",
+      "Multi-depot routing with time windows over real polygons: 0 of 173 zones unserved."
+     ],
+     "tags": [
+      "or-tools",
+      "vrptw",
+      "h3"
+     ],
+     "page": true
+    },
+    {
+     "repo": "customer-churn-mlops-platform",
+     "name": [
+      "Churn como decisión de negocio",
+      "Churn as a business decision"
+     ],
+     "data": "sim",
+     "res": [
+      "Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos.",
+      "Threshold by customer value: +US$75,847 contacting 78.6%, vs +US$42,717 contacting everyone."
+     ],
+     "tags": [
+      "mlflow",
+      "fastapi",
+      "docker"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Medir y gestionar riesgo financiero",
+    "Measuring and managing financial risk"
+   ],
+   "items": [
+    {
+     "repo": "credit-risk-scoring-lab",
+     "name": [
+      "Laboratorio de riesgo crediticio",
+      "Credit risk lab"
+     ],
+     "data": "macro",
+     "res": [
+      "26 técnicas: scorecard R+Python+C a 270,6 M filas/s, PD para IFRS 9, auditoría de sesgo y ciclo shadow/canary/reentrenamiento.",
+      "26 techniques: R+Python+C scorecard at 270.6M rows/s, IFRS 9 PD, bias audit and a shadow/canary/retraining lifecycle."
+     ],
+     "tags": [
+      "scorecard",
+      "ifrs9",
+      "mlops"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-fintech-systemic-risk",
+     "name": [
+      "Riesgo sistémico en Chile",
+      "Systemic risk in Chile"
+     ],
+     "data": "real",
+     "res": [
+      "Seis lenguajes sobre datos del Banco Central. El LSTM (51,0%) no le gana a la clase mayoritaria (53,6%).",
+      "Six languages on Central Bank data. The LSTM (51.0%) doesn't beat the majority class (53.6%)."
+     ],
+     "tags": [
+      "julia",
+      "r",
+      "cplusplus"
+     ],
+     "page": true
+    },
+    {
+     "repo": "crypto-quant-techniques-lab",
+     "name": [
+      "Laboratorio cuantitativo cripto",
+      "Crypto quant lab"
+     ],
+     "data": "real",
+     "res": [
+      "Ocho técnicas. Las cinco estrategias pierden tras costos; la detección de spoofing sí funciona (precisión 0,92).",
+      "Eight techniques. All five strategies lose after costs; spoofing detection works (0.92 precision)."
+     ],
+     "tags": [
+      "quantitative-finance",
+      "cointegration",
+      "nlp"
+     ],
+     "page": true
+    },
+    {
+     "repo": "copper-options-montecarlo-cpp",
+     "name": [
+      "Opciones asiáticas sobre cobre (C++)",
+      "Copper Asian options (C++)"
+     ],
+     "data": "model",
+     "res": [
+      "Monte Carlo C++20 bajo GBM, Schwartz y Heston: 9,64× con 16 hilos y un sesgo real corregido.",
+      "C++20 Monte Carlo under GBM, Schwartz and Heston: 9.64× on 16 threads and a real bias fixed."
+     ],
+     "tags": [
+      "cpp20",
+      "monte-carlo",
+      "heston-model"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Ordenar y preparar los datos",
+    "Getting the data in order"
+   ],
+   "items": [
+    {
+     "repo": "data-cleaning-toolkit",
+     "name": [
+      "Toolkit de limpieza en 4 dominios",
+      "Cleaning toolkit across 4 domains"
+     ],
+     "data": "real",
+     "res": [
+      "El mismo toolkit sobre Banco Central, COCHILCO y Banco Mundial; detectó un dato corrupto en la fuente.",
+      "One toolkit on Central Bank, COCHILCO and World Bank data; it caught a corrupted source value."
+     ],
+     "tags": [
+      "data-quality",
+      "pydantic",
+      "pytest"
+     ],
+     "page": true
+    },
+    {
+     "repo": "data-warehouse-analitico-mineria-chile",
+     "name": [
+      "Data warehouse minero",
+      "Mining data warehouse"
+     ],
+     "data": "sim",
+     "res": [
+      "dbt + DuckDB de staging a marts, 83 tests de calidad y vistas listas para modelar.",
+      "dbt + DuckDB from staging to marts, 83 quality tests and model-ready views."
+     ],
+     "tags": [
+      "dbt",
+      "duckdb",
+      "star-schema"
+     ],
+     "page": true
+    },
+    {
+     "repo": "ecommerce-lakehouse-duckdb",
+     "name": [
+      "Lakehouse de e-commerce",
+      "E-commerce lakehouse"
+     ],
+     "data": "sim",
+     "res": [
+      "Polars + DuckDB sobre Parquet; repetir el benchmark 7 veces cambió la conclusión.",
+      "Polars + DuckDB over Parquet; repeating the benchmark 7 times changed the conclusion."
+     ],
+     "tags": [
+      "polars",
+      "duckdb",
+      "parquet"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Clasificar y estimar",
+    "Classifying and estimating"
+   ],
+   "items": [
+    {
+     "repo": "scientific-classification-lab",
+     "name": [
+      "Clasificación científica",
+      "Scientific classification"
+     ],
+     "data": "real",
+     "res": [
+      "Bosón de Higgs (AMS 3,64 vs 3,8–3,9 de los ganadores) y exoplanetas Kepler (79,3% vs 49,8%).",
+      "Higgs boson (AMS 3.64 vs 3.8–3.9 for the winners) and Kepler exoplanets (79.3% vs 49.8%)."
+     ],
+     "tags": [
+      "gradient-boosting",
+      "pytorch",
+      "astronomy"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-mining-grade-blast-quality-dotnet",
+     "name": [
+      "Ley y fragmentación (.NET)",
+      "Ore grade and fragmentation (.NET)"
+     ],
+     "data": "sim",
+     "res": [
+      "ML.NET + ONNX en app de escritorio: P80 con R² 0,957.",
+      "ML.NET + ONNX in a desktop app: P80 at R² 0.957."
+     ],
+     "tags": [
+      "csharp",
+      "ml-net",
+      "onnx"
+     ],
+     "page": true
+    }
+   ]
+  },
+  {
+   "name": [
+    "Texto, lenguaje e imágenes",
+    "Text, language and images"
+   ],
+   "items": [
+    {
+     "repo": "rag-seguridad-minera-chile",
+     "name": [
+      "RAG de seguridad minera",
+      "Mining safety RAG"
+     ],
+     "data": "reg",
+     "res": [
+      "Búsqueda híbrida sobre el DS 132; el re-ranking sube el MRR de 0,920 a 0,981.",
+      "Hybrid search over DS 132; re-ranking lifts MRR from 0.920 to 0.981."
+     ],
+     "tags": [
+      "rag",
+      "hybrid-search",
+      "cross-encoder"
+     ],
+     "page": true
+    },
+    {
+     "repo": "chile-mining-ops-agent",
+     "name": [
+      "Agente de operaciones mineras",
+      "Mining operations agent"
+     ],
+     "data": "sim",
+     "res": [
+      "Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números.",
+      "An LLM that answers by calling tools (SQL, scoring, anomalies) instead of making up numbers."
+     ],
+     "tags": [
+      "llm-agent",
+      "tool-calling",
+      "duckdb"
+     ],
+     "page": true
+    },
+    {
+     "repo": "slm-industrial-gateway",
+     "name": [
+      "Modelo de lenguaje local para industria",
+      "Local language model for industry"
+     ],
+     "data": "sim",
+     "res": [
+      "Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts.",
+      "Offline inference, guardrails and QLoRA; the base model makes up arguments in 94 of 100 prompts."
+     ],
+     "tags": [
+      "llama-cpp",
+      "qlora",
+      "guardrails"
+     ],
+     "page": true
+    },
+    {
+     "repo": "yolov8-separable-convolutions",
+     "name": [
+      "YOLOv8 en Raspberry Pi (tesis)",
+      "YOLOv8 on a Raspberry Pi (thesis)"
+     ],
+     "data": "coco",
+     "res": [
+      "68% menos parámetros y ~10× más rápido en Raspberry Pi, a cambio de mAP50 0,175 vs 0,212.",
+      "68% fewer parameters and ~10× faster on a Raspberry Pi, at mAP50 0.175 vs 0.212."
+     ],
+     "tags": [
+      "yolov8",
+      "computer-vision",
+      "edge-computing"
+     ],
+     "page": true
+    }
+   ]
+  }
+ ],
+ "tools": [
+  {
+   "group": [
+    "Lenguajes",
+    "Languages"
+   ],
+   "items": [
+    {
+     "label": "Python",
+     "logo": "python"
+    },
+    {
+     "label": "SQL",
+     "logo": "postgresql"
+    },
+    {
+     "label": "R",
+     "logo": "r"
+    },
+    {
+     "label": "C++",
+     "logo": "cplusplus"
+    },
+    {
+     "label": "C",
+     "logo": "c"
+    },
+    {
+     "label": "C#",
+     "logo": "dotnet"
+    },
+    {
+     "label": "Julia",
+     "logo": "julia"
+    },
+    {
+     "label": "Go",
+     "logo": "go"
+    },
+    {
+     "label": "Ruby",
+     "logo": "ruby"
+    }
+   ]
+  },
+  {
+   "group": [
+    "Datos",
+    "Data"
+   ],
+   "items": [
+    {
+     "label": "pandas",
+     "logo": "pandas"
+    },
+    {
+     "label": "Polars",
+     "logo": "polars"
+    },
+    {
+     "label": "NumPy",
+     "logo": "numpy"
+    },
+    {
+     "label": "DuckDB",
+     "logo": "duckdb"
+    },
+    {
+     "label": "dbt",
+     "logo": ""
+    },
+    {
+     "label": "Parquet",
+     "logo": "apacheparquet"
+    },
+    {
+     "label": "Pydantic",
+     "logo": "pydantic"
+    },
+    {
+     "label": "Jupyter",
+     "logo": "jupyter"
+    }
+   ]
+  },
+  {
+   "group": [
+    "ML y estadística",
+    "ML & statistics"
+   ],
+   "items": [
+    {
+     "label": "scikit-learn",
+     "logo": "scikitlearn"
+    },
+    {
+     "label": "LightGBM",
+     "logo": ""
+    },
+    {
+     "label": "XGBoost",
+     "logo": ""
+    },
+    {
+     "label": "CatBoost",
+     "logo": ""
+    },
+    {
+     "label": "PyTorch",
+     "logo": "pytorch"
+    },
+    {
+     "label": "SciPy",
+     "logo": "scipy"
+    },
+    {
+     "label": "Optuna",
+     "logo": "optuna"
+    },
+    {
+     "label": "Plotly",
+     "logo": "plotly"
+    }
+   ]
+  },
+  {
+   "group": [
+    "Lenguaje, visión y edge",
+    "Language, vision & edge"
+   ],
+   "items": [
+    {
+     "label": "LangChain",
+     "logo": "langchain"
+    },
+    {
+     "label": "Hugging Face",
+     "logo": "huggingface"
+    },
+    {
+     "label": "Ultralytics YOLO",
+     "logo": "ultralytics"
+    },
+    {
+     "label": "ONNX",
+     "logo": "onnx"
+    },
+    {
+     "label": "Raspberry Pi",
+     "logo": "raspberrypi"
+    }
+   ]
+  },
+  {
+   "group": [
+    "Producción",
+    "Production"
+   ],
+   "items": [
+    {
+     "label": "FastAPI",
+     "logo": "fastapi"
+    },
+    {
+     "label": "Streamlit",
+     "logo": "streamlit"
+    },
+    {
+     "label": "MLflow",
+     "logo": "mlflow"
+    },
+    {
+     "label": "Docker",
+     "logo": "docker"
+    },
+    {
+     "label": "GitHub Actions",
+     "logo": "githubactions"
+    },
+    {
+     "label": "pytest",
+     "logo": "pytest"
+    },
+    {
+     "label": "Prometheus",
+     "logo": "prometheus"
+    },
+    {
+     "label": "Grafana",
+     "logo": "grafana"
+    },
+    {
+     "label": "Git",
+     "logo": "git"
+    },
+    {
+     "label": "Linux",
+     "logo": "linux"
+    }
+   ]
+  }
+ ],
+ "library": {
+  "repo": "datoschile",
+  "name": [
+   "datoschile: datos públicos de Chile en una línea",
+   "datoschile: Chilean public data in one line"
+  ],
+  "res": [
+   "Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.",
+   "A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed."
+  ],
+  "code": "import datoschile as dc\n\ndc.indicadores.uf(desde=2020)\ndc.pensiones.indice(fondos=\"A\", desde=2008, real=True)\ndc.cmf.morosidad(solo_sistema=True)",
+  "tags": [
+   "python",
+   "pandas",
+   "open-data",
+   "data-cleaning"
+  ]
+ },
+ "profile": {
+  "name": "Pablo Reyes",
+  "role": [
+   "Científico de Datos · Universidad Mayor · Santiago, Chile",
+   "Data Scientist · Universidad Mayor · Santiago, Chile"
+  ],
+  "linkedin": "https://www.linkedin.com/in/pablo-reyes-pino",
+  "email": "preyesp09@gmail.com",
+  "github": "https://github.com/Rxyxs",
+  "site": "https://rxyxs.github.io/",
+  "intro": [
+   [
+    "Este perfil reúne trabajo y proyectos propios ordenados **por el tipo de problema que resuelven**: pronosticar, detectar lo anómalo, anticipar fallas, medir causas, optimizar, gestionar riesgo, ordenar datos y trabajar con texto e imágenes. La idea es mostrar las distintas formas en que un científico de datos puede ayudar a una organización, en minería, energía, finanzas, retail o pensiones.",
+    "En todos sigo las mismas reglas: el código corre de principio a fin, las cifras salen de esa corrida, casi todos tienen tests y CI, y los resultados negativos se publican igual que los positivos."
+   ],
+   [
+    "This profile collects work and personal projects organized **by the kind of problem they solve**: forecasting, catching anomalies, anticipating failures, measuring causes, optimizing, managing risk, getting data in order, and working with text and images. The point is to show the different ways a data scientist can help an organization, in mining, energy, finance, retail or pensions.",
+    "The same rules apply throughout: the code runs end to end, the numbers come from that run, nearly every repo has tests and CI, and negative results are published like positive ones."
+   ]
+  ]
+ }
+}
