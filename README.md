@@ -69,7 +69,7 @@ co.cmf.morosidad(solo_sistema=True)
 ## Experiencia
 
 **[Control de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
-Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí dos errores que hacían que el reporte no marcara buses que sí estaban fuera de rango.  
+Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
 `python` `pandas` `appsheet` `excel` `data-cleaning`
 
 ## Proyectos por tipo de problema
