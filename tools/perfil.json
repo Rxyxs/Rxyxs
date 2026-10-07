@@ -1030,16 +1030,16 @@
   }
  ],
  "library": {
-  "repo": "cordillera",
+  "repo": "datoschile",
   "name": [
-   "cordillera: datos públicos de Chile en una línea",
-   "cordillera: Chilean public data in one line"
+   "datoschile: datos públicos de Chile en una línea",
+   "datoschile: Chilean public data in one line"
   ],
   "res": [
    "Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.",
    "A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed."
   ],
-  "code": "import cordillera as co\n\nco.indicadores.uf(desde=2020)\nco.pensiones.indice(fondos=\"A\", desde=2008, real=True)\nco.cmf.morosidad(solo_sistema=True)",
+  "code": "import datoschile as dc\n\ndc.indicadores.uf(desde=2020)\ndc.pensiones.indice(fondos=\"A\", desde=2008, real=True)\ndc.cmf.morosidad(solo_sistema=True)",
   "tags": [
    "python",
    "pandas",

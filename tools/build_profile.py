@@ -190,7 +190,7 @@ def site(L: int) -> str:
     body = [f'<header><div class="lang">{other}</div><h1>{h(p["name"])}</h1><p class="role">{h(p["role"][L])}</p>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>',
-            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">cordillera</a></div></header>',
+            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div></header>',
             f'<h2>{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L, img=True) for f in D["featured"]) + "</div>",

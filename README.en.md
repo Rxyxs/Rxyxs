@@ -55,15 +55,15 @@ The same rules apply throughout: the code runs end to end, the numbers come from
 
 ## Open-source tool
 
-**[cordillera: Chilean public data in one line](https://github.com/Rxyxs/cordillera)**  
+**[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
 A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed.
 
 ```python
-import cordillera as co
+import datoschile as dc
 
-co.indicadores.uf(desde=2020)
-co.pensiones.indice(fondos="A", desde=2008, real=True)
-co.cmf.morosidad(solo_sistema=True)
+dc.indicadores.uf(desde=2020)
+dc.pensiones.indice(fondos="A", desde=2008, real=True)
+dc.cmf.morosidad(solo_sistema=True)
 ```
 
 ## Experience

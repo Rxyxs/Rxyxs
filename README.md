@@ -55,15 +55,15 @@ En todos sigo las mismas reglas: el código corre de principio a fin, las cifras
 
 ## Herramienta abierta
 
-**[cordillera: datos públicos de Chile en una línea](https://github.com/Rxyxs/cordillera)**  
+**[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
 Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.
 
 ```python
-import cordillera as co
+import datoschile as dc
 
-co.indicadores.uf(desde=2020)
-co.pensiones.indice(fondos="A", desde=2008, real=True)
-co.cmf.morosidad(solo_sistema=True)
+dc.indicadores.uf(desde=2020)
+dc.pensiones.indice(fondos="A", desde=2008, real=True)
+dc.cmf.morosidad(solo_sistema=True)
 ```
 
 ## Experiencia
