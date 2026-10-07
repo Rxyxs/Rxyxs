@@ -312,11 +312,11 @@
       "13.7 M ChileCompra order lines: Compra Ágil orders pile up under the cap and the pile moved with the law, but there is little sign of split purchases. Isolation Forest finds 38.8% of planted anomalies reviewing 5%."
      ],
      "tags": [
-      "autoencoder",
-      "pytorch",
-      "unsupervised-learning"
+      "public-procurement",
+      "bunching",
+      "isolation-forest"
      ],
-     "page": false
+     "page": true
     },
     {
      "repo": "chile-polyglot-fraud-engine",
