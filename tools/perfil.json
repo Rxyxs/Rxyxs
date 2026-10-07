@@ -303,13 +303,13 @@
     {
      "repo": "mining-procurement-anomaly-engine",
      "name": [
-      "Facturas anómalas en compras mineras",
-      "Anomalous mining procurement invoices"
+      "Anomalías en compras públicas",
+      "Public procurement anomalies"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Revisando solo el 5% de las facturas, el autoencoder encuentra el 37,3% de las anómalas: ~7,5× el azar.",
-      "Reviewing only 5% of invoices, the autoencoder finds 37.3% of anomalies: ~7.5× chance."
+      "13,7 M de líneas de ChileCompra: las Compras Ágiles se acumulan bajo el tope y la acumulación se movió con la ley, pero casi no hay señal de compras partidas. Isolation Forest encuentra el 38,8% de las anomalías plantadas revisando el 5%.",
+      "13.7 M ChileCompra order lines: Compra Ágil orders pile up under the cap and the pile moved with the law, but there is little sign of split purchases. Isolation Forest finds 38.8% of planted anomalies reviewing 5%."
      ],
      "tags": [
       "autoencoder",
