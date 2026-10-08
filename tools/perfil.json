@@ -507,20 +507,20 @@
     {
      "repo": "optimizacion-geometalurgica-flotacion-cobre",
      "name": [
-      "Flotación de cobre",
-      "Copper flotation"
+      "Planta de flotación",
+      "Flotation plant"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Reactivos y pH por bloque: +27,6 pp de recuperación en los 150 peores bloques, con dos optimizadores que coinciden.",
-      "Reagents and pH per block: +27.6 pp recovery on the 150 worst blocks, with two optimizers that agree."
+      "Planta real de hierro: el R² 0,83 de una partición al azar es -0,43 en orden temporal; solo con laboratorio reciente se le gana a la persistencia, y cuatro modelos recetan pH opuestos.",
+      "Real iron-ore plant: R² 0.83 on a random split is -0.43 in time order; only recent lab results beat persistence, and four models prescribe opposite pH moves."
      ],
      "tags": [
-      "genetic-algorithm",
-      "nsga-ii",
-      "shap"
+      "soft-sensor",
+      "walk-forward",
+      "optimization"
      ],
-     "page": false
+     "page": true
     },
     {
      "repo": "chile-spatial-logistics-opt",

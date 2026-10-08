@@ -131,7 +131,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Flotación de cobre](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre)**<br><sub>simulado</sub> | Reactivos y pH por bloque: +27,6 pp de recuperación en los 150 peores bloques, con dos optimizadores que coinciden. | `genetic-algorithm` `nsga-ii` `shap` |
+| **[Planta de flotación](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre)**<br><sub>datos reales · [página](https://rxyxs.github.io/optimizacion-geometalurgica-flotacion-cobre/)</sub> | Planta real de hierro: el R² 0,83 de una partición al azar es -0,43 en orden temporal; solo con laboratorio reciente se le gana a la persistencia, y cuatro modelos recetan pH opuestos. | `soft-sensor` `walk-forward` `optimization` |
 | **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
 | **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulado · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos. | `mlflow` `fastapi` `docker` |
 
