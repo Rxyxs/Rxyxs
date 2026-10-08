@@ -131,7 +131,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
-| **[Flotation plant](https://github.com/Rxyxs/optimizacion-geometalurgica-flotacion-cobre)**<br><sub>real data · [page](https://rxyxs.github.io/optimizacion-geometalurgica-flotacion-cobre/)</sub> | Real iron-ore plant: R² 0.83 on a random split is -0.43 in time order; only recent lab results beat persistence, and four models prescribe opposite pH moves. | `soft-sensor` `walk-forward` `optimization` |
+| **[Flotation plant](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>real data · [page](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Real iron-ore plant: R² 0.83 on a random split is -0.43 in time order; only recent lab results beat persistence, and four models prescribe opposite pH moves. | `soft-sensor` `walk-forward` `optimization` |
 | **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>real districts, simulated demand · [page](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Multi-depot routing with time windows over real polygons: 0 of 173 zones unserved. | `or-tools` `vrptw` `h3` |
 | **[Churn as a business decision](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulated · [page](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Threshold by customer value: +US$75,847 contacting 78.6%, vs +US$42,717 contacting everyone. | `mlflow` `fastapi` `docker` |
 
