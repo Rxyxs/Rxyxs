@@ -685,17 +685,18 @@
     {
      "repo": "ecommerce-lakehouse-duckdb",
      "name": [
-      "Lakehouse de e-commerce",
-      "E-commerce lakehouse"
+      "Lakehouse de e-commerce (110M eventos)",
+      "E-commerce lakehouse (110M events)"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Polars + DuckDB sobre Parquet; repetir el benchmark 7 veces cambió la conclusión.",
-      "Polars + DuckDB over Parquet; repeating the benchmark 7 times changed the conclusion."
+      "110M eventos reales en DuckDB: faltan 48 h de compras y el tracking de carritos cambia 6 veces, así que el embudo se mide por régimen.",
+      "110M real events in DuckDB: 48 hours of purchases are missing and cart tracking changes 6 times, so the funnel is measured per regime."
      ],
      "tags": [
-      "polars",
       "duckdb",
+      "polars",
+      "pyspark",
       "parquet"
      ],
      "page": true
