@@ -710,6 +710,24 @@
    ],
    "items": [
     {
+     "repo": "ecommerce-recommender-rees46",
+     "name": [
+      "Recomendador de e-commerce",
+      "E-commerce recommender"
+     ],
+     "data": "real",
+     "res": [
+      "85M eventos reales: el ranker LightGBM sube el recall@20 de 0,244 a 0,395, pero el 71% de lo comprado nunca se había visto.",
+      "85M real events: a LightGBM ranker lifts recall@20 from 0.244 to 0.395, but 71% of purchases are items never viewed before."
+     ],
+     "tags": [
+      "lightgbm",
+      "learning-to-rank",
+      "duckdb"
+     ],
+     "page": true
+    },
+    {
      "repo": "scientific-classification-lab",
      "name": [
       "Clasificación científica",

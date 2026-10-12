@@ -74,7 +74,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 ## Projects by kind of problem
 
-34 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
+35 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
 
 <details>
 <summary><b>1. Forecasting what comes next</b> · 6 projects</summary>
@@ -161,10 +161,11 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 </details>
 
 <details>
-<summary><b>8. Classifying and estimating</b> · 2 projects</summary>
+<summary><b>8. Classifying and estimating</b> · 3 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
+| **[E-commerce recommender](https://github.com/Rxyxs/ecommerce-recommender-rees46)**<br><sub>real data · [page](https://rxyxs.github.io/ecommerce-recommender-rees46/)</sub> | 85M real events: a LightGBM ranker lifts recall@20 from 0.244 to 0.395, but 71% of purchases are items never viewed before. | `lightgbm` `learning-to-rank` `duckdb` |
 | **[Scientific classification](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>real data · [page](https://rxyxs.github.io/scientific-classification-lab/)</sub> | Higgs boson (AMS 3.64 vs 3.8–3.9 for the winners) and Kepler exoplanets (79.3% vs 49.8%). | `gradient-boosting` `pytorch` `astronomy` |
 | **[Ore grade and fragmentation (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX in a desktop app: P80 at R² 0.957. | `csharp` `ml-net` `onnx` |
 

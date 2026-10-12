@@ -74,7 +74,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 ## Proyectos por tipo de problema
 
-34 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+35 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 6 proyectos</summary>
@@ -161,10 +161,11 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>8. Clasificar y estimar</b> · 2 proyectos</summary>
+<summary><b>8. Clasificar y estimar</b> · 3 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
+| **[Recomendador de e-commerce](https://github.com/Rxyxs/ecommerce-recommender-rees46)**<br><sub>datos reales · [página](https://rxyxs.github.io/ecommerce-recommender-rees46/)</sub> | 85M eventos reales: el ranker LightGBM sube el recall@20 de 0,244 a 0,395, pero el 71% de lo comprado nunca se había visto. | `lightgbm` `learning-to-rank` `duckdb` |
 | **[Clasificación científica](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/scientific-classification-lab/)</sub> | Bosón de Higgs (AMS 3,64 vs 3,8–3,9 de los ganadores) y exoplanetas Kepler (79,3% vs 49,8%). | `gradient-boosting` `pytorch` `astronomy` |
 | **[Ley y fragmentación (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX en app de escritorio: P80 con R² 0,957. | `csharp` `ml-net` `onnx` |
 
