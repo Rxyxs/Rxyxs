@@ -174,13 +174,13 @@
      ],
      "data": "real",
      "res": [
-      "Panel desde 128 Excel de la CMF. Solo ARIMA a 3 meses le gana al ingenuo; sumar desempleo, TPM e IMACEC lo empeora.",
-      "Panel from 128 CMF Excel files. Only ARIMA at 3 months beats naive; adding unemployment, policy rate and IMACEC makes it worse."
+      "Panel desde 128 Excel de la CMF. Prueba de tensión con rezago y signos elegidos sin mirar el futuro: solo consumo y comercial le ganan a «sin cambio» (0,73 y 0,85). LightGBM por banco no le gana; SHAP muestra que aprende el régimen.",
+      "Panel from 128 CMF Excel files. Stress test with lag and signs chosen without look-ahead: only consumer and commercial beat no change (0.73 and 0.85). Per-bank LightGBM does not; SHAP shows it learns the regime."
      ],
      "tags": [
-      "time-series",
-      "forecasting",
-      "credit-risk"
+      "stress-testing",
+      "shap",
+      "fastapi"
      ],
      "page": true
     },
