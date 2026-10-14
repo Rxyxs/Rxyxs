@@ -155,7 +155,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Cleaning toolkit across 4 domains](https://github.com/Rxyxs/data-cleaning-toolkit)**<br><sub>real data · [page](https://rxyxs.github.io/data-cleaning-toolkit/)</sub> | One toolkit on Central Bank, COCHILCO and World Bank data; it caught a corrupted source value. | `data-quality` `pydantic` `pytest` |
-| **[Mining data warehouse](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile)**<br><sub>simulated · [page](https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/)</sub> | dbt + DuckDB from staging to marts, 83 quality tests and model-ready views. | `dbt` `duckdb` `star-schema` |
+| **[Mining data warehouse](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile)**<br><sub>real + simulated · [page](https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/)</sub> | Real Cochilco yearbook 2000-2025 in dbt + DuckDB: ore grade fell 39% while electricity per tonne rose only 9%; 121 tests, simulated site layer. | `dbt` `duckdb` `star-schema` |
 | **[E-commerce lakehouse (110M events)](https://github.com/Rxyxs/ecommerce-lakehouse-duckdb)**<br><sub>real data · [page](https://rxyxs.github.io/ecommerce-lakehouse-duckdb/)</sub> | 110M real events in DuckDB: 48 hours of purchases are missing and cart tracking changes 6 times, so the funnel is measured per regime. | `duckdb` `polars` `pyspark` `parquet` |
 
 </details>

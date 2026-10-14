@@ -670,10 +670,10 @@
       "Data warehouse minero",
       "Mining data warehouse"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "dbt + DuckDB de staging a marts, 83 tests de calidad y vistas listas para modelar.",
-      "dbt + DuckDB from staging to marts, 83 quality tests and model-ready views."
+      "Anuario real de Cochilco 2000-2025 en dbt + DuckDB: la ley cayó 39% y la electricidad por tonelada solo 9%; 121 tests, capa de faena simulada.",
+      "Real Cochilco yearbook 2000-2025 in dbt + DuckDB: ore grade fell 39% while electricity per tonne rose only 9%; 121 tests, simulated site layer."
      ],
      "tags": [
       "dbt",
