@@ -111,7 +111,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 |---|---|---|
 | **[Mantenimiento predictivo (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>datos reales · [página](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23.550 camiones: −31% del costo oficial en test, pero el ahorro se agota si la visita cuesta el doble, porque el modelo exagera el riesgo. | `predictive-maintenance` `survival-analysis` `shap` |
 | **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulado</sub> | Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN. | `remaining-useful-life` `signal-processing` `fft` |
-| **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters. | `digital-twin` `kalman-filter` `lightgbm` |
+| **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
 

@@ -422,10 +422,10 @@
       "Gemelo digital de molino SAG",
       "SAG mill digital twin"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters.",
-      "Kalman estimates ore hardness with 79% less error; 24 h energy forecast 27.6% better than Holt-Winters."
+      "Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses).",
+      "Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months)."
      ],
      "tags": [
       "digital-twin",
