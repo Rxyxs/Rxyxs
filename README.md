@@ -74,10 +74,10 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 ## Proyectos por tipo de problema
 
-35 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+40 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
-<summary><b>1. Pronosticar lo que viene</b> · 6 proyectos</summary>
+<summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
@@ -87,6 +87,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | **[Sistema Eléctrico Nacional, en R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling. | `r` `arima` `garch` |
 | **[Volatilidad del cobre](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>datos reales · [página](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | 14 años de precios reales de la LME: GARCH(1,1) tiene el mejor QLIKE y solo HAR-X, con el VIX y el dólar, lo empata. CatBoost ajustado en cada fold no le gana. | `garch` `catboost` `shap` |
 | **[Volatilidad de alta frecuencia](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>datos reales · [página](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24,8 M de trades de Binance: a 30 s, la persistencia (RMSPE 4,58) le gana a LightGBM y a la red neuronal. | `high-frequency-trading` `lightgbm` `duckdb` |
+| **[Valor de vida del cliente](https://github.com/Rxyxs/customer-lifetime-value)**<br><sub>datos reales · [página](https://rxyxs.github.io/customer-lifetime-value/)</sub> | BG/NBD y Gamma-Gamma programados desde la verosimilitud. Prediciendo 26 semanas: **-2%** de error en compras totales, frente a +68% de la tasa ingenua y +24% de LightGBM. | `bg-nbd` `gamma-gamma` `retention` |
 
 </details>
 
@@ -116,24 +117,26 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>4. Medir causas y evaluar decisiones</b> · 3 proyectos</summary>
+<summary><b>4. Medir causas y evaluar decisiones</b> · 4 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Impacto causal en flota minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift y DiD escalonado; el ATT coincide con una implementación de referencia en un panel real. | `causal-inference` `econml` `uplift-modeling` |
 | **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
 | **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año empata en Sharpe con una mezcla fija fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
+| **[Atrasos de entrega en un marketplace (Olist)](https://github.com/Rxyxs/olist-delivery-delays)**<br><sub>datos reales · [página](https://rxyxs.github.io/olist-delivery-delays/)</sub> | 96 mil pedidos reales. Llegar tarde causa **-1,97 puntos** de reseña (AIPW), y casi todo el daño ocurre en la primera semana. Filtrar reseñas previas a la entrega habría botado el 74% de los atrasos. | `causal-inference` `aipw` `survival-analysis` |
 
 </details>
 
 <details>
-<summary><b>5. Optimizar operaciones</b> · 3 proyectos</summary>
+<summary><b>5. Optimizar operaciones</b> · 4 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Planta de flotación](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>datos reales · [página](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Planta real de hierro: el R² 0,83 de una partición al azar es -0,43 en orden temporal; solo con laboratorio reciente se le gana a la persistencia, y cuatro modelos recetan pH opuestos. | `soft-sensor` `walk-forward` `optimization` |
 | **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
 | **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulado · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos. | `mlflow` `fastapi` `docker` |
+| **[Fallas de calidad en una línea Bosch](https://github.com/Rxyxs/bosch-line-quality)**<br><sub>datos reales · [página](https://rxyxs.github.io/bosch-line-quality/)</sub> | 1,18 M piezas reales: las fallas vienen por lote (11x junto a una pieza fallada). El CV mezclado exagera (0,40 vs 0,21 en piezas futuras). Inspeccionar el 5% más riesgoso atrapa el **61%** de las fallas. | `lightgbm` `imbalanced-learning` `quality-control` |
 
 </details>
 
@@ -161,18 +164,19 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>8. Clasificar y estimar</b> · 3 proyectos</summary>
+<summary><b>8. Clasificar y estimar</b> · 4 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Recomendador de e-commerce](https://github.com/Rxyxs/ecommerce-recommender-rees46)**<br><sub>datos reales · [página](https://rxyxs.github.io/ecommerce-recommender-rees46/)</sub> | 85M eventos reales: el ranker LightGBM sube el recall@20 de 0,244 a 0,395, pero el 71% de lo comprado nunca se había visto. | `lightgbm` `learning-to-rank` `duckdb` |
 | **[Clasificación científica](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/scientific-classification-lab/)</sub> | Bosón de Higgs (AMS 3,64 vs 3,8–3,9 de los ganadores) y exoplanetas Kepler (79,3% vs 49,8%). | `gradient-boosting` `pytorch` `astronomy` |
 | **[Ley y fragmentación (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX en app de escritorio: P80 con R² 0,957. | `csharp` `ml-net` `onnx` |
+| **[Reingreso hospitalario a 30 días](https://github.com/Rxyxs/hospital-readmission-risk)**<br><sub>datos reales · [página](https://rxyxs.github.io/hospital-readmission-risk/)</sub> | 99 mil hospitalizaciones reales. Contar visitas futuras infla el AUC de 0,67 a **0,80**. Modelo calibrado con beneficio neto en umbrales de 5% a 39%; sin brecha por raza, pero peor en mayores de 70. | `calibration` `decision-curve` `fairness` |
 
 </details>
 
 <details>
-<summary><b>9. Texto, lenguaje e imágenes</b> · 4 proyectos</summary>
+<summary><b>9. Texto, lenguaje e imágenes</b> · 5 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
@@ -180,6 +184,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | **[Agente de operaciones mineras](https://github.com/Rxyxs/chile-mining-ops-agent)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-mining-ops-agent/)</sub> | Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números. | `llm-agent` `tool-calling` `duckdb` |
 | **[Modelo de lenguaje local para industria](https://github.com/Rxyxs/slm-industrial-gateway)**<br><sub>simulado · [página](https://rxyxs.github.io/slm-industrial-gateway/)</sub> | Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts. | `llama-cpp` `qlora` `guardrails` |
 | **[YOLOv8 en Raspberry Pi (tesis)](https://github.com/Rxyxs/yolov8-separable-convolutions)**<br><sub>datos reales (COCO) · [página](https://rxyxs.github.io/yolov8-separable-convolutions/)</sub> | 68% menos parámetros y ~10× más rápido en Raspberry Pi, a cambio de mAP50 0,175 vs 0,212. | `yolov8` `computer-vision` `edge-computing` |
+| **[Estelas de aviones en imágenes satelitales](https://github.com/Rxyxs/contrail-detection-goes16)**<br><sub>datos reales · [página](https://rxyxs.github.io/contrail-detection-goes16/)</sub> | Segmentación en GOES-16 sin bajar 451 GB: lectura remota del zip de Kaggle y de OpenContrails. Agrandar la entrada 2x vale +0,05 de Dice; apilar frames empeora. **0,597** en el privado de Kaggle. | `pytorch` `segmentation` `satellite-imagery` |
 
 </details>
 
