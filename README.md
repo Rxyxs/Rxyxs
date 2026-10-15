@@ -74,7 +74,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 ## Proyectos por tipo de problema
 
-41 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+42 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
@@ -92,7 +92,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>2. Detectar fraude y anomalías</b> · 6 proyectos</summary>
+<summary><b>2. Detectar fraude y anomalías</b> · 7 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
@@ -102,6 +102,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | **[Motor de fraude políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa. | `c` `ruby` `prometheus` |
 | **[Anomalías en ticks de mercado (C++)](https://github.com/Rxyxs/market-tick-anomaly-engine-cpp)**<br><sub>datos reales</sub> | EWMA y CUSUM validados contra el crash cripto de marzo 2020, a 7,26 M ticks/s. | `cpp` `cusum` `ewma` |
 | **[Order flow en acciones de litio (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>simulado · [página](https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/)</sub> | Cero falsos positivos fuera del shock inyectado en 43.200 ventanas. | `cpp` `order-flow` `market-microstructure` |
+| **[Anomalías en series de sensores (NAB)](https://github.com/Rxyxs/iot-anomaly-benchmark)**<br><sub>datos reales · [página](https://rxyxs.github.io/iot-anomaly-benchmark/)</sub> | Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41; con validación cruzada queda en **42,4**, sobre el baseline gaussiano publicado. | `anomaly-detection` `time-series` `benchmark` |
 
 </details>
 

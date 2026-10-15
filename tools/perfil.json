@@ -389,6 +389,24 @@
       "market-microstructure"
      ],
      "page": true
+    },
+    {
+     "repo": "iot-anomaly-benchmark",
+     "name": [
+      "Anomalías en series de sensores (NAB)",
+      "Anomalies in sensor streams (NAB)"
+     ],
+     "data": "real",
+     "res": [
+      "Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41; con validación cruzada queda en <b>42,4</b>, sobre el baseline gaussiano publicado.",
+      "NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41; cross-validated it scores <b>42.4</b>, above the published Gaussian baseline."
+     ],
+     "tags": [
+      "anomaly-detection",
+      "time-series",
+      "benchmark"
+     ],
+     "page": true
     }
    ]
   },

@@ -74,7 +74,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 ## Projects by kind of problem
 
-41 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
+42 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
 
 <details>
 <summary><b>1. Forecasting what comes next</b> · 7 projects</summary>
@@ -92,7 +92,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 </details>
 
 <details>
-<summary><b>2. Catching fraud and anomalies</b> · 6 projects</summary>
+<summary><b>2. Catching fraud and anomalies</b> · 7 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
@@ -102,6 +102,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | **[Polyglot fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end. | `c` `ruby` `prometheus` |
 | **[Market tick anomalies (C++)](https://github.com/Rxyxs/market-tick-anomaly-engine-cpp)**<br><sub>real data</sub> | EWMA and CUSUM validated on the March 2020 crypto crash, at 7.26M ticks/s. | `cpp` `cusum` `ewma` |
 | **[Lithium order-flow imbalance (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>simulated · [page](https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/)</sub> | Zero false positives outside the injected shock across 43,200 windows. | `cpp` `order-flow` `market-microstructure` |
+| **[Anomalies in sensor streams (NAB)](https://github.com/Rxyxs/iot-anomaly-benchmark)**<br><sub>real data · [page](https://rxyxs.github.io/iot-anomaly-benchmark/)</sub> | NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41; cross-validated it scores **42.4**, above the published Gaussian baseline. | `anomaly-detection` `time-series` `benchmark` |
 
 </details>
 
