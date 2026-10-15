@@ -255,6 +255,24 @@
       "duckdb"
      ],
      "page": true
+    },
+    {
+     "repo": "customer-lifetime-value",
+     "name": [
+      "Valor de vida del cliente",
+      "Customer lifetime value"
+     ],
+     "data": "real",
+     "res": [
+      "BG/NBD y Gamma-Gamma programados desde la verosimilitud. Prediciendo 26 semanas: <b>-2%</b> de error en compras totales, frente a +68% de la tasa ingenua y +24% de LightGBM.",
+      "BG/NBD and Gamma-Gamma coded from the likelihood. Predicting 26 weeks: <b>-2%</b> error on total purchases, against +68% for the naive rate and +24% for LightGBM."
+     ],
+     "tags": [
+      "bg-nbd",
+      "gamma-gamma",
+      "retention"
+     ],
+     "page": true
     }
    ]
   },
@@ -495,6 +513,24 @@
       "pensions"
      ],
      "page": true
+    },
+    {
+     "repo": "olist-delivery-delays",
+     "name": [
+      "Atrasos de entrega en un marketplace (Olist)",
+      "Late deliveries on a marketplace (Olist)"
+     ],
+     "data": "real",
+     "res": [
+      "96 mil pedidos reales. Llegar tarde causa <b>-1,97 puntos</b> de reseña (AIPW), y casi todo el daño ocurre en la primera semana. Filtrar reseñas previas a la entrega habría botado el 74% de los atrasos.",
+      "96k real orders. Arriving late causes <b>-1.97 review points</b> (AIPW), with most of the damage in the first week. Filtering out pre-delivery reviews would have dropped 74% of late orders."
+     ],
+     "tags": [
+      "causal-inference",
+      "aipw",
+      "survival-analysis"
+     ],
+     "page": true
     }
    ]
   },
@@ -555,6 +591,24 @@
       "mlflow",
       "fastapi",
       "docker"
+     ],
+     "page": true
+    },
+    {
+     "repo": "bosch-line-quality",
+     "name": [
+      "Fallas de calidad en una línea Bosch",
+      "Quality failures on a Bosch line"
+     ],
+     "data": "real",
+     "res": [
+      "1,18 M piezas reales: las fallas vienen por lote (11x junto a una pieza fallada). El CV mezclado exagera (0,40 vs 0,21 en piezas futuras). Inspeccionar el 5% más riesgoso atrapa el <b>61%</b> de las fallas.",
+      "1.18M real parts: failures come in lots (11x next to a failed part). Shuffled CV overstates (0.40 vs 0.21 on later parts). Inspecting the riskiest 5% catches <b>61%</b> of failures."
+     ],
+     "tags": [
+      "lightgbm",
+      "imbalanced-learning",
+      "quality-control"
      ],
      "page": true
     }
@@ -762,6 +816,24 @@
       "onnx"
      ],
      "page": true
+    },
+    {
+     "repo": "hospital-readmission-risk",
+     "name": [
+      "Reingreso hospitalario a 30 días",
+      "30-day hospital readmission"
+     ],
+     "data": "real",
+     "res": [
+      "99 mil hospitalizaciones reales. Contar visitas futuras infla el AUC de 0,67 a <b>0,80</b>. Modelo calibrado con beneficio neto en umbrales de 5% a 39%; sin brecha por raza, pero peor en mayores de 70.",
+      "99k real hospital encounters. Counting future visits inflates AUC from 0.67 to <b>0.80</b>. Calibrated model with net benefit at 5-39% thresholds; no racial gap, but weaker for patients over 70."
+     ],
+     "tags": [
+      "calibration",
+      "decision-curve",
+      "fairness"
+     ],
+     "page": true
     }
    ]
   },
@@ -840,6 +912,24 @@
       "yolov8",
       "computer-vision",
       "edge-computing"
+     ],
+     "page": true
+    },
+    {
+     "repo": "contrail-detection-goes16",
+     "name": [
+      "Estelas de aviones en imágenes satelitales",
+      "Aircraft contrails in satellite imagery"
+     ],
+     "data": "real",
+     "res": [
+      "Segmentación en GOES-16 sin bajar 451 GB: lectura remota del zip de Kaggle y de OpenContrails. Agrandar la entrada 2x vale +0,05 de Dice; apilar frames empeora. <b>0,597</b> en el privado de Kaggle.",
+      "Segmentation on GOES-16 without downloading 451 GB: remote reads of the Kaggle zip and OpenContrails. Upsampling the input 2x is worth +0.05 Dice; stacking frames hurts. <b>0.597</b> on Kaggle private."
+     ],
+     "tags": [
+      "pytorch",
+      "segmentation",
+      "satellite-imagery"
      ],
      "page": true
     }
