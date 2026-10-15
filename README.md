@@ -74,7 +74,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 ## Proyectos por tipo de problema
 
-40 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+41 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
@@ -117,7 +117,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>4. Medir causas y evaluar decisiones</b> · 4 proyectos</summary>
+<summary><b>4. Medir causas y evaluar decisiones</b> · 5 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
@@ -125,6 +125,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
 | **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año empata en Sharpe con una mezcla fija fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 | **[Atrasos de entrega en un marketplace (Olist)](https://github.com/Rxyxs/olist-delivery-delays)**<br><sub>datos reales · [página](https://rxyxs.github.io/olist-delivery-delays/)</sub> | 96 mil pedidos reales. Llegar tarde causa **-1,97 puntos** de reseña (AIPW), y casi todo el daño ocurre en la primera semana. Filtrar reseñas previas a la entrega habría botado el 74% de los atrasos. | `causal-inference` `aipw` `survival-analysis` |
+| **[Elasticidad precio en supermercado](https://github.com/Rxyxs/retail-price-elasticity)**<br><sub>datos reales · [página](https://rxyxs.github.io/retail-price-elasticity/)</sub> | 580 productos y 2.500 hogares reales. Ignorar exhibición y folleto exagera la elasticidad un 40%; double ML da **-1,50**. Una rebaja de 10% solo se paga sola con margen bruto sobre 50%, incluso en cerveza. | `double-machine-learning` `fixed-effects` `pricing` |
 
 </details>
 

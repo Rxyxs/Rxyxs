@@ -531,6 +531,24 @@
       "survival-analysis"
      ],
      "page": true
+    },
+    {
+     "repo": "retail-price-elasticity",
+     "name": [
+      "Elasticidad precio en supermercado",
+      "Grocery price elasticity"
+     ],
+     "data": "real",
+     "res": [
+      "580 productos y 2.500 hogares reales. Ignorar exhibición y folleto exagera la elasticidad un 40%; double ML da <b>-1,50</b>. Una rebaja de 10% solo se paga sola con margen bruto sobre 50%, incluso en cerveza.",
+      "580 products, 2,500 real households. Ignoring display and mailer overstates elasticity by 40%; double ML gives <b>-1.50</b>. A 10% discount only pays for itself above 50% gross margin, even for beer."
+     ],
+     "tags": [
+      "double-machine-learning",
+      "fixed-effects",
+      "pricing"
+     ],
+     "page": true
     }
    ]
   },
