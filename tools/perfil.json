@@ -208,10 +208,10 @@
       "Sistema Eléctrico Nacional, en R",
       "Chile's power grid, in R"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling.",
-      "TBATS: 2.47% MAPE vs 6.54% seasonal naive; ETS's edge only shows under rolling validation."
+      "Demanda del SEN con energía mensual real y clima ERA5: TBATS MAPE 4,28% vs 6,73% del ingenuo; el MAPE engaña en demanda neta.",
+      "SEN demand with real monthly energy and ERA5 weather: TBATS 4.28% MAPE vs 6.73% naive; MAPE misleads on net demand."
      ],
      "tags": [
       "r",
