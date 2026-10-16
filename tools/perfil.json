@@ -190,10 +190,10 @@
       "Sistema Eléctrico Nacional, horario",
       "Chile's power grid, hourly"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Solar, eólica, demanda y costo marginal en 5 barras. Solar: WAPE 3,64% vs 26,95% del ingenuo; en eólica gana el ingenuo.",
-      "Solar, wind, demand and marginal cost at 5 nodes. Solar: 3.64% WAPE vs 26.95% naive; on wind, naive wins."
+      "5 barras del SEN con clima real (ERA5) y precio anclado al costo marginal real de Crucero. Solar: WAPE 5,55% vs 28,89% del ingenuo; precio 8,77%.",
+      "5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%."
      ],
      "tags": [
       "lightgbm",
