@@ -95,7 +95,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
-| **[Fraud and AML lab](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | ROC-AUC makes a model with 3.4× worse PR-AUC look almost equal (0.931 vs 0.965); label-free graph AML: ROC-AUC 0.893. | `fraud-detection` `aml` `xgboost` |
+| **[Fraud and AML lab](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | ROC-AUC makes a model with 2.6× worse PR-AUC look almost equal (0.938 vs 0.965); label-free graph AML: ROC-AUC 0.893. | `fraud-detection` `aml` `xgboost` |
 | **[16 detectors on mobile-money fraud](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>simulated · [page](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | The statistical baseline lands below chance (ROC-AUC 0.383) and ensembles don't win. 266 tests. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Public procurement anomalies](https://github.com/Rxyxs/chile-public-procurement-anomalies)**<br><sub>real data · [page](https://rxyxs.github.io/chile-public-procurement-anomalies/)</sub> | 13.7 M ChileCompra order lines: Compra Ágil orders pile up under the cap and the pile moved with the law, but there is little sign of split purchases. Isolation Forest finds 38.8% of planted anomalies reviewing 5%. | `public-procurement` `bunching` `isolation-forest` |
 | **[Polyglot fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end. | `c` `ruby` `prometheus` |
@@ -110,7 +110,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Predictive maintenance (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>real data · [page](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23,550 trucks: −31% official cost on test, but the saving runs out if a visit costs double, because the model overstates risk. | `predictive-maintenance` `survival-analysis` `shap` |
-| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulated</sub> | Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.7×. | `remaining-useful-life` `signal-processing` `fft` |
+| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulated</sub> | Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×. | `remaining-useful-life` `signal-processing` `fft` |
 | **[SAG mill digital twin](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>

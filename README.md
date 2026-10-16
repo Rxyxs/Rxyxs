@@ -95,7 +95,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Laboratorio de fraude y AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulado · [página](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893. | `fraud-detection` `aml` `xgboost` |
+| **[Laboratorio de fraude y AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulado · [página](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | El ROC-AUC hace parecer casi igual (0,938 vs 0,965) un modelo con PR-AUC 2,6× peor; AML por grafos sin etiquetas: ROC-AUC 0,893. | `fraud-detection` `aml` `xgboost` |
 | **[16 detectores sobre fraude móvil](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>simulado · [página](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Anomalías en compras públicas](https://github.com/Rxyxs/chile-public-procurement-anomalies)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-public-procurement-anomalies/)</sub> | 13,7 M de líneas de ChileCompra: las Compras Ágiles se acumulan bajo el tope y la acumulación se movió con la ley, pero casi no hay señal de compras partidas. Isolation Forest encuentra el 38,8% de las anomalías plantadas revisando el 5%. | `public-procurement` `bunching` `isolation-forest` |
 | **[Motor de fraude políglota](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulado · [página](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa. | `c` `ruby` `prometheus` |
@@ -110,7 +110,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Mantenimiento predictivo (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>datos reales · [página](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23.550 camiones: −31% del costo oficial en test, pero el ahorro se agota si la visita cuesta el doble, porque el modelo exagera el riesgo. | `predictive-maintenance` `survival-analysis` `shap` |
-| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulado</sub> | Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN. | `remaining-useful-life` `signal-processing` `fft` |
+| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulado</sub> | Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,5× a una CNN. | `remaining-useful-life` `signal-processing` `fft` |
 | **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>

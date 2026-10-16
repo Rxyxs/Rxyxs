@@ -272,8 +272,8 @@
      ],
      "data": "mix",
      "res": [
-      "El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
-      "ROC-AUC makes a model with 3.4× worse PR-AUC look almost equal (0.931 vs 0.965); label-free graph AML: ROC-AUC 0.893."
+      "El ROC-AUC hace parecer casi igual (0,938 vs 0,965) un modelo con PR-AUC 2,6× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
+      "ROC-AUC makes a model with 2.6× worse PR-AUC look almost equal (0.938 vs 0.965); label-free graph AML: ROC-AUC 0.893."
      ],
      "tags": [
       "fraud-detection",
@@ -406,8 +406,8 @@
      ],
      "data": "mix",
      "res": [
-      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN.",
-      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.7×."
+      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,5× a una CNN.",
+      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×."
      ],
      "tags": [
       "remaining-useful-life",
