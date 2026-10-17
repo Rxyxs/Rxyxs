@@ -133,7 +133,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 |---|---|---|
 | **[Planta de flotación](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>datos reales · [página](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Planta real de hierro: el R² 0,83 de una partición al azar es -0,43 en orden temporal; solo con laboratorio reciente se le gana a la persistencia, y cuatro modelos recetan pH opuestos. | `soft-sensor` `walk-forward` `optimization` |
 | **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
-| **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulado · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos. | `mlflow` `fastapi` `docker` |
+| **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>datos reales · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | 10.000 clientes bancarios reales: la columna de quejas era una fuga (AUC 1,00 vs 0,85); umbral por valor recupera US$189.930 contactando al 42%, vs US$143.842 contactando a todos. | `mlflow` `fastapi` `docker` |
 
 </details>
 
