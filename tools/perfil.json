@@ -813,10 +813,10 @@
       "Modelo de lenguaje local para industria",
       "Local language model for industry"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts.",
-      "Offline inference, guardrails and QLoRA; the base model makes up arguments in 94 of 100 prompts."
+      "Evaluado con 100 casos de una planta de flotación real: listar los argumentos de las herramientas baja las llamadas inválidas de 76 a 17 y sube las decisiones de seguridad correctas de 12 a 20 de 25.",
+      "Evaluated on 100 real flotation-plant cases: listing tool arguments cuts invalid calls from 76 to 17 and lifts correct safety decisions from 12 to 20 of 25."
      ],
      "tags": [
       "llama-cpp",
