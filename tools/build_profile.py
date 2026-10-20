@@ -113,13 +113,15 @@ def readme(L: int) -> str:
 # ----------------------------------------------------------------------------- sitio
 
 CSS = """
-:root{--bg:#0A1628;--bg2:#0E1D33;--surface:#112440;--surface2:#163055;--ink:#E7EEF7;--body:#CBD6E4;--muted:#9AABC1;
---line:#1F3A5F;--accent:#5AA9F0;--accent-ink:#06121F;--real:#5CC98A;--sim:#E9B95C;--mix:#7CC7E8}
+:root{--bg:#FFFFFF;--bg2:#F6F8FA;--surface:#FFFFFF;--surface2:#F1F4F7;--ink:#1A1D21;--body:#3D434B;--muted:#5F6670;
+--line:#E4E7EB;--hover:#C9D1D9;--accent:#0F766E;--accent-hover:#0D5F59;--accent-ink:#FFFFFF;--tag:#3D434B;--nav:rgba(255,255,255,.9);--real:#1A7F37;--sim:#9A6700;--mix:#0969DA}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1117;--bg2:#0D1117;--surface:#161B22;--surface2:#21262D;--ink:#E6EDF3;--body:#C9D1D9;--muted:#8B949E;--line:#30363D;--hover:#484F58;--accent:#3FB950;--accent-hover:#56D364;--accent-ink:#0D1117;--tag:#C9D1D9;--nav:rgba(13,17,23,.9);--real:#3FB950;--sim:#D29922;--mix:#58A6FF}}
+:root[data-theme="dark"]{--bg:#0D1117;--bg2:#0D1117;--surface:#161B22;--surface2:#21262D;--ink:#E6EDF3;--body:#C9D1D9;--muted:#8B949E;--line:#30363D;--hover:#484F58;--accent:#3FB950;--accent-hover:#56D364;--accent-ink:#0D1117;--tag:#C9D1D9;--nav:rgba(13,17,23,.9);--real:#3FB950;--sim:#D29922;--mix:#58A6FF}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
-.top{position:sticky;top:0;z-index:10;background:rgba(10,22,40,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .in{max-width:1080px;margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;gap:24px}
 .brand{font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
 .top nav{display:flex;gap:20px;overflow-x:auto;flex:1;scrollbar-width:none}
@@ -138,7 +140,7 @@ h1{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.08;margin:0 0 8px;letter-spa
 .links a{padding:10px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);background:var(--surface);font-size:.9rem;font-weight:500;transition:border-color .15s,background .15s}
 .links a:hover{border-color:var(--accent)}
 .links a.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.links a.primary:hover{background:#7BBBF4}
+.links a.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
 .stat{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .stat b{display:block;font-size:1.7rem;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
@@ -153,20 +155,20 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .feat{grid-template-columns:repeat(auto-fill,minmax(min(460px,100%),1fr))}
 @media (max-width:640px){.feat,.grid{grid-template-columns:minmax(0,1fr)}.top nav{display:none}.top .in{justify-content:space-between}}
 .card{min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
-.card:hover{border-color:#2D5285;transform:translateY(-2px)}
+.card:hover{border-color:var(--hover);transform:translateY(-2px)}
 .card img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;border-radius:8px;background:#fff;margin-bottom:14px}
 .card img.contain{object-fit:contain}
 .card h3{font-size:1.04rem;margin:0 0 8px;line-height:1.3}
 .card h3 a{color:var(--ink);text-decoration:none}
 .card h3 a:hover{color:var(--accent)}
 .data{align-self:flex-start;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:999px;margin-bottom:10px;border:1px solid}
-.data.real{color:var(--real);border-color:rgba(92,201,138,.35);background:rgba(92,201,138,.08)}
-.data.sim{color:var(--sim);border-color:rgba(233,185,92,.35);background:rgba(233,185,92,.08)}
-.data.mix{color:var(--mix);border-color:rgba(124,199,232,.35);background:rgba(124,199,232,.08)}
+.data.real{color:var(--real);border-color:color-mix(in srgb,var(--real) 40%,transparent);background:color-mix(in srgb,var(--real) 8%,transparent)}
+.data.sim{color:var(--sim);border-color:color-mix(in srgb,var(--sim) 40%,transparent);background:color-mix(in srgb,var(--sim) 8%,transparent)}
+.data.mix{color:var(--mix);border-color:color-mix(in srgb,var(--mix) 40%,transparent);background:color-mix(in srgb,var(--mix) 8%,transparent)}
 .card p{margin:0 0 14px;font-size:.92rem;color:var(--body);flex:1}
 .card p b{color:var(--ink)}
 .tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
-.tags code{font-size:.72rem;padding:2px 8px;border-radius:5px;background:var(--surface2);color:#B9CCE3;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.tags code{font-size:.72rem;padding:2px 8px;border-radius:5px;background:var(--surface2);color:var(--tag);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
 .actions{font-size:.86rem;display:flex;gap:16px;padding-top:12px;border-top:1px solid var(--line)}
 .actions a{text-decoration:none;font-weight:500}
 .actions a:hover{text-decoration:underline}
@@ -268,7 +270,8 @@ def site(L: int) -> str:
             f'<title>Pablo Reyes · {t(L, "Ciencia de datos", "Data science")}</title>\n'
             f'<meta name="description" content="{desc}">\n'
             f'<link rel="alternate" hreflang="es" href="{PAGE}"><link rel="alternate" hreflang="en" href="{PAGE}en/">\n'
-            '<meta name="theme-color" content="#0A1628">\n'
+            '<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">'
+            '<meta name="theme-color" content="#0D1117" media="(prefers-color-scheme: dark)">\n'
             '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
             '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
             f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + "\n</div>\n</body>\n</html>\n")
