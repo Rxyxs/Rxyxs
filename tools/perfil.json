@@ -795,10 +795,10 @@
       "Agente de operaciones mineras",
       "Mining operations agent"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números.",
-      "An LLM that answers by calling tools (SQL, scoring, anomalies) instead of making up numbers."
+      "Agente con datos reales de planta y ChileCompra, medido en 100 consultas con Qwen local: elige bien la herramienta 99 veces, y pasar los montos a millones sube las respuestas ancladas de 67 a 86.",
+      "Agent over real plant and ChileCompra data, measured on 100 queries with local Qwen: right tool 99 times, and reporting amounts in millions lifts grounded answers from 67 to 86."
      ],
      "tags": [
       "llm-agent",
