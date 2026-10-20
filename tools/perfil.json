@@ -190,10 +190,10 @@
       "Sistema Eléctrico Nacional, horario",
       "Chile's power grid, hourly"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Solar, eólica, demanda y costo marginal en 5 barras. Solar: WAPE 3,64% vs 26,95% del ingenuo; en eólica gana el ingenuo.",
-      "Solar, wind, demand and marginal cost at 5 nodes. Solar: 3.64% WAPE vs 26.95% naive; on wind, naive wins."
+      "5 barras del SEN con clima real (ERA5) y precio anclado al costo marginal real de Crucero. Solar: WAPE 5,55% vs 28,89% del ingenuo; precio 8,77%.",
+      "5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%."
      ],
      "tags": [
       "lightgbm",
@@ -208,10 +208,10 @@
       "Sistema Eléctrico Nacional, en R",
       "Chile's power grid, in R"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "TBATS: MAPE 2,47% vs 6,54% del ingenuo estacional; la ventaja de ETS solo aparece con validación rolling.",
-      "TBATS: 2.47% MAPE vs 6.54% seasonal naive; ETS's edge only shows under rolling validation."
+      "Demanda del SEN con energía mensual real y clima ERA5: TBATS MAPE 4,28% vs 6,73% del ingenuo; el MAPE engaña en demanda neta.",
+      "SEN demand with real monthly energy and ERA5 weather: TBATS 4.28% MAPE vs 6.73% naive; MAPE misleads on net demand."
      ],
      "tags": [
       "r",
@@ -290,8 +290,8 @@
      ],
      "data": "mix",
      "res": [
-      "El ROC-AUC hace parecer casi igual (0,931 vs 0,965) un modelo con PR-AUC 3,4× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
-      "ROC-AUC makes a model with 3.4× worse PR-AUC look almost equal (0.931 vs 0.965); label-free graph AML: ROC-AUC 0.893."
+      "El ROC-AUC hace parecer casi igual (0,938 vs 0,965) un modelo con PR-AUC 2,6× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
+      "ROC-AUC makes a model with 2.6× worse PR-AUC look almost equal (0.938 vs 0.965); label-free graph AML: ROC-AUC 0.893."
      ],
      "tags": [
       "fraud-detection",
@@ -389,6 +389,24 @@
       "market-microstructure"
      ],
      "page": true
+    },
+    {
+     "repo": "iot-anomaly-benchmark",
+     "name": [
+      "Anomalías en series de sensores (NAB)",
+      "Anomalies in sensor streams (NAB)"
+     ],
+     "data": "real",
+     "res": [
+      "Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41; con validación cruzada queda en <b>42,4</b>, sobre el baseline gaussiano publicado.",
+      "NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41; cross-validated it scores <b>42.4</b>, above the published Gaussian baseline."
+     ],
+     "tags": [
+      "anomaly-detection",
+      "time-series",
+      "benchmark"
+     ],
+     "page": true
     }
    ]
   },
@@ -424,8 +442,8 @@
      ],
      "data": "mix",
      "res": [
-      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,7× a una CNN.",
-      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.7×."
+      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,5× a una CNN.",
+      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×."
      ],
      "tags": [
       "remaining-useful-life",
@@ -440,10 +458,10 @@
       "Gemelo digital de molino SAG",
       "SAG mill digital twin"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Kalman estima la dureza del mineral con 79% menos error; energía a 24 h un 27,6% mejor que Holt-Winters.",
-      "Kalman estimates ore hardness with 79% less error; 24 h energy forecast 27.6% better than Holt-Winters."
+      "Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses).",
+      "Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months)."
      ],
      "tags": [
       "digital-twin",
@@ -531,6 +549,24 @@
       "survival-analysis"
      ],
      "page": true
+    },
+    {
+     "repo": "retail-price-elasticity",
+     "name": [
+      "Elasticidad precio en supermercado",
+      "Grocery price elasticity"
+     ],
+     "data": "real",
+     "res": [
+      "580 productos y 2.500 hogares reales. Ignorar exhibición y folleto exagera la elasticidad un 40%; double ML da <b>-1,50</b>. Una rebaja de 10% solo se paga sola con margen bruto sobre 50%, incluso en cerveza.",
+      "580 products, 2,500 real households. Ignoring display and mailer overstates elasticity by 40%; double ML gives <b>-1.50</b>. A 10% discount only pays for itself above 50% gross margin, even for beer."
+     ],
+     "tags": [
+      "double-machine-learning",
+      "fixed-effects",
+      "pricing"
+     ],
+     "page": true
     }
    ]
   },
@@ -582,10 +618,10 @@
       "Churn como decisión de negocio",
       "Churn as a business decision"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Umbral por valor de cliente: +US$75.847 contactando al 78,6%, vs +US$42.717 contactando a todos.",
-      "Threshold by customer value: +US$75,847 contacting 78.6%, vs +US$42,717 contacting everyone."
+      "10.000 clientes bancarios reales: la columna de quejas era una fuga (AUC 1,00 vs 0,85); umbral por valor recupera US$189.930 contactando al 42%, vs US$143.842 contactando a todos.",
+      "10,000 real bank customers: the complaints column was a leak (AUC 1.00 vs 0.85); a value-based threshold recovers US$189,930 contacting 42%, vs US$143,842 contacting everyone."
      ],
      "tags": [
       "mlflow",
@@ -867,10 +903,10 @@
       "Agente de operaciones mineras",
       "Mining operations agent"
      ],
-     "data": "sim",
+     "data": "real",
      "res": [
-      "Un LLM que responde llamando herramientas (SQL, scoring, anomalías) en vez de inventar números.",
-      "An LLM that answers by calling tools (SQL, scoring, anomalies) instead of making up numbers."
+      "Agente con datos reales de planta y ChileCompra, medido en 100 consultas con Qwen local: elige bien la herramienta 99 veces, y pasar los montos a millones sube las respuestas ancladas de 67 a 86.",
+      "Agent over real plant and ChileCompra data, measured on 100 queries with local Qwen: right tool 99 times, and reporting amounts in millions lifts grounded answers from 67 to 86."
      ],
      "tags": [
       "llm-agent",
@@ -885,10 +921,10 @@
       "Modelo de lenguaje local para industria",
       "Local language model for industry"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Inferencia sin internet, guardrails y QLoRA; el modelo base inventa argumentos en 94 de 100 prompts.",
-      "Offline inference, guardrails and QLoRA; the base model makes up arguments in 94 of 100 prompts."
+      "Evaluado con 100 casos de una planta de flotación real: listar los argumentos de las herramientas baja las llamadas inválidas de 69 a 16, y auditar la solicitud deja 25 de 25 decisiones de seguridad correctas.",
+      "Evaluated on 100 real flotation-plant cases: listing tool arguments cuts invalid calls from 69 to 16, and auditing the request gives 25 of 25 correct safety decisions."
      ],
      "tags": [
       "llama-cpp",

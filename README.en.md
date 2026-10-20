@@ -74,7 +74,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 ## Projects by kind of problem
 
-40 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
+42 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
 
 <details>
 <summary><b>1. Forecasting what comes next</b> · 7 projects</summary>
@@ -83,8 +83,8 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 |---|---|---|
 | **[Retail demand (Favorita)](https://github.com/Rxyxs/retail-demand-forecasting-favorita)**<br><sub>real data · [page](https://rxyxs.github.io/retail-demand-forecasting-favorita/)</sub> | Forecast scored as a purchase decision: quantiles only pay above a ~3:1 cost ratio. | `lightgbm` `quantile-regression` `newsvendor` |
 | **[Chilean bank delinquency (CMF)](https://github.com/Rxyxs/chile-banking-delinquency-cmf)**<br><sub>real data · [page](https://rxyxs.github.io/chile-banking-delinquency-cmf/)</sub> | Panel from 128 CMF Excel files. Stress test with lag and signs chosen without look-ahead: only consumer and commercial beat no change (0.73 and 0.85). Per-bank LightGBM does not; SHAP shows it learns the regime. | `stress-testing` `shap` `fastapi` |
-| **[Chile's power grid, hourly](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>simulated</sub> | Solar, wind, demand and marginal cost at 5 nodes. Solar: 3.64% WAPE vs 26.95% naive; on wind, naive wins. | `lightgbm` `optuna` `time-series` |
-| **[Chile's power grid, in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | TBATS: 2.47% MAPE vs 6.54% seasonal naive; ETS's edge only shows under rolling validation. | `r` `arima` `garch` |
+| **[Chile's power grid, hourly](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>real + simulated</sub> | 5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%. | `lightgbm` `optuna` `time-series` |
+| **[Chile's power grid, in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | SEN demand with real monthly energy and ERA5 weather: TBATS 4.28% MAPE vs 6.73% naive; MAPE misleads on net demand. | `r` `arima` `garch` |
 | **[Copper volatility](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>real data · [page](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | 14 years of real LME prices: GARCH(1,1) has the best QLIKE and only HAR-X, with the VIX and the dollar, ties it. CatBoost re-tuned in every fold does not beat it. | `garch` `catboost` `shap` |
 | **[High-frequency volatility](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>real data · [page](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24.8M Binance trades: at 30 s, persistence (RMSPE 4.58) beats LightGBM and the neural net. | `high-frequency-trading` `lightgbm` `duckdb` |
 | **[Customer lifetime value](https://github.com/Rxyxs/customer-lifetime-value)**<br><sub>real data · [page](https://rxyxs.github.io/customer-lifetime-value/)</sub> | BG/NBD and Gamma-Gamma coded from the likelihood. Predicting 26 weeks: **-2%** error on total purchases, against +68% for the naive rate and +24% for LightGBM. | `bg-nbd` `gamma-gamma` `retention` |
@@ -92,16 +92,17 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 </details>
 
 <details>
-<summary><b>2. Catching fraud and anomalies</b> · 6 projects</summary>
+<summary><b>2. Catching fraud and anomalies</b> · 7 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
-| **[Fraud and AML lab](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | ROC-AUC makes a model with 3.4× worse PR-AUC look almost equal (0.931 vs 0.965); label-free graph AML: ROC-AUC 0.893. | `fraud-detection` `aml` `xgboost` |
+| **[Fraud and AML lab](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | ROC-AUC makes a model with 2.6× worse PR-AUC look almost equal (0.938 vs 0.965); label-free graph AML: ROC-AUC 0.893. | `fraud-detection` `aml` `xgboost` |
 | **[16 detectors on mobile-money fraud](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>simulated · [page](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | The statistical baseline lands below chance (ROC-AUC 0.383) and ensembles don't win. 266 tests. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Public procurement anomalies](https://github.com/Rxyxs/chile-public-procurement-anomalies)**<br><sub>real data · [page](https://rxyxs.github.io/chile-public-procurement-anomalies/)</sub> | 13.7 M ChileCompra order lines: Compra Ágil orders pile up under the cap and the pile moved with the law, but there is little sign of split purchases. Isolation Forest finds 38.8% of planted anomalies reviewing 5%. | `public-procurement` `bunching` `isolation-forest` |
 | **[Polyglot fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-polyglot-fraud-engine/)</sub> | C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end. | `c` `ruby` `prometheus` |
 | **[Market tick anomalies (C++)](https://github.com/Rxyxs/market-tick-anomaly-engine-cpp)**<br><sub>real data</sub> | EWMA and CUSUM validated on the March 2020 crypto crash, at 7.26M ticks/s. | `cpp` `cusum` `ewma` |
 | **[Lithium order-flow imbalance (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>simulated · [page](https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/)</sub> | Zero false positives outside the injected shock across 43,200 windows. | `cpp` `order-flow` `market-microstructure` |
+| **[Anomalies in sensor streams (NAB)](https://github.com/Rxyxs/iot-anomaly-benchmark)**<br><sub>real data · [page](https://rxyxs.github.io/iot-anomaly-benchmark/)</sub> | NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41; cross-validated it scores **42.4**, above the published Gaussian baseline. | `anomaly-detection` `time-series` `benchmark` |
 
 </details>
 
@@ -111,13 +112,13 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Predictive maintenance (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>real data · [page](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23,550 trucks: −31% official cost on test, but the saving runs out if a visit costs double, because the model overstates risk. | `predictive-maintenance` `survival-analysis` `shap` |
-| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulated</sub> | Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.7×. | `remaining-useful-life` `signal-processing` `fft` |
-| **[SAG mill digital twin](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estimates ore hardness with 79% less error; 24 h energy forecast 27.6% better than Holt-Winters. | `digital-twin` `kalman-filter` `lightgbm` |
+| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulated</sub> | Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×. | `remaining-useful-life` `signal-processing` `fft` |
+| **[SAG mill digital twin](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
 
 <details>
-<summary><b>4. Measuring causes and evaluating decisions</b> · 4 projects</summary>
+<summary><b>4. Measuring causes and evaluating decisions</b> · 5 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
@@ -125,6 +126,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [page](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Sample size, SRM, CUPED and multiple testing, with a harness that checks each rule's error rate. | `ab-testing` `cuped` `power-analysis` |
 | **[Pension funds](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>real data · [page](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | A regime signal that "earned" 1.4–2.3% a year ties a static mix on Sharpe out of sample. In real terms, 2021–23 fell 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 | **[Late deliveries on a marketplace (Olist)](https://github.com/Rxyxs/olist-delivery-delays)**<br><sub>real data · [page](https://rxyxs.github.io/olist-delivery-delays/)</sub> | 96k real orders. Arriving late causes **-1.97 review points** (AIPW), with most of the damage in the first week. Filtering out pre-delivery reviews would have dropped 74% of late orders. | `causal-inference` `aipw` `survival-analysis` |
+| **[Grocery price elasticity](https://github.com/Rxyxs/retail-price-elasticity)**<br><sub>real data · [page](https://rxyxs.github.io/retail-price-elasticity/)</sub> | 580 products, 2,500 real households. Ignoring display and mailer overstates elasticity by 40%; double ML gives **-1.50**. A 10% discount only pays for itself above 50% gross margin, even for beer. | `double-machine-learning` `fixed-effects` `pricing` |
 
 </details>
 
@@ -135,7 +137,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 |---|---|---|
 | **[Flotation plant](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>real data · [page](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Real iron-ore plant: R² 0.83 on a random split is -0.43 in time order; only recent lab results beat persistence, and four models prescribe opposite pH moves. | `soft-sensor` `walk-forward` `optimization` |
 | **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>real districts, simulated demand · [page](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Multi-depot routing with time windows over real polygons: 0 of 173 zones unserved. | `or-tools` `vrptw` `h3` |
-| **[Churn as a business decision](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>simulated · [page](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | Threshold by customer value: +US$75,847 contacting 78.6%, vs +US$42,717 contacting everyone. | `mlflow` `fastapi` `docker` |
+| **[Churn as a business decision](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>real data · [page](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | 10,000 real bank customers: the complaints column was a leak (AUC 1.00 vs 0.85); a value-based threshold recovers US$189,930 contacting 42%, vs US$143,842 contacting everyone. | `mlflow` `fastapi` `docker` |
 | **[Quality failures on a Bosch line](https://github.com/Rxyxs/bosch-line-quality)**<br><sub>real data · [page](https://rxyxs.github.io/bosch-line-quality/)</sub> | 1.18M real parts: failures come in lots (11x next to a failed part). Shuffled CV overstates (0.40 vs 0.21 on later parts). Inspecting the riskiest 5% catches **61%** of failures. | `lightgbm` `imbalanced-learning` `quality-control` |
 
 </details>
@@ -181,8 +183,8 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Mining safety RAG](https://github.com/Rxyxs/rag-seguridad-minera-chile)**<br><sub>real regulation · [page](https://rxyxs.github.io/rag-seguridad-minera-chile/)</sub> | Hybrid search over DS 132; re-ranking lifts MRR from 0.920 to 0.981. | `rag` `hybrid-search` `cross-encoder` |
-| **[Mining operations agent](https://github.com/Rxyxs/chile-mining-ops-agent)**<br><sub>simulated · [page](https://rxyxs.github.io/chile-mining-ops-agent/)</sub> | An LLM that answers by calling tools (SQL, scoring, anomalies) instead of making up numbers. | `llm-agent` `tool-calling` `duckdb` |
-| **[Local language model for industry](https://github.com/Rxyxs/slm-industrial-gateway)**<br><sub>simulated · [page](https://rxyxs.github.io/slm-industrial-gateway/)</sub> | Offline inference, guardrails and QLoRA; the base model makes up arguments in 94 of 100 prompts. | `llama-cpp` `qlora` `guardrails` |
+| **[Mining operations agent](https://github.com/Rxyxs/chile-mining-ops-agent)**<br><sub>real data · [page](https://rxyxs.github.io/chile-mining-ops-agent/)</sub> | Agent over real plant and ChileCompra data, measured on 100 queries with local Qwen: right tool 99 times, and reporting amounts in millions lifts grounded answers from 67 to 86. | `llm-agent` `tool-calling` `duckdb` |
+| **[Local language model for industry](https://github.com/Rxyxs/slm-industrial-gateway)**<br><sub>real + simulated · [page](https://rxyxs.github.io/slm-industrial-gateway/)</sub> | Evaluated on 100 real flotation-plant cases: listing tool arguments cuts invalid calls from 69 to 16, and auditing the request gives 25 of 25 correct safety decisions. | `llama-cpp` `qlora` `guardrails` |
 | **[YOLOv8 on a Raspberry Pi (thesis)](https://github.com/Rxyxs/yolov8-separable-convolutions)**<br><sub>real data (COCO) · [page](https://rxyxs.github.io/yolov8-separable-convolutions/)</sub> | 68% fewer parameters and ~10× faster on a Raspberry Pi, at mAP50 0.175 vs 0.212. | `yolov8` `computer-vision` `edge-computing` |
 | **[Aircraft contrails in satellite imagery](https://github.com/Rxyxs/contrail-detection-goes16)**<br><sub>real data · [page](https://rxyxs.github.io/contrail-detection-goes16/)</sub> | Segmentation on GOES-16 without downloading 451 GB: remote reads of the Kaggle zip and OpenContrails. Upsampling the input 2x is worth +0.05 Dice; stacking frames hurts. **0.597** on Kaggle private. | `pytorch` `segmentation` `satellite-imagery` |
 
