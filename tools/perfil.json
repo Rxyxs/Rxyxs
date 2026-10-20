@@ -306,10 +306,10 @@
       "16 detectores sobre fraude móvil",
       "16 detectors on mobile-money fraud"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests.",
-      "The statistical baseline lands below chance (ROC-AUC 0.383) and ensembles don't win. 266 tests."
+      "19 detectores en PaySim y en fraude real (tarjetas ULB, e-commerce IEEE-CIS): el ranking casi no se transfiere (Spearman 0,28-0,38) y en e-commerce ningún detector supera PR-AUC 0,22.",
+      "19 detectors on PaySim and on real fraud (ULB cards, IEEE-CIS e-commerce): the ranking barely transfers (Spearman 0.28-0.38) and on e-commerce no detector exceeds PR-AUC 0.22."
      ],
      "tags": [
       "isolation-forest",
@@ -342,10 +342,10 @@
       "Motor de fraude políglota",
       "Polyglot fraud engine"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa.",
-      "C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end."
+      "El mismo motor C + Ruby + Python sobre 590.540 transacciones reales (IEEE-CIS): PR-AUC 0,098 frente al 1,000 sintético, y sus capas no aportan sobre las features nativas.",
+      "The same C + Ruby + Python engine on 590,540 real transactions (IEEE-CIS): PR-AUC 0.098 against the synthetic 1.000, and its layers add nothing over the native features."
      ],
      "tags": [
       "c",
@@ -378,10 +378,10 @@
       "Order flow en acciones de litio (C++)",
       "Lithium order-flow imbalance (C++)"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Cero falsos positivos fuera del shock inyectado en 43.200 ventanas.",
-      "Zero false positives outside the injected shock across 43,200 windows."
+      "En cintas reales (IEX y Binance) el detector alerta 1,4-24% de las ventanas, no 0,27%, y no anticipa el precio; el día de la noticia del litio (abr 2023) fue un evento de volumen (12x), no de desbalance.",
+      "On real IEX and Binance tapes the detector alerts on 1.4-24% of windows, not 0.27%, and does not anticipate price; the Apr 2023 lithium news day was a volume event (12x), not an imbalance one."
      ],
      "tags": [
       "cpp",
