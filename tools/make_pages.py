@@ -26,7 +26,7 @@ from pathlib import Path
 FIG_RE = re.compile(r"^!\[(?P<alt>[^\]]*)\]\((?P<src>[^)\s]+)\)\s*$")
 BADGE_RE = re.compile(r"^\[?!\[")
 HEADING_RE = re.compile(r"^(#{1,3})\s+(.*)$")
-LANG_TOGGLE_RE = re.compile(r"^\[\s*🇺🇸|^\[\s*🇨🇱")
+LANG_TOGGLE_RE = re.compile(r"^\[+\s*(🇺🇸|🇨🇱|English|Español)")
 PLACEHOLDER_TITLE_RE = re.compile(r"^\d*\.?\s*project title\s*$", re.I)
 
 
