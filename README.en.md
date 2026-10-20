@@ -16,9 +16,9 @@
 
 ---
 
-This profile collects work and personal projects organized **by the kind of problem they solve**: forecasting, catching anomalies, anticipating failures, measuring causes, optimizing, managing risk, getting data in order, and working with text and images. The point is to show the different ways a data scientist can help an organization, in mining, energy, finance, retail or pensions.
+I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
 
-The same rules apply throughout: the code runs end to end, the numbers come from that run, nearly every repo has tests and CI, and negative results are published like positive ones.
+Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end.
 
 ## Featured projects
 

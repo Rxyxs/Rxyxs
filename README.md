@@ -16,9 +16,9 @@
 
 ---
 
-Este perfil reúne trabajo y proyectos propios ordenados **por el tipo de problema que resuelven**: pronosticar, detectar lo anómalo, anticipar fallas, medir causas, optimizar, gestionar riesgo, ordenar datos y trabajar con texto e imágenes. La idea es mostrar las distintas formas en que un científico de datos puede ayudar a una organización, en minería, energía, finanzas, retail o pensiones.
+Soy científico de datos en Santiago. Me interesa la parte del trabajo que viene después de entrenar el modelo: **si la cifra se sostiene con datos reales y si alguien puede tomar una decisión con ella**. Por eso la mayoría de mis proyectos parten de datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y de problemas concretos de minería, energía y finanzas.
 
-En todos sigo las mismas reglas: el código corre de principio a fin, las cifras salen de esa corrida, casi todos tienen tests y CI, y los resultados negativos se publican igual que los positivos.
+Varias veces el resultado no fue el que esperaba. Un modelo de reingreso hospitalario llegaba a un AUC de 0,805 porque contaba todas las visitas del paciente, incluido el propio reingreso que debía predecir; con solo lo que el hospital sabe al momento del alta, y evaluado en pacientes nuevos, queda en 0,671. Cambiarse de fondo de pensiones en el piso de una caída parece prudente, pero en 2.000 historias construidas a partir de 24 años de valores cuota resta 1,9 puntos de rentabilidad real al año. Publico esos hallazgos igual que los positivos, y cada cifra sale de código que corre de principio a fin.
 
 ## Proyectos destacados
 
