@@ -389,6 +389,24 @@
       "market-microstructure"
      ],
      "page": true
+    },
+    {
+     "repo": "iot-anomaly-benchmark",
+     "name": [
+      "Anomalías en series de sensores (NAB)",
+      "Anomalies in sensor streams (NAB)"
+     ],
+     "data": "real",
+     "res": [
+      "Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41; con validación cruzada queda en <b>42,4</b>, sobre el baseline gaussiano publicado.",
+      "NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41; cross-validated it scores <b>42.4</b>, above the published Gaussian baseline."
+     ],
+     "tags": [
+      "anomaly-detection",
+      "time-series",
+      "benchmark"
+     ],
+     "page": true
     }
    ]
   },
@@ -529,6 +547,24 @@
       "causal-inference",
       "aipw",
       "survival-analysis"
+     ],
+     "page": true
+    },
+    {
+     "repo": "retail-price-elasticity",
+     "name": [
+      "Elasticidad precio en supermercado",
+      "Grocery price elasticity"
+     ],
+     "data": "real",
+     "res": [
+      "580 productos y 2.500 hogares reales. Ignorar exhibición y folleto exagera la elasticidad un 40%; double ML da <b>-1,50</b>. Una rebaja de 10% solo se paga sola con margen bruto sobre 50%, incluso en cerveza.",
+      "580 products, 2,500 real households. Ignoring display and mailer overstates elasticity by 40%; double ML gives <b>-1.50</b>. A 10% discount only pays for itself above 50% gross margin, even for beer."
+     ],
+     "tags": [
+      "double-machine-learning",
+      "fixed-effects",
+      "pricing"
      ],
      "page": true
     }
