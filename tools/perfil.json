@@ -306,10 +306,10 @@
       "16 detectores sobre fraude móvil",
       "16 detectors on mobile-money fraud"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "El baseline estadístico queda bajo el azar (ROC-AUC 0,383) y los ensambles no ganan. 266 tests.",
-      "The statistical baseline lands below chance (ROC-AUC 0.383) and ensembles don't win. 266 tests."
+      "19 detectores en PaySim y en fraude real con tarjeta (ULB): el ranking casi no se transfiere (Spearman 0,38), el baseline bajo el azar en PaySim da 0,93 en real, y LOF cae de 0,67 a 0,02 entre días.",
+      "19 detectors on PaySim and on real card fraud (ULB): the ranking barely transfers (Spearman 0.38), the below-chance PaySim baseline scores 0.93 on real data, and LOF drops from 0.67 to 0.02 across days."
      ],
      "tags": [
       "isolation-forest",
