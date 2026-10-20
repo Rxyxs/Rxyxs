@@ -16,9 +16,9 @@
 
 ---
 
-Soy científico de datos, de Santiago. Lo que más me gusta de la pega es lo que viene después de entrenar el modelo: **cachar si el número aguanta con datos reales y si a alguien le sirve para tomar una decisión**. Por eso casi todos mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y problemas reales de minería, energía y finanzas.
+Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
 
-Hartas veces el resultado no fue el que esperaba. Un modelo de reingreso hospitalario me daba un AUC de 0,805, pero era trampa: contaba todas las visitas del paciente, incluido el mismo reingreso que tenía que predecir. Usando solo lo que el hospital sabe al dar el alta, y probándolo con pacientes nuevos, baja a 0,671. Otro caso: cambiarse de fondo de pensiones cuando el mercado está en el suelo suena prudente, pero en 2.000 historias armadas con 24 años de valores cuota te quita 1,9 puntos de rentabilidad real al año. Esos resultados los publico igual que los buenos, y todas las cifras salen de código que corre de principio a fin.
+En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin.
 
 ## Proyectos destacados
 
