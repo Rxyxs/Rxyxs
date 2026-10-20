@@ -378,10 +378,10 @@
       "Order flow en acciones de litio (C++)",
       "Lithium order-flow imbalance (C++)"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "Cero falsos positivos fuera del shock inyectado en 43.200 ventanas.",
-      "Zero false positives outside the injected shock across 43,200 windows."
+      "En cintas reales (IEX y Binance) el detector alerta 1,4-24% de las ventanas, no 0,27%, y no anticipa el precio; el día de la noticia del litio (abr 2023) fue un evento de volumen (12x), no de desbalance.",
+      "On real IEX and Binance tapes the detector alerts on 1.4-24% of windows, not 0.27%, and does not anticipate price; the Apr 2023 lithium news day was a volume event (12x), not an imbalance one."
      ],
      "tags": [
       "cpp",
