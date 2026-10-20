@@ -16,9 +16,9 @@
 
 ---
 
-Soy científico de datos en Santiago. Me interesa la parte del trabajo que viene después de entrenar el modelo: **si la cifra se sostiene con datos reales y si alguien puede tomar una decisión con ella**. Por eso la mayoría de mis proyectos parten de datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y de problemas concretos de minería, energía y finanzas.
+Soy científico de datos, de Santiago. Lo que más me gusta de la pega es lo que viene después de entrenar el modelo: **cachar si el número aguanta con datos reales y si a alguien le sirve para tomar una decisión**. Por eso casi todos mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y problemas reales de minería, energía y finanzas.
 
-Varias veces el resultado no fue el que esperaba. Un modelo de reingreso hospitalario llegaba a un AUC de 0,805 porque contaba todas las visitas del paciente, incluido el propio reingreso que debía predecir; con solo lo que el hospital sabe al momento del alta, y evaluado en pacientes nuevos, queda en 0,671. Cambiarse de fondo de pensiones en el piso de una caída parece prudente, pero en 2.000 historias construidas a partir de 24 años de valores cuota resta 1,9 puntos de rentabilidad real al año. Publico esos hallazgos igual que los positivos, y cada cifra sale de código que corre de principio a fin.
+Hartas veces el resultado no fue el que esperaba. Un modelo de reingreso hospitalario me daba un AUC de 0,805, pero era trampa: contaba todas las visitas del paciente, incluido el mismo reingreso que tenía que predecir. Usando solo lo que el hospital sabe al dar el alta, y probándolo con pacientes nuevos, baja a 0,671. Otro caso: cambiarse de fondo de pensiones cuando el mercado está en el suelo suena prudente, pero en 2.000 historias armadas con 24 años de valores cuota te quita 1,9 puntos de rentabilidad real al año. Esos resultados los publico igual que los buenos, y todas las cifras salen de código que corre de principio a fin.
 
 ## Proyectos destacados
 
