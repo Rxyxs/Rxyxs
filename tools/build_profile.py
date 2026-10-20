@@ -113,49 +113,73 @@ def readme(L: int) -> str:
 # ----------------------------------------------------------------------------- sitio
 
 CSS = """
-:root{--bg:#FBFAF8;--surface:#FFFFFF;--ink:#23201D;--muted:#6B645D;--line:#E3DED7;--accent:#1F5A96;--green:#1a7f37}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171614;--surface:#201E1B;--ink:#EDE9E3;--muted:#A9A29A;--line:#322E2A;--accent:#6FA8DC;--green:#7FAE6B}}
-:root[data-theme="dark"]{--bg:#171614;--surface:#201E1B;--ink:#EDE9E3;--muted:#A9A29A;--line:#322E2A;--accent:#6FA8DC;--green:#7FAE6B}
+:root{--bg:#0A1628;--bg2:#0E1D33;--surface:#112440;--surface2:#163055;--ink:#E7EEF7;--body:#CBD6E4;--muted:#9AABC1;
+--line:#1F3A5F;--accent:#5AA9F0;--accent-ink:#06121F;--real:#5CC98A;--sim:#E9B95C;--mix:#7CC7E8}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px 80px}
-header{padding:56px 0 32px;border-bottom:1px solid var(--line);margin-bottom:8px}
-.lang{float:right;font-size:.85rem;color:var(--muted)}
-.lang a{color:var(--muted)}
-h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.1;margin:0 0 6px;letter-spacing:-.02em}
-.role{color:var(--muted);margin:0 0 22px;font-size:1.05rem}
-.intro p{max-width:72ch;margin:0 0 14px}
-.links a{display:inline-block;margin:6px 8px 0 0;padding:8px 14px;border:1px solid var(--line);border-radius:7px;text-decoration:none;color:var(--ink);background:var(--surface);font-size:.9rem}
+.top{position:sticky;top:0;z-index:10;background:rgba(10,22,40,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1080px;margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;gap:24px}
+.brand{font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.top nav{display:flex;gap:20px;overflow-x:auto;flex:1;scrollbar-width:none}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.88rem;white-space:nowrap}
+.top nav a:hover{color:var(--ink)}
+.lang a{font-size:.82rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 10px;text-decoration:none}
+.lang a:hover{color:var(--ink);border-color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 80px}
+.hero{padding:64px 0 44px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.08;margin:0 0 8px;letter-spacing:-.025em}
+.role{color:var(--muted);margin:0 0 24px;font-size:1.08rem}
+.intro p{max-width:70ch;margin:0 0 14px;color:var(--body)}
+.intro strong{color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.links a{padding:10px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);background:var(--surface);font-size:.9rem;font-weight:500;transition:border-color .15s,background .15s}
 .links a:hover{border-color:var(--accent)}
-h2{font-size:1.35rem;margin:48px 0 6px;letter-spacing:-.01em}
-.sub{color:var(--muted);margin:0 0 18px;font-size:.95rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0}
-nav.toc a{font-size:.82rem;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted);background:var(--surface)}
+.links a.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.links a.primary:hover{background:#7BBBF4}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat b{display:block;font-size:1.7rem;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{font-size:.82rem;color:var(--muted)}
+h2{font-size:1.45rem;margin:56px 0 6px;letter-spacing:-.015em}
+.sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px}
+nav.toc a{font-size:.82rem;padding:5px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--muted);background:var(--surface)}
 nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
 .one{grid-template-columns:minmax(0,1fr)}
-.feat{grid-template-columns:repeat(auto-fill,minmax(min(440px,100%),1fr))}
-@media (max-width:520px){.feat,.grid{grid-template-columns:minmax(0,1fr)}.lang{float:none;margin-bottom:8px}}
-.card{min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column}
-.card img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;border-radius:6px;border:1px solid var(--line);background:#fff;margin-bottom:12px}
+.feat{grid-template-columns:repeat(auto-fill,minmax(min(460px,100%),1fr))}
+@media (max-width:640px){.feat,.grid{grid-template-columns:minmax(0,1fr)}.top nav{display:none}.top .in{justify-content:space-between}}
+.card{min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.card:hover{border-color:#2D5285;transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;border-radius:8px;background:#fff;margin-bottom:14px}
 .card img.contain{object-fit:contain}
-.card h3{font-size:1.02rem;margin:0 0 2px;line-height:1.3}
+.card h3{font-size:1.04rem;margin:0 0 8px;line-height:1.3}
 .card h3 a{color:var(--ink);text-decoration:none}
 .card h3 a:hover{color:var(--accent)}
-.data{font-size:.78rem;color:var(--muted);margin-bottom:8px}
-.card p{margin:0 0 12px;font-size:.92rem;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
-.tags code{font-size:.74rem;padding:2px 7px;border-radius:999px;background:rgba(31,90,150,.08);color:var(--accent);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
-.actions{font-size:.85rem;display:flex;gap:14px}
-.lib{border-left:3px solid var(--green)}
-pre{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:12px 14px;overflow-x:auto;font-size:.85rem;margin:4px 0 12px}
-h2.cat{font-size:1.12rem;margin:36px 0 12px;padding-top:12px;border-top:1px solid var(--line)}
-h2.cat .n{color:var(--accent);margin-right:6px}
-.tools{display:flex;flex-wrap:wrap;gap:6px}
-.tools span{font-size:.82rem;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
-.tools b{display:block;width:100%;font-size:.8rem;color:var(--muted);font-weight:600;margin:10px 0 2px}
-footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+.data{align-self:flex-start;font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:999px;margin-bottom:10px;border:1px solid}
+.data.real{color:var(--real);border-color:rgba(92,201,138,.35);background:rgba(92,201,138,.08)}
+.data.sim{color:var(--sim);border-color:rgba(233,185,92,.35);background:rgba(233,185,92,.08)}
+.data.mix{color:var(--mix);border-color:rgba(124,199,232,.35);background:rgba(124,199,232,.08)}
+.card p{margin:0 0 14px;font-size:.92rem;color:var(--body);flex:1}
+.card p b{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.tags code{font-size:.72rem;padding:2px 8px;border-radius:5px;background:var(--surface2);color:#B9CCE3;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.actions{font-size:.86rem;display:flex;gap:16px;padding-top:12px;border-top:1px solid var(--line)}
+.actions a{text-decoration:none;font-weight:500}
+.actions a:hover{text-decoration:underline}
+.lib{border-left:3px solid var(--real)}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;font-size:.85rem;margin:4px 0 12px;color:var(--body)}
+h2.cat{font-size:1.1rem;margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--line)}
+h2.cat .n{color:var(--accent);margin-right:8px;font-variant-numeric:tabular-nums}
+.tools{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
+.tools div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.tools b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 8px}
+.tools span{display:inline-block;font-size:.82rem;padding:3px 9px;margin:0 5px 6px 0;border:1px solid var(--line);border-radius:6px;background:var(--bg2)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
+footer a{color:var(--muted)}
 """
 
 
@@ -168,6 +192,15 @@ def md_inline(s: str) -> str:
     return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", h(s))
 
 
+def kind(it: dict) -> str:
+    """Color de la etiqueta de datos: real, simulado o mezcla de ambos."""
+    if it["data"] in ("real", "coco"):
+        return "real"
+    if it["data"] in ("sim", "mc", "model"):
+        return "sim"
+    return "mix"
+
+
 def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
     acts = []
     if it.get("page"):
@@ -178,7 +211,7 @@ def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
     pic = (f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy"{fit}>' if img and it.get("img") else "")
     tags = "".join(f"<code>{html.escape(x)}</code>" for x in it["tags"])
     return (f'<article class="card {cls}">{pic}<h3><a href="{GH}{it["repo"]}">{h(it["name"][L])}</a></h3>'
-            f'<div class="data">{h(label(it, L))}</div><p>{h(it["res"][L])}</p>'
+            f'<div class="data {kind(it)}">{h(label(it, L))}</div><p>{h(it["res"][L])}</p>'
             f'<div class="tags">{tags}</div><div class="actions">{"".join(acts)}</div></article>')
 
 
@@ -187,30 +220,46 @@ def site(L: int) -> str:
     other = t(L, '<a href="en/">English</a>', '<a href="../">Español</a>')
     intro = "".join(f"<p>{md_inline(x)}</p>" for x in p["intro"][L])
     toc = "".join(f'<a href="#c{i}">{h(c["name"][L])}</a>' for i, c in enumerate(cats, 1))
-    body = [f'<header><div class="lang">{other}</div><h1>{h(p["name"])}</h1><p class="role">{h(p["role"][L])}</p>',
+    items = all_items()
+    stats = [(len(items), t(L, "proyectos publicados", "published projects")),
+             (len(cats), t(L, "tipos de problema", "kinds of problem")),
+             (sum(kind(it) == "real" for it in items), t(L, "con datos reales", "on real data")),
+             (sum(bool(it.get("page")) for it in items), t(L, "con página de resultados", "with a results page"))]
+    menu = [("destacados", t(L, "Destacados", "Featured")), ("herramienta", t(L, "Herramienta", "Tool")),
+            ("experiencia", t(L, "Experiencia", "Experience")), ("proyectos", t(L, "Proyectos", "Projects")),
+            ("stack", "Stack")]
+    body = ['<div class="top"><div class="in">'
+            f'<a class="brand" href="#">{h(p["name"])}</a>'
+            '<nav>' + "".join(f'<a href="#{k}">{v}</a>' for k, v in menu) + '</nav>'
+            f'<div class="lang">{other}</div></div></div><div class="wrap">',
+            f'<header class="hero"><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
+            f'<p class="role">{h(p["role"][L])}</p>',
             f'<div class="intro">{intro}</div><div class="links">',
-            f'<a href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>',
-            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div></header>',
-            f'<h2>{t(L, "Proyectos destacados", "Featured projects")}</h2>',
+            f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>',
+            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div>',
+            '<div class="stats">' + "".join(f'<div class="stat"><b>{n}</b><span>{s}</span></div>' for n, s in stats)
+            + "</div></header>",
+            f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L, img=True) for f in D["featured"]) + "</div>",
-            f'<h2>{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
+            f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
             f'<article class="card lib"><h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
             f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
             f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
             f'<div class="actions"><a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
-            f'<h2>{t(L, "Experiencia", "Experience")}</h2>',
+            f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
             '<div class="grid one">' + card(w, L) + "</div>",
-            f'<h2>{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
-            f'<p class="sub">{t(L, f"{len(all_items())} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(all_items())} projects. Each states whether it uses real or simulated data.")}</p>',
+            f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
+            f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']
     for i, c in enumerate(cats, 1):
         body.append(f'<h2 class="cat" id="c{i}"><span class="n">{i}.</span>{h(c["name"][L])}</h2>')
         body.append('<div class="grid">' + "".join(card(it, L) for it in c["items"]) + "</div>")
-    tools = "".join(f"<b>{h(g['group'][L])}</b>" + "".join(f"<span>{h(x['label'])}</span>" for x in g["items"]) for g in D["tools"])
-    body += [f'<h2>{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
-             f'<footer>{h(p["name"])} · {h(p["role"][L])} · <a href="{p["github"]}">GitHub</a> · '
-             f'<a href="{p["linkedin"]}">LinkedIn</a></footer>']
+    tools = "".join(f"<div><b>{h(g['group'][L])}</b>" + "".join(f"<span>{h(x['label'])}</span>" for x in g["items"])
+                    + "</div>" for g in D["tools"])
+    body += [f'<h2 id="stack">{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
+             f'<footer><span>{h(p["name"])} · {h(p["role"][L])}</span><span><a href="{p["github"]}">GitHub</a> · '
+             f'<a href="{p["linkedin"]}">LinkedIn</a> · <a href="mailto:{p["email"]}">{p["email"]}</a></span></footer>']
     desc = t(L, "Portafolio de ciencia de datos de Pablo Reyes: proyectos ordenados por el tipo de problema que resuelven.",
              "Data science portfolio of Pablo Reyes: projects organized by the kind of problem they solve.")
     lang = t(L, "es", "en")
@@ -219,7 +268,10 @@ def site(L: int) -> str:
             f'<title>Pablo Reyes · {t(L, "Ciencia de datos", "Data science")}</title>\n'
             f'<meta name="description" content="{desc}">\n'
             f'<link rel="alternate" hreflang="es" href="{PAGE}"><link rel="alternate" hreflang="en" href="{PAGE}en/">\n'
-            f"<style>{CSS}</style>\n</head>\n<body>\n<div class=\"wrap\">\n" + "\n".join(body) + "\n</div>\n</body>\n</html>\n")
+            '<meta name="theme-color" content="#0A1628">\n'
+            '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+            '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
+            f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + "\n</div>\n</body>\n</html>\n")
 
 
 
