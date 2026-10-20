@@ -308,8 +308,8 @@
      ],
      "data": "mix",
      "res": [
-      "19 detectores en PaySim y en fraude real con tarjeta (ULB): el ranking casi no se transfiere (Spearman 0,38), el baseline bajo el azar en PaySim da 0,93 en real, y LOF cae de 0,67 a 0,02 entre días.",
-      "19 detectors on PaySim and on real card fraud (ULB): the ranking barely transfers (Spearman 0.38), the below-chance PaySim baseline scores 0.93 on real data, and LOF drops from 0.67 to 0.02 across days."
+      "19 detectores en PaySim y en fraude real (tarjetas ULB, e-commerce IEEE-CIS): el ranking casi no se transfiere (Spearman 0,28-0,38) y en e-commerce ningún detector supera PR-AUC 0,22.",
+      "19 detectors on PaySim and on real fraud (ULB cards, IEEE-CIS e-commerce): the ranking barely transfers (Spearman 0.28-0.38) and on e-commerce no detector exceeds PR-AUC 0.22."
      ],
      "tags": [
       "isolation-forest",
@@ -342,10 +342,10 @@
       "Motor de fraude políglota",
       "Polyglot fraud engine"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "C + Ruby + Python, cada capa perfilada: 31 ns por llamada en C; 4,68 ms p50 la solicitud completa.",
-      "C + Ruby + Python, each layer profiled: 31 ns per call in C; 4.68 ms p50 end to end."
+      "El mismo motor C + Ruby + Python sobre 590.540 transacciones reales (IEEE-CIS): PR-AUC 0,098 frente al 1,000 sintético, y sus capas no aportan sobre las features nativas.",
+      "The same C + Ruby + Python engine on 590,540 real transactions (IEEE-CIS): PR-AUC 0.098 against the synthetic 1.000, and its layers add nothing over the native features."
      ],
      "tags": [
       "c",
