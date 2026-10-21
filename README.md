@@ -74,7 +74,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 ## Proyectos por tipo de problema
 
-42 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+43 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
@@ -155,13 +155,14 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 </details>
 
 <details>
-<summary><b>7. Ordenar y preparar los datos</b> · 3 proyectos</summary>
+<summary><b>7. Ordenar y preparar los datos</b> · 4 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Toolkit de limpieza en 4 dominios](https://github.com/Rxyxs/data-cleaning-toolkit)**<br><sub>datos reales · [página](https://rxyxs.github.io/data-cleaning-toolkit/)</sub> | El mismo toolkit sobre Banco Central, COCHILCO y Banco Mundial; detectó un dato corrupto en la fuente. | `data-quality` `pydantic` `pytest` |
 | **[Data warehouse minero](https://github.com/Rxyxs/data-warehouse-analitico-mineria-chile)**<br><sub>real + simulado · [página](https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/)</sub> | Anuario real de Cochilco 2000-2025 en dbt + DuckDB: la ley cayó 39% y la electricidad por tonelada solo 9%; 121 tests, capa de faena simulada. | `dbt` `duckdb` `star-schema` |
 | **[Lakehouse de e-commerce (110M eventos)](https://github.com/Rxyxs/ecommerce-lakehouse-duckdb)**<br><sub>datos reales · [página](https://rxyxs.github.io/ecommerce-lakehouse-duckdb/)</sub> | 110M eventos reales en DuckDB: faltan 48 h de compras y el tracking de carritos cambia 6 veces, así que el embudo se mide por régimen. | `duckdb` `polars` `pyspark` `parquet` |
+| **[Datos de Chile, actualizados cada día](https://github.com/Rxyxs/chile-macro-data-pipeline)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-macro-data-pipeline/)</sub> | dbt + DuckDB + GitHub Actions: nueve series públicas (UF, dólar, cobre, IPC, TPM, IMACEC, desempleo, fondos AFP, morosidad CMF) se descargan, prueban y publican cada día; si mindicador se cae, la UF y el dólar salen del SII. | `dbt` `duckdb` `github-actions` |
 
 </details>
 
