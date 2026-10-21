@@ -790,6 +790,24 @@
       "parquet"
      ],
      "page": true
+    },
+    {
+     "repo": "chile-macro-data-pipeline",
+     "name": [
+      "Datos de Chile, actualizados cada día",
+      "Chilean data, refreshed every day"
+     ],
+     "data": "real",
+     "res": [
+      "dbt + DuckDB + GitHub Actions: nueve series públicas (UF, dólar, cobre, IPC, TPM, IMACEC, desempleo, fondos AFP, morosidad CMF) se descargan, prueban y publican cada día; si mindicador se cae, la UF y el dólar salen del SII.",
+      "dbt + DuckDB + GitHub Actions: nine public series (UF, dollar, copper, CPI, policy rate, IMACEC, unemployment, pension funds, CMF delinquency) are downloaded, tested and published every day; if mindicador is down, the UF and the dollar come from the SII."
+     ],
+     "tags": [
+      "dbt",
+      "duckdb",
+      "github-actions"
+     ],
+     "page": true
     }
    ]
   },
