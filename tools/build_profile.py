@@ -21,6 +21,11 @@ GH = "https://github.com/Rxyxs/"
 PAGE = "https://rxyxs.github.io/"
 
 D = json.loads((ROOT / "tools" / "perfil.json").read_text(encoding="utf-8"))
+# Generados aparte para no reescribir perfil.json: la primera figura de la página de cada
+# proyecto (miniaturas.json) y los sectores que alimentan los filtros del sitio (sectores.json).
+THUMBS = json.loads((ROOT / "tools" / "miniaturas.json").read_text(encoding="utf-8"))
+SECT = json.loads((ROOT / "tools" / "sectores.json").read_text(encoding="utf-8"))
+ICONS: set[str] = set()  # logos disponibles en <sitio>/assets/icons, se llena en main()
 ES, EN = 0, 1
 
 
@@ -182,7 +187,59 @@ h2.cat .n{color:var(--accent);margin-right:8px;font-variant-numeric:tabular-nums
 .tools span{display:inline-block;font-size:.82rem;padding:3px 9px;margin:0 5px 6px 0;border:1px solid var(--line);border-radius:6px;background:var(--bg2)}
 footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
 footer a{color:var(--muted)}
+.right{display:flex;align-items:center;gap:8px}
+.theme{background:none;border:1px solid var(--line);border-radius:6px;width:30px;height:28px;color:var(--muted);cursor:pointer;display:grid;place-items:center;padding:0}
+.theme:hover{color:var(--ink);border-color:var(--accent)}
+.theme svg{width:15px;height:15px}
+.hero-top{display:flex;align-items:center;gap:24px}
+.photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);flex:none}
+@media (max-width:640px){.hero-top{flex-direction:column-reverse;align-items:flex-start;gap:16px}.photo{width:88px;height:88px}}
+.card .thumb{aspect-ratio:16/9;margin:-6px -8px 14px;width:calc(100% + 16px)}
+.filters{display:flex;flex-direction:column;gap:10px;margin:18px 0 6px;padding:14px 16px;background:var(--bg2);border:1px solid var(--line);border-radius:12px}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.frow b{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-right:6px;min-width:64px}
+.chip{font:inherit;font-size:.82rem;padding:4px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--body);cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.count{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.card[hidden],.catwrap[hidden]{display:none}
+.tools span{display:inline-flex;align-items:center;gap:6px}
+.ic{width:14px;height:14px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;flex:none;opacity:.85}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}html{scroll-behavior:auto}}
 """
+
+# Botón de tema, filtros y aparición suave de las tarjetas. Sin dependencias.
+JS = """
+(function(){
+  var root=document.documentElement, btn=document.querySelector('.theme');
+  function current(){return root.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
+  if(btn){btn.addEventListener('click',function(){var n=current()==='dark'?'light':'dark';root.dataset.theme=n;
+    try{localStorage.setItem('tema',n)}catch(e){}});}
+  var sel={sector:'',datos:''}, cards=[].slice.call(document.querySelectorAll('.catwrap .card')),
+      count=document.querySelector('.count');
+  function apply(){var n=0;
+    cards.forEach(function(c){var ok=(!sel.sector||c.dataset.sector.split(' ').indexOf(sel.sector)>=0)&&(!sel.datos||c.dataset.kind===sel.datos);
+      c.hidden=!ok; if(ok)n++;});
+    [].forEach.call(document.querySelectorAll('.catwrap'),function(w){w.hidden=!w.querySelector('.card:not([hidden])')});
+    if(count)count.textContent=count.dataset.tpl.replace('{n}',n);}
+  [].forEach.call(document.querySelectorAll('.chip'),function(b){b.addEventListener('click',function(){
+    var g=b.dataset.group; sel[g]=b.dataset.value;
+    [].forEach.call(document.querySelectorAll('.chip[data-group="'+g+'"]'),function(o){o.setAttribute('aria-pressed',o===b)});
+    apply();});});
+  apply();
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
+    [].forEach.call(document.querySelectorAll('.card'),function(c){c.classList.add('reveal');io.observe(c)});}
+})();
+"""
+
+# Se ejecuta antes de pintar la página para no mostrar un destello del tema equivocado.
+THEME_BOOT = "try{var t=localStorage.getItem('tema');if(t)document.documentElement.dataset.theme=t}catch(e){}"
+
+SUN_MOON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'
+            '<path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>')
 
 
 def h(s: str) -> str:
@@ -210,9 +267,15 @@ def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
     acts.append(f'<a href="{GH}{it["repo"]}">{t(L, "Código", "Code")}</a>')
     # "img_fit": "contain" muestra el gráfico entero en vez de recortarlo al formato de la tarjeta.
     fit = ' class="contain"' if it.get("img_fit") == "contain" else ""
-    pic = (f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy"{fit}>' if img and it.get("img") else "")
+    if img and it.get("img"):
+        pic = f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy"{fit}>'
+    elif THUMBS.get(it.get("repo", "")):
+        pic = f'<img class="thumb" src="{PAGE}{it["repo"]}/{THUMBS[it["repo"]]}" alt="" loading="lazy">'
+    else:
+        pic = ""
     tags = "".join(f"<code>{html.escape(x)}</code>" for x in it["tags"])
-    return (f'<article class="card {cls}">{pic}<h3><a href="{GH}{it["repo"]}">{h(it["name"][L])}</a></h3>'
+    attrs = f' data-kind="{kind(it)}" data-sector="{" ".join(SECT.get(it.get("repo", ""), []))}"'
+    return (f'<article class="card {cls}"{attrs}>{pic}<h3><a href="{GH}{it["repo"]}">{h(it["name"][L])}</a></h3>'
             f'<div class="data {kind(it)}">{h(label(it, L))}</div><p>{h(it["res"][L])}</p>'
             f'<div class="tags">{tags}</div><div class="actions">{"".join(acts)}</div></article>')
 
@@ -230,14 +293,21 @@ def site(L: int) -> str:
     menu = [("destacados", t(L, "Destacados", "Featured")), ("herramienta", t(L, "Herramienta", "Tool")),
             ("experiencia", t(L, "Experiencia", "Experience")), ("proyectos", t(L, "Proyectos", "Projects")),
             ("stack", "Stack")]
+    R = t(L, "", "../")  # la versión en inglés vive en /en/
+    # Foto y CV son opcionales: aparecen solo si perfil.json los declara (rutas dentro del sitio).
+    photo = (f'<img class="photo" src="{R}{p["photo"]}" alt="{h(p["name"])}" width="112" height="112">'
+             if p.get("photo") else "")
+    cv = (f'<a href="{R}{p["cv"][L]}" download>{t(L, "Descargar CV", "Download CV")}</a>' if p.get("cv") else "")
+    theme_lbl = t(L, "Cambiar entre modo claro y oscuro", "Toggle light and dark mode")
     body = ['<div class="top"><div class="in">'
             f'<a class="brand" href="#">{h(p["name"])}</a>'
             '<nav>' + "".join(f'<a href="#{k}">{v}</a>' for k, v in menu) + '</nav>'
-            f'<div class="lang">{other}</div></div></div><div class="wrap">',
-            f'<header class="hero"><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
-            f'<p class="role">{h(p["role"][L])}</p>',
+            f'<div class="right"><button class="theme" type="button" aria-label="{theme_lbl}" title="{theme_lbl}">{SUN_MOON}</button>'
+            f'<div class="lang">{other}</div></div></div></div><div class="wrap">',
+            f'<header class="hero"><div class="hero-top"><div><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
+            f'<p class="role">{h(p["role"][L])}</p></div>{photo}</div>',
             f'<div class="intro">{intro}</div><div class="links">',
-            f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>',
+            f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>{cv}',
             f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div>',
             '<div class="stats">' + "".join(f'<div class="stat"><b>{n}</b><span>{s}</span></div>' for n, s in stats)
             + "</div></header>",
@@ -254,27 +324,51 @@ def site(L: int) -> str:
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']
+    # Filtros: solo se ofrecen los sectores que tienen al menos un proyecto.
+    used = {s for it in items for s in SECT.get(it["repo"], [])}
+    def chips(group: str, opts: list[tuple[str, str]]) -> str:
+        return "".join(f'<button type="button" class="chip" data-group="{group}" data-value="{v}" '
+                       f'aria-pressed="{"true" if v == "" else "false"}">{h(lbl)}</button>' for v, lbl in opts)
+    sect_opts = [("", t(L, "Todos", "All"))] + [(k, v[L]) for k, v in SECT["_sectores"].items() if k in used]
+    data_opts = [("", t(L, "Todos", "All")), ("real", t(L, "Reales", "Real")),
+                 ("mix", t(L, "Real + simulado", "Real + simulated")), ("sim", t(L, "Simulados", "Simulated"))]
+    tpl = t(L, "Mostrando {n} proyectos", "Showing {n} projects")
+    body.append(f'<div class="filters"><div class="frow"><b>{t(L, "Sector", "Sector")}</b>{chips("sector", sect_opts)}</div>'
+                f'<div class="frow"><b>{t(L, "Datos", "Data")}</b>{chips("datos", data_opts)}</div></div>'
+                f'<p class="count" data-tpl="{tpl}" aria-live="polite">{tpl.replace("{n}", str(len(items)))}</p>')
     for i, c in enumerate(cats, 1):
-        body.append(f'<h2 class="cat" id="c{i}"><span class="n">{i}.</span>{h(c["name"][L])}</h2>')
-        body.append('<div class="grid">' + "".join(card(it, L) for it in c["items"]) + "</div>")
-    tools = "".join(f"<div><b>{h(g['group'][L])}</b>" + "".join(f"<span>{h(x['label'])}</span>" for x in g["items"])
-                    + "</div>" for g in D["tools"])
+        body.append(f'<section class="catwrap"><h2 class="cat" id="c{i}"><span class="n">{i}.</span>{h(c["name"][L])}</h2>')
+        body.append('<div class="grid">' + "".join(card(it, L) for it in c["items"]) + "</div></section>")
+    def tool(x: dict) -> str:
+        ic = (f'<i class="ic" style="--i:url({R}assets/icons/{x["logo"]}.svg)" aria-hidden="true"></i>'
+              if x.get("logo") in ICONS else "")
+        return f"<span>{ic}{h(x['label'])}</span>"
+    tools = "".join(f"<div><b>{h(g['group'][L])}</b>" + "".join(tool(x) for x in g["items"]) + "</div>" for g in D["tools"])
     body += [f'<h2 id="stack">{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
              f'<footer><span>{h(p["name"])} · {h(p["role"][L])}</span><span><a href="{p["github"]}">GitHub</a> · '
              f'<a href="{p["linkedin"]}">LinkedIn</a> · <a href="mailto:{p["email"]}">{p["email"]}</a></span></footer>']
     desc = t(L, "Portafolio de ciencia de datos de Pablo Reyes: proyectos ordenados por el tipo de problema que resuelven.",
              "Data science portfolio of Pablo Reyes: projects organized by the kind of problem they solve.")
     lang = t(L, "es", "en")
+    title = f'Pablo Reyes · {t(L, "Ciencia de datos", "Data science")}'
+    url = PAGE + t(L, "", "en/")
+    og = (f'<meta property="og:type" content="website"><meta property="og:title" content="{title}">'
+          f'<meta property="og:description" content="{desc}"><meta property="og:url" content="{url}">'
+          f'<meta property="og:image" content="{PAGE}assets/og-{lang}.png"><meta property="og:image:width" content="1200">'
+          f'<meta property="og:image:height" content="630"><meta property="og:locale" content="{t(L, "es_CL", "en_US")}">'
+          f'<meta name="twitter:card" content="summary_large_image">\n'
+          f'<link rel="icon" href="{R}favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="{R}assets/icon-180.png">\n')
     return (f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-            f'<title>Pablo Reyes · {t(L, "Ciencia de datos", "Data science")}</title>\n'
-            f'<meta name="description" content="{desc}">\n'
+            f'<title>{title}</title>\n'
+            f'<meta name="description" content="{desc}">\n' + og +
+            f'<script>{THEME_BOOT}</script>\n'
             f'<link rel="alternate" hreflang="es" href="{PAGE}"><link rel="alternate" hreflang="en" href="{PAGE}en/">\n'
             '<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">'
             '<meta name="theme-color" content="#0D1117" media="(prefers-color-scheme: dark)">\n'
             '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
             '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
-            f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + "\n</div>\n</body>\n</html>\n")
+            f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + f"\n</div>\n<script>{JS}</script>\n</body>\n</html>\n")
 
 
 
@@ -291,6 +385,7 @@ def main() -> None:
     escribir(ROOT / "README.en.md", readme(EN))
     print(f"README.md, README.en.md: {len(all_items())} proyectos")
     if a.site:
+        ICONS.update(f.stem for f in (a.site / "assets" / "icons").glob("*.svg"))
         (a.site / "en").mkdir(parents=True, exist_ok=True)
         escribir(a.site / "index.html", site(ES))
         escribir(a.site / "en" / "index.html", site(EN))
