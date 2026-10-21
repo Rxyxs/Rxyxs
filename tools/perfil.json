@@ -841,10 +841,10 @@
       "Ley y fragmentación (.NET)",
       "Ore grade and fragmentation (.NET)"
      ],
-     "data": "sim",
+     "data": "mix",
      "res": [
-      "ML.NET + ONNX en app de escritorio: P80 con R² 0,957.",
-      "ML.NET + ONNX in a desktop app: P80 at R² 0.957."
+      "ML.NET + ONNX en app de escritorio; sobre 97 tronaduras reales publicadas el modelo explica 0,76 con split aleatorio pero -0,59 en una mina nueva, frente al 0,957 sintético.",
+      "ML.NET + ONNX in a desktop app; on 97 real published blasts the model explains 0.76 with a random split but -0.59 at a new mine, against the synthetic 0.957."
      ],
      "tags": [
       "csharp",
