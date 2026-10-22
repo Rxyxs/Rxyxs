@@ -18,7 +18,7 @@
 
 I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
 
-Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end.
+Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved seven projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
 
 ## Featured projects
 
@@ -45,13 +45,27 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 <code>demand-forecasting</code> <code>lightgbm</code> <code>quantile-regression</code>
 </td>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/Rxyxs/chile-fintech-experimentation-lab">A/B experimentation lab</a></h3>
-<sub>Monte Carlo · <a href="https://rxyxs.github.io/chile-fintech-experimentation-lab/">page</a></sub>
-<p>Checking an A/B test every day inflates the false-positive rate from 5% to <b>24.2%</b>, and the Bayesian rule usually assumed "safe" barely helps (<b>20.5%</b>).</p>
-<code>ab-testing</code> <code>cuped</code> <code>sequential-testing</code>
+<h3><a href="https://github.com/Rxyxs/chile-mining-ops-agent">Mining operations agent with a local LLM</a></h3>
+<sub>real data · <a href="https://rxyxs.github.io/chile-mining-ops-agent/">page</a></sub>
+<p>An agent with Qwen 2.5 running on CPU, over real plant and ChileCompra data, measured on 100 queries: it picks the right tool <b>99 times</b> but miscopies large amounts; returning them in millions lifts grounded answers from <b>67 to 86</b>.</p>
+<code>llm-agent</code> <code>tool-calling</code> <code>evaluation</code>
 </td>
 </tr>
 </table>
+
+## What changed on real data
+
+Seven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+
+| Project | Metric | Simulated | Real | Why |
+|---|---|---:|---:|---|
+| **[E-commerce fraud pipeline](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590k transactions</sub> | PR-AUC | 0.993 | **0.052** | The behavioral features carry almost no signal on real fraud. |
+| **[C + Ruby + Python fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1.000 | **0.098** | Two of its four rules never fire: their lists were invented. |
+| **[Unsupervised graph AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204k Bitcoin transactions</sub> | ROC-AUC | 0.893 | **0.17–0.33** | Illicit flows are typical, not anomalous: it falls below random. |
+| **[Blast fragmentation](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 published blasts, unseen mine</sub> | R² | 0.957 | **−0.59** | A random split lets it recognise the site; at a new mine it is worse than the mean. |
+| **[Order-flow detector (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX and Binance</sub> | Alerts (target 0.27%) | 0.02% | **1.4–24%** | Real tails are far heavier than the assumed Student-t. |
+| **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 | **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
+| **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.55 vs. 0.65** | The shared network loses both tasks on real trucks. |
 
 ## Open-source tool
 

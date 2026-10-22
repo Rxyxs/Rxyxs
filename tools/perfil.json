@@ -102,23 +102,23 @@
    "img": "figures/accuracy_vs_decision.png"
   },
   {
-   "repo": "chile-fintech-experimentation-lab",
+   "repo": "chile-mining-ops-agent",
    "name": [
-    "Laboratorio de experimentación A/B",
-    "A/B experimentation lab"
+    "Agente de operaciones mineras con LLM local",
+    "Mining operations agent with a local LLM"
    ],
-   "data": "mc",
+   "data": "real",
    "res": [
-    "Revisar un test A/B todos los días infla el falso positivo de 5% a <b>24,2%</b>, y la regla bayesiana que se suele asumir \"segura\" casi no ayuda (<b>20,5%</b>).",
-    "Checking an A/B test every day inflates the false-positive rate from 5% to <b>24.2%</b>, and the Bayesian rule usually assumed \"safe\" barely helps (<b>20.5%</b>)."
+    "Un agente con Qwen 2.5 corriendo en CPU, sobre datos reales de planta y ChileCompra, medido en 100 consultas: elige bien la herramienta <b>99 veces</b>, pero copia mal los montos grandes; devolverlos en millones sube las respuestas ancladas de <b>67 a 86</b>.",
+    "An agent with Qwen 2.5 running on CPU, over real plant and ChileCompra data, measured on 100 queries: it picks the right tool <b>99 times</b> but miscopies large amounts; returning them in millions lifts grounded answers from <b>67 to 86</b>."
    ],
    "tags": [
-    "ab-testing",
-    "cuped",
-    "sequential-testing"
+    "llm-agent",
+    "tool-calling",
+    "evaluation"
    ],
    "page": true,
-   "img": "figures/peeking_inflation_curve.png"
+   "img": "figures/anomaly_scores.png"
   }
  ],
  "work": {
@@ -1223,12 +1223,229 @@
   "intro": [
    [
     "Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.",
-    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin."
+    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé siete proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué."
    ],
    [
     "I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.",
-    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end."
+    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved seven projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down."
    ]
+  ]
+ },
+ "real_vs_sim": {
+  "title": [
+   "Lo que cambió con datos reales",
+   "What changed on real data"
+  ],
+  "intro": [
+   "Siete proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
+   "Seven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+  ],
+  "head": [
+   [
+    "Proyecto",
+    "Métrica",
+    "Simulado",
+    "Real",
+    "Por qué"
+   ],
+   [
+    "Project",
+    "Metric",
+    "Simulated",
+    "Real",
+    "Why"
+   ]
+  ],
+  "rows": [
+   {
+    "repo": "fraud-detection-techniques-lab",
+    "name": [
+     "Pipeline de fraude e-commerce",
+     "E-commerce fraud pipeline"
+    ],
+    "metric": [
+     "PR-AUC",
+     "PR-AUC"
+    ],
+    "sim": [
+     "0,993",
+     "0.993"
+    ],
+    "real": [
+     "0,052",
+     "0.052"
+    ],
+    "data": [
+     "IEEE-CIS, 590 mil transacciones",
+     "IEEE-CIS, 590k transactions"
+    ],
+    "why": [
+     "Las variables de comportamiento casi no tienen señal en fraude real.",
+     "The behavioral features carry almost no signal on real fraud."
+    ]
+   },
+   {
+    "repo": "chile-polyglot-fraud-engine",
+    "name": [
+     "Motor de fraude C + Ruby + Python",
+     "C + Ruby + Python fraud engine"
+    ],
+    "metric": [
+     "PR-AUC",
+     "PR-AUC"
+    ],
+    "sim": [
+     "1,000",
+     "1.000"
+    ],
+    "real": [
+     "0,098",
+     "0.098"
+    ],
+    "data": [
+     "IEEE-CIS",
+     "IEEE-CIS"
+    ],
+    "why": [
+     "Dos de sus cuatro reglas nunca se disparan: sus listas eran inventadas.",
+     "Two of its four rules never fire: their lists were invented."
+    ]
+   },
+   {
+    "repo": "fraud-detection-techniques-lab",
+    "name": [
+     "AML no supervisado sobre grafo",
+     "Unsupervised graph AML"
+    ],
+    "metric": [
+     "ROC-AUC",
+     "ROC-AUC"
+    ],
+    "sim": [
+     "0,893",
+     "0.893"
+    ],
+    "real": [
+     "0,17–0,33",
+     "0.17–0.33"
+    ],
+    "data": [
+     "Elliptic, 204 mil transacciones Bitcoin",
+     "Elliptic, 204k Bitcoin transactions"
+    ],
+    "why": [
+     "Lo ilícito es típico, no anómalo: queda bajo el azar.",
+     "Illicit flows are typical, not anomalous: it falls below random."
+    ]
+   },
+   {
+    "repo": "chile-mining-grade-blast-quality-dotnet",
+    "name": [
+     "Fragmentación de tronadura",
+     "Blast fragmentation"
+    ],
+    "metric": [
+     "R²",
+     "R²"
+    ],
+    "sim": [
+     "0,957",
+     "0.957"
+    ],
+    "real": [
+     "−0,59",
+     "−0.59"
+    ],
+    "data": [
+     "97 tronaduras publicadas, mina nueva",
+     "97 published blasts, unseen mine"
+    ],
+    "why": [
+     "Con split aleatorio el modelo reconoce la faena; en una mina nueva es peor que el promedio.",
+     "A random split lets it recognise the site; at a new mine it is worse than the mean."
+    ]
+   },
+   {
+    "repo": "lithium-orderbook-imbalance-cpp",
+    "name": [
+     "Detector de order flow (C++)",
+     "Order-flow detector (C++)"
+    ],
+    "metric": [
+     "Alertas (meta 0,27%)",
+     "Alerts (target 0.27%)"
+    ],
+    "sim": [
+     "0,02%",
+     "0.02%"
+    ],
+    "real": [
+     "1,4–24%",
+     "1.4–24%"
+    ],
+    "data": [
+     "IEX y Binance",
+     "IEX and Binance"
+    ],
+    "why": [
+     "Las colas reales son mucho más pesadas que la Student-t supuesta.",
+     "Real tails are far heavier than the assumed Student-t."
+    ]
+   },
+   {
+    "repo": "paysim-anomaly-detection-benchmark",
+    "name": [
+     "19 detectores de anomalías",
+     "19 anomaly detectors"
+    ],
+    "metric": [
+     "ROC-AUC del baseline",
+     "Baseline ROC-AUC"
+    ],
+    "sim": [
+     "0,383",
+     "0.383"
+    ],
+    "real": [
+     "0,931",
+     "0.931"
+    ],
+    "data": [
+     "ULB e IEEE-CIS",
+     "ULB and IEEE-CIS"
+    ],
+    "why": [
+     "El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere.",
+     "The 'below chance' baseline was a simulator artifact; the ranking barely transfers."
+    ]
+   },
+   {
+    "repo": "failure-prediction-signal-lab",
+    "name": [
+     "Red multi-task de mantenimiento",
+     "Multi-task maintenance network"
+    ],
+    "metric": [
+     "AUC vs. LightGBM",
+     "AUC vs. LightGBM"
+    ],
+    "sim": [
+     "empata",
+     "ties"
+    ],
+    "real": [
+     "0,55 vs. 0,65",
+     "0.55 vs. 0.65"
+    ],
+    "data": [
+     "23.550 camiones SCANIA",
+     "23,550 SCANIA trucks"
+    ],
+    "why": [
+     "La red compartida pierde en las dos tareas con camiones reales.",
+     "The shared network loses both tasks on real trucks."
+    ]
+   }
   ]
  }
 }

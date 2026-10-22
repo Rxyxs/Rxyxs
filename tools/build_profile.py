@@ -82,6 +82,14 @@ def readme(L: int) -> str:
         out.append("</tr>")
     out += ["</table>", ""]
 
+    rv = D["real_vs_sim"]
+    out += [f"## {rv['title'][L]}", "", rv["intro"][L], "",
+            "| " + " | ".join(rv["head"][L]) + " |", "|---|---|---:|---:|---|"]
+    for r in rv["rows"]:
+        out.append(f"| **[{r['name'][L]}]({GH}{r['repo']})**<br><sub>{r['data'][L]}</sub> | {r['metric'][L]} | "
+                   f"{r['sim'][L]} | **{r['real'][L]}** | {r['why'][L]} |")
+    out.append("")
+
     lib = D["library"]
     out += [f"## {t(L, 'Herramienta abierta', 'Open-source tool')}", "",
             f"**[{lib['name'][L]}]({GH}{lib['repo']})**  ", lib["res"][L], "",
@@ -178,6 +186,15 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .actions a{text-decoration:none;font-weight:500}
 .actions a:hover{text-decoration:underline}
 .lib{border-left:3px solid var(--real)}
+.rvs{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.rvs h3{font-size:1rem;margin:0}.rvs h3 a{color:var(--ink);text-decoration:none}.rvs h3 a:hover{color:var(--accent)}
+.rvs .metric{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.rvs .vals{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.rvs .vals span{display:flex;flex-direction:column;font-size:1.35rem;font-weight:700;line-height:1.1}
+.rvs .vals small{font-size:.7rem;font-weight:500;color:var(--muted)}
+.rvs .vals .sim{color:var(--muted)}.rvs .vals .real{color:var(--ink)}.rvs .arrow{color:var(--muted);font-size:1.1rem}
+.rvs p{margin:2px 0 0;color:var(--body);font-size:.92rem}.rvs .src{font-size:.78rem;color:var(--muted);margin-top:auto}
+.rvsg{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;font-size:.85rem;margin:4px 0 12px;color:var(--body)}
 h2.cat{font-size:1.1rem;margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--line)}
 h2.cat .n{color:var(--accent);margin-right:8px;font-variant-numeric:tabular-nums}
@@ -231,7 +248,7 @@ JS = """
   apply();
   if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
-    [].forEach.call(document.querySelectorAll('.card'),function(c){c.classList.add('reveal');io.observe(c)});}
+    [].forEach.call(document.querySelectorAll('.card,.rvs'),function(c){c.classList.add('reveal');io.observe(c)});}
 })();
 """
 
@@ -280,6 +297,21 @@ def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
             f'<div class="tags">{tags}</div><div class="actions">{"".join(acts)}</div></article>')
 
 
+def rvs_section(L: int) -> str:
+    """Simulado contra real: una tarjeta por proyecto con la cifra antes y después."""
+    rv = D["real_vs_sim"]
+    cards = "".join(
+        f'<article class="rvs"><h3><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a></h3>'
+        f'<div class="metric">{h(r["metric"][L])}</div>'
+        f'<div class="vals"><span class="sim"><small>{t(L, "Simulado", "Simulated")}</small>{h(r["sim"][L])}</span>'
+        f'<span class="arrow" aria-hidden="true">→</span>'
+        f'<span class="real"><small>{t(L, "Real", "Real")}</small>{h(r["real"][L])}</span></div>'
+        f'<p>{h(r["why"][L])}</p><div class="src">{h(r["data"][L])}</div></article>'
+        for r in rv["rows"])
+    return (f'<h2 id="real">{h(rv["title"][L])}</h2><p class="sub">{h(rv["intro"][L])}</p>'
+            f'<div class="grid rvsg">{cards}</div>')
+
+
 def site(L: int) -> str:
     p, cats, lib, w = D["profile"], D["categories"], D["library"], D["work"]
     other = t(L, '<a href="en/">English</a>', '<a href="../">Español</a>')
@@ -290,7 +322,8 @@ def site(L: int) -> str:
              (len(cats), t(L, "tipos de problema", "kinds of problem")),
              (sum(kind(it) == "real" for it in items), t(L, "con datos reales", "on real data")),
              (sum(bool(it.get("page")) for it in items), t(L, "con página de resultados", "with a results page"))]
-    menu = [("destacados", t(L, "Destacados", "Featured")), ("herramienta", t(L, "Herramienta", "Tool")),
+    menu = [("destacados", t(L, "Destacados", "Featured")), ("real", t(L, "Simulado vs. real", "Simulated vs. real")),
+            ("herramienta", t(L, "Herramienta", "Tool")),
             ("experiencia", t(L, "Experiencia", "Experience")), ("proyectos", t(L, "Proyectos", "Projects")),
             ("stack", "Stack")]
     R = t(L, "", "../")  # la versión en inglés vive en /en/
@@ -314,6 +347,7 @@ def site(L: int) -> str:
             f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L, img=True) for f in D["featured"]) + "</div>",
+            rvs_section(L),
             f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
             f'<article class="card lib"><h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
             f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
