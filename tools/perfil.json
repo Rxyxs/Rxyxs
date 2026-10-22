@@ -440,10 +440,10 @@
       "Falla desde señal continua",
       "Failure from continuous signal"
      ],
-     "data": "mix",
+     "data": "real",
      "res": [
-      "Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,5× a una CNN.",
-      "Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×."
+      "Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales (AUC 0,55 vs 0,65).",
+      "Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks (AUC 0.55 vs 0.65)."
      ],
      "tags": [
       "remaining-useful-life",

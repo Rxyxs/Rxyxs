@@ -112,7 +112,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Predictive maintenance (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>real data · [page](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23,550 trucks: −31% official cost on test, but the saving runs out if a visit costs double, because the model overstates risk. | `predictive-maintenance` `survival-analysis` `shap` |
-| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulated</sub> | Bearings (NASA IMS) and seismic signal (LANL): spectral features with boosting beat a CNN by 2.5×. | `remaining-useful-life` `signal-processing` `fft` |
+| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real data</sub> | Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks (AUC 0.55 vs 0.65). | `remaining-useful-life` `signal-processing` `fft` |
 | **[SAG mill digital twin](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
