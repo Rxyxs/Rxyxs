@@ -66,6 +66,8 @@ def readme(L: int) -> str:
            f"# {p['name']}", "", f"**{p['role'][L]}**", "",
            f'<a href="{p["site"]}">{badge(t(L, "Portafolio", "Portfolio"), "githubpages", "for-the-badge")}</a>',
            f'<a href="{p["linkedin"]}">{badge("LinkedIn", "linkedin", "for-the-badge")}</a>',
+           *([f'<a href="{PAGE}{p["cv"][L]}">{badge("CV", "adobeacrobatreader", "for-the-badge")}</a>']
+             if p.get("cv") else []),
            f'<a href="mailto:{p["email"]}">{badge("Email", "gmail", "for-the-badge")}</a>',
            "", "</div>", "", "---", "", "\n\n".join(p["intro"][L]), ""]
 

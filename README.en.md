@@ -10,6 +10,7 @@
 
 <a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portfolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
+<a href="https://rxyxs.github.io/assets/cv/Pablo_Reyes_CV_EN.pdf"><img src="https://img.shields.io/badge/CV-0D1117?style=for-the-badge&logo=adobeacrobatreader&logoColor=00FF66" alt="CV"></a>
 <a href="mailto:preyesp09@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=00FF66" alt="Email"></a>
 
 </div>

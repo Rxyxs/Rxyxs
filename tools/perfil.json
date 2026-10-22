@@ -1220,6 +1220,10 @@
   "email": "preyesp09@gmail.com",
   "github": "https://github.com/Rxyxs",
   "site": "https://rxyxs.github.io/",
+  "cv": [
+   "assets/cv/Pablo_Reyes_CV_ES.pdf",
+   "assets/cv/Pablo_Reyes_CV_EN.pdf"
+  ],
   "intro": [
    [
     "Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.",
