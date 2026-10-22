@@ -18,7 +18,7 @@
 
 Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
 
-En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin.
+En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé siete proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
 
 ## Proyectos destacados
 
@@ -45,13 +45,27 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 <code>demand-forecasting</code> <code>lightgbm</code> <code>quantile-regression</code>
 </td>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/Rxyxs/chile-fintech-experimentation-lab">Laboratorio de experimentación A/B</a></h3>
-<sub>Monte Carlo · <a href="https://rxyxs.github.io/chile-fintech-experimentation-lab/">página</a></sub>
-<p>Revisar un test A/B todos los días infla el falso positivo de 5% a <b>24,2%</b>, y la regla bayesiana que se suele asumir "segura" casi no ayuda (<b>20,5%</b>).</p>
-<code>ab-testing</code> <code>cuped</code> <code>sequential-testing</code>
+<h3><a href="https://github.com/Rxyxs/chile-mining-ops-agent">Agente de operaciones mineras con LLM local</a></h3>
+<sub>datos reales · <a href="https://rxyxs.github.io/chile-mining-ops-agent/">página</a></sub>
+<p>Un agente con Qwen 2.5 corriendo en CPU, sobre datos reales de planta y ChileCompra, medido en 100 consultas: elige bien la herramienta <b>99 veces</b>, pero copia mal los montos grandes; devolverlos en millones sube las respuestas ancladas de <b>67 a 86</b>.</p>
+<code>llm-agent</code> <code>tool-calling</code> <code>evaluation</code>
 </td>
 </tr>
 </table>
+
+## Lo que cambió con datos reales
+
+Siete proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+
+| Proyecto | Métrica | Simulado | Real | Por qué |
+|---|---|---:|---:|---|
+| **[Pipeline de fraude e-commerce](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590 mil transacciones</sub> | PR-AUC | 0,993 | **0,052** | Las variables de comportamiento casi no tienen señal en fraude real. |
+| **[Motor de fraude C + Ruby + Python](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1,000 | **0,098** | Dos de sus cuatro reglas nunca se disparan: sus listas eran inventadas. |
+| **[AML no supervisado sobre grafo](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204 mil transacciones Bitcoin</sub> | ROC-AUC | 0,893 | **0,17–0,33** | Lo ilícito es típico, no anómalo: queda bajo el azar. |
+| **[Fragmentación de tronadura](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 tronaduras publicadas, mina nueva</sub> | R² | 0,957 | **−0,59** | Con split aleatorio el modelo reconoce la faena; en una mina nueva es peor que el promedio. |
+| **[Detector de order flow (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX y Binance</sub> | Alertas (meta 0,27%) | 0,02% | **1,4–24%** | Las colas reales son mucho más pesadas que la Student-t supuesta. |
+| **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 | **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
+| **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,55 vs. 0,65** | La red compartida pierde en las dos tareas con camiones reales. |
 
 ## Herramienta abierta
 
