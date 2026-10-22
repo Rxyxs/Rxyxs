@@ -112,7 +112,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Mantenimiento predictivo (SCANIA)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>datos reales · [página](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 23.550 camiones: −31% del costo oficial en test, pero el ahorro se agota si la visita cuesta el doble, porque el modelo exagera el riesgo. | `predictive-maintenance` `survival-analysis` `shap` |
-| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real + simulado</sub> | Rodamientos (NASA IMS) y señal sísmica (LANL): features espectrales con boosting le ganan 2,5× a una CNN. | `remaining-useful-life` `signal-processing` `fft` |
+| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>datos reales</sub> | Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales (AUC 0,55 vs 0,65). | `remaining-useful-life` `signal-processing` `fft` |
 | **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
