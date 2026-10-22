@@ -10,7 +10,7 @@
   "chile-polyglot-fraud-engine": "figures/model_comparison_roc.png",
   "lithium-orderbook-imbalance-cpp": null,
   "iot-anomaly-benchmark": "img/leaderboard.png",
-  "heavy-truck-predictive-maintenance": "figures/02_matriz_confusion.png",
+  "heavy-truck-predictive-maintenance": "figures/es/overview.png",
   "chile-mining-sag-energy-digital-twin": "figures/kalman_filter_trace_animated.gif",
   "olist-delivery-delays": "img/dose_response.png",
   "retail-price-elasticity": "img/ladder.png",
