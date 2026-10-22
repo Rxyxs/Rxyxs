@@ -288,10 +288,10 @@
       "Laboratorio de fraude y AML",
       "Fraud and AML lab"
      ],
-     "data": "mix",
+     "data": "real",
      "res": [
-      "El ROC-AUC hace parecer casi igual (0,938 vs 0,965) un modelo con PR-AUC 2,6× peor; AML por grafos sin etiquetas: ROC-AUC 0,893.",
-      "ROC-AUC makes a model with 2.6× worse PR-AUC look almost equal (0.938 vs 0.965); label-free graph AML: ROC-AUC 0.893."
+      "Cuatro técnicas, todas con datos reales: el pipeline de e-commerce cae de PR-AUC 0,993 sintético a 0,052 en IEEE-CIS, y el ensamble AML no supervisado queda bajo el azar en Elliptic (ROC-AUC 0,17-0,33) porque el flujo ilícito es típico, no anómalo.",
+      "Four techniques, all with real data: the e-commerce pipeline drops from a synthetic PR-AUC of 0.993 to 0.052 on IEEE-CIS, and the unsupervised AML ensemble falls below random on Elliptic (ROC-AUC 0.17-0.33) because illicit flows are typical, not anomalous."
      ],
      "tags": [
       "fraud-detection",
