@@ -19,7 +19,7 @@
 
 I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
 
-Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved nine projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
+Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved ten projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
 
 ## Featured projects
 
@@ -56,7 +56,7 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 
 ## What changed on real data
 
-Nine projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Ten projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
 
 | Project | Metric | Simulated | Real | Why |
 |---|---|---:|---:|---|
@@ -69,6 +69,7 @@ Nine projects started on simulated data, and I later ran them, with the method u
 | **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
 | **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 | **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
 | **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged | **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
+| **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86k road pairs</sub> | Route plan, km | 572 | **835 driven** | The simulated detour factor falls short: 19% of real trips exceed its maximum. |
 
 ## Open-source tool
 
@@ -153,7 +154,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Flotation plant](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>real data · [page](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Real iron-ore plant: R² 0.83 on a random split is -0.43 in time order; only recent lab results beat persistence, and four models prescribe opposite pH moves. | `soft-sensor` `walk-forward` `optimization` |
-| **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>real districts, simulated demand · [page](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Multi-depot routing with time windows over real polygons: 0 of 173 zones unserved. | `or-tools` `vrptw` `h3` |
+| **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Multi-depot routing with time windows on real population (Kontur rescaled to Censo 2017) and real roads (OSRM): a plan built on simulated distances is 46% longer once driven. | `or-tools` `vrptw` `h3` `osrm` |
 | **[Churn as a business decision](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>real data · [page](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | 10,000 real bank customers: the complaints column was a leak (AUC 1.00 vs 0.85); a value-based threshold recovers US$189,930 contacting 42%, vs US$143,842 contacting everyone. | `mlflow` `fastapi` `docker` |
 | **[Quality failures on a Bosch line](https://github.com/Rxyxs/bosch-line-quality)**<br><sub>real data · [page](https://rxyxs.github.io/bosch-line-quality/)</sub> | 1.18M real parts: failures come in lots (11x next to a failed part). Shuffled CV overstates (0.40 vs 0.21 on later parts). Inspecting the riskiest 5% catches **61%** of failures. | `lightgbm` `imbalanced-learning` `quality-control` |
 

@@ -600,15 +600,16 @@
       "Logística de última milla",
       "Last-mile logistics"
      ],
-     "data": "comunas",
+     "data": "mix",
      "res": [
-      "Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender.",
-      "Multi-depot routing with time windows over real polygons: 0 of 173 zones unserved."
+      "Ruteo multi-depósito con ventanas horarias sobre población real (Kontur ajustado al Censo 2017) y calles reales (OSRM): un plan hecho con distancias simuladas resulta 46% más largo al manejarlo.",
+      "Multi-depot routing with time windows on real population (Kontur rescaled to Censo 2017) and real roads (OSRM): a plan built on simulated distances is 46% longer once driven."
      ],
      "tags": [
       "or-tools",
       "vrptw",
-      "h3"
+      "h3",
+      "osrm"
      ],
      "page": true
     },
@@ -1227,11 +1228,11 @@
   "intro": [
    [
     "Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.",
-    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé nueve proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué."
+    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé diez proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué."
    ],
    [
     "I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.",
-    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved nine projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down."
+    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved ten projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down."
    ]
   ]
  },
@@ -1241,8 +1242,8 @@
    "What changed on real data"
   ],
   "intro": [
-   "Nueve proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
-   "Nine projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+   "Diez proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
+   "Ten projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
   ],
   "head": [
    [
@@ -1502,6 +1503,33 @@
     "why": [
      "El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación.",
      "SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate."
+    ]
+   },
+   {
+    "repo": "chile-spatial-logistics-opt",
+    "name": [
+     "Logística de última milla",
+     "Last-mile logistics"
+    ],
+    "metric": [
+     "Km del plan de rutas",
+     "Route plan, km"
+    ],
+    "sim": [
+     "572",
+     "572"
+    ],
+    "real": [
+     "835 manejado",
+     "835 driven"
+    ],
+    "data": [
+     "OSRM, 86 mil pares de calles",
+     "OSRM, 86k road pairs"
+    ],
+    "why": [
+     "La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo.",
+     "The simulated detour factor falls short: 19% of real trips exceed its maximum."
     ]
    }
   ]
