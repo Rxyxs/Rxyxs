@@ -1,6 +1,6 @@
 """Genera la GitHub Page de un repositorio a partir de su README y sus figuras.
 
-    python tools/make_pages.py <ruta-al-repo> [--lang es|en] [--dry-run]
+    python tools/make_pages.py <ruta-al-repo> [--lang es|en] [--dry-run] [--repair]
 
 **Qué hace y qué no.** La página es un *índice visual*: toma el título, la
 entradilla y cada figura del README con el párrafo que la explica, y las muestra
@@ -46,11 +46,54 @@ class Page:
 
 
 def _clean_inline(md: str) -> str:
-    """Markdown en linea -> HTML, lo justo: negrita, codigo y enlaces."""
+    """Markdown en linea -> HTML, lo justo: negrita, cursiva, codigo y enlaces.
+
+    Los enlaces relativos (a un archivo del repo) apuntan a una ruta que en la
+    pagina no existe, asi que se deja solo su texto.
+    """
     s = html.escape(md.strip())
     s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
+    s = re.sub(r"(?<![*\w])\*([^*]+)\*(?![*\w])", r"<em>\1</em>", s)
     s = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', s)
+    s = re.sub(r"\[([^\]]+)\]\([^)\s]+\)", r"\1", s)
+    return s
+
+
+def _is_block(t: str) -> bool:
+    return bool(HEADING_RE.match(t) or FIG_RE.match(t) or t.startswith(("|", "```", "<", "---")))
+
+
+def _paragraph(lines: list[str], start: int) -> str:
+    """El parrafo que empieza en `start`, con todas sus lineas.
+
+    Los READMEs cortan los parrafos a ~80 columnas. La primera version de este
+    script tomaba solo la primera linea, y cada leyenda quedaba cortada a mitad
+    de frase.
+    """
+    out = []
+    for ln in lines[start:]:
+        t = ln.strip()
+        if not t or _is_block(t):
+            break
+        out.append(t)
+    return " ".join(out)
+
+
+def _trim_sentences(s: str, limit: int = 600) -> str:
+    """Una leyenda larguisima no se lee en una pagina de figuras: se corta en la
+    ultima frase completa antes de `limit` (el resto sigue en el README)."""
+    if len(s) <= limit:
+        return s
+    cut = s.rfind(". ", 0, limit)
+    return s[:cut + 1] if cut > 0 else s
+
+
+def _unwrap_italics(s: str) -> str:
+    """Las leyendas suelen ir enteras en cursiva (*...*); en la pagina ya lo parecen."""
+    s = s.strip()
+    if len(s) > 2 and s[0] == s[-1] and s[0] in "*_" and s[1] != s[0]:
+        return s[1:-1].strip()
     return s
 
 
@@ -82,10 +125,11 @@ def parse_readme(path: Path) -> Page:
     # el selector de idioma y las lineas vacias.
     while i < len(lines):
         ln = lines[i].strip()
-        if not ln or BADGE_RE.match(ln) or LANG_TOGGLE_RE.match(ln) or HEADING_RE.match(ln):
+        if (not ln or BADGE_RE.match(ln) or LANG_TOGGLE_RE.match(ln) or _is_block(ln)
+                or ln.startswith(("🌐", ">")) or "](README" in ln):
             i += 1
             continue
-        lede = ln
+        lede = _paragraph(lines, i)
         break
 
     # Figuras, con la seccion donde viven y el parrafo que las sigue.
@@ -104,13 +148,12 @@ def parse_readme(path: Path) -> Page:
         if m.group("src").startswith(("http://", "https://")):
             continue
         caption = ""
-        for nxt in lines[idx + 1: idx + 6]:
-            t = nxt.strip()
+        for j in range(idx + 1, min(idx + 6, len(lines))):
+            t = lines[j].strip()
             if not t or FIG_RE.match(t):
                 continue
-            if HEADING_RE.match(t) or t.startswith("|") or t.startswith("```"):
-                break
-            caption = t
+            if not _is_block(t):
+                caption = _trim_sentences(_unwrap_italics(_paragraph(lines, j)))
             break
         figures.append(Figure(src=m.group("src"), alt=m.group("alt"),
                               caption=caption, section=section))
@@ -174,7 +217,8 @@ def render(page: Page, repo: str, lang: str) -> str:
         "<!doctype html>", f'<html lang="{lang}">', "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         f"<title>{html.escape(page.title)}</title>",
-        f'<meta name="description" content="{html.escape(page.lede[:180])}">',
+        f'<meta name="description" content="{html.escape(re.sub(r"[*_`]", "", page.lede)[:180])}">',
+        f'<meta name="generator" content="{GENERATOR}">',
         f"<style>{CSS}</style>", "</head>", "<body>", '<div class="wrap">',
         "<header>", f"<h1>{html.escape(page.title)}</h1>",
         f'<p class="lede">{_clean_inline(page.lede)}</p>',
@@ -204,11 +248,78 @@ def render(page: Page, repo: str, lang: str) -> str:
     return "\n".join(parts)
 
 
-def build(repo_dir: Path, lang: str, dry_run: bool = False) -> bool:
+GENERATOR = "Rxyxs/tools/make_pages.py"
+
+
+def made_by_this_script(index: Path) -> bool:
+    """Una pagina generada lleva la marca, o (las de antes de la marca) la frase de entrada."""
+    s = index.read_text(encoding="utf-8")
+    return GENERATOR in s or any(t["intro"] in s for t in TEXT.values())
+
+
+def _readme(repo_dir: Path, lang: str) -> Path | None:
     readme = repo_dir / ("README.md" if lang == "en" else "README.es.md")
     if not readme.exists():
         readme = repo_dir / "README.md"
-    if not readme.exists():
+    return readme if readme.exists() else None
+
+
+FIGURE_HTML_RE = re.compile(
+    r'(?P<img><img src="figures/(?P<name>[^"]+)"[^>]*>)(?P<cap>\s*<figcaption>.*?</figcaption>)?', re.S)
+
+
+def repair(repo_dir: Path, lang: str, dry_run: bool = False) -> bool:
+    """Arregla una pagina generada sin rehacerla.
+
+    Varias paginas generadas se completaron despues a mano (tablas y secciones
+    con los resultados sobre datos reales), asi que regenerarlas borraria ese
+    trabajo. Esto solo reemplaza cada leyenda por el parrafo completo que el
+    README pone bajo la misma figura, rehace la meta descripcion desde la
+    entradilla visible y actualiza las copias de las figuras que la pagina
+    muestra. Lo demas queda como esta.
+    """
+    index = repo_dir / "docs" / "index.html"
+    readme = _readme(repo_dir, lang)
+    if not index.exists() or readme is None or not made_by_this_script(index):
+        print(f"  [saltado] {repo_dir.name}: sin pagina generada o sin README")
+        return False
+    page = parse_readme(readme)
+    captions = {Path(f.src).name: f.caption for f in page.figures if f.caption}
+    sources = {Path(f.src).name: repo_dir / f.src for f in page.figures}
+
+    def fix(m: re.Match) -> str:
+        cap = captions.get(m.group("name"))
+        if not cap:
+            return m.group(0)
+        return f'{m.group("img")}\n<figcaption>{_clean_inline(cap)}</figcaption>'
+
+    before = index.read_text(encoding="utf-8")
+    after = FIGURE_HTML_RE.sub(fix, before)
+    lede = re.search(r'<p class="lede">(.*?)</p>', after, re.S)
+    if lede:
+        text = html.unescape(re.sub(r"<[^>]+>", "", lede.group(1))).strip()
+        after = re.sub(r'<meta name="description" content="[^"]*">',
+                       lambda _: f'<meta name="description" content="{html.escape(text[:180])}">', after, count=1)
+
+    stale = []
+    for name in sorted(set(re.findall(r'<img src="figures/([^"]+)"', after))):
+        src, dst = sources.get(name), repo_dir / "docs" / "figures" / name
+        if src is None or not src.exists() or src.resolve() == dst.resolve():
+            continue
+        if not dst.exists() or src.read_bytes() != dst.read_bytes():
+            stale.append(name)
+            if not dry_run:
+                shutil.copy2(src, dst)
+    if after != before and not dry_run:
+        index.write_text(after, encoding="utf-8", newline="\n")
+    print(f"  [{'cambia' if after != before or stale else 'igual'}] {repo_dir.name}: "
+          f"{len(captions)} leyendas, {len(stale)} figuras actualizadas")
+    return after != before or bool(stale)
+
+
+def build(repo_dir: Path, lang: str, dry_run: bool = False) -> bool:
+    readme = _readme(repo_dir, lang)
+    if readme is None:
         print(f"  [saltado] {repo_dir.name}: sin README")
         return False
 
@@ -224,7 +335,7 @@ def build(repo_dir: Path, lang: str, dry_run: bool = False) -> bool:
     # escrito a mano, mas largo y mejor que lo que este generador produce, y la
     # primera corrida de este script reemplazo tres de ellos por versiones
     # generadas mas pobres. Un generador por lotes solo deberia crear lo que no
-    # existe.
+    # existe (para arreglar una pagina generada, ver `repair`).
     if (docs / "index.html").exists():
         print(f"  [saltado] {repo_dir.name}: ya tiene docs/index.html, no se toca")
         return False
@@ -264,11 +375,14 @@ def main() -> int:
     ap.add_argument("repos", nargs="+", type=Path)
     ap.add_argument("--lang", choices=("es", "en"), default="en")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--repair", action="store_true",
+                    help="arreglar leyendas y figuras de paginas ya generadas, sin rehacerlas")
     args = ap.parse_args()
 
     built = 0
     for r in args.repos:
-        if build(r, args.lang, args.dry_run):
+        done = repair(r, args.lang, args.dry_run) if args.repair else build(r, args.lang, args.dry_run)
+        if done:
             built += 1
     print(f"\n{built} de {len(args.repos)} repositorios")
     return 0
