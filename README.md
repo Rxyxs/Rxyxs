@@ -19,7 +19,7 @@
 
 Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
 
-En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé siete proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
+En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé ocho proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
 
 ## Proyectos destacados
 
@@ -56,7 +56,7 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 
 ## Lo que cambió con datos reales
 
-Siete proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+Ocho proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
 
 | Proyecto | Métrica | Simulado | Real | Por qué |
 |---|---|---:|---:|---|
@@ -67,6 +67,7 @@ Siete proyectos partieron con datos simulados y después los corrí, sin cambiar
 | **[Detector de order flow (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX y Binance</sub> | Alertas (meta 0,27%) | 0,02% | **1,4–24%** | Las colas reales son mucho más pesadas que la Student-t supuesta. |
 | **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 | **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
 | **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
+| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621 mil créditos</sub> | AUC, scorecard vs. boosting | 0,733 vs. 0,716 | **0,647 vs. 0,660** | Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada. |
 
 ## Herramienta abierta
 
@@ -162,7 +163,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
-| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>macro real, cartera simulada · [página](https://rxyxs.github.io/credit-risk-scoring-lab/)</sub> | 26 técnicas: scorecard R+Python+C a 270,6 M filas/s, PD para IFRS 9, auditoría de sesgo y ciclo shadow/canary/reentrenamiento. | `scorecard` `ifrs9` `mlops` |
+| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>real + simulado · [página](https://rxyxs.github.io/credit-risk-scoring-lab/)</sub> | 26 técnicas sobre carteras simuladas (scorecard R+Python+C a 270,6 M filas/s, PD para IFRS 9, ciclo shadow/canary/reentrenamiento) y una 27 que las prueba con 621 mil créditos reales de Lending Club: la restricción monótona sigue siendo gratis y el scorecard ya no gana. | `scorecard` `ifrs9` `mlops` |
 | **[Riesgo sistémico en Chile](https://github.com/Rxyxs/chile-fintech-systemic-risk)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-fintech-systemic-risk/)</sub> | Seis lenguajes sobre datos del Banco Central. El LSTM (51,0%) no le gana a la clase mayoritaria (53,6%). | `julia` `r` `cplusplus` |
 | **[Laboratorio cuantitativo cripto](https://github.com/Rxyxs/crypto-quant-techniques-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/crypto-quant-techniques-lab/)</sub> | Ocho técnicas. Las cinco estrategias pierden tras costos; la detección de spoofing sí funciona (precisión 0,92). | `quantitative-finance` `cointegration` `nlp` |
 | **[Opciones asiáticas sobre cobre (C++)](https://github.com/Rxyxs/copper-options-montecarlo-cpp)**<br><sub>modelo de precios · [página](https://rxyxs.github.io/copper-options-montecarlo-cpp/)</sub> | Monte Carlo C++20 bajo GBM, Schwartz y Heston: 9,64× con 16 hilos y un sesgo real corregido. | `cpp20` `monte-carlo` `heston-model` |
