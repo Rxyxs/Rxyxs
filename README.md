@@ -19,7 +19,7 @@
 
 Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
 
-En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé nueve proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
+En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé diez proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
 
 ## Proyectos destacados
 
@@ -56,7 +56,7 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 
 ## Lo que cambió con datos reales
 
-Nueve proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+Diez proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
 
 | Proyecto | Métrica | Simulado | Real | Por qué |
 |---|---|---:|---:|---|
@@ -69,6 +69,7 @@ Nueve proyectos partieron con datos simulados y después los corrí, sin cambiar
 | **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
 | **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621 mil créditos</sub> | AUC, scorecard vs. boosting | 0,733 vs. 0,716 | **0,647 vs. 0,660** | Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada. |
 | **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14 millones de usuarios</sub> | Efecto tras ajustar con CUPED | no se mueve | **−24% a −39%** | El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación. |
+| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86 mil pares de calles</sub> | Km del plan de rutas | 572 | **835 manejado** | La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo. |
 
 ## Herramienta abierta
 
@@ -153,7 +154,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Planta de flotación](https://github.com/Rxyxs/flotation-plant-silica-soft-sensor)**<br><sub>datos reales · [página](https://rxyxs.github.io/flotation-plant-silica-soft-sensor/)</sub> | Planta real de hierro: el R² 0,83 de una partición al azar es -0,43 en orden temporal; solo con laboratorio reciente se le gana a la persistencia, y cuatro modelos recetan pH opuestos. | `soft-sensor` `walk-forward` `optimization` |
-| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>comunas reales, demanda simulada · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre polígonos reales: 0 de 173 zonas sin atender. | `or-tools` `vrptw` `h3` |
+| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-spatial-logistics-opt/)</sub> | Ruteo multi-depósito con ventanas horarias sobre población real (Kontur ajustado al Censo 2017) y calles reales (OSRM): un plan hecho con distancias simuladas resulta 46% más largo al manejarlo. | `or-tools` `vrptw` `h3` `osrm` |
 | **[Churn como decisión de negocio](https://github.com/Rxyxs/customer-churn-mlops-platform)**<br><sub>datos reales · [página](https://rxyxs.github.io/customer-churn-mlops-platform/)</sub> | 10.000 clientes bancarios reales: la columna de quejas era una fuga (AUC 1,00 vs 0,85); umbral por valor recupera US$189.930 contactando al 42%, vs US$143.842 contactando a todos. | `mlflow` `fastapi` `docker` |
 | **[Fallas de calidad en una línea Bosch](https://github.com/Rxyxs/bosch-line-quality)**<br><sub>datos reales · [página](https://rxyxs.github.io/bosch-line-quality/)</sub> | 1,18 M piezas reales: las fallas vienen por lote (11x junto a una pieza fallada). El CV mezclado exagera (0,40 vs 0,21 en piezas futuras). Inspeccionar el 5% más riesgoso atrapa el **61%** de las fallas. | `lightgbm` `imbalanced-learning` `quality-control` |
 
