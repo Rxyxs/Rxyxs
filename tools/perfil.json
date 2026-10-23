@@ -502,15 +502,15 @@
       "Experimentación A/B",
       "A/B experimentation"
      ],
-     "data": "mc",
+     "data": "mix",
      "res": [
-      "Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla.",
-      "Sample size, SRM, CUPED and multiple testing, with a harness that checks each rule's error rate."
+      "Tamaño muestral, SRM, CUPED, comparaciones múltiples y un mSPRT que se puede revisar a diario, verificados en simulación y en el experimento real de Criteo (14 millones de usuarios): el SRM pasa, pero el ajuste por covariables mueve el efecto 39%.",
+      "Sample size, SRM, CUPED, multiple testing and an mSPRT you can check daily, verified in simulation and on Criteo's real 14M-user experiment: SRM passes, but covariate adjustment moves the effect by 39%."
      ],
      "tags": [
       "ab-testing",
       "cuped",
-      "power-analysis"
+      "sequential-testing"
      ],
      "page": true
     },
@@ -1227,11 +1227,11 @@
   "intro": [
    [
     "Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.",
-    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé ocho proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué."
+    "En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé nueve proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué."
    ],
    [
     "I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.",
-    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved eight projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down."
+    "Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved nine projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down."
    ]
   ]
  },
@@ -1241,8 +1241,8 @@
    "What changed on real data"
   ],
   "intro": [
-   "Ocho proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
-   "Eight projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+   "Nueve proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
+   "Nine projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
   ],
   "head": [
    [
@@ -1475,6 +1475,33 @@
     "why": [
      "Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada.",
      "On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing."
+    ]
+   },
+   {
+    "repo": "chile-fintech-experimentation-lab",
+    "name": [
+     "Experimentación A/B",
+     "A/B experimentation"
+    ],
+    "metric": [
+     "Efecto tras ajustar con CUPED",
+     "Effect after CUPED adjustment"
+    ],
+    "sim": [
+     "no se mueve",
+     "unchanged"
+    ],
+    "real": [
+     "−24% a −39%",
+     "−24% to −39%"
+    ],
+    "data": [
+     "Criteo, 14 millones de usuarios",
+     "Criteo, 14M users"
+    ],
+    "why": [
+     "El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación.",
+     "SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate."
     ]
    }
   ]
