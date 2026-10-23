@@ -19,7 +19,7 @@
 
 I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
 
-Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved seven projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
+Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved eight projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
 
 ## Featured projects
 
@@ -56,7 +56,7 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 
 ## What changed on real data
 
-Seven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Eight projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
 
 | Project | Metric | Simulated | Real | Why |
 |---|---|---:|---:|---|
@@ -67,6 +67,7 @@ Seven projects started on simulated data, and I later ran them, with the method 
 | **[Order-flow detector (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX and Binance</sub> | Alerts (target 0.27%) | 0.02% | **1.4–24%** | Real tails are far heavier than the assumed Student-t. |
 | **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 | **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
 | **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
+| **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 | **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
 
 ## Open-source tool
 
@@ -162,7 +163,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
-| **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>real macro, simulated portfolio · [page](https://rxyxs.github.io/credit-risk-scoring-lab/)</sub> | 26 techniques: R+Python+C scorecard at 270.6M rows/s, IFRS 9 PD, bias audit and a shadow/canary/retraining lifecycle. | `scorecard` `ifrs9` `mlops` |
+| **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/credit-risk-scoring-lab/)</sub> | 26 techniques on simulated books (R+Python+C scorecard at 270.6M rows/s, IFRS 9 PD, shadow/canary/retraining lifecycle) and a 27th that tests them on 621k real Lending Club loans: the monotonic constraint is still free and the scorecard no longer wins. | `scorecard` `ifrs9` `mlops` |
 | **[Systemic risk in Chile](https://github.com/Rxyxs/chile-fintech-systemic-risk)**<br><sub>real data · [page](https://rxyxs.github.io/chile-fintech-systemic-risk/)</sub> | Six languages on Central Bank data. The LSTM (51.0%) doesn't beat the majority class (53.6%). | `julia` `r` `cplusplus` |
 | **[Crypto quant lab](https://github.com/Rxyxs/crypto-quant-techniques-lab)**<br><sub>real data · [page](https://rxyxs.github.io/crypto-quant-techniques-lab/)</sub> | Eight techniques. All five strategies lose after costs; spoofing detection works (0.92 precision). | `quantitative-finance` `cointegration` `nlp` |
 | **[Copper Asian options (C++)](https://github.com/Rxyxs/copper-options-montecarlo-cpp)**<br><sub>pricing model · [page](https://rxyxs.github.io/copper-options-montecarlo-cpp/)</sub> | C++20 Monte Carlo under GBM, Schwartz and Heston: 9.64× on 16 threads and a real bias fixed. | `cpp20` `monte-carlo` `heston-model` |
