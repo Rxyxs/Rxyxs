@@ -19,7 +19,7 @@
 
 Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
 
-En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé ocho proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
+En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé nueve proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
 
 ## Proyectos destacados
 
@@ -56,7 +56,7 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 
 ## Lo que cambió con datos reales
 
-Ocho proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+Nueve proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
 
 | Proyecto | Métrica | Simulado | Real | Por qué |
 |---|---|---:|---:|---|
@@ -68,6 +68,7 @@ Ocho proyectos partieron con datos simulados y después los corrí, sin cambiar 
 | **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 | **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
 | **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
 | **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621 mil créditos</sub> | AUC, scorecard vs. boosting | 0,733 vs. 0,716 | **0,647 vs. 0,660** | Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada. |
+| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14 millones de usuarios</sub> | Efecto tras ajustar con CUPED | no se mueve | **−24% a −39%** | El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación. |
 
 ## Herramienta abierta
 
@@ -139,7 +140,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Impacto causal en flota minera](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift y DiD escalonado; el ATT coincide con una implementación de referencia en un panel real. | `causal-inference` `econml` `uplift-modeling` |
-| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED y comparaciones múltiples, con un arnés que verifica el error de cada regla. | `ab-testing` `cuped` `power-analysis` |
+| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Tamaño muestral, SRM, CUPED, comparaciones múltiples y un mSPRT que se puede revisar a diario, verificados en simulación y en el experimento real de Criteo (14 millones de usuarios): el SRM pasa, pero el ajuste por covariables mueve el efecto 39%. | `ab-testing` `cuped` `sequential-testing` |
 | **[Fondos de pensiones](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | Una señal de régimen que "ganaba" 1,4–2,3% al año empata en Sharpe con una mezcla fija fuera de muestra. En UF, 2021–23 cayó 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 | **[Atrasos de entrega en un marketplace (Olist)](https://github.com/Rxyxs/olist-delivery-delays)**<br><sub>datos reales · [página](https://rxyxs.github.io/olist-delivery-delays/)</sub> | 96 mil pedidos reales. Llegar tarde causa **-1,97 puntos** de reseña (AIPW), y casi todo el daño ocurre en la primera semana. Filtrar reseñas previas a la entrega habría botado el 74% de los atrasos. | `causal-inference` `aipw` `survival-analysis` |
 | **[Elasticidad precio en supermercado](https://github.com/Rxyxs/retail-price-elasticity)**<br><sub>datos reales · [página](https://rxyxs.github.io/retail-price-elasticity/)</sub> | 580 productos y 2.500 hogares reales. Ignorar exhibición y folleto exagera la elasticidad un 40%; double ML da **-1,50**. Una rebaja de 10% solo se paga sola con margen bruto sobre 50%, incluso en cerveza. | `double-machine-learning` `fixed-effects` `pricing` |

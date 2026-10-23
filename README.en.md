@@ -19,7 +19,7 @@
 
 I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
 
-Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved eight projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
+Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved nine projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
 
 ## Featured projects
 
@@ -56,7 +56,7 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 
 ## What changed on real data
 
-Eight projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Nine projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
 
 | Project | Metric | Simulated | Real | Why |
 |---|---|---:|---:|---|
@@ -68,6 +68,7 @@ Eight projects started on simulated data, and I later ran them, with the method 
 | **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 | **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
 | **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
 | **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 | **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
+| **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged | **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
 
 ## Open-source tool
 
@@ -139,7 +140,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Mining fleet causal impact](https://github.com/Rxyxs/chile-mining-fleet-causal-impact)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-fleet-causal-impact/)</sub> | Uplift and staggered DiD; the ATT matches a reference implementation on a real panel. | `causal-inference` `econml` `uplift-modeling` |
-| **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Monte Carlo · [page](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Sample size, SRM, CUPED and multiple testing, with a harness that checks each rule's error rate. | `ab-testing` `cuped` `power-analysis` |
+| **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-fintech-experimentation-lab/)</sub> | Sample size, SRM, CUPED, multiple testing and an mSPRT you can check daily, verified in simulation and on Criteo's real 14M-user experiment: SRM passes, but covariate adjustment moves the effect by 39%. | `ab-testing` `cuped` `sequential-testing` |
 | **[Pension funds](https://github.com/Rxyxs/chile-pension-fund-switching-cost)**<br><sub>real data · [page](https://rxyxs.github.io/chile-pension-fund-switching-cost/)</sub> | A regime signal that "earned" 1.4–2.3% a year ties a static mix on Sharpe out of sample. In real terms, 2021–23 fell 26%. | `duckdb` `counterfactual-analysis` `pensions` |
 | **[Late deliveries on a marketplace (Olist)](https://github.com/Rxyxs/olist-delivery-delays)**<br><sub>real data · [page](https://rxyxs.github.io/olist-delivery-delays/)</sub> | 96k real orders. Arriving late causes **-1.97 review points** (AIPW), with most of the damage in the first week. Filtering out pre-delivery reviews would have dropped 74% of late orders. | `causal-inference` `aipw` `survival-analysis` |
 | **[Grocery price elasticity](https://github.com/Rxyxs/retail-price-elasticity)**<br><sub>real data · [page](https://rxyxs.github.io/retail-price-elasticity/)</sub> | 580 products, 2,500 real households. Ignoring display and mailer overstates elasticity by 40%; double ML gives **-1.50**. A 10% discount only pays for itself above 50% gross margin, even for beer. | `double-machine-learning` `fixed-effects` `pricing` |
