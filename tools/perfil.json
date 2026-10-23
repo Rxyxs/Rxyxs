@@ -442,8 +442,8 @@
      ],
      "data": "real",
      "res": [
-      "Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales (AUC 0,55 vs 0,65).",
-      "Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks (AUC 0.55 vs 0.65)."
+      "Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales, aun corrigiendo la escala de validación (AUC 0,62 vs 0,71).",
+      "Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks, even after correcting the validation scale (AUC 0.62 vs 0.71)."
      ],
      "tags": [
       "remaining-useful-life",
@@ -1438,16 +1438,16 @@
      "ties"
     ],
     "real": [
-     "0,55 vs. 0,65",
-     "0.55 vs. 0.65"
+     "0,62 vs. 0,71",
+     "0.62 vs. 0.71"
     ],
     "data": [
      "23.550 camiones SCANIA",
      "23,550 SCANIA trucks"
     ],
     "why": [
-     "La red compartida pierde en las dos tareas con camiones reales.",
-     "The shared network loses both tasks on real trucks."
+     "La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación.",
+     "The shared network loses both tasks on real trucks, even after correcting the validation scale."
     ]
    }
   ]

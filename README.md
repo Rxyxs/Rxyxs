@@ -66,7 +66,7 @@ Siete proyectos partieron con datos simulados y después los corrí, sin cambiar
 | **[Fragmentación de tronadura](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 tronaduras publicadas, mina nueva</sub> | R² | 0,957 | **−0,59** | Con split aleatorio el modelo reconoce la faena; en una mina nueva es peor que el promedio. |
 | **[Detector de order flow (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX y Binance</sub> | Alertas (meta 0,27%) | 0,02% | **1,4–24%** | Las colas reales son mucho más pesadas que la Student-t supuesta. |
 | **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 | **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
-| **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,55 vs. 0,65** | La red compartida pierde en las dos tareas con camiones reales. |
+| **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
 
 ## Herramienta abierta
 
@@ -127,7 +127,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
 | **[Mantenimiento predictivo (4 datasets)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>datos reales · [página](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 4 datasets públicos (2 de camiones Scania reales, un compresor de metro, turbinas simuladas de la NASA) y 6 familias de modelos: SCANIA reescala cada variable distinto en train, validación y test (AUC adversarial 1,00); corregirlo baja el riesgo predicho de 16,9% a 4,2% (2,7% real). En APS, costo 9.150 vs 9.920 del ganador IDA 2016. | `predictive-maintenance` `distribution-shift` `deep-learning` |
-| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>datos reales</sub> | Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales (AUC 0,55 vs 0,65). | `remaining-useful-life` `signal-processing` `fft` |
+| **[Falla desde señal continua](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>datos reales</sub> | Rodamientos (NASA IMS), sismos (LANL) y 23.550 camiones SCANIA reales: el boosting espectral le gana a una CNN por 2,5×, y la red multi-task que empataba en la flota sintética pierde con camiones reales, aun corrigiendo la escala de validación (AUC 0,62 vs 0,71). | `remaining-useful-life` `signal-processing` `fft` |
 | **[Gemelo digital de molino SAG](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estima la dureza del mineral con 79% menos error; energía valorizada con costos marginales reales de la CNE (95 meses). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>

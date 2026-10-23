@@ -66,7 +66,7 @@ Seven projects started on simulated data, and I later ran them, with the method 
 | **[Blast fragmentation](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 published blasts, unseen mine</sub> | R² | 0.957 | **−0.59** | A random split lets it recognise the site; at a new mine it is worse than the mean. |
 | **[Order-flow detector (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX and Binance</sub> | Alerts (target 0.27%) | 0.02% | **1.4–24%** | Real tails are far heavier than the assumed Student-t. |
 | **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 | **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
-| **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.55 vs. 0.65** | The shared network loses both tasks on real trucks. |
+| **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
 
 ## Open-source tool
 
@@ -127,7 +127,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | Project | What it solves and what it found | Stack |
 |---|---|---|
 | **[Predictive maintenance (4 datasets)](https://github.com/Rxyxs/heavy-truck-predictive-maintenance)**<br><sub>real data · [page](https://rxyxs.github.io/heavy-truck-predictive-maintenance/)</sub> | 4 public datasets (2 real Scania truck sets, a metro compressor, NASA's simulated turbofans) and 6 model families: SCANIA rescales each variable differently across train, validation and test (adversarial AUC 1.00); fixing it cuts predicted risk from 16.9% to 4.2% (2.7% actual). On APS, cost 9,150 vs the IDA 2016 winner's 9,920. | `predictive-maintenance` `distribution-shift` `deep-learning` |
-| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real data</sub> | Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks (AUC 0.55 vs 0.65). | `remaining-useful-life` `signal-processing` `fft` |
+| **[Failure from continuous signal](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>real data</sub> | Bearings (NASA IMS), earthquakes (LANL) and 23,550 real SCANIA trucks: spectral boosting beats a CNN by 2.5×, and the multi-task network that tied on the synthetic fleet loses on real trucks, even after correcting the validation scale (AUC 0.62 vs 0.71). | `remaining-useful-life` `signal-processing` `fft` |
 | **[SAG mill digital twin](https://github.com/Rxyxs/chile-mining-sag-energy-digital-twin)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/)</sub> | Kalman estimates ore hardness with 79% less error; energy priced with real CNE marginal costs (95 months). | `digital-twin` `kalman-filter` `lightgbm` |
 
 </details>
