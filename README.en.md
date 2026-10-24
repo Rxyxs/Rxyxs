@@ -1,6 +1,6 @@
 [Español](https://github.com/Rxyxs) · **English**
 
-![Banner](assets/banner.png)
+![Banner](assets/banner.gif)
 
 <div align="center">
 
