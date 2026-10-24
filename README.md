@@ -1,6 +1,6 @@
 **Español** · [English](https://github.com/Rxyxs/Rxyxs/blob/main/README.en.md)
 
-![Portada](assets/banner.png)
+![Portada](assets/banner.gif)
 
 <div align="center">
 

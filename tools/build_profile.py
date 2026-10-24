@@ -62,7 +62,7 @@ def readme(L: int) -> str:
     p = D["profile"]
     switch = [f"**Español** · [English]({GH}Rxyxs/blob/main/README.en.md)",
               f"[Español]({GH[:-1]}) · **English**"][L]
-    out = [switch, "", f"![{t(L, 'Portada', 'Banner')}](assets/banner.png)", "", '<div align="center">', "",
+    out = [switch, "", f"![{t(L, 'Portada', 'Banner')}](assets/banner.gif)", "", '<div align="center">', "",
            f"# {p['name']}", "", f"**{p['role'][L]}**", "",
            f'<a href="{p["site"]}">{badge(t(L, "Portafolio", "Portfolio"), "githubpages", "for-the-badge")}</a>',
            f'<a href="{p["linkedin"]}">{badge("LinkedIn", "linkedin", "for-the-badge")}</a>',
