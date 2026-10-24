@@ -424,8 +424,8 @@
      ],
      "data": "real",
      "res": [
-      "4 datasets públicos (2 de camiones Scania reales, un compresor de metro, turbinas simuladas de la NASA) y 6 familias de modelos: SCANIA reescala cada variable distinto en train, validación y test (AUC adversarial 1,00); corregirlo baja el riesgo predicho de 16,9% a 4,2% (2,7% real). En APS, costo 9.150 vs 9.920 del ganador IDA 2016.",
-      "4 public datasets (2 real Scania truck sets, a metro compressor, NASA's simulated turbofans) and 6 model families: SCANIA rescales each variable differently across train, validation and test (adversarial AUC 1.00); fixing it cuts predicted risk from 16.9% to 4.2% (2.7% actual). On APS, cost 9,150 vs the IDA 2016 winner's 9,920."
+      "4 datasets públicos (2 de camiones Scania reales, un compresor de metro, turbinas simuladas de la NASA), 8 familias de modelos y demo en Docker: SCANIA reescala cada variable distinto en train, validación y test (AUC adversarial 1,00); corregirlo baja el riesgo predicho de 16,9% a 4,2% (2,7% real). En APS, costo 9.150 vs 9.920 del ganador IDA 2016.",
+      "4 public datasets (2 real Scania truck sets, a metro compressor, NASA's simulated turbofans), 8 model families and a Docker demo: SCANIA rescales each variable differently across train, validation and test (adversarial AUC 1.00); fixing it cuts predicted risk from 16.9% to 4.2% (2.7% actual). On APS, cost 9,150 vs the IDA 2016 winner's 9,920."
      ],
      "tags": [
       "predictive-maintenance",
