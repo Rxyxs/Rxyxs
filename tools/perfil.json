@@ -210,13 +210,13 @@
      ],
      "data": "mix",
      "res": [
-      "Demanda del SEN con energía mensual real y clima ERA5: TBATS MAPE 4,28% vs 6,73% del ingenuo; el MAPE engaña en demanda neta.",
-      "SEN demand with real monthly energy and ERA5 weather: TBATS 4.28% MAPE vs 6.73% naive; MAPE misleads on net demand."
+      "70.128 horas reales del SEN (archivo público del Coordinador): LightGBM con objetivo relativo pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; el archivo cambió de definición en 2025.",
+      "70,128 real hours of the SEN (the Coordinador's public file): LightGBM on a relative target forecasts the next day at 2.48% MAPE vs 3.61% naive; the file changed definition in 2025."
      ],
      "tags": [
       "r",
-      "arima",
-      "garch"
+      "lightgbm",
+      "forecasting"
      ],
      "page": true
     },

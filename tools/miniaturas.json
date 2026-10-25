@@ -1,6 +1,6 @@
 {
   "chile-banking-delinquency-cmf": "figures/07_macro_aporte.png",
-  "chile-energy-grid-forecasting-r": "figures/residuals_arima.png",
+  "chile-energy-grid-forecasting-r": "figures/real_sen_hourly_heatmap.png",
   "copper-volatility-forecaster": "figures/copper_price_and_vol.png",
   "reading-market-turbulence": "figures/price_and_volatility_animated.gif",
   "customer-lifetime-value": "img/conditional.png",
