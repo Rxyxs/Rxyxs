@@ -129,8 +129,8 @@
   ],
   "data": "work",
   "res": [
-   "Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.",
-   "Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake."
+   "Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.",
+   "Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, compresses them into consolidated tables by depot, day and month, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake."
   ],
   "tags": [
    "python",
@@ -208,17 +208,17 @@
       "Sistema Eléctrico Nacional, horario",
       "Chile's power grid, hourly"
      ],
-     "data": "mix",
+     "data": "real",
      "res": [
-      "5 barras del SEN con clima real (ERA5) y precio anclado al costo marginal real de Crucero. Solar: WAPE 5,55% vs 28,89% del ingenuo; precio 8,77%.",
-      "5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%."
+      "4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 18,84% vs 21,87% del ingenuo; en Puerto Montt el modelo pierde.",
+      "4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 18.84% WAPE vs 21.87% naive; at Puerto Montt the model loses."
      ],
      "tags": [
       "lightgbm",
-      "optuna",
+      "pdf-extraction",
       "time-series"
      ],
-     "page": false
+     "page": true
     },
     {
      "repo": "chile-energy-grid-forecasting-r",
@@ -1261,8 +1261,8 @@
    "What changed on real data"
   ],
   "intro": [
-   "Once proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
-   "Eleven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+   "Doce proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
+   "Twelve projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
   ],
   "head": [
    [
@@ -1576,6 +1576,33 @@
     "why": [
      "Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día.",
      "Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day."
+    ]
+   },
+   {
+    "repo": "chile-energy-grid-forecasting",
+    "name": [
+     "Precio horario del SEN por barra",
+     "Hourly SEN price by bus"
+    ],
+    "metric": [
+     "WAPE del precio, LightGBM",
+     "Price WAPE, LightGBM"
+    ],
+    "sim": [
+     "8,77%",
+     "8.77%"
+    ],
+    "real": [
+     "18,84%",
+     "18.84%"
+    ],
+    "data": [
+     "Informes diarios del CEN, 4 años, 6 barras",
+     "CEN daily reports, 4 years, 6 buses"
+    ],
+    "why": [
+     "Precios con ceros en el norte, cambios de régimen y desacople norte-sur; en Puerto Montt pierde contra la persistencia.",
+     "Zeros in the north, regime shifts and a north-south split; at Puerto Montt it loses to persistence."
     ]
    }
   ]

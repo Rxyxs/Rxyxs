@@ -56,7 +56,7 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 
 ## What changed on real data
 
-Eleven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Twelve projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
 
 | Project | Metric | Simulated | Real | Why |
 |---|---|---:|---:|---|
@@ -71,6 +71,7 @@ Eleven projects started on simulated data, and I later ran them, with the method
 | **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged | **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
 | **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86k road pairs</sub> | Route plan, km | 572 | **835 driven** | The simulated detour factor falls short: 19% of real trips exceed its maximum. |
 | **[Hourly power demand (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 years of hourly demand</sub> | Hourly MAPE, TBATS vs. naive | 4.28% vs. 6.73% | **7.01% vs. 5.81%** | Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day. |
+| **[Hourly SEN price by bus](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>CEN daily reports, 4 years, 6 buses</sub> | Price WAPE, LightGBM | 8.77% | **18.84%** | Zeros in the north, regime shifts and a north-south split; at Puerto Montt it loses to persistence. |
 
 ## Open-source tool
 
@@ -88,7 +89,7 @@ dc.cmf.morosidad(solo_sistema=True)
 ## Experience
 
 **[Fuel control for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
-Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake.  
+Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, compresses them into consolidated tables by depot, day and month, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake.  
 `python` `pandas` `appsheet` `excel` `data-cleaning`
 
 ## Projects by kind of problem
@@ -102,7 +103,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 |---|---|---|
 | **[Retail demand (Favorita)](https://github.com/Rxyxs/retail-demand-forecasting-favorita)**<br><sub>real data · [page](https://rxyxs.github.io/retail-demand-forecasting-favorita/)</sub> | Forecast scored as a purchase decision: quantiles only pay above a ~3:1 cost ratio. | `lightgbm` `quantile-regression` `newsvendor` |
 | **[Chilean bank delinquency (CMF)](https://github.com/Rxyxs/chile-banking-delinquency-cmf)**<br><sub>real data · [page](https://rxyxs.github.io/chile-banking-delinquency-cmf/)</sub> | Panel from 128 CMF Excel files. Stress test with lag and signs chosen without look-ahead: only consumer and commercial beat no change (0.73 and 0.85). Per-bank LightGBM does not; SHAP shows it learns the regime. | `stress-testing` `shap` `fastapi` |
-| **[Chile's power grid, hourly](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>real + simulated</sub> | 5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%. | `lightgbm` `optuna` `time-series` |
+| **[Chile's power grid, hourly](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>real data · [page](https://rxyxs.github.io/chile-energy-grid-forecasting/)</sub> | 4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 18.84% WAPE vs 21.87% naive; at Puerto Montt the model loses. | `lightgbm` `pdf-extraction` `time-series` |
 | **[Chile's power grid, in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | 70,128 real hours of the SEN (the Coordinador's public file): LightGBM with a holiday calendar forecasts the next day at 2.48% MAPE vs 3.61% naive; on the same real demand, ARIMA and TBATS lose to naive over the holidays. | `r` `lightgbm` `forecasting` |
 | **[Copper volatility](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>real data · [page](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | 14 years of real LME prices: GARCH(1,1) has the best QLIKE and only HAR-X, with the VIX and the dollar, ties it. CatBoost re-tuned in every fold does not beat it. | `garch` `catboost` `shap` |
 | **[High-frequency volatility](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>real data · [page](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24.8M Binance trades: at 30 s, persistence (RMSPE 4.58) beats LightGBM and the neural net. | `high-frequency-trading` `lightgbm` `duckdb` |
