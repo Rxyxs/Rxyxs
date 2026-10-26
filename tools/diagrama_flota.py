@@ -17,7 +17,7 @@ TXT = {
     "es": {
         "title": "Buses Vule S.A. · Abastecimiento y combustibles",
         "sub": "Analista de Datos · Red Metropolitana de Movilidad · enero 2025 a abril 2026",
-        "kpis": [("17", "terminales"), ("2.094", "buses en la app"), ("−70%", "tiempo de procesamiento"),
+        "kpis": [("20", "terminales"), ("2.094", "buses en la app"), ("−70%", "tiempo de procesamiento"),
                  ("1.754", "cargas reales en la prueba"), ("13", "tests automatizados")],
         "stages": [
             ("Captura", "App en AppSheet",
@@ -53,7 +53,7 @@ TXT = {
     "en": {
         "title": "Buses Vule S.A. · Supply and fuel",
         "sub": "Data Analyst · Santiago's public bus network (Red) · January 2025 to April 2026",
-        "kpis": [("17", "depots"), ("2,094", "buses in the app"), ("−70%", "processing time"),
+        "kpis": [("20", "depots"), ("2,094", "buses in the app"), ("−70%", "processing time"),
                  ("1,754", "real loads in the test"), ("13", "automated tests")],
         "stages": [
             ("Capture", "AppSheet app",
