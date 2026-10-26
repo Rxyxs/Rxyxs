@@ -56,7 +56,7 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 
 ## Lo que cambió con datos reales
 
-Once proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+Doce proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
 
 | Proyecto | Métrica | Simulado | Real | Por qué |
 |---|---|---:|---:|---|
@@ -71,6 +71,7 @@ Once proyectos partieron con datos simulados y después los corrí, sin cambiar 
 | **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14 millones de usuarios</sub> | Efecto tras ajustar con CUPED | no se mueve | **−24% a −39%** | El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación. |
 | **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86 mil pares de calles</sub> | Km del plan de rutas | 572 | **835 manejado** | La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo. |
 | **[Demanda eléctrica horaria (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 años de demanda horaria</sub> | MAPE horario, TBATS vs. ingenuo | 4,28% vs. 6,73% | **7,01% vs. 5,81%** | Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día. |
+| **[Precio horario del SEN por barra](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>Informes diarios del CEN, 4 años, 6 barras</sub> | WAPE del precio, LightGBM | 8,77% | **18,84%** | Precios con ceros en el norte, cambios de régimen y desacople norte-sur; en Puerto Montt pierde contra la persistencia. |
 
 ## Herramienta abierta
 
@@ -88,7 +89,7 @@ dc.cmf.morosidad(solo_sistema=True)
 ## Experiencia
 
 **[Control de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
-Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
+Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
 `python` `pandas` `appsheet` `excel` `data-cleaning`
 
 ## Proyectos por tipo de problema
@@ -102,7 +103,7 @@ Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero
 |---|---|---|
 | **[Demanda retail (Favorita)](https://github.com/Rxyxs/retail-demand-forecasting-favorita)**<br><sub>datos reales · [página](https://rxyxs.github.io/retail-demand-forecasting-favorita/)</sub> | Pronóstico evaluado como decisión de compra: los cuantiles solo convienen sobre una razón de costos ~3:1. | `lightgbm` `quantile-regression` `newsvendor` |
 | **[Morosidad bancaria en Chile (CMF)](https://github.com/Rxyxs/chile-banking-delinquency-cmf)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-banking-delinquency-cmf/)</sub> | Panel desde 128 Excel de la CMF. Prueba de tensión con rezago y signos elegidos sin mirar el futuro: solo consumo y comercial le ganan a «sin cambio» (0,73 y 0,85). LightGBM por banco no le gana; SHAP muestra que aprende el régimen. | `stress-testing` `shap` `fastapi` |
-| **[Sistema Eléctrico Nacional, horario](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>real + simulado</sub> | 5 barras del SEN con clima real (ERA5) y precio anclado al costo marginal real de Crucero. Solar: WAPE 5,55% vs 28,89% del ingenuo; precio 8,77%. | `lightgbm` `optuna` `time-series` |
+| **[Sistema Eléctrico Nacional, horario](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-energy-grid-forecasting/)</sub> | 4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 18,84% vs 21,87% del ingenuo; en Puerto Montt el modelo pierde. | `lightgbm` `pdf-extraction` `time-series` |
 | **[Sistema Eléctrico Nacional, en R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | 70.128 horas reales del SEN (archivo público del Coordinador): LightGBM con calendario pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; sobre la misma demanda real, ARIMA y TBATS pierden contra el ingenuo en los feriados. | `r` `lightgbm` `forecasting` |
 | **[Volatilidad del cobre](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>datos reales · [página](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | 14 años de precios reales de la LME: GARCH(1,1) tiene el mejor QLIKE y solo HAR-X, con el VIX y el dólar, lo empata. CatBoost ajustado en cada fold no le gana. | `garch` `catboost` `shap` |
 | **[Volatilidad de alta frecuencia](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>datos reales · [página](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24,8 M de trades de Binance: a 30 s, la persistencia (RMSPE 4,58) le gana a LightGBM y a la red neuronal. | `high-frequency-trading` `lightgbm` `duckdb` |

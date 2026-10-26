@@ -116,8 +116,38 @@
  "chile-energy-grid-forecasting": [
   {
    "src": [
-    "https://cdn.jsdelivr.net/gh/Rxyxs/chile-energy-grid-forecasting@HEAD/data/processed/torch_loss_curve_marginal_cost_usd_mwh_animated.gif",
-    "https://cdn.jsdelivr.net/gh/Rxyxs/chile-energy-grid-forecasting@HEAD/data/processed/torch_loss_curve_marginal_cost_usd_mwh_animated.gif"
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_price_profile_by_bar.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_price_profile_by_bar.png"
+   ],
+   "cap": [
+    "Real hourly marginal cost by bus",
+    "Real hourly marginal cost by bus"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_reconstruction_check.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_reconstruction_check.png"
+   ],
+   "cap": [
+    "Reconstruction vs. official monthly series",
+    "Reconstruction vs. official monthly series"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/price_wape_by_bus.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/price_wape_by_bus.png"
+   ],
+   "cap": [
+    "Price WAPE by bus: model vs. persistence",
+    "Price WAPE by bus: model vs. persistence"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/torch_loss_curve_marginal_cost_usd_mwh_animated.gif",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/torch_loss_curve_marginal_cost_usd_mwh_animated.gif"
    ],
    "cap": [
     "MLP PyTorch loss curve, animated",
@@ -2788,6 +2818,48 @@
    "cap": [
     "Model and loss comparison on 2025",
     "Model and loss comparison on 2025"
+   ]
+  }
+ ],
+ "rvs/Precio horario del SEN por barra": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_price_profile_by_bar.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_price_profile_by_bar.png"
+   ],
+   "cap": [
+    "Real hourly marginal cost by bus",
+    "Real hourly marginal cost by bus"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_reconstruction_check.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/real_reconstruction_check.png"
+   ],
+   "cap": [
+    "Reconstruction vs. official monthly series",
+    "Reconstruction vs. official monthly series"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/price_wape_by_bus.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/price_wape_by_bus.png"
+   ],
+   "cap": [
+    "Price WAPE by bus: model vs. persistence",
+    "Price WAPE by bus: model vs. persistence"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/torch_loss_curve_marginal_cost_usd_mwh_animated.gif",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting/figures/torch_loss_curve_marginal_cost_usd_mwh_animated.gif"
+   ],
+   "cap": [
+    "MLP PyTorch loss curve, animated",
+    "MLP PyTorch loss curve, animated"
    ]
   }
  ]
