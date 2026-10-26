@@ -56,7 +56,7 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 
 ## What changed on real data
 
-Ten projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Eleven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
 
 | Project | Metric | Simulated | Real | Why |
 |---|---|---:|---:|---|
@@ -70,6 +70,7 @@ Ten projects started on simulated data, and I later ran them, with the method un
 | **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 | **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
 | **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged | **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
 | **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86k road pairs</sub> | Route plan, km | 572 | **835 driven** | The simulated detour factor falls short: 19% of real trips exceed its maximum. |
+| **[Hourly power demand (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 years of hourly demand</sub> | Hourly MAPE, TBATS vs. naive | 4.28% vs. 6.73% | **7.01% vs. 5.81%** | Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day. |
 
 ## Open-source tool
 
@@ -102,7 +103,7 @@ Each of the 17 depots tracked fuel in its own Excel file. First I wrote a Python
 | **[Retail demand (Favorita)](https://github.com/Rxyxs/retail-demand-forecasting-favorita)**<br><sub>real data · [page](https://rxyxs.github.io/retail-demand-forecasting-favorita/)</sub> | Forecast scored as a purchase decision: quantiles only pay above a ~3:1 cost ratio. | `lightgbm` `quantile-regression` `newsvendor` |
 | **[Chilean bank delinquency (CMF)](https://github.com/Rxyxs/chile-banking-delinquency-cmf)**<br><sub>real data · [page](https://rxyxs.github.io/chile-banking-delinquency-cmf/)</sub> | Panel from 128 CMF Excel files. Stress test with lag and signs chosen without look-ahead: only consumer and commercial beat no change (0.73 and 0.85). Per-bank LightGBM does not; SHAP shows it learns the regime. | `stress-testing` `shap` `fastapi` |
 | **[Chile's power grid, hourly](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>real + simulated</sub> | 5 SEN nodes with real weather (ERA5) and price anchored to the real Crucero marginal cost. Solar: 5.55% WAPE vs 28.89% naive; price 8.77%. | `lightgbm` `optuna` `time-series` |
-| **[Chile's power grid, in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | 70,128 real hours of the SEN (the Coordinador's public file): LightGBM on a relative target forecasts the next day at 2.48% MAPE vs 3.61% naive; the file changed definition in 2025. | `r` `lightgbm` `forecasting` |
+| **[Chile's power grid, in R](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-energy-grid-forecasting-r/)</sub> | 70,128 real hours of the SEN (the Coordinador's public file): LightGBM with a holiday calendar forecasts the next day at 2.48% MAPE vs 3.61% naive; on the same real demand, ARIMA and TBATS lose to naive over the holidays. | `r` `lightgbm` `forecasting` |
 | **[Copper volatility](https://github.com/Rxyxs/copper-volatility-forecaster)**<br><sub>real data · [page](https://rxyxs.github.io/copper-volatility-forecaster/)</sub> | 14 years of real LME prices: GARCH(1,1) has the best QLIKE and only HAR-X, with the VIX and the dollar, ties it. CatBoost re-tuned in every fold does not beat it. | `garch` `catboost` `shap` |
 | **[High-frequency volatility](https://github.com/Rxyxs/reading-market-turbulence)**<br><sub>real data · [page](https://rxyxs.github.io/reading-market-turbulence/)</sub> | 24.8M Binance trades: at 30 s, persistence (RMSPE 4.58) beats LightGBM and the neural net. | `high-frequency-trading` `lightgbm` `duckdb` |
 | **[Customer lifetime value](https://github.com/Rxyxs/customer-lifetime-value)**<br><sub>real data · [page](https://rxyxs.github.io/customer-lifetime-value/)</sub> | BG/NBD and Gamma-Gamma coded from the likelihood. Predicting 26 weeks: **-2%** error on total purchases, against +68% for the naive rate and +24% for LightGBM. | `bg-nbd` `gamma-gamma` `retention` |
