@@ -210,8 +210,8 @@
      ],
      "data": "mix",
      "res": [
-      "70.128 horas reales del SEN (archivo público del Coordinador): LightGBM con objetivo relativo pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; el archivo cambió de definición en 2025.",
-      "70,128 real hours of the SEN (the Coordinador's public file): LightGBM on a relative target forecasts the next day at 2.48% MAPE vs 3.61% naive; the file changed definition in 2025."
+      "70.128 horas reales del SEN (archivo público del Coordinador): LightGBM con calendario pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; sobre la misma demanda real, ARIMA y TBATS pierden contra el ingenuo en los feriados.",
+      "70,128 real hours of the SEN (the Coordinador's public file): LightGBM with a holiday calendar forecasts the next day at 2.48% MAPE vs 3.61% naive; on the same real demand, ARIMA and TBATS lose to naive over the holidays."
      ],
      "tags": [
       "r",
@@ -1242,8 +1242,8 @@
    "What changed on real data"
   ],
   "intro": [
-   "Diez proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
-   "Ten projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+   "Once proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
+   "Eleven projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
   ],
   "head": [
    [
@@ -1530,6 +1530,33 @@
     "why": [
      "La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo.",
      "The simulated detour factor falls short: 19% of real trips exceed its maximum."
+    ]
+   },
+   {
+    "repo": "chile-energy-grid-forecasting-r",
+    "name": [
+     "Demanda eléctrica horaria (R)",
+     "Hourly power demand (R)"
+    ],
+    "metric": [
+     "MAPE horario, TBATS vs. ingenuo",
+     "Hourly MAPE, TBATS vs. naive"
+    ],
+    "sim": [
+     "4,28% vs. 6,73%",
+     "4.28% vs. 6.73%"
+    ],
+    "real": [
+     "7,01% vs. 5,81%",
+     "7.01% vs. 5.81%"
+    ],
+    "data": [
+     "CEN, 2 años de demanda horaria",
+     "CEN, 2 years of hourly demand"
+    ],
+    "why": [
+     "Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día.",
+     "Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day."
     ]
    }
   ]
