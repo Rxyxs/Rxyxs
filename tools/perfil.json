@@ -141,6 +141,24 @@
   ],
   "page": false
  },
+ "outside": {
+  "_": "Solo para el sitio: no va en el README del perfil ni en el CV.",
+  "name": [
+   "Profesor de enduro",
+   "Enduro instructor"
+  ],
+  "org": "Ecobike Training",
+  "since": 2024,
+  "res": [
+   "Llevo {n} años como profesor de enduro en la escuela Ecobike Training, haciendo clases de bicicleta de montaña.",
+   "For {n} years I have been an enduro instructor at the Ecobike Training school, teaching mountain biking."
+  ],
+  "photo": "assets/photos/enduro-ecobike.jpg",
+  "credit": [
+   "Foto: Bonnefoy Fotografía",
+   "Photo: Bonnefoy Fotografía"
+  ]
+ },
  "categories": [
   {
    "name": [
@@ -1221,6 +1239,7 @@
   "email": "preyesp09@gmail.com",
   "github": "https://github.com/Rxyxs",
   "site": "https://rxyxs.github.io/",
+  "photo": "assets/photos/pablo-reyes.jpg",
   "cv": [
    "assets/cv/Pablo_Reyes_CV_ES.pdf",
    "assets/cv/Pablo_Reyes_CV_EN.pdf"
