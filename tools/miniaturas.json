@@ -37,5 +37,6 @@
   "chile-pension-fund-switching-cost": "figures/kpis_bootstrap.png",
   "chile-mining-fleet-causal-impact": "figures/real_did_estimators.png",
   "retail-demand-forecasting-favorita": "figures/accuracy_vs_decision.png",
-  "chile-fintech-experimentation-lab": "figures/peeking_inflation_curve.png"
+  "chile-fintech-experimentation-lab": "figures/peeking_inflation_curve.png",
+  "failure-prediction-signal-lab": "01-mining-fleet-multitask-rul/outputs/reports/real_scania_feature_sets.png"
 }

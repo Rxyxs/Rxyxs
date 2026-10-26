@@ -2,6 +2,7 @@
 
     python tools/build_profile.py                         # README.md y README.en.md
     python tools/build_profile.py --site ../Rxyxs.github.io   # además, el sitio
+    python tools/galerias.py                              # antes, si cambiaron las figuras de un proyecto
 
 Los proyectos, sus resultados y sus etiquetas viven solo en ``tools/perfil.json``: el README y
 el sitio se generan desde ahí para que nunca digan cosas distintas. Para agregar o corregir un
@@ -24,6 +25,8 @@ D = json.loads((ROOT / "tools" / "perfil.json").read_text(encoding="utf-8"))
 # Generados aparte para no reescribir perfil.json: la primera figura de la página de cada
 # proyecto (miniaturas.json) y los sectores que alimentan los filtros del sitio (sectores.json).
 THUMBS = json.loads((ROOT / "tools" / "miniaturas.json").read_text(encoding="utf-8"))
+# Las figuras de la galería de cada tarjeta, con la miniatura primero (tools/galerias.py).
+GAL = json.loads((ROOT / "tools" / "galerias.json").read_text(encoding="utf-8"))
 SECT = json.loads((ROOT / "tools" / "sectores.json").read_text(encoding="utf-8"))
 ICONS: set[str] = set()  # logos disponibles en <sitio>/assets/icons, se llena en main()
 ES, EN = 0, 1
@@ -171,8 +174,44 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 @media (max-width:640px){.feat,.grid{grid-template-columns:minmax(0,1fr)}.top nav{display:none}.top .in{justify-content:space-between}}
 .card{min-width:0;overflow-wrap:anywhere;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
 .card:hover{border-color:var(--hover);transform:translateY(-2px)}
-.card img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;border-radius:8px;background:#fff;margin-bottom:14px}
-.card img.contain{object-fit:contain}
+.gal{position:relative;margin:-6px -8px 14px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.feat .gal{aspect-ratio:16/9}
+.frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;opacity:0;transform:scale(1.015);transition:opacity .7s ease,transform 4s ease}
+.frames img.on{opacity:1;transform:none}
+.gal .open{position:absolute;inset:0;width:100%;border:0;padding:0;background:none;cursor:zoom-in}
+.gal .open:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;padding:0;background:rgba(13,17,23,.62);color:#fff;cursor:pointer;display:grid;place-items:center;transition:opacity .2s,background .15s}
+.nav:hover{background:rgba(13,17,23,.85)}.nav svg{width:16px;height:16px}
+.gal .nav{opacity:0}.gal:hover .nav,.gal:focus-within .nav{opacity:1}
+@media (hover:none){.gal .nav{display:none}}
+.prev{left:8px}.next{right:8px}
+.dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.dots i{width:6px;height:6px;border-radius:3px;background:rgba(13,17,23,.22);transition:width .3s,background .3s}
+.dots i.on{width:16px;background:rgba(13,17,23,.72)}
+.bar{position:absolute;left:0;right:0;top:0;height:3px;pointer-events:none}
+.bar i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);animation:fill 3.6s linear forwards paused}
+@keyframes fill{to{transform:scaleX(1)}}
+.gal.run .bar i{animation-play-state:running}
+.gal.run:hover .bar i,.gal:focus-within .bar i,.lb-on .gal .bar i{animation-play-state:paused}
+.gal .n{position:absolute;right:8px;top:10px;display:flex;align-items:center;gap:4px;font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:999px;background:rgba(13,17,23,.62);color:#fff;pointer-events:none;font-variant-numeric:tabular-nums}
+.gal .n svg{width:11px;height:11px}
+.lb{border:0;padding:0;margin:auto;width:min(1120px,94vw);max-width:none;max-height:94vh;background:var(--surface);color:var(--ink);border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.45);overflow:hidden}
+.lb[open]{display:flex;flex-direction:column}
+.lb::backdrop{background:rgba(1,4,9,.8);backdrop-filter:blur(3px)}
+.lb-top{display:flex;align-items:center;gap:14px;padding:12px 14px 12px 18px;border-bottom:1px solid var(--line)}
+.lb-top b{flex:1;min-width:0;font-size:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-k{color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lb-top a{font-size:.86rem;font-weight:500;text-decoration:none;white-space:nowrap}.lb-top a:hover{text-decoration:underline}
+.lb-x{background:none;border:1px solid var(--line);border-radius:6px;width:32px;height:30px;color:var(--muted);cursor:pointer;display:grid;place-items:center;padding:0}
+.lb-x:hover{color:var(--ink);border-color:var(--accent)}.lb-x svg{width:15px;height:15px}
+.lb-stage{position:relative;background:#fff;display:grid;place-items:center;min-height:0;touch-action:pan-y}
+.lb-stage img{display:block;max-width:100%;height:calc(94vh - 210px);max-height:760px;object-fit:contain;padding:12px}
+.lb-cap{margin:0;padding:12px 18px 10px;font-size:.92rem;color:var(--body);min-height:2.4em}
+.lb-th{display:flex;gap:8px;padding:2px 18px 16px;overflow-x:auto;scrollbar-width:thin}
+.lb-th button{flex:none;width:76px;height:48px;padding:2px;border:2px solid var(--line);border-radius:7px;background:#fff;cursor:pointer;opacity:.55;transition:opacity .15s,border-color .15s}
+.lb-th button:hover{opacity:.9}.lb-th button[aria-current="true"]{opacity:1;border-color:var(--accent)}
+.lb-th img{width:100%;height:100%;object-fit:contain}
+@media (max-width:640px){.lb{width:100vw;max-height:100vh;border-radius:0}.lb-stage img{height:auto;max-height:62vh;padding:6px}.lb-top a{display:none}}
 .card h3{font-size:1.04rem;margin:0 0 8px;line-height:1.3}
 .card h3 a{color:var(--ink);text-decoration:none}
 .card h3 a:hover{color:var(--accent)}
@@ -213,7 +252,6 @@ footer a{color:var(--muted)}
 .hero-top{display:flex;align-items:center;gap:24px}
 .photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line);flex:none}
 @media (max-width:640px){.hero-top{flex-direction:column-reverse;align-items:flex-start;gap:16px}.photo{width:88px;height:88px}}
-.card .thumb{aspect-ratio:16/9;margin:-6px -8px 14px;width:calc(100% + 16px)}
 .filters{display:flex;flex-direction:column;gap:10px;margin:18px 0 6px;padding:14px 16px;background:var(--bg2);border:1px solid var(--line);border-radius:12px}
 .frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .frow b{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-right:6px;min-width:64px}
@@ -226,7 +264,8 @@ footer a{color:var(--muted)}
 .ic{width:14px;height:14px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;flex:none;opacity:.85}
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}html{scroll-behavior:auto}
+.frames img{transition:none;transform:none}.bar{display:none}}
 """
 
 # Botón de tema, filtros y aparición suave de las tarjetas. Sin dependencias.
@@ -252,7 +291,71 @@ JS = """
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
     [].forEach.call(document.querySelectorAll('.card,.rvs'),function(c){c.classList.add('reveal');io.observe(c)});}
 })();
+// Galerías: las figuras avanzan solas mientras la tarjeta está a la vista (la barra de progreso
+// marca el tiempo, así que pasar el mouse la pausa), con flechas, swipe y un visor al hacer clic.
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, root=document.documentElement;
+  function load(im){if(im&&!im.getAttribute('src')&&im.dataset.src)im.src=im.dataset.src}
+  function src(im){return im.getAttribute('src')||im.dataset.src}
+  function swipe(el,fn){var x0=null;
+    el.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    el.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;
+      if(Math.abs(dx)>40)fn(dx<0?1:-1)},{passive:true});}
+  var lb=document.querySelector('.lb'), cur=null;
+  var gals=[].slice.call(document.querySelectorAll('.gal'));
+  gals.forEach(function(g,gi){
+    var ims=[].slice.call(g.querySelectorAll('.frames img')), n=ims.length, i=0,
+        dots=[].slice.call(g.querySelectorAll('.dots i')), bar=g.querySelector('.bar i');
+    function timing(){if(!bar)return;bar.style.animation='none';void bar.offsetWidth;bar.style.animation='';
+      bar.style.animationDuration=(/\\.gif$/i.test(src(ims[i]))?7:3.6)+'s'}
+    g.go=function(k){if(n<2)return;ims[i].classList.remove('on');if(dots[i])dots[i].classList.remove('on');
+      i=(k+n)%n;load(ims[i]);ims[i].classList.add('on');if(dots[i])dots[i].classList.add('on');
+      load(ims[(i+1)%n]);timing()};
+    g.at=function(){return i};
+    g.figs=function(){return ims.map(function(im){return {src:src(im),cap:im.alt}})};
+    if(bar){bar.addEventListener('animationend',function(){g.go(i+1)});
+      bar.style.animationDelay=(gi%3)*0.9+'s';}
+    [].forEach.call(g.querySelectorAll('.nav'),function(b){b.addEventListener('click',function(){
+      g.go(i+(b.classList.contains('next')?1:-1))})});
+    g.querySelector('.open').addEventListener('click',function(){show(g,i)});
+    swipe(g,function(d){g.go(i+d)});
+  });
+  if(!reduce&&'IntersectionObserver' in window){
+    var vis=new IntersectionObserver(function(es){es.forEach(function(e){var g=e.target;
+      g.classList.toggle('run',e.isIntersecting);
+      if(e.isIntersecting){var ims=g.querySelectorAll('.frames img');load(ims[1])}})},{threshold:.55});
+    gals.forEach(function(g){if(g.querySelector('.bar'))vis.observe(g)});}
+  if(!lb||!lb.showModal)return;
+  var img=lb.querySelector('.lb-stage img'), cap=lb.querySelector('.lb-cap'), k=lb.querySelector('.lb-k'),
+      ttl=lb.querySelector('.lb-top b'), link=lb.querySelector('.lb-top a'), th=lb.querySelector('.lb-th'), figs=[], j=0;
+  function paint(){var f=figs[j];img.src=f.src;img.alt=f.cap;cap.textContent=f.cap;
+    k.textContent=(j+1)+' / '+figs.length;
+    [].forEach.call(th.children,function(b,x){b.setAttribute('aria-current',x===j);if(x===j)b.scrollIntoView({block:'nearest',inline:'nearest'})});
+    if(figs.length>1)new Image().src=figs[(j+1)%figs.length].src;}
+  function step(d){if(figs.length<2)return;j=(j+d+figs.length)%figs.length;paint()}
+  function show(g,i){cur=g;figs=g.figs();j=i;ttl.textContent=g.dataset.title;link.href=g.dataset.href;link.textContent=g.dataset.go+' ↗';
+    th.innerHTML='';th.hidden=figs.length<2;
+    figs.forEach(function(f,x){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',f.cap);
+      var t=document.createElement('img');t.src=f.src;t.alt='';t.loading='lazy';b.appendChild(t);
+      b.addEventListener('click',function(){j=x;paint()});th.appendChild(b)});
+    [].forEach.call(lb.querySelectorAll('.nav'),function(b){b.hidden=figs.length<2});
+    root.classList.add('lb-on');lb.showModal();paint();}
+  lb.querySelector('.prev').addEventListener('click',function(){step(-1)});
+  lb.querySelector('.next').addEventListener('click',function(){step(1)});
+  lb.querySelector('.lb-x').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+  lb.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);else if(e.key==='ArrowLeft')step(-1)});
+  lb.addEventListener('close',function(){root.classList.remove('lb-on');
+    if(cur){if(cur.at()!==j)cur.go(j);cur.querySelector('.open').focus({preventScroll:true})}});
+  swipe(lb.querySelector('.lb-stage'),step);
+})();
 """
+
+ARROW_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>'
+ARROW_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>'
+EXPAND = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">'
+          '<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>')
+CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>'
 
 # Se ejecuta antes de pintar la página para no mostrar un destello del tema equivocado.
 THEME_BOOT = "try{var t=localStorage.getItem('tema');if(t)document.documentElement.dataset.theme=t}catch(e){}"
@@ -279,19 +382,50 @@ def kind(it: dict) -> str:
     return "mix"
 
 
-def card(it: dict, L: int, cls: str = "", img: bool = False) -> str:
+def gallery(it: dict, L: int) -> str:
+    """Figuras del proyecto que rotan solas; la primera se carga con la página y el resto
+    (data-src) recién cuando la tarjeta aparece en pantalla. Un clic abre el visor."""
+    figs = GAL.get(it.get("repo", ""), [])
+    if not figs:
+        return ""
+    name = html.escape(re.sub(r"</?b>", "", it["name"][L]))
+    href = f'{PAGE}{it["repo"]}/' if it.get("page") else f'{GH}{it["repo"]}'
+    go = t(L, "Ver página", "View page") if it.get("page") else t(L, "Ver código", "View code")
+    imgs = "".join(
+        f'<img {"src" if k == 0 else "data-src"}="{html.escape(f["src"][L])}" alt="{html.escape(f["cap"][L])}"'
+        + (' class="on" loading="lazy"' if k == 0 else "") + ">"
+        for k, f in enumerate(figs))
+    n = len(figs)
+    lbl = t(L, f"Ver las {n} figuras de {name}" if n > 1 else f"Ampliar la figura de {name}",
+            f"View the {n} figures of {name}" if n > 1 else f"Enlarge the figure of {name}")
+    ctrl = ""
+    if n > 1:
+        ctrl = (f'<button type="button" class="nav prev" aria-label="{t(L, "Figura anterior", "Previous figure")}">{ARROW_L}</button>'
+                f'<button type="button" class="nav next" aria-label="{t(L, "Figura siguiente", "Next figure")}">{ARROW_R}</button>'
+                '<div class="dots" aria-hidden="true">' + '<i class="on"></i>' + "<i></i>" * (n - 1) + "</div>"
+                '<div class="bar" aria-hidden="true"><i></i></div>')
+    return (f'<div class="gal" data-title="{name}" data-href="{href}" data-go="{go}"><div class="frames">{imgs}</div>'
+            f'<button type="button" class="open" aria-label="{lbl}"></button>{ctrl}'
+            f'<span class="n" aria-hidden="true">{EXPAND}{n if n > 1 else ""}</span></div>')
+
+
+def lightbox(L: int) -> str:
+    return ('<dialog class="lb" aria-label="' + t(L, "Figuras del proyecto", "Project figures") + '">'
+            '<div class="lb-top"><b></b><span class="lb-k"></span>'
+            f'<a href="#">{t(L, "Ver página", "View page")} ↗</a>'
+            f'<button type="button" class="lb-x" aria-label="{t(L, "Cerrar", "Close")}">{CLOSE}</button></div>'
+            '<div class="lb-stage"><img alt="">'
+            f'<button type="button" class="nav prev" aria-label="{t(L, "Figura anterior", "Previous figure")}">{ARROW_L}</button>'
+            f'<button type="button" class="nav next" aria-label="{t(L, "Figura siguiente", "Next figure")}">{ARROW_R}</button></div>'
+            '<p class="lb-cap" aria-live="polite"></p><div class="lb-th"></div></dialog>')
+
+
+def card(it: dict, L: int, cls: str = "") -> str:
     acts = []
     if it.get("page"):
         acts.append(f'<a href="{PAGE}{it["repo"]}/">{t(L, "Ver página", "View page")}</a>')
     acts.append(f'<a href="{GH}{it["repo"]}">{t(L, "Código", "Code")}</a>')
-    # "img_fit": "contain" muestra el gráfico entero en vez de recortarlo al formato de la tarjeta.
-    fit = ' class="contain"' if it.get("img_fit") == "contain" else ""
-    if img and it.get("img"):
-        pic = f'<img src="{PAGE}{it["repo"]}/{it["img"]}" alt="" loading="lazy"{fit}>'
-    elif THUMBS.get(it.get("repo", "")):
-        pic = f'<img class="thumb" src="{PAGE}{it["repo"]}/{THUMBS[it["repo"]]}" alt="" loading="lazy">'
-    else:
-        pic = ""
+    pic = gallery(it, L)
     tags = "".join(f"<code>{html.escape(x)}</code>" for x in it["tags"])
     attrs = f' data-kind="{kind(it)}" data-sector="{" ".join(SECT.get(it.get("repo", ""), []))}"'
     return (f'<article class="card {cls}"{attrs}>{pic}<h3><a href="{GH}{it["repo"]}">{h(it["name"][L])}</a></h3>'
@@ -348,7 +482,7 @@ def site(L: int) -> str:
             + "</div></header>",
             f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
-            '<div class="grid feat">' + "".join(card(f, L, img=True) for f in D["featured"]) + "</div>",
+            '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
             rvs_section(L),
             f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
             f'<article class="card lib"><h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
@@ -404,7 +538,8 @@ def site(L: int) -> str:
             '<meta name="theme-color" content="#0D1117" media="(prefers-color-scheme: dark)">\n'
             '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
             '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
-            f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + f"\n</div>\n<script>{JS}</script>\n</body>\n</html>\n")
+            f"<style>{CSS}</style>\n</head>\n<body>\n" + "\n".join(body) + "\n</div>\n" + lightbox(L) +
+            f"\n<script>{JS}</script>\n</body>\n</html>\n")
 
 
 
