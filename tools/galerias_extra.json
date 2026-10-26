@@ -2,5 +2,13 @@
  "chile-macro-data-pipeline": [
   {"src": "assets/shots/chile-macro-data-pipeline.png",
    "cap": ["Tablero diario: cobre, dólar, UF, IPC, TPM y morosidad", "Daily dashboard: copper, dollar, UF, CPI, policy rate and delinquency"]}
+ ],
+ "datoschile": [
+  {"src": "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/ejemplo.png",
+   "cap": ["Fondos A y E en UF, morosidad bancaria y cobre: cada gráfico es una línea de datoschile", "Pension funds A and E in UF, bank delinquency and copper: each chart is one line of datoschile"]}
+ ],
+ "bus-fleet-fuel-efficiency": [
+  {"src": ["assets/shots/bus-fleet-flow-es.svg", "assets/shots/bus-fleet-flow-en.svg"],
+   "cap": ["De un Excel por terminal a una app que calcula el consumo sola", "From one Excel per depot to an app that computes consumption"]}
  ]
 }

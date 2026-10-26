@@ -14,6 +14,7 @@ import argparse
 import html
 import json
 import re
+from datetime import date
 from pathlib import Path
 from urllib.parse import quote
 
@@ -27,6 +28,8 @@ D = json.loads((ROOT / "tools" / "perfil.json").read_text(encoding="utf-8"))
 THUMBS = json.loads((ROOT / "tools" / "miniaturas.json").read_text(encoding="utf-8"))
 # Las figuras de la galería de cada tarjeta, con la miniatura primero (tools/galerias.py).
 GAL = json.loads((ROOT / "tools" / "galerias.json").read_text(encoding="utf-8"))
+# Qué repositorios tienen página de resultados, para las tarjetas que no lo declaran (Simulado vs. real).
+PAGES = {p["repo"]: p.get("page") for p in [p for c in D["categories"] for p in c["items"]] + D["featured"]}
 SECT = json.loads((ROOT / "tools" / "sectores.json").read_text(encoding="utf-8"))
 ICONS: set[str] = set()  # logos disponibles en <sitio>/assets/icons, se llena en main()
 ES, EN = 0, 1
@@ -176,6 +179,12 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .card:hover{border-color:var(--hover);transform:translateY(-2px)}
 .gal{position:relative;margin:-6px -8px 14px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
 .feat .gal{aspect-ratio:16/9}
+.rvs .gal{margin:-4px -6px 8px}
+.two{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr))}
+.gal.pic{aspect-ratio:4/5;background:var(--bg2)}
+.gal.pic .frames img{object-fit:cover;object-position:50% 45%;padding:0;transform:none}
+.data.org{color:var(--muted);border-color:var(--line);background:var(--bg2)}
+.credit{font-size:.78rem;color:var(--muted);padding-top:10px;border-top:1px solid var(--line)}
 .frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;opacity:0;transform:scale(1.015);transition:opacity .7s ease,transform 4s ease}
 .frames img.on{opacity:1;transform:none}
 .gal .open{position:absolute;inset:0;width:100%;border:0;padding:0;background:none;cursor:zoom-in}
@@ -211,6 +220,7 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .lb-th button{flex:none;width:76px;height:48px;padding:2px;border:2px solid var(--line);border-radius:7px;background:#fff;cursor:pointer;opacity:.55;transition:opacity .15s,border-color .15s}
 .lb-th button:hover{opacity:.9}.lb-th button[aria-current="true"]{opacity:1;border-color:var(--accent)}
 .lb-th img{width:100%;height:100%;object-fit:contain}
+.nav[hidden],.lb-th[hidden],.lb-top a[hidden]{display:none}
 @media (max-width:640px){.lb{width:100vw;max-height:100vh;border-radius:0}.lb-stage img{height:auto;max-height:62vh;padding:6px}.lb-top a{display:none}}
 .card h3{font-size:1.04rem;margin:0 0 8px;line-height:1.3}
 .card h3 a{color:var(--ink);text-decoration:none}
@@ -333,7 +343,7 @@ JS = """
     [].forEach.call(th.children,function(b,x){b.setAttribute('aria-current',x===j);if(x===j)b.scrollIntoView({block:'nearest',inline:'nearest'})});
     if(figs.length>1)new Image().src=figs[(j+1)%figs.length].src;}
   function step(d){if(figs.length<2)return;j=(j+d+figs.length)%figs.length;paint()}
-  function show(g,i){cur=g;figs=g.figs();j=i;ttl.textContent=g.dataset.title;link.href=g.dataset.href;link.textContent=g.dataset.go+' ↗';
+  function show(g,i){cur=g;figs=g.figs();j=i;ttl.textContent=g.dataset.title;link.href=g.dataset.href;link.hidden=!g.dataset.href;link.textContent=g.dataset.go+' ↗';
     th.innerHTML='';th.hidden=figs.length<2;
     figs.forEach(function(f,x){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',f.cap);
       var t=document.createElement('img');t.src=f.src;t.alt='';t.loading='lazy';b.appendChild(t);
@@ -382,15 +392,17 @@ def kind(it: dict) -> str:
     return "mix"
 
 
-def gallery(it: dict, L: int) -> str:
+def gallery(it: dict, L: int, figs: list | None = None, cls: str = "") -> str:
     """Figuras del proyecto que rotan solas; la primera se carga con la página y el resto
-    (data-src) recién cuando la tarjeta aparece en pantalla. Un clic abre el visor."""
-    figs = GAL.get(it.get("repo", ""), [])
+    (data-src) recién cuando la tarjeta aparece en pantalla. Un clic abre el visor.
+    Sin ``figs`` usa las del repositorio del ítem (galerias.json)."""
+    figs = GAL.get(it.get("repo", ""), []) if figs is None else figs
     if not figs:
         return ""
     name = html.escape(re.sub(r"</?b>", "", it["name"][L]))
-    href = f'{PAGE}{it["repo"]}/' if it.get("page") else f'{GH}{it["repo"]}'
-    go = t(L, "Ver página", "View page") if it.get("page") else t(L, "Ver código", "View code")
+    page = it.get("page", PAGES.get(it.get("repo")))
+    href = (f'{PAGE}{it["repo"]}/' if page else f'{GH}{it["repo"]}') if it.get("repo") else ""
+    go = t(L, "Ver página", "View page") if page else t(L, "Ver código", "View code")
     imgs = "".join(
         f'<img {"src" if k == 0 else "data-src"}="{html.escape(f["src"][L])}" alt="{html.escape(f["cap"][L])}"'
         + (' class="on" loading="lazy"' if k == 0 else "") + ">"
@@ -404,7 +416,7 @@ def gallery(it: dict, L: int) -> str:
                 f'<button type="button" class="nav next" aria-label="{t(L, "Figura siguiente", "Next figure")}">{ARROW_R}</button>'
                 '<div class="dots" aria-hidden="true">' + '<i class="on"></i>' + "<i></i>" * (n - 1) + "</div>"
                 '<div class="bar" aria-hidden="true"><i></i></div>')
-    return (f'<div class="gal" data-title="{name}" data-href="{href}" data-go="{go}"><div class="frames">{imgs}</div>'
+    return (f'<div class="gal{cls}" data-title="{name}" data-href="{href}" data-go="{go}"><div class="frames">{imgs}</div>'
             f'<button type="button" class="open" aria-label="{lbl}"></button>{ctrl}'
             f'<span class="n" aria-hidden="true">{EXPAND}{n if n > 1 else ""}</span></div>')
 
@@ -437,7 +449,8 @@ def rvs_section(L: int) -> str:
     """Simulado contra real: una tarjeta por proyecto con la cifra antes y después."""
     rv = D["real_vs_sim"]
     cards = "".join(
-        f'<article class="rvs"><h3><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a></h3>'
+        f'<article class="rvs">{gallery(r, L, GAL.get("rvs/" + r["name"][ES], []))}'
+        f'<h3><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a></h3>'
         f'<div class="metric">{h(r["metric"][L])}</div>'
         f'<div class="vals"><span class="sim"><small>{t(L, "Simulado", "Simulated")}</small>{h(r["sim"][L])}</span>'
         f'<span class="arrow" aria-hidden="true">→</span>'
@@ -446,6 +459,20 @@ def rvs_section(L: int) -> str:
         for r in rv["rows"])
     return (f'<h2 id="real">{h(rv["title"][L])}</h2><p class="sub">{h(rv["intro"][L])}</p>'
             f'<div class="grid rvsg">{cards}</div>')
+
+
+def outside(L: int, R: str) -> str:
+    """Experiencia fuera de los datos (perfil.json "outside"). Solo existe en el sitio."""
+    o = D.get("outside")
+    if not o:
+        return ""
+    years = date.today().year - o["since"]
+    cap = f'{o["name"][L]} · {o["org"]}'
+    pic = gallery({"name": [cap, cap]}, L, [{"src": [R + o["photo"]] * 2, "cap": [cap + ". " + o["credit"][0],
+                                                                               cap + ". " + o["credit"][1]]}], " pic")
+    return (f'<article class="card">{pic}<h3>{h(o["name"][L])}</h3>'
+            f'<div class="data org">{h(o["org"])} · {t(L, "desde", "since")} {o["since"]}</div>'
+            f'<p>{h(o["res"][L].replace("{n}", str(years)))}</p><div class="credit">{h(o["credit"][L])}</div></article>')
 
 
 def site(L: int) -> str:
@@ -485,12 +512,12 @@ def site(L: int) -> str:
             '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
             rvs_section(L),
             f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
-            f'<article class="card lib"><h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
+            f'<article class="card lib">{gallery(lib, L)}<h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
             f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
             f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
             f'<div class="actions"><a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
             f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
-            '<div class="grid one">' + card(w, L) + "</div>",
+            f'<div class="grid two">{card(w, L)}{outside(L, R)}</div>',
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']

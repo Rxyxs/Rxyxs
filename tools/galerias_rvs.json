@@ -1,0 +1,21 @@
+{
+ "_": "Figuras de cada fila de Simulado vs. real, por nombre en español. 'figs' va primero (ruta dentro del repo, o solo el nombre si la figura ya está en la página del proyecto); con 'rest' se agregan después las demás figuras del proyecto, las de datos reales primero.",
+ "Pipeline de fraude e-commerce": {"figs": [
+  ["02-realtime-ecommerce-fraud/outputs/plots/model_comparison.png", "Comparación de modelos", "Model comparison"],
+  ["02-realtime-ecommerce-fraud/outputs/plots/precision_recall_curve.png", "Curva de precisión y recall", "Precision-recall curve"],
+  ["02-realtime-ecommerce-fraud/outputs/plots/dl_loss_curves_animated.gif", "Curvas de pérdida de la red, animadas", "Network loss curves, animated"]]},
+ "AML no supervisado sobre grafo": {"figs": [
+  ["03-graph-based-aml-detection/outputs/figures/comparacion_modelos_roc.png", "Curvas ROC por modelo", "ROC curves by model"],
+  ["03-graph-based-aml-detection/outputs/figures/precision_recall_sweep_animated.gif", "Barrido de precisión y recall, animado", "Precision and recall sweep, animated"],
+  ["03-graph-based-aml-detection/outputs/figures/distribucion_scores.png", "Distribución de los puntajes", "Score distributions"],
+  ["03-graph-based-aml-detection/outputs/figures/tipologias_en_alertas.png", "Tipologías en las alertas", "Typologies among the alerts"]]},
+ "19 detectores de anomalías": {"rest": true, "figs": [
+  ["data/processed/figures/realdata_paysim_vs_ulb.png", "PaySim contra los datos reales de ULB", "PaySim against the real ULB data"]]},
+ "Laboratorio de riesgo crediticio": {"figs": [
+  ["27-real-portfolio-lending-club/outputs/plots/comparacion_modelos.png", "Modelos sobre la cartera real de Lending Club", "Models on the real Lending Club book"],
+  ["27-real-portfolio-lending-club/outputs/plots/momento_del_default.png", "En qué mes del crédito ocurre el default", "When in the loan's life default happens"],
+  ["27-real-portfolio-lending-club/outputs/plots/cosechas_y_correlacion.png", "Cosechas y correlación de default", "Vintages and default correlation"],
+  ["27-real-portfolio-lending-club/outputs/plots/estabilidad_trimestral.png", "Estabilidad trimestral", "Quarterly stability"]]},
+ "Fragmentación de tronadura": {"rest": true, "figs": [["p80_predicted_vs_actual.png"]]},
+ "Detector de order flow (C++)": {"rest": true, "figs": [["alert_counts.svg"], ["detector_timeline.svg"]]}
+}

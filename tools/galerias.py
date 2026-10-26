@@ -119,11 +119,39 @@ def curate(figs: list[dict], cover: str | None) -> list[dict]:
     return uniq[:MAX]
 
 
+def site_url(s: str) -> str:
+    return s if s.startswith("http") else PAGE + s
+
+
+def real_vs_sim(D: dict, out: dict) -> dict:
+    """Una galería por fila de Simulado vs. real: primero la figura del resultado con datos
+    reales (galerias_rvs.json), después, si la fila lo pide, el resto del proyecto con las
+    figuras de datos reales delante."""
+    conf = json.loads((ROOT / "tools" / "galerias_rvs.json").read_text(encoding="utf-8"))
+    rows = {}
+    for r in D["real_vs_sim"]["rows"]:
+        base, c = out.get(r["repo"], []), conf.get(r["name"][0], {"rest": True})
+        figs = []
+        for spec in c.get("figs", []):
+            path = spec[0]
+            same = next((f for f in base if f["src"][0].rsplit("/", 1)[-1] == path.rsplit("/", 1)[-1]), None)
+            if same and "/" not in path:
+                figs.append(same)
+            else:
+                figs.append({"src": [f"{CDN}{r['repo']}@HEAD/{path}"] * 2, "cap": list(spec[1:3])})
+        if c.get("rest"):
+            rest = [f for f in base if f not in figs]
+            figs += sorted(rest, key=lambda f: "real" not in f["src"][0].rsplit("/", 1)[-1])
+        rows["rvs/" + r["name"][0]] = figs[:6]
+        print(f"{'rvs/' + r['name'][0]:45s} {len(figs[:6]):2d} figuras")
+    return rows
+
+
 def main() -> None:
     D = json.loads((ROOT / "tools" / "perfil.json").read_text(encoding="utf-8"))
     thumbs = json.loads((ROOT / "tools" / "miniaturas.json").read_text(encoding="utf-8"))
     extra = json.loads((ROOT / "tools" / "galerias_extra.json").read_text(encoding="utf-8"))
-    items = [p for c in D["categories"] for p in c["items"]] + D["featured"]
+    items = [p for c in D["categories"] for p in c["items"]] + D["featured"] + [D["library"], D["work"]]
     covers = {f["repo"]: f.get("img") for f in D["featured"]}
     out = {}
     for repo in dict.fromkeys(it["repo"] for it in items):
@@ -132,10 +160,13 @@ def main() -> None:
         source = "página"
         if not figs:
             figs, source = from_repo(repo), "repositorio"
-        # Capturas propias del sitio (por ejemplo, de un tablero interactivo sin figuras).
-        figs = [{"src": [PAGE + e["src"]] * 2, "cap": e["cap"]} for e in extra.get(repo, [])] + figs
+        # Imágenes propias del sitio o externas: la captura de un tablero interactivo, un
+        # diagrama para un proyecto de trabajo sin datos públicos. "src" puede ir por idioma.
+        figs = [{"src": [site_url(s) for s in (e["src"] if isinstance(e["src"], list) else [e["src"]] * 2)],
+                 "cap": e["cap"]} for e in extra.get(repo, [])] + figs
         out[repo] = curate(figs, covers.get(repo) or thumbs.get(repo))
         print(f"{repo:45s} {len(out[repo]):2d} figuras ({source})")
+    out.update(real_vs_sim(D, out))
     (ROOT / "tools" / "galerias.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
 
