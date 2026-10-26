@@ -184,6 +184,12 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .gal.pic{aspect-ratio:4/5;background:var(--bg2)}
 .gal.pic .frames img{object-fit:cover;object-position:50% 45%;padding:0;transform:none}
 .data.org{color:var(--muted);border-color:var(--line);background:var(--bg2)}
+.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 14px;margin:0 0 14px;align-items:start}
+.facts dt{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:5px;white-space:nowrap}
+.facts dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.facts dd span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:3px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg2);color:var(--body)}
+.facts dd.steps span b{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.66rem}
+.card p.note{flex:none;font-size:.82rem;color:var(--muted);margin:0 0 12px}
 .credit{font-size:.78rem;color:var(--muted);padding-top:10px;border-top:1px solid var(--line)}
 .frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;opacity:0;transform:scale(1.015);transition:opacity .7s ease,transform 4s ease}
 .frames img.on{opacity:1;transform:none}
@@ -470,9 +476,18 @@ def outside(L: int, R: str) -> str:
     cap = f'{o["name"][L]} · {o["org"]}'
     pic = gallery({"name": [cap, cap]}, L, [{"src": [R + o["photo"]] * 2, "cap": [cap + ". " + o["credit"][0],
                                                                                cap + ". " + o["credit"][1]]}], " pic")
+    # Datos breves en filas: los grupos como etiquetas y el ciclo del mes como pasos numerados.
+    facts = "".join(
+        f'<dt>{h(f["label"][L])}</dt><dd class="{"steps" if f.get("steps") else ""}">'
+        + "".join(f'<span>{f"<b>{k}</b>" if f.get("steps") else ""}{h(x[L])}</span>'
+                  for k, x in enumerate(f["items"], 1)) + "</dd>"
+        for f in o.get("facts", []))
+    note = f'<p class="note">{h(o["note"][L])}</p>' if o.get("note") else ""
     return (f'<article class="card">{pic}<h3>{h(o["name"][L])}</h3>'
             f'<div class="data org">{h(o["org"])} · {t(L, "desde", "since")} {o["since"]}</div>'
-            f'<p>{h(o["res"][L].replace("{n}", str(years)))}</p><div class="credit">{h(o["credit"][L])}</div></article>')
+            f'<p>{h(o["res"][L].replace("{n}", str(years)))}</p>'
+            + (f'<dl class="facts">{facts}</dl>' if facts else "") + note +
+            f'<div class="credit">{h(o["credit"][L])}</div></article>')
 
 
 def site(L: int) -> str:

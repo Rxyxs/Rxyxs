@@ -150,13 +150,68 @@
   "org": "Ecobike Training",
   "since": 2024,
   "res": [
-   "Llevo {n} años como profesor de enduro en la escuela Ecobike Training, haciendo clases de bicicleta de montaña.",
-   "For {n} years I have been an enduro instructor at the Ecobike Training school, teaching mountain biking."
+   "Llevo {n} años como profesor de enduro en la escuela Ecobike Training. Las clases son los sábados en la mañana y cada mes combina técnica, preparación física, circuitos y un paseo por distintos cerros de Santiago.",
+   "For {n} years I have been an enduro instructor at the Ecobike Training school. Classes run on Saturday mornings, and each month combines technique, fitness, circuits and a ride on a different hill around Santiago."
   ],
   "photo": "assets/photos/enduro-ecobike.jpg",
   "credit": [
    "Foto: Bonnefoy Fotografía",
    "Photo: Bonnefoy Fotografía"
+  ],
+  "facts": [
+   {
+    "label": [
+     "Grupos",
+     "Groups"
+    ],
+    "items": [
+     [
+      "Adultos avanzados",
+      "Advanced adults"
+     ],
+     [
+      "Adultos principiantes",
+      "Beginner adults"
+     ],
+     [
+      "Niños avanzados",
+      "Advanced kids"
+     ],
+     [
+      "Niños principiantes",
+      "Beginner kids"
+     ]
+    ]
+   },
+   {
+    "label": [
+     "Cada mes",
+     "Each month"
+    ],
+    "steps": true,
+    "items": [
+     [
+      "Técnica",
+      "Technique"
+     ],
+     [
+      "Física",
+      "Fitness"
+     ],
+     [
+      "Circuitos",
+      "Circuits"
+     ],
+     [
+      "Paseo por cerros de Santiago",
+      "Ride on Santiago hills"
+     ]
+    ]
+   }
+  ],
+  "note": [
+   "Primeros auxilios básicos, sin certificación.",
+   "Basic first aid, no certification."
   ]
  },
  "categories": [

@@ -2264,8 +2264,8 @@
     "https://rxyxs.github.io/assets/shots/bus-fleet-flow-en.svg"
    ],
    "cap": [
-    "De un Excel por terminal a una app que calcula el consumo sola",
-    "From one Excel per depot to an app that computes consumption"
+    "El proceso en cuatro etapas: planillas por terminal, consolidación por terminal, día y mes, control de rendimiento y app de registro",
+    "The process in four stages: one sheet per depot, consolidation by depot, day and month, efficiency check and recording app"
    ]
   }
  ],
