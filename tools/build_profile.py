@@ -11,6 +11,7 @@ proyecto se edita el JSON y se vuelve a correr este script.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -31,6 +32,7 @@ GAL = json.loads((ROOT / "tools" / "galerias.json").read_text(encoding="utf-8"))
 # Qué repositorios tienen página de resultados, para las tarjetas que no lo declaran (Simulado vs. real).
 PAGES = {p["repo"]: p.get("page") for p in [p for c in D["categories"] for p in c["items"]] + D["featured"]}
 SECT = json.loads((ROOT / "tools" / "sectores.json").read_text(encoding="utf-8"))
+SITE: Path | None = None  # carpeta del sitio, para versionar sus imágenes (main)
 ICONS: set[str] = set()  # logos disponibles en <sitio>/assets/icons, se llena en main()
 ES, EN = 0, 1
 
@@ -415,6 +417,15 @@ def kind(it: dict) -> str:
     return "mix"
 
 
+def bust(src: str) -> str:
+    """Agrega ?v=<hash> a las imágenes que viven en el sitio: GitHub Pages las cachea 10 minutos
+    y el navegador seguía mostrando el diagrama anterior después de publicar uno nuevo."""
+    rel = src.removeprefix(PAGE).removeprefix("../")
+    if SITE is None or "://" in rel or not rel.startswith("assets/") or not (SITE / rel).is_file():
+        return src
+    return f"{src}?v={hashlib.sha1((SITE / rel).read_bytes()).hexdigest()[:8]}"
+
+
 def gallery(it: dict, L: int, figs: list | None = None, cls: str = "") -> str:
     """Figuras del proyecto que rotan solas; la primera se carga con la página y el resto
     (data-src) recién cuando la tarjeta aparece en pantalla. Un clic abre el visor.
@@ -427,7 +438,7 @@ def gallery(it: dict, L: int, figs: list | None = None, cls: str = "") -> str:
     href = (f'{PAGE}{it["repo"]}/' if page else f'{GH}{it["repo"]}') if it.get("repo") else it.get("href", "")
     go = it.get("go") or (t(L, "Ver página", "View page") if page else t(L, "Ver código", "View code"))
     imgs = "".join(
-        f'<img {"src" if k == 0 else "data-src"}="{html.escape(f["src"][L])}" alt="{html.escape(f["cap"][L])}"'
+        f'<img {"src" if k == 0 else "data-src"}="{html.escape(bust(f["src"][L]))}" alt="{html.escape(f["cap"][L])}"'
         + (' class="on" loading="lazy"' if k == 0 else "") + ">"
         for k, f in enumerate(figs))
     n = len(figs)
@@ -493,14 +504,16 @@ def experience(L: int, R: str) -> str:
     """Experiencia como filas de CV: imagen a la izquierda, rol y detalle a la derecha. La fila
     de "outside" (perfil.json) es la docencia de enduro y solo existe en el sitio."""
     w = D["work"]
-    acts = f'<a href="{GH}{w["repo"]}">{t(L, "Código", "Code")}</a>'
-    # El proyecto laboral va como caso: texto arriba y el diagrama a todo el ancho, donde se lee.
+    acts = f'<a href="{GH}{w["repo"]}">{t(L, "Código del flujo", "Code of the pipeline")}</a>'
+    # El cargo va como caso: empresa y período arriba, el texto y el mapa del trabajo a todo el
+    # ancho, donde se lee. El repositorio reproduce parte del flujo con datos ficticios.
+    meta = "".join(f"<span>{h(x)}</span>" for x in (w["network"][L], w["period"][L])) if w.get("company") else ""
     rows = [f'<article class="card xp wide"><div class="xb">'
-            f'<p class="kick">{t(L, "Proyecto laboral", "Work project")}</p>'
-            f'<h3><a href="{GH}{w["repo"]}">{h(w["name"][L])}</a></h3>'
-            f'<div class="meta"><span class="data {kind(w)}">{h(label(w, L))}</span></div>'
+            f'<p class="kick">{t(L, "Experiencia laboral", "Work experience")}</p>'
+            f'<h3>{h(w.get("role", w["name"])[L])}</h3>'
+            f'<div class="meta"><b>{h(w.get("company", ""))}</b>{meta}</div>'
             f'<p>{h(w["res"][L])}</p>{gallery(w, L)}<div class="tags">{"".join(f"<code>{html.escape(x)}</code>" for x in w["tags"])}</div>'
-            f'<div class="actions">{acts}</div></div></article>']
+            f'<div class="actions xf">{acts}<span class="data {kind(w)}">{h(label(w, L))}</span></div></div></article>']
     o = D.get("outside")
     if o:
         years = date.today().year - o["since"]
@@ -636,6 +649,8 @@ def main() -> None:
     escribir(ROOT / "README.en.md", readme(EN))
     print(f"README.md, README.en.md: {len(all_items())} proyectos")
     if a.site:
+        global SITE
+        SITE = a.site
         ICONS.update(f.stem for f in (a.site / "assets" / "icons").glob("*.svg"))
         (a.site / "en").mkdir(parents=True, exist_ok=True)
         escribir(a.site / "index.html", site(ES))

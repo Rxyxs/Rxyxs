@@ -127,6 +127,20 @@
    "Control de combustible de una flota de buses",
    "Fuel control for a bus fleet"
   ],
+  "company": "Buses Vule S.A.",
+  "network": [
+   "Red Metropolitana de Movilidad",
+   "Santiago public bus network (Red)"
+  ],
+  "role": [
+   "Analista de Datos · Abastecimiento y Combustibles",
+   "Data Analyst · Supply and Fuel"
+  ],
+  "period": [
+   "enero 2025 – abril 2026",
+   "January 2025 – April 2026"
+  ],
+  "_site": "company, network, role y period solo los usa el sitio (sección Experiencia).",
   "data": "work",
   "res": [
    "Cada uno de los 17 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.",
@@ -218,8 +232,8 @@
    }
   ],
   "note": [
-   "Primeros auxilios básicos, sin certificación.",
-   "Basic first aid, no certification."
+   "Primeros auxilios básicos.",
+   "Basic first aid."
   ],
   "links": [
    {

@@ -2264,8 +2264,8 @@
     "https://rxyxs.github.io/assets/shots/bus-fleet-flow-en.svg"
    ],
    "cap": [
-    "El proceso en cuatro etapas: planillas por terminal, consolidación por terminal, día y mes, control de rendimiento y app de registro",
-    "The process in four stages: one sheet per depot, consolidation by depot, day and month, efficiency check and recording app"
+    "Mapa del trabajo en Buses Vule: captura, ETL, control, analítica y reportes",
+    "Map of the work at Buses Vule: capture, ETL, control, analytics and reporting"
    ]
   }
  ],
