@@ -189,8 +189,25 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .facts dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
 .facts dd span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:3px 10px;border:1px solid var(--line);border-radius:999px;background:var(--bg2);color:var(--body)}
 .facts dd.steps span b{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.66rem}
-.card p.note{flex:none;font-size:.82rem;color:var(--muted);margin:0 0 12px}
-.credit{font-size:.78rem;color:var(--muted);padding-top:10px;border-top:1px solid var(--line)}
+.xps{display:grid;gap:16px}
+.card.xp{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;padding:18px 24px 18px 18px;align-items:stretch}
+.xp .gal{margin:0;height:100%;min-height:300px;aspect-ratio:auto}
+.card.xp.wide{grid-template-columns:minmax(0,1fr);padding:22px 24px}
+.xp.wide .gal{height:auto;min-height:0;aspect-ratio:1200/684;margin:0 0 18px}
+.xb{display:flex;flex-direction:column;min-width:0;padding-top:6px}
+.xp p.kick{flex:none;margin:0 0 6px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.xp h3{font-size:1.18rem;margin:0 0 8px}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin-bottom:14px;font-size:.86rem;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}.meta .data{margin:0}
+.meta span+span::before,.meta b+span::before{content:"·";margin-right:14px;color:var(--line)}
+.meta .data::before{content:none}
+.xp .xb>p{flex:none;margin:0 0 16px}
+.xf{margin-top:auto;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.ig{display:inline-flex;align-items:center;gap:7px}.ig svg{width:16px;height:16px}
+.xf .note{font-size:.8rem;color:var(--muted)}
+.credit{font-size:.75rem;color:var(--muted);margin-left:auto}
+@media (max-width:760px){.card.xp{grid-template-columns:minmax(0,1fr);gap:16px;padding:16px}
+.xp .gal,.xp.wide .gal{height:auto;min-height:0;aspect-ratio:16/10}.xp .gal.pic{aspect-ratio:1/1}.credit{margin-left:0}}
 .frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;opacity:0;transform:scale(1.015);transition:opacity .7s ease,transform 4s ease}
 .frames img.on{opacity:1;transform:none}
 .gal .open{position:absolute;inset:0;width:100%;border:0;padding:0;background:none;cursor:zoom-in}
@@ -407,8 +424,8 @@ def gallery(it: dict, L: int, figs: list | None = None, cls: str = "") -> str:
         return ""
     name = html.escape(re.sub(r"</?b>", "", it["name"][L]))
     page = it.get("page", PAGES.get(it.get("repo")))
-    href = (f'{PAGE}{it["repo"]}/' if page else f'{GH}{it["repo"]}') if it.get("repo") else ""
-    go = t(L, "Ver página", "View page") if page else t(L, "Ver código", "View code")
+    href = (f'{PAGE}{it["repo"]}/' if page else f'{GH}{it["repo"]}') if it.get("repo") else it.get("href", "")
+    go = it.get("go") or (t(L, "Ver página", "View page") if page else t(L, "Ver código", "View code"))
     imgs = "".join(
         f'<img {"src" if k == 0 else "data-src"}="{html.escape(f["src"][L])}" alt="{html.escape(f["cap"][L])}"'
         + (' class="on" loading="lazy"' if k == 0 else "") + ">"
@@ -467,27 +484,48 @@ def rvs_section(L: int) -> str:
             f'<div class="grid rvsg">{cards}</div>')
 
 
-def outside(L: int, R: str) -> str:
-    """Experiencia fuera de los datos (perfil.json "outside"). Solo existe en el sitio."""
+INSTAGRAM = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'
+             '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>'
+             '<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>')
+
+
+def experience(L: int, R: str) -> str:
+    """Experiencia como filas de CV: imagen a la izquierda, rol y detalle a la derecha. La fila
+    de "outside" (perfil.json) es la docencia de enduro y solo existe en el sitio."""
+    w = D["work"]
+    acts = f'<a href="{GH}{w["repo"]}">{t(L, "Código", "Code")}</a>'
+    # El proyecto laboral va como caso: texto arriba y el diagrama a todo el ancho, donde se lee.
+    rows = [f'<article class="card xp wide"><div class="xb">'
+            f'<p class="kick">{t(L, "Proyecto laboral", "Work project")}</p>'
+            f'<h3><a href="{GH}{w["repo"]}">{h(w["name"][L])}</a></h3>'
+            f'<div class="meta"><span class="data {kind(w)}">{h(label(w, L))}</span></div>'
+            f'<p>{h(w["res"][L])}</p>{gallery(w, L)}<div class="tags">{"".join(f"<code>{html.escape(x)}</code>" for x in w["tags"])}</div>'
+            f'<div class="actions">{acts}</div></div></article>']
     o = D.get("outside")
-    if not o:
-        return ""
-    years = date.today().year - o["since"]
-    cap = f'{o["name"][L]} · {o["org"]}'
-    pic = gallery({"name": [cap, cap]}, L, [{"src": [R + o["photo"]] * 2, "cap": [cap + ". " + o["credit"][0],
-                                                                               cap + ". " + o["credit"][1]]}], " pic")
-    # Datos breves en filas: los grupos como etiquetas y el ciclo del mes como pasos numerados.
-    facts = "".join(
-        f'<dt>{h(f["label"][L])}</dt><dd class="{"steps" if f.get("steps") else ""}">'
-        + "".join(f'<span>{f"<b>{k}</b>" if f.get("steps") else ""}{h(x[L])}</span>'
-                  for k, x in enumerate(f["items"], 1)) + "</dd>"
-        for f in o.get("facts", []))
-    note = f'<p class="note">{h(o["note"][L])}</p>' if o.get("note") else ""
-    return (f'<article class="card">{pic}<h3>{h(o["name"][L])}</h3>'
-            f'<div class="data org">{h(o["org"])} · {t(L, "desde", "since")} {o["since"]}</div>'
+    if o:
+        years = date.today().year - o["since"]
+        cap = f'{o["name"][L]} · {o["org"]}'
+        link = (o.get("links") or [{}])[0]
+        pic = gallery({"name": [cap, cap], "href": link.get("url", ""), "go": link.get("label", ["", ""])[L]}, L,
+                      [{"src": [R + o["photo"]] * 2, "cap": [f'{cap}. {o["credit"][0]}', f'{cap}. {o["credit"][1]}']}], " pic")
+        # Los grupos como etiquetas y el ciclo del mes como pasos numerados.
+        facts = "".join(
+            f'<dt>{h(f["label"][L])}</dt><dd class="{"steps" if f.get("steps") else ""}">'
+            + "".join(f'<span>{f"<b>{k}</b>" if f.get("steps") else ""}{h(x[L])}</span>'
+                      for k, x in enumerate(f["items"], 1)) + "</dd>"
+            for f in o.get("facts", []))
+        links = "".join(f'<a class="ig" href="{x["url"]}" rel="noopener">{INSTAGRAM}{h(x["handle"])}</a>'
+                        for x in o.get("links", []))
+        note = f'<span class="note">{h(o["note"][L])}</span>' if o.get("note") else ""
+        rows.append(
+            f'<article class="card xp">{pic}<div class="xb">'
+            f'<p class="kick">{h(o["kicker"][L])}</p><h3>{h(o["name"][L])}</h3>'
+            f'<div class="meta"><b>{h(o["org"])}</b><span>{h(o["place"][L])}</span>'
+            f'<span>{t(L, "desde", "since")} {o["since"]}</span></div>'
             f'<p>{h(o["res"][L].replace("{n}", str(years)))}</p>'
-            + (f'<dl class="facts">{facts}</dl>' if facts else "") + note +
-            f'<div class="credit">{h(o["credit"][L])}</div></article>')
+            + (f'<dl class="facts">{facts}</dl>' if facts else "") +
+            f'<div class="actions xf">{links}{note}<span class="credit">{h(o["credit"][L])}</span></div></div></article>')
+    return '<div class="xps">' + "".join(rows) + "</div>"
 
 
 def site(L: int) -> str:
@@ -556,7 +594,7 @@ def site(L: int) -> str:
     body += [f'<h2 id="stack">{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
              # Experiencia va al final, después de los proyectos y las herramientas.
              f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
-             f'<div class="grid two">{card(w, L)}{outside(L, R)}</div>',
+             experience(L, R),
              f'<footer><span>{h(p["name"])} · {h(p["role"][L])}</span><span><a href="{p["github"]}">GitHub</a> · '
              f'<a href="{p["linkedin"]}">LinkedIn</a> · <a href="mailto:{p["email"]}">{p["email"]}</a></span></footer>']
     desc = t(L, "Portafolio de ciencia de datos de Pablo Reyes: proyectos ordenados por el tipo de problema que resuelven.",
