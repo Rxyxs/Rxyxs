@@ -1,0 +1,2218 @@
+{
+ "retail-demand-forecasting-favorita": [
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/accuracy_vs_decision.png",
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/accuracy_vs_decision.png"
+   ],
+   "cap": [
+    "Three models compared on RMSLE, service level and total cost",
+    "Three models compared on RMSLE, service level and total cost"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/zeros_decomposition.png",
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/zeros_decomposition.png"
+   ],
+   "cap": [
+    "Decomposition of the panel's zero rows into genuine zeros and stores that had not opened",
+    "Decomposition of the panel's zero rows into genuine zeros and stores that had not opened"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/intermittency_distribution.png",
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/intermittency_distribution.png"
+   ],
+   "cap": [
+    "Histogram of the share of zero-sales days across the 1,782 series",
+    "Histogram of the share of zero-sales days across the 1,782 series"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/cost_ratio_sensitivity.png",
+    "https://rxyxs.github.io/retail-demand-forecasting-favorita/figures/cost_ratio_sensitivity.png"
+   ],
+   "cap": [
+    "Cost saving versus the mean forecast across cost ratios, and quantile calibration",
+    "Cost saving versus the mean forecast across cost ratios, and quantile calibration"
+   ]
+  }
+ ],
+ "chile-banking-delinquency-cmf": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/07_macro_aporte.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/07_macro_aporte.png"
+   ],
+   "cap": [
+    "Macro aporte",
+    "Macro aporte"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/08_bancos_modelos.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/08_bancos_modelos.png"
+   ],
+   "cap": [
+    "Bancos modelos",
+    "Bancos modelos"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/11_estres_validacion.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/11_estres_validacion.png"
+   ],
+   "cap": [
+    "Estres validacion",
+    "Estres validacion"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/10_estres_escenarios.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/10_estres_escenarios.png"
+   ],
+   "cap": [
+    "Estres escenarios",
+    "Estres escenarios"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/12_estres_bancos_tpm.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/12_estres_bancos_tpm.png"
+   ],
+   "cap": [
+    "Estres bancos tpm",
+    "Estres bancos tpm"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/shap_summary.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/shap_summary.png"
+   ],
+   "cap": [
+    "Shap summary",
+    "Shap summary"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/13_shap_local.png",
+    "https://rxyxs.github.io/chile-banking-delinquency-cmf/figures/13_shap_local.png"
+   ],
+   "cap": [
+    "Shap local",
+    "Shap local"
+   ]
+  }
+ ],
+ "chile-energy-grid-forecasting": [
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/chile-energy-grid-forecasting@HEAD/data/processed/torch_loss_curve_marginal_cost_usd_mwh_animated.gif",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/chile-energy-grid-forecasting@HEAD/data/processed/torch_loss_curve_marginal_cost_usd_mwh_animated.gif"
+   ],
+   "cap": [
+    "MLP PyTorch loss curve, animated",
+    "MLP PyTorch loss curve, animated"
+   ]
+  }
+ ],
+ "chile-energy-grid-forecasting-r": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_sen_hourly_heatmap.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_sen_hourly_heatmap.png"
+   ],
+   "cap": [
+    "Every hour of Chile's grid, 2018-2025",
+    "Every hour of Chile's grid, 2018-2025"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_forecast_two_weeks.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_forecast_two_weeks.png"
+   ],
+   "cap": [
+    "Day-ahead forecast on two weeks of 2025",
+    "Day-ahead forecast on two weeks of 2025"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_model_comparison.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_model_comparison.png"
+   ],
+   "cap": [
+    "Model and loss comparison on 2025",
+    "Model and loss comparison on 2025"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_yearly_cv.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_yearly_cv.png"
+   ],
+   "cap": [
+    "Rolling-origin validation by year",
+    "Rolling-origin validation by year"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_file_definition_break.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_file_definition_break.png"
+   ],
+   "cap": [
+    "Hourly sum against the official monthly total",
+    "Hourly sum against the official monthly total"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_file_vs_daily_reports.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_file_vs_daily_reports.png"
+   ],
+   "cap": [
+    "Hourly file against the daily reports, with and without batteries",
+    "Hourly file against the daily reports, with and without batteries"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_curtailment_by_hour.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_curtailment_by_hour.png"
+   ],
+   "cap": [
+    "Real hourly curtailment by year",
+    "Real hourly curtailment by year"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/residuals_arima.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/residuals_arima.png"
+   ],
+   "cap": [
+    "Residual diagnostics -- ARIMA + Fourier K=12",
+    "Residual diagnostics -- ARIMA + Fourier K=12"
+   ]
+  }
+ ],
+ "copper-volatility-forecaster": [
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/copper_price_and_vol.png",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/copper_price_and_vol.png"
+   ],
+   "cap": [
+    "Copper price and realized volatility",
+    "Copper price and realized volatility"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/model_comparison.png",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/model_comparison.png"
+   ],
+   "cap": [
+    "Model comparison against persistence",
+    "Model comparison against persistence"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/forecasts_last_fold.png",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/forecasts_last_fold.png"
+   ],
+   "cap": [
+    "Forecasts in the last fold",
+    "Forecasts in the last fold"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/predicted_vs_actual.png",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/predicted_vs_actual.png"
+   ],
+   "cap": [
+    "Predicted vs. actual",
+    "Predicted vs. actual"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/residual_distribution.png",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/residual_distribution.png"
+   ],
+   "cap": [
+    "Residual distribution",
+    "Residual distribution"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/mlp_loss_curves_animated.gif",
+    "https://rxyxs.github.io/copper-volatility-forecaster/figures/mlp_loss_curves_animated.gif"
+   ],
+   "cap": [
+    "MLP loss curves by activation, animated",
+    "MLP loss curves by activation, animated"
+   ]
+  }
+ ],
+ "reading-market-turbulence": [
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/price_and_volatility_animated.gif",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/price_and_volatility_animated.gif"
+   ],
+   "cap": [
+    "Price and realized volatility, animated",
+    "Price and realized volatility, animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/ofi_vs_future_vol.png",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/ofi_vs_future_vol.png"
+   ],
+   "cap": [
+    "Order-flow imbalance vs. next-bucket realized volatility",
+    "Order-flow imbalance vs. next-bucket realized volatility"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/rmspe_comparison.png",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/rmspe_comparison.png"
+   ],
+   "cap": [
+    "RMSPE comparison across models",
+    "RMSPE comparison across models"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/activation_comparison.png",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/activation_comparison.png"
+   ],
+   "cap": [
+    "Activation comparison (ReLU vs. GELU vs. Swish)",
+    "Activation comparison (ReLU vs. GELU vs. Swish)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/predicted_vs_actual.png",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/predicted_vs_actual.png"
+   ],
+   "cap": [
+    "Predicted vs. actual realized volatility, held-out day, fresh run",
+    "Predicted vs. actual realized volatility, held-out day, fresh run"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/reading-market-turbulence/figures/feature_importance.png",
+    "https://rxyxs.github.io/reading-market-turbulence/figures/feature_importance.png"
+   ],
+   "cap": [
+    "LightGBM feature importance, fresh run",
+    "LightGBM feature importance, fresh run"
+   ]
+  }
+ ],
+ "customer-lifetime-value": [
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-lifetime-value/img/conditional.png",
+    "https://rxyxs.github.io/customer-lifetime-value/img/conditional.png"
+   ],
+   "cap": [
+    "Mean purchases in the holdout by calibration frequency: BG/NBD tracks the actual line closely at every level, LightGBM overshoots for low-frequency customers, the naive rate overshoots everywhere.",
+    "Mean purchases in the holdout by calibration frequency: BG/NBD tracks the actual line closely at every level, LightGBM overshoots for low-frequency customers, the naive rate overshoots everywhere."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-lifetime-value/img/capture.png",
+    "https://rxyxs.github.io/customer-lifetime-value/img/capture.png"
+   ],
+   "cap": [
+    "Cumulative share of next-26-week revenue against share of customers ranked by predicted value; both models sit close below the perfect-foresight curve.",
+    "Cumulative share of next-26-week revenue against share of customers ranked by predicted value; both models sit close below the perfect-foresight curve."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-lifetime-value/img/p_alive.png",
+    "https://rxyxs.github.io/customer-lifetime-value/img/p_alive.png"
+   ],
+   "cap": [
+    "Bar chart of the share of customers buying again by P(alive) band; it rises from 19% to 56% and then drops to 53% in the top band.",
+    "Bar chart of the share of customers buying again by P(alive) band; it rises from 19% to 56% and then drops to 53% in the top band."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-lifetime-value/img/cohorts.png",
+    "https://rxyxs.github.io/customer-lifetime-value/img/cohorts.png"
+   ],
+   "cap": [
+    "Heatmap of monthly cohort retention; cohorts from September to December 2010 are visibly lighter than the rest.",
+    "Heatmap of monthly cohort retention; cohorts from September to December 2010 are visibly lighter than the rest."
+   ]
+  }
+ ],
+ "fraud-detection-techniques-lab": [
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/model_comparison_with_mlp.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/model_comparison_with_mlp.png"
+   ],
+   "cap": [
+    "Model comparison including MLP",
+    "Model comparison including MLP"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/pca_correlation.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/pca_correlation.png"
+   ],
+   "cap": [
+    "PCA component correlation with fraud",
+    "PCA component correlation with fraud"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/mlp_loss_curves.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/mlp_loss_curves.png"
+   ],
+   "cap": [
+    "MLP validation loss per epoch by activation",
+    "MLP validation loss per epoch by activation"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/comparacion_modelos.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/comparacion_modelos.png"
+   ],
+   "cap": [
+    "Model comparison",
+    "Model comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_precision_recall.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_precision_recall.png"
+   ],
+   "cap": [
+    "AE vs VAE vs Deep SVDD precision-recall",
+    "AE vs VAE vs Deep SVDD precision-recall"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_score_distributions.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_score_distributions.png"
+   ],
+   "cap": [
+    "AE vs VAE vs Deep SVDD score distributions",
+    "AE vs VAE vs Deep SVDD score distributions"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_cost_curves.png",
+    "https://rxyxs.github.io/fraud-detection-techniques-lab/assets/ae_vae_svdd_cost_curves.png"
+   ],
+   "cap": [
+    "Cost vs alert budget",
+    "Cost vs alert budget"
+   ]
+  }
+ ],
+ "paysim-anomaly-detection-benchmark": [
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/dataset_overview.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/dataset_overview.png"
+   ],
+   "cap": [
+    "Dataset overview",
+    "Dataset overview"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/pr_curves.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/pr_curves.png"
+   ],
+   "cap": [
+    "Supervised Precision-Recall curves",
+    "Supervised Precision-Recall curves"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/roc_curves.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/roc_curves.png"
+   ],
+   "cap": [
+    "Supervised ROC curves",
+    "Supervised ROC curves"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/confusion_matrices.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/confusion_matrices.png"
+   ],
+   "cap": [
+    "Confusion matrices",
+    "Confusion matrices"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/unsupervised_scores.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/unsupervised_scores.png"
+   ],
+   "cap": [
+    "Anomaly score distributions",
+    "Anomaly score distributions"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/unsupervised_pr_curve.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/unsupervised_pr_curve.png"
+   ],
+   "cap": [
+    "Precision-Recall curve",
+    "Precision-Recall curve"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/autoencoder_activations.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/autoencoder_activations.png"
+   ],
+   "cap": [
+    "Autoencoder activation comparison",
+    "Autoencoder activation comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/benchmark_ranking.png",
+    "https://rxyxs.github.io/paysim-anomaly-detection-benchmark/figures/benchmark_ranking.png"
+   ],
+   "cap": [
+    "Ranking by family",
+    "Ranking by family"
+   ]
+  }
+ ],
+ "chile-public-procurement-anomalies": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/bunching_compra_agil.png",
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/bunching_compra_agil.png"
+   ],
+   "cap": [
+    "Compra Ágil orders by amount",
+    "Compra Ágil orders by amount"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/placebo_caps.png",
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/placebo_caps.png"
+   ],
+   "cap": [
+    "Excess mass at real and fake caps",
+    "Excess mass at real and fake caps"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/sibling_rates.png",
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/sibling_rates.png"
+   ],
+   "cap": [
+    "Orders with a sibling by size",
+    "Orders with a sibling by size"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/detector_recall.png",
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/detector_recall.png"
+   ],
+   "cap": [
+    "Planted anomalies found by each detector",
+    "Planted anomalies found by each detector"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/training_curves.png",
+    "https://rxyxs.github.io/chile-public-procurement-anomalies/figures/training_curves.png"
+   ],
+   "cap": [
+    "Autoencoder training curves",
+    "Autoencoder training curves"
+   ]
+  }
+ ],
+ "chile-polyglot-fraud-engine": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/model_comparison_roc.png",
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/model_comparison_roc.png"
+   ],
+   "cap": [
+    "ROC curve comparison",
+    "ROC curve comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/activation_comparison.png",
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/activation_comparison.png"
+   ],
+   "cap": [
+    "Activation comparison",
+    "Activation comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/precision_recall_curve.png",
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/precision_recall_curve.png"
+   ],
+   "cap": [
+    "Precision-Recall Curve",
+    "Precision-Recall Curve"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/confusion_matrix.png",
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/confusion_matrix.png"
+   ],
+   "cap": [
+    "Confusion Matrix",
+    "Confusion Matrix"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/feature_importance.png",
+    "https://rxyxs.github.io/chile-polyglot-fraud-engine/figures/feature_importance.png"
+   ],
+   "cap": [
+    "Feature Importance",
+    "Feature Importance"
+   ]
+  }
+ ],
+ "market-tick-anomaly-engine-cpp": [
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/market-tick-anomaly-engine-cpp@HEAD/outputs/figures/price_and_alerts.svg",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/market-tick-anomaly-engine-cpp@HEAD/outputs/figures/price_and_alerts.svg"
+   ],
+   "cap": [
+    "Price and alerts",
+    "Price and alerts"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/market-tick-anomaly-engine-cpp@HEAD/outputs/figures/ensemble_score.svg",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/market-tick-anomaly-engine-cpp@HEAD/outputs/figures/ensemble_score.svg"
+   ],
+   "cap": [
+    "Ensemble score over time",
+    "Ensemble score over time"
+   ]
+  }
+ ],
+ "lithium-orderbook-imbalance-cpp": [
+  {
+   "src": [
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/student_t_critical_values.svg",
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/student_t_critical_values.svg"
+   ],
+   "cap": [
+    "Student-t critical value against assumed degrees of freedom",
+    "Student-t critical value against assumed degrees of freedom"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/alert_counts.svg",
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/alert_counts.svg"
+   ],
+   "cap": [
+    "Alerts raised by each detector, split into false alarms and true detections",
+    "Alerts raised by each detector, split into false alarms and true detections"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/detector_timeline.svg",
+    "https://rxyxs.github.io/lithium-orderbook-imbalance-cpp/figures/detector_timeline.svg"
+   ],
+   "cap": [
+    "Both statistics over the full SQM session",
+    "Both statistics over the full SQM session"
+   ]
+  }
+ ],
+ "iot-anomaly-benchmark": [
+  {
+   "src": [
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/leaderboard.png",
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/leaderboard.png"
+   ],
+   "cap": [
+    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample and 42.4 cross-validated, both above windowedGaussian 39.6.",
+    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample and 42.4 cross-validated, both above windowedGaussian 39.6."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/onset.png",
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/onset.png"
+   ],
+   "cap": [
+    "Paired bars per detector, score every row versus report only the onset: Gaussian 36.4 to 42.6, seasonal 2.4 to 41.0, robust diff 0 to 23.6, KS shift 1.9 to 8.5.",
+    "Paired bars per detector, score every row versus report only the onset: Gaussian 36.4 to 42.6, seasonal 2.4 to 41.0, robust diff 0 to 23.6, KS shift 1.9 to 8.5."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/machine.png",
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/machine.png"
+   ],
+   "cap": [
+    "Machine temperature series with four labelled anomaly windows and the detector score below; the score rises inside three windows to about 0.4-0.6, but the corpus threshold of 0.753 is above every value.",
+    "Machine temperature series with four labelled anomaly windows and the detector score below; the score rises inside three windows to about 0.4-0.6, but the corpus threshold of 0.753 is above every value."
+   ]
+  }
+ ],
+ "heavy-truck-predictive-maintenance": [
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/overview.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/overview.png"
+   ],
+   "cap": [
+    "Resumen de los cuatro datasets",
+    "Summary of the four datasets"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_scale_shift.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_scale_shift.png"
+   ],
+   "cap": [
+    "Factor de escala de cada variable en validación y test respecto de entrenamiento (mediana de sus bins)",
+    "Scale factor of each variable in validation and test relative to training (median over its bins)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_models.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_models.png"
+   ],
+   "cap": [
+    "Ahorro frente a no hacer nada con intervalo bootstrap al 95% (remuestreo de camiones)",
+    "Saving against doing nothing with a 95% bootstrap interval (resampling trucks)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_seed_spread.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_seed_spread.png"
+   ],
+   "cap": [
+    "El mismo modelo con otras semillas: el puntaje de selección se mueve más que la distancia entre los mejores modelos",
+    "The same model with other seeds: the selection score moves more than the gap between the best models"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_confusion.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_confusion.png"
+   ],
+   "cap": [
+    "Matriz de confusión en test con los costos del reto: la regla recomienda casi siempre la clase 4, así que funciona como un interruptor «alarma / sin alarma» y no distingue bien las ventanas intermedias",
+    "Confusion matrix on test with the challenge's costs: the rule mostly recommends class 4, so it works as an “alarm / no alarm” switch and does not separate the intermediate windows well"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_lead_time.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_lead_time.png"
+   ],
+   "cap": [
+    "En camiones retenidos del entrenamiento, la fracción de lecturas con alarma sube de forma sostenida desde unas 100–200 unidades antes de la reparación: el modelo ve una deriva lenta, no la ventana de 48 unidades del reto",
+    "On held-out training trucks, the share of readouts with an alarm rises steadily from about 100–200 units before the repair: the model sees a slow drift, not the challenge's 48-unit window"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/scania_shap.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/scania_shap.png"
+   ],
+   "cap": [
+    "Lo que más mueve el pronóstico de tiempo restante es cuánto lleva operando el camión (time_step, n_readouts) y su configuración (Spec_7)",
+    "What moves the time-to-failure forecast most is how long the truck has been running (time_step, n_readouts) and its configuration (Spec_7)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/es/aps_models.png",
+    "https://rxyxs.github.io/heavy-truck-predictive-maintenance/figures/en/aps_models.png"
+   ],
+   "cap": [
+    "Costo en test con intervalo bootstrap; la línea es el ganador del reto IDA 2016",
+    "Test cost with a bootstrap interval; the line is the IDA 2016 challenge winner"
+   ]
+  }
+ ],
+ "failure-prediction-signal-lab": [
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/01-mining-fleet-multitask-rul/outputs/reports/real_scania_feature_sets.png",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/01-mining-fleet-multitask-rul/outputs/reports/real_scania_feature_sets.png"
+   ],
+   "cap": [
+    "The same two models on two feature sets",
+    "The same two models on two feature sets"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/target_fix_comparison.png",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/target_fix_comparison.png"
+   ],
+   "cap": [
+    "MAE before and after the target fix",
+    "MAE before and after the target fix"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/01-mining-fleet-multitask-rul/data/processed/models/multitask_loss_curves_animated.gif",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/01-mining-fleet-multitask-rul/data/processed/models/multitask_loss_curves_animated.gif"
+   ],
+   "cap": [
+    "Multi-task loss curves animated",
+    "Multi-task loss curves animated"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/rms_degradation_curve_animated.gif",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/rms_degradation_curve_animated.gif"
+   ],
+   "cap": [
+    "RMS degradation curve, animated",
+    "RMS degradation curve, animated"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/signal_vs_ttf_animated.gif",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/signal_vs_ttf_animated.gif"
+   ],
+   "cap": [
+    "Raw signal vs time_to_failure animated",
+    "Raw signal vs time_to_failure animated"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/mae_comparison.png",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/mae_comparison.png"
+   ],
+   "cap": [
+    "Out-of-fold MAE by model",
+    "Out-of-fold MAE by model"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/raw_signal_early_vs_late_animated.gif",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/02-bearing-vibration-rul/outputs/reports/raw_signal_early_vs_late_animated.gif"
+   ],
+   "cap": [
+    "Raw signal, early vs. late, animated",
+    "Raw signal, early vs. late, animated"
+   ]
+  },
+  {
+   "src": [
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/ttf_distribution.png",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/failure-prediction-signal-lab@HEAD/03-earthquake-acoustic-signal/reports/figures/ttf_distribution.png"
+   ],
+   "cap": [
+    "time_to_failure distribution",
+    "time_to_failure distribution"
+   ]
+  }
+ ],
+ "chile-mining-sag-energy-digital-twin": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/kalman_filter_trace_animated.gif",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/kalman_filter_trace_animated.gif"
+   ],
+   "cap": [
+    "Kalman Filter animated",
+    "Kalman Filter animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/correlation_heatmap.png",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/correlation_heatmap.png"
+   ],
+   "cap": [
+    "Correlation matrix",
+    "Correlation matrix"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/model_comparison.png",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/model_comparison.png"
+   ],
+   "cap": [
+    "Model comparison",
+    "Model comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/feature_importance.png",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/feature_importance.png"
+   ],
+   "cap": [
+    "Feature importance",
+    "Feature importance"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/learning_curve.png",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/learning_curve.png"
+   ],
+   "cap": [
+    "Learning curve",
+    "Learning curve"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/residuals.png",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/residuals.png"
+   ],
+   "cap": [
+    "Residual diagnostics",
+    "Residual diagnostics"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/forecast_comparison_animated.gif",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/forecast_comparison_animated.gif"
+   ],
+   "cap": [
+    "Forecasting comparison animated",
+    "Forecasting comparison animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/operational_overview_animated.gif",
+    "https://rxyxs.github.io/chile-mining-sag-energy-digital-twin/figures/operational_overview_animated.gif"
+   ],
+   "cap": [
+    "Full operational series animated",
+    "Full operational series animated"
+   ]
+  }
+ ],
+ "chile-mining-fleet-causal-impact": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/real_did_estimators.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/real_did_estimators.png"
+   ],
+   "cap": [
+    "Real did estimators",
+    "Real did estimators"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/targeting_policy_comparison.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/targeting_policy_comparison.png"
+   ],
+   "cap": [
+    "Targeting policy comparison",
+    "Targeting policy comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/assets/rct_capture_distribution.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/assets/rct_capture_distribution.png"
+   ],
+   "cap": [
+    "Rct capture distribution",
+    "Rct capture distribution"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/event_study.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/event_study.png"
+   ],
+   "cap": [
+    "Event study",
+    "Event study"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/assets/did_error_distribution.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/assets/did_error_distribution.png"
+   ],
+   "cap": [
+    "Did error distribution",
+    "Did error distribution"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/real_rct_targeting.png",
+    "https://rxyxs.github.io/chile-mining-fleet-causal-impact/figures/real_rct_targeting.png"
+   ],
+   "cap": [
+    "Real rct targeting",
+    "Real rct targeting"
+   ]
+  }
+ ],
+ "chile-fintech-experimentation-lab": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/peeking_inflation_curve.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/peeking_inflation_curve.png"
+   ],
+   "cap": [
+    "False-positive rate against the number of daily looks",
+    "False-positive rate against the number of daily looks"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/power_curve_mde.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/power_curve_mde.png"
+   ],
+   "cap": [
+    "Required sample size against minimum detectable effect",
+    "Required sample size against minimum detectable effect"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/cuped_variance_reduction.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/cuped_variance_reduction.png"
+   ],
+   "cap": [
+    "CUPED variance reduction and its effect on the confidence interval",
+    "CUPED variance reduction and its effect on the confidence interval"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/bh_fdr_guardrails.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/bh_fdr_guardrails.png"
+   ],
+   "cap": [
+    "Guardrail p-values against the BH critical line",
+    "Guardrail p-values against the BH critical line"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/novelty_decay_vs_linear_fit.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/novelty_decay_vs_linear_fit.png"
+   ],
+   "cap": [
+    "Injected exponential decay against the fitted linear interaction",
+    "Injected exponential decay against the fitted linear interaction"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/calibration_false_positive_rate.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/calibration_false_positive_rate.png"
+   ],
+   "cap": [
+    "Empirical false-positive rate of each stopping rule against its nominal 5%",
+    "Empirical false-positive rate of each stopping rule against its nominal 5%"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/real_adjustment_moves_the_estimate.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/real_adjustment_moves_the_estimate.png"
+   ],
+   "cap": [
+    "Treatment effect under each adjustment",
+    "Treatment effect under each adjustment"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/real_aa_false_positive_rates.png",
+    "https://rxyxs.github.io/chile-fintech-experimentation-lab/figures/real_aa_false_positive_rates.png"
+   ],
+   "cap": [
+    "False-positive rates on real A/A tests",
+    "False-positive rates on real A/A tests"
+   ]
+  }
+ ],
+ "chile-pension-fund-switching-cost": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/kpis_bootstrap.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/kpis_bootstrap.png"
+   ],
+   "cap": [
+    "Diferencias de CAGR, Sharpe y caída máxima de cada regla en 2.000 historias",
+    "Diferencias de CAGR, Sharpe y caída máxima de cada regla en 2.000 historias"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/mecanismo_covid.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/mecanismo_covid.png"
+   ],
+   "cap": [
+    "Fondo A y Fondo E durante la caída de 2020 y su recuperación",
+    "Fondo A y Fondo E durante la caída de 2020 y su recuperación"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/pension_por_edad.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/pension_por_edad.png"
+   ],
+   "cap": [
+    "Cambio en la pensión por edad, según se cambie en el piso o al cruzar -15%",
+    "Cambio en la pensión por edad, según se cambie en el piso o al cruzar -15%"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/bootstrap_reglas.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/bootstrap_reglas.png"
+   ],
+   "cap": [
+    "Distribución del costo de cambiarse según la regla, en 2.000 historias sintéticas",
+    "Distribución del costo de cambiarse según la regla, en 2.000 historias sintéticas"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/kpis_estrategias.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/kpis_estrategias.png"
+   ],
+   "cap": [
+    "Estrategias en el plano retorno-riesgo, frente a las mezclas fijas de A y E",
+    "Estrategias en el plano retorno-riesgo, frente a las mezclas fijas de A y E"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/punto_de_quiebre.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/punto_de_quiebre.png"
+   ],
+   "cap": [
+    "Costo de cambiarse según la pérdida ya sufrida",
+    "Costo de cambiarse según la pérdida ya sufrida"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/volatilidad_regimen.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/volatilidad_regimen.png"
+   ],
+   "cap": [
+    "Volatilidad condicional GJR-GARCH del Fondo A y régimen turbulento",
+    "Volatilidad condicional GJR-GARCH del Fondo A y régimen turbulento"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/senal_sesgo_anticipacion.png",
+    "https://rxyxs.github.io/chile-pension-fund-switching-cost/figures/senal_sesgo_anticipacion.png"
+   ],
+   "cap": [
+    "Retorno de la regla de salir en turbulencia, con y sin información del futuro",
+    "Retorno de la regla de salir en turbulencia, con y sin información del futuro"
+   ]
+  }
+ ],
+ "olist-delivery-delays": [
+  {
+   "src": [
+    "https://rxyxs.github.io/olist-delivery-delays/img/dose_response.png",
+    "https://rxyxs.github.io/olist-delivery-delays/img/dose_response.png"
+   ],
+   "cap": [
+    "Bar chart of the effect of lateness on review score by band: about -1 for 1-3 days, -2.15 for 4-7 days, and about -2.5 for 8-14 and 15+ days, with naive and adjusted bars nearly equal.",
+    "Bar chart of the effect of lateness on review score by band: about -1 for 1-3 days, -2.15 for 4-7 days, and about -2.5 for 8-14 and 15+ days, with naive and adjusted bars nearly equal."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/olist-delivery-delays/img/overlap.png",
+    "https://rxyxs.github.io/olist-delivery-delays/img/overlap.png"
+   ],
+   "cap": [
+    "Histogram of cross-fitted propensity scores for on-time and late orders; both groups cover the same range, on-time orders concentrated near zero.",
+    "Histogram of cross-fitted propensity scores for on-time and late orders; both groups cover the same range, on-time orders concentrated near zero."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/olist-delivery-delays/img/risk_capture.png",
+    "https://rxyxs.github.io/olist-delivery-delays/img/risk_capture.png"
+   ],
+   "cap": [
+    "Cumulative capture curve: share of late deliveries flagged against share of orders flagged, for orders placed April to August 2018; the model curve sits above the random diagonal, reaching about 23% at 10% and 40% at 20%.",
+    "Cumulative capture curve: share of late deliveries flagged against share of orders flagged, for orders placed April to August 2018; the model curve sits above the random diagonal, reaching about 23% at 10% and 40% at 20%."
+   ]
+  }
+ ],
+ "retail-price-elasticity": [
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-price-elasticity/img/ladder.png",
+    "https://rxyxs.github.io/retail-price-elasticity/img/ladder.png"
+   ],
+   "cap": [
+    "Bar chart of the elasticity under five estimators: -0.21 pooled, -2.10 with fixed effects, -1.47 with display and mailer, -1.50 with last week price, -1.50 with double ML.",
+    "Bar chart of the elasticity under five estimators: -0.21 pooled, -2.10 with fixed effects, -1.47 with display and mailer, -1.50 with last week price, -1.50 with double ML."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/retail-price-elasticity/img/by_category.png",
+    "https://rxyxs.github.io/retail-price-elasticity/img/by_category.png"
+   ],
+   "cap": [
+    "Horizontal bars of elasticity by category with 95% intervals: beer, frozen pizza, cookies and soft drinks around -2; bread and soup near -1 with intervals crossing it; yogurt near zero.",
+    "Horizontal bars of elasticity by category with 95% intervals: beer, frozen pizza, cookies and soft drinks around -2; bread and soup near -1 with intervals crossing it; yogurt near zero."
+   ]
+  }
+ ],
+ "flotation-plant-silica-soft-sensor": [
+  {
+   "src": [
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/silica_series.png",
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/silica_series.png"
+   ],
+   "cap": [
+    "Hourly silica in the concentrate",
+    "Hourly silica in the concentrate"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/validation_protocols.png",
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/validation_protocols.png"
+   ],
+   "cap": [
+    "R² under four validation protocols",
+    "R² under four validation protocols"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/walk_forward.png",
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/walk_forward.png"
+   ],
+   "cap": [
+    "Walk-forward results",
+    "Walk-forward results"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/recommendations.png",
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/recommendations.png"
+   ],
+   "cap": [
+    "Recommended moves by four models",
+    "Recommended moves by four models"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/operator_reaction.png",
+    "https://rxyxs.github.io/flotation-plant-silica-soft-sensor/figures/operator_reaction.png"
+   ],
+   "cap": [
+    "Amine dose against earlier silica",
+    "Amine dose against earlier silica"
+   ]
+  }
+ ],
+ "chile-spatial-logistics-opt": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/demand_model_comparison.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/demand_model_comparison.png"
+   ],
+   "cap": [
+    "Model comparison",
+    "Model comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/mlp_activation_convergence_animated.gif",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/mlp_activation_convergence_animated.gif"
+   ],
+   "cap": [
+    "Activation convergence animated",
+    "Activation convergence animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/demand_actual_vs_predicted.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/demand_actual_vs_predicted.png"
+   ],
+   "cap": [
+    "Actual vs predicted",
+    "Actual vs predicted"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_demand_maps.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_demand_maps.png"
+   ],
+   "cap": [
+    "Demand under each model and the depots it picks",
+    "Demand under each model and the depots it picks"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_circuity.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_circuity.png"
+   ],
+   "cap": [
+    "Real circuity against the simulated ranges",
+    "Real circuity against the simulated ranges"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_routing_km.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_routing_km.png"
+   ],
+   "cap": [
+    "Route length under each combination",
+    "Route length under each combination"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_forecast_cv.png",
+    "https://rxyxs.github.io/chile-spatial-logistics-opt/figures/real_forecast_cv.png"
+   ],
+   "cap": [
+    "R2 under random and spatial cross-validation",
+    "R2 under random and spatial cross-validation"
+   ]
+  }
+ ],
+ "customer-churn-mlops-platform": [
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/streamlit_preview.png",
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/streamlit_preview.png"
+   ],
+   "cap": [
+    "Streamlit ROI simulator",
+    "Streamlit ROI simulator"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/roc_pr_comparison.png",
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/roc_pr_comparison.png"
+   ],
+   "cap": [
+    "Model comparison",
+    "Model comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/confusion_matrices.png",
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/confusion_matrices.png"
+   ],
+   "cap": [
+    "Confusion matrices",
+    "Confusion matrices"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/mlp_activation_loss_curves_animated.gif",
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/mlp_activation_loss_curves_animated.gif"
+   ],
+   "cap": [
+    "MLP activation loss curves animated",
+    "MLP activation loss curves animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/mlp_activation_comparison.png",
+    "https://rxyxs.github.io/customer-churn-mlops-platform/figures/mlp_activation_comparison.png"
+   ],
+   "cap": [
+    "MLP activation metric comparison",
+    "MLP activation metric comparison"
+   ]
+  }
+ ],
+ "bosch-line-quality": [
+  {
+   "src": [
+    "https://rxyxs.github.io/bosch-line-quality/img/validation.png",
+    "https://rxyxs.github.io/bosch-line-quality/img/validation.png"
+   ],
+   "cap": [
+    "Bar chart of MCC by feature set under shuffled CV and a temporal holdout; every set scores much lower on later parts, measurements only falling from 0.228 to 0.061.",
+    "Bar chart of MCC by feature set under shuffled CV and a temporal holdout; every set scores much lower on later parts, measurements only falling from 0.228 to 0.061."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/bosch-line-quality/img/capture.png",
+    "https://rxyxs.github.io/bosch-line-quality/img/capture.png"
+   ],
+   "cap": [
+    "Capture curve: percent of failures caught against percent of parts inspected on a log axis; the sequence model reaches about 74% at 5% inspected, measurement-only models about 35%, random inspection 5%.",
+    "Capture curve: percent of failures caught against percent of parts inspected on a log axis; the sequence model reaches about 74% at 5% inspected, measurement-only models about 35%, random inspection 5%."
+   ]
+  }
+ ],
+ "credit-risk-scoring-lab": [
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/c_engine_benchmark.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/c_engine_benchmark.png"
+   ],
+   "cap": [
+    "Scoring engine benchmark",
+    "Scoring engine benchmark"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/combined_risk_heatmap.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/combined_risk_heatmap.png"
+   ],
+   "cap": [
+    "Combined credit and market risk heatmap",
+    "Combined credit and market risk heatmap"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/hazard_base_vs_verdad.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/hazard_base_vs_verdad.png"
+   ],
+   "cap": [
+    "Estimated hazard vs. the true generating hazard",
+    "Estimated hazard vs. the true generating hazard"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/pd_term_structure.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/pd_term_structure.png"
+   ],
+   "cap": [
+    "PD term structure by risk band",
+    "PD term structure by risk band"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/shrinkage_por_segmento.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/shrinkage_por_segmento.png"
+   ],
+   "cap": [
+    "Shrinkage by segment",
+    "Shrinkage by segment"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/auditoria_monotonia.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/auditoria_monotonia.png"
+   ],
+   "cap": [
+    "Monotonicity audit",
+    "Monotonicity audit"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/cobertura_conforme.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/cobertura_conforme.png"
+   ],
+   "cap": [
+    "Conformal coverage by class",
+    "Conformal coverage by class"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/woe_por_metodo.png",
+    "https://rxyxs.github.io/credit-risk-scoring-lab/figures/woe_por_metodo.png"
+   ],
+   "cap": [
+    "WOE by binning method",
+    "WOE by binning method"
+   ]
+  }
+ ],
+ "chile-fintech-systemic-risk": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/chile_equity_price_vol_animated.gif",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/chile_equity_price_vol_animated.gif"
+   ],
+   "cap": [
+    "Chile equity price and realized volatility, animated",
+    "Chile equity price and realized volatility, animated"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/shap_importance.png",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/shap_importance.png"
+   ],
+   "cap": [
+    "SHAP feature importance",
+    "SHAP feature importance"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/pd_score_distribution.png",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/pd_score_distribution.png"
+   ],
+   "cap": [
+    "PD score distribution",
+    "PD score distribution"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/lstm_vs_baseline.png",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/lstm_vs_baseline.png"
+   ],
+   "cap": [
+    "LSTM vs. majority-class baseline",
+    "LSTM vs. majority-class baseline"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/cluster_feature_space.png",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/cluster_feature_space.png"
+   ],
+   "cap": [
+    "Credit and volatility clusters in feature space",
+    "Credit and volatility clusters in feature space"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/montecarlo_var_distribution.png",
+    "https://rxyxs.github.io/chile-fintech-systemic-risk/figures/montecarlo_var_distribution.png"
+   ],
+   "cap": [
+    "Simulated PnL distribution with VaR/ES",
+    "Simulated PnL distribution with VaR/ES"
+   ]
+  }
+ ],
+ "crypto-quant-techniques-lab": [
+  {
+   "src": [
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/comparison_dashboard.png",
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/comparison_dashboard.png"
+   ],
+   "cap": [
+    "Net Sharpe and equity curves, five strategies",
+    "Net Sharpe and equity curves, five strategies"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/kalman_vs_ols_equity_curve.png",
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/kalman_vs_ols_equity_curve.png"
+   ],
+   "cap": [
+    "Kalman vs. static OLS equity curve, net of costs",
+    "Kalman vs. static OLS equity curve, net of costs"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/correlation_heatmap_by_regime.png",
+    "https://rxyxs.github.io/crypto-quant-techniques-lab/figures/correlation_heatmap_by_regime.png"
+   ],
+   "cap": [
+    "Correlation by regime",
+    "Correlation by regime"
+   ]
+  }
+ ],
+ "copper-options-montecarlo-cpp": [
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/variance_reduction_ab.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/variance_reduction_ab.svg"
+   ],
+   "cap": [
+    "Standard error by configuration and model",
+    "Standard error by configuration and model"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/schwartz_theta_response.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/schwartz_theta_response.svg"
+   ],
+   "cap": [
+    "Schwartz call price against the equilibrium level",
+    "Schwartz call price against the equilibrium level"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/thread_scaling.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/thread_scaling.svg"
+   ],
+   "cap": [
+    "Measured speedup against perfect linear scaling",
+    "Measured speedup against perfect linear scaling"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/convergence_one_over_sqrt_n.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/convergence_one_over_sqrt_n.svg"
+   ],
+   "cap": [
+    "Standard error against path count, log-log",
+    "Standard error against path count, log-log"
+   ]
+  }
+ ],
+ "data-cleaning-toolkit": [
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/missingness_before_after.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/missingness_before_after.png"
+   ],
+   "cap": [
+    "Missingness before/after calendar reindexing",
+    "Missingness before/after calendar reindexing"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/return_distribution_before_after.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/return_distribution_before_after.png"
+   ],
+   "cap": [
+    "Dollar return distribution, raw vs. winsorized",
+    "Dollar return distribution, raw vs. winsorized"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/dolar_timeseries.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/dolar_timeseries.png"
+   ],
+   "cap": [
+    "USD/CLP time series",
+    "USD/CLP time series"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/feature_correlation.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/feature_correlation.png"
+   ],
+   "cap": [
+    "Feature correlation heatmap",
+    "Feature correlation heatmap"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/mlp_training_curve.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/mlp_training_curve.png"
+   ],
+   "cap": [
+    "MLP training curve",
+    "MLP training curve"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/best_model_regression_diagnostics.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/best_model_regression_diagnostics.png"
+   ],
+   "cap": [
+    "Real vs. predicted return",
+    "Real vs. predicted return"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/model_comparison.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/model_comparison.png"
+   ],
+   "cap": [
+    "Model comparison",
+    "Model comparison"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/production_distribution_before_after.png",
+    "https://rxyxs.github.io/data-cleaning-toolkit/figures/production_distribution_before_after.png"
+   ],
+   "cap": [
+    "Production distribution before/after winsorizing",
+    "Production distribution before/after winsorizing"
+   ]
+  }
+ ],
+ "data-warehouse-analitico-mineria-chile": [
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_sector_trends.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_sector_trends.png"
+   ],
+   "cap": [
+    "Chile's copper sector indexed to 2005",
+    "Chile's copper sector indexed to 2005"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_mines_2025.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_mines_2025.png"
+   ],
+   "cap": [
+    "Copper output by mine in 2025",
+    "Copper output by mine in 2025"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/cross_domain_safety_oee.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/cross_domain_safety_oee.png"
+   ],
+   "cap": [
+    "Safety incidents against the equipment KPI, decomposed",
+    "Safety incidents against the equipment KPI, decomposed"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/risk_distribution.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/risk_distribution.png"
+   ],
+   "cap": [
+    "Risk level distribution and mean OEE per level",
+    "Risk level distribution and mean OEE per level"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/kpi_distributions.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/kpi_distributions.png"
+   ],
+   "cap": [
+    "KPI distributions across 540 shifts",
+    "KPI distributions across 540 shifts"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/ml_view_readiness.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/ml_view_readiness.png"
+   ],
+   "cap": [
+    "Label coverage of the ML-ready views",
+    "Label coverage of the ML-ready views"
+   ]
+  }
+ ],
+ "ecommerce-lakehouse-duckdb": [
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/daily_capture.png",
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/daily_capture.png"
+   ],
+   "cap": [
+    "Daily views and purchases, with capture gaps shaded",
+    "Daily views and purchases, with capture gaps shaded"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/cart_regimes.png",
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/cart_regimes.png"
+   ],
+   "cap": [
+    "Cart events per purchase with detected regimes",
+    "Cart events per purchase with detected regimes"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/funnel_by_regime.png",
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/funnel_by_regime.png"
+   ],
+   "cap": [
+    "Session funnel per tracking regime",
+    "Session funnel per tracking regime"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/revenue_concentration.png",
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/revenue_concentration.png"
+   ],
+   "cap": [
+    "Revenue by category and buyer concentration",
+    "Revenue by category and buyer concentration"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/engine_benchmark.png",
+    "https://rxyxs.github.io/ecommerce-lakehouse-duckdb/figures/engine_benchmark.png"
+   ],
+   "cap": [
+    "Engine benchmark",
+    "Engine benchmark"
+   ]
+  }
+ ],
+ "chile-macro-data-pipeline": [
+  {
+   "src": [
+    "https://rxyxs.github.io/assets/shots/chile-macro-data-pipeline.png",
+    "https://rxyxs.github.io/assets/shots/chile-macro-data-pipeline.png"
+   ],
+   "cap": [
+    "Tablero diario: cobre, dólar, UF, IPC, TPM y morosidad",
+    "Daily dashboard: copper, dollar, UF, CPI, policy rate and delinquency"
+   ]
+  }
+ ],
+ "ecommerce-recommender-rees46": [
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/methods.png",
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/methods.png"
+   ],
+   "cap": [
+    "recall@20 and NDCG@20 per method",
+    "recall@20 and NDCG@20 per method"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/importance.png",
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/importance.png"
+   ],
+   "cap": [
+    "Feature importance",
+    "Feature importance"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/candidate_recall.png",
+    "https://rxyxs.github.io/ecommerce-recommender-rees46/figures/candidate_recall.png"
+   ],
+   "cap": [
+    "Candidate recall per generator",
+    "Candidate recall per generator"
+   ]
+  }
+ ],
+ "scientific-classification-lab": [
+  {
+   "src": [
+    "https://rxyxs.github.io/scientific-classification-lab/assets/missing_by_jet_num.png",
+    "https://rxyxs.github.io/scientific-classification-lab/assets/missing_by_jet_num.png"
+   ],
+   "cap": [
+    "Missing dijet values by jet count",
+    "Missing dijet values by jet count"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/scientific-classification-lab/assets/ams_comparison.png",
+    "https://rxyxs.github.io/scientific-classification-lab/assets/ams_comparison.png"
+   ],
+   "cap": [
+    "AMS comparison across models",
+    "AMS comparison across models"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/scientific-classification-lab/assets/activation_ams_comparison.png",
+    "https://rxyxs.github.io/scientific-classification-lab/assets/activation_ams_comparison.png"
+   ],
+   "cap": [
+    "AMS by activation function",
+    "AMS by activation function"
+   ]
+  }
+ ],
+ "chile-mining-grade-blast-quality-dotnet": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/trainer_comparison_stability.png",
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/trainer_comparison_stability.png"
+   ],
+   "cap": [
+    "Trainer comparison across 12 retrainings",
+    "Trainer comparison across 12 retrainings"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/classifier_metric_stability.png",
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/classifier_metric_stability.png"
+   ],
+   "cap": [
+    "Fragmentation classifier metrics across 12 retrainings",
+    "Fragmentation classifier metrics across 12 retrainings"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/p80_predicted_vs_actual.png",
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/p80_predicted_vs_actual.png"
+   ],
+   "cap": [
+    "P80 predicted against actual on the fresh holdout",
+    "P80 predicted against actual on the fresh holdout"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/grade_predicted_vs_actual.png",
+    "https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/figures/grade_predicted_vs_actual.png"
+   ],
+   "cap": [
+    "Cu grade predicted against actual on the fresh holdout",
+    "Cu grade predicted against actual on the fresh holdout"
+   ]
+  }
+ ],
+ "hospital-readmission-risk": [
+  {
+   "src": [
+    "https://rxyxs.github.io/hospital-readmission-risk/img/leak.png",
+    "https://rxyxs.github.io/hospital-readmission-risk/img/leak.png"
+   ],
+   "cap": [
+    "Bar chart of 5-fold AUC: 0.805 with an all-time visit count, 0.685 with random rows and honest features, 0.684 split by patient, 0.664 for logistic regression.",
+    "Bar chart of 5-fold AUC: 0.805 with an all-time visit count, 0.685 with random rows and honest features, 0.684 split by patient, 0.664 for logistic regression."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/hospital-readmission-risk/img/calibration.png",
+    "https://rxyxs.github.io/hospital-readmission-risk/img/calibration.png"
+   ],
+   "cap": [
+    "Calibration plot of observed readmission against predicted risk by decile; points lie close to the diagonal.",
+    "Calibration plot of observed readmission against predicted risk by decile; points lie close to the diagonal."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/hospital-readmission-risk/img/decision_curve.png",
+    "https://rxyxs.github.io/hospital-readmission-risk/img/decision_curve.png"
+   ],
+   "cap": [
+    "Decision curve: the model net benefit stays above both following up everyone and no one from a 5% to a 39% risk threshold.",
+    "Decision curve: the model net benefit stays above both following up everyone and no one from a 5% to a 39% risk threshold."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/hospital-readmission-risk/img/groups.png",
+    "https://rxyxs.github.io/hospital-readmission-risk/img/groups.png"
+   ],
+   "cap": [
+    "Two panels by group: observed vs predicted readmission rates, which match closely for large groups, and the share of readmissions flagged, which is lowest for patients with missing race at about 3%.",
+    "Two panels by group: observed vs predicted readmission rates, which match closely for large groups, and the share of readmissions flagged, which is lowest for patients with missing race at about 3%."
+   ]
+  }
+ ],
+ "rag-seguridad-minera-chile": [
+  {
+   "src": [
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/reranking_rank_shift.png",
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/reranking_rank_shift.png"
+   ],
+   "cap": [
+    "What Cross-Encoder re-ranking changes",
+    "What Cross-Encoder re-ranking changes"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/severity_classifier.png",
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/severity_classifier.png"
+   ],
+   "cap": [
+    "Severity classifier: confusion matrix and per-class scores",
+    "Severity classifier: confusion matrix and per-class scores"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/corpus_composition.png",
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/corpus_composition.png"
+   ],
+   "cap": [
+    "Corpus composition: severity distribution and incident types",
+    "Corpus composition: severity distribution and incident types"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/citation_faithfulness.png",
+    "https://rxyxs.github.io/rag-seguridad-minera-chile/figures/citation_faithfulness.png"
+   ],
+   "cap": [
+    "Citation faithfulness per query",
+    "Citation faithfulness per query"
+   ]
+  }
+ ],
+ "chile-mining-ops-agent": [
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-ops-agent/figures/anomaly_scores.png",
+    "https://rxyxs.github.io/chile-mining-ops-agent/figures/anomaly_scores.png"
+   ],
+   "cap": [
+    "Event hours by equipment, last 200 days of plant data",
+    "Event hours by equipment, last 200 days of plant data"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/chile-mining-ops-agent/figures/warehouse_overview_animated.gif",
+    "https://rxyxs.github.io/chile-mining-ops-agent/figures/warehouse_overview_animated.gif"
+   ],
+   "cap": [
+    "Monthly silica in concentrate, animated",
+    "Monthly silica in concentrate, animated"
+   ]
+  }
+ ],
+ "slm-industrial-gateway": [
+  {
+   "src": [
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/gguf_benchmark.png",
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/gguf_benchmark.png"
+   ],
+   "cap": [
+    "GGUF Benchmark",
+    "GGUF Benchmark"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/quant_benchmark.png",
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/quant_benchmark.png"
+   ],
+   "cap": [
+    "Quantization Benchmark (illustrative)",
+    "Quantization Benchmark (illustrative)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/eval_metrics.png",
+    "https://rxyxs.github.io/slm-industrial-gateway/figures/eval_metrics.png"
+   ],
+   "cap": [
+    "Eval Metrics",
+    "Eval Metrics"
+   ]
+  }
+ ],
+ "yolov8-separable-convolutions": [
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura1_ejemplo_yolo.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura1_ejemplo_yolo.png"
+   ],
+   "cap": [
+    "Figure 1: Object detection example (YOLO)",
+    "Figure 1: Object detection example (YOLO)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png"
+   ],
+   "cap": [
+    "Figure 2: YOLOv8 architecture (Backbone-Neck-Head)",
+    "Figure 2: YOLOv8 architecture (Backbone-Neck-Head)"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura3_conv2d_vs_separable.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura3_conv2d_vs_separable.png"
+   ],
+   "cap": [
+    "Figure 3: Conv2D vs SeparableConv2D",
+    "Figure 3: Conv2D vs SeparableConv2D"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura4_procesos_convolucion.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura4_procesos_convolucion.png"
+   ],
+   "cap": [
+    "Figure 4: Standard vs separable convolution processes",
+    "Figure 4: Standard vs separable convolution processes"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura5_proceso_entrenamiento.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura5_proceso_entrenamiento.png"
+   ],
+   "cap": [
+    "Figure 5: Training/validation process",
+    "Figure 5: Training/validation process"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura6_map_epocas.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura6_map_epocas.png"
+   ],
+   "cap": [
+    "Figure 6: mAP evolution every 10 epochs",
+    "Figure 6: mAP evolution every 10 epochs"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura7_deteccion_conv2d.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura7_deteccion_conv2d.png"
+   ],
+   "cap": [
+    "Figure 7: YOLOv8-Conv2D detection model trained for 50 epochs",
+    "Figure 7: YOLOv8-Conv2D detection model trained for 50 epochs"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura8_deteccion_separable.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura8_deteccion_separable.png"
+   ],
+   "cap": [
+    "Figure 8: YOLOv8-Separable detection model trained for 100 epochs",
+    "Figure 8: YOLOv8-Separable detection model trained for 100 epochs"
+   ]
+  }
+ ],
+ "contrail-detection-goes16": [
+  {
+   "src": [
+    "https://rxyxs.github.io/contrail-detection-goes16/img/val_curves.png",
+    "https://rxyxs.github.io/contrail-detection-goes16/img/val_curves.png"
+   ],
+   "cap": [
+    "Validation global Dice per epoch for the four runs; the 2x-input run on 8,197 scenes stays highest throughout, the three-frame run lowest.",
+    "Validation global Dice per epoch for the four runs; the 2x-input run on 8,197 scenes stays highest throughout, the three-frame run lowest."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/contrail-detection-goes16/img/examples.png",
+    "https://rxyxs.github.io/contrail-detection-goes16/img/examples.png"
+   ],
+   "cap": [
+    "Four validation scenes in ash false colour with the human label and the model prediction side by side. Rows 1, 3 and 4 match closely; row 2 shows a contrail over complex cloud that the model misses.",
+    "Four validation scenes in ash false colour with the human label and the model prediction side by side. Rows 1, 3 and 4 match closely; row 2 shows a contrail over complex cloud that the model misses."
+   ]
+  }
+ ]
+}
