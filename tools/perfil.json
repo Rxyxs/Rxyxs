@@ -148,6 +148,14 @@
    "Enduro instructor"
   ],
   "org": "Ecobike Training",
+  "place": [
+   "Santiago",
+   "Santiago"
+  ],
+  "kicker": [
+   "Docencia deportiva",
+   "Sports coaching"
+  ],
   "since": 2024,
   "res": [
    "Llevo {n} años como profesor de enduro en la escuela Ecobike Training. Las clases son los sábados en la mañana y cada mes combina técnica, preparación física, circuitos y un paseo por distintos cerros de Santiago.",
@@ -212,6 +220,16 @@
   "note": [
    "Primeros auxilios básicos, sin certificación.",
    "Basic first aid, no certification."
+  ],
+  "links": [
+   {
+    "label": [
+     "Instagram de la escuela",
+     "School on Instagram"
+    ],
+    "handle": "@ecobiketraining",
+    "url": "https://www.instagram.com/ecobiketraining/"
+   }
   ]
  },
  "categories": [
