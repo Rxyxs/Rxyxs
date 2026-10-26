@@ -297,8 +297,8 @@
      ],
      "data": "real",
      "res": [
-      "4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 18,84% vs 21,87% del ingenuo; en Puerto Montt el modelo pierde.",
-      "4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 18.84% WAPE vs 21.87% naive; at Puerto Montt the model loses."
+      "4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 18,71% vs 21,88% del ingenuo; en Puerto Montt el modelo pierde.",
+      "4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 18.71% WAPE vs 21.88% naive; at Puerto Montt the model loses."
      ],
      "tags": [
       "lightgbm",
@@ -313,10 +313,10 @@
       "Sistema Eléctrico Nacional, en R",
       "Chile's power grid, in R"
      ],
-     "data": "mix",
+     "data": "real",
      "res": [
-      "70.128 horas reales del SEN (archivo público del Coordinador): LightGBM con calendario pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; sobre la misma demanda real, ARIMA y TBATS pierden contra el ingenuo en los feriados.",
-      "70,128 real hours of the SEN (the Coordinador's public file): LightGBM with a holiday calendar forecasts the next day at 2.48% MAPE vs 3.61% naive; on the same real demand, ARIMA and TBATS lose to naive over the holidays."
+      "Demanda, solar y eólica horarias reales del SEN: LightGBM con calendario pronostica el día siguiente con MAPE 2,48% vs 3,61% del ingenuo; ARIMA y TBATS pierden en feriados; la eólica real tiene la mitad de la volatilidad que daba la reconstrucción.",
+      "Real hourly SEN demand, solar and wind: LightGBM with a holiday calendar forecasts the next day at 2.48% MAPE vs 3.61% naive; ARIMA and TBATS lose over the holidays; real wind has half the volatility the reconstruction implied."
      ],
      "tags": [
       "r",
@@ -1680,8 +1680,8 @@
      "8.77%"
     ],
     "real": [
-     "18,84%",
-     "18.84%"
+     "18,71%",
+     "18.71%"
     ],
     "data": [
      "Informes diarios del CEN, 4 años, 6 barras",
