@@ -486,9 +486,8 @@ def site(L: int) -> str:
              (sum(kind(it) == "real" for it in items), t(L, "con datos reales", "on real data")),
              (sum(bool(it.get("page")) for it in items), t(L, "con página de resultados", "with a results page"))]
     menu = [("destacados", t(L, "Destacados", "Featured")), ("real", t(L, "Simulado vs. real", "Simulated vs. real")),
-            ("herramienta", t(L, "Herramienta", "Tool")),
-            ("experiencia", t(L, "Experiencia", "Experience")), ("proyectos", t(L, "Proyectos", "Projects")),
-            ("stack", "Stack")]
+            ("herramienta", t(L, "Herramienta", "Tool")), ("proyectos", t(L, "Proyectos", "Projects")),
+            ("stack", "Stack"), ("experiencia", t(L, "Experiencia", "Experience"))]
     R = t(L, "", "../")  # la versión en inglés vive en /en/
     # Foto y CV son opcionales: aparecen solo si perfil.json los declara (rutas dentro del sitio).
     photo = (f'<img class="photo" src="{R}{p["photo"]}" alt="{h(p["name"])}" width="112" height="112">'
@@ -516,8 +515,6 @@ def site(L: int) -> str:
             f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
             f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
             f'<div class="actions"><a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
-            f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
-            f'<div class="grid two">{card(w, L)}{outside(L, R)}</div>',
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']
@@ -542,6 +539,9 @@ def site(L: int) -> str:
         return f"<span>{ic}{h(x['label'])}</span>"
     tools = "".join(f"<div><b>{h(g['group'][L])}</b>" + "".join(tool(x) for x in g["items"]) + "</div>" for g in D["tools"])
     body += [f'<h2 id="stack">{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
+             # Experiencia va al final, después de los proyectos y las herramientas.
+             f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
+             f'<div class="grid two">{card(w, L)}{outside(L, R)}</div>',
              f'<footer><span>{h(p["name"])} · {h(p["role"][L])}</span><span><a href="{p["github"]}">GitHub</a> · '
              f'<a href="{p["linkedin"]}">LinkedIn</a> · <a href="mailto:{p["email"]}">{p["email"]}</a></span></footer>']
     desc = t(L, "Portafolio de ciencia de datos de Pablo Reyes: proyectos ordenados por el tipo de problema que resuelven.",
