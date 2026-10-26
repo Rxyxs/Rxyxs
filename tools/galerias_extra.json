@@ -4,8 +4,12 @@
    "cap": ["Tablero diario: cobre, dólar, UF, IPC, TPM y morosidad", "Daily dashboard: copper, dollar, UF, CPI, policy rate and delinquency"]}
  ],
  "datoschile": [
-  {"src": "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/ejemplo.png",
-   "cap": ["Fondos A y E en UF, morosidad bancaria y cobre: cada gráfico es una línea de datoschile", "Pension funds A and E in UF, bank delinquency and copper: each chart is one line of datoschile"]}
+  {"src": "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/portada.png",
+   "cap": ["Último valor, variación en 12 meses y trayectoria de dos años de ocho indicadores, bajados con datoschile","Latest value, 12-month change and two-year path of eight indicators, downloaded with datoschile"]},
+  {"src": "assets/shots/datoschile-panel.png",
+   "cap": ["Panel interactivo: elige un indicador, un rango de tiempo y pasa el cursor para ver cada dato","Interactive dashboard: pick an indicator and a time range, and hover to see each data point"]},
+  {"src": "assets/shots/datoschile-fondos.png",
+   "cap": ["Fondos A a E en UF, próximos feriados calculados desde la ley y una calculadora de pesos de hoy","Pension funds A to E in UF, upcoming holidays computed from the law and a today's-pesos calculator"]}
  ],
  "bus-fleet-fuel-efficiency": [
   {"src": ["assets/shots/bus-fleet-flow-es.svg", "assets/shots/bus-fleet-flow-en.svg"],

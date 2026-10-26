@@ -104,6 +104,8 @@ def readme(L: int) -> str:
     out += [f"## {t(L, 'Herramienta abierta', 'Open-source tool')}", "",
             f"**[{lib['name'][L]}]({GH}{lib['repo']})**  ", lib["res"][L], "",
             "```python", lib["code"], "```", ""]
+    if lib.get("page"):
+        out += [f"[{t(L, 'Ver el panel interactivo', 'Open the interactive dashboard')}]({PAGE}{lib['repo']}/)", ""]
 
     w = D["work"]
     out += [f"## {t(L, 'Experiencia', 'Experience')}", "",
@@ -184,6 +186,7 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .rvs .gal{margin:-4px -6px 8px}
 .two{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr))}
 .gal.pic{aspect-ratio:4/5;background:var(--bg2)}
+.gal.oscura{background:#0d1117}.gal.oscura .frames img{padding:0}
 .gal.pic .frames img{object-fit:cover;object-position:50% 45%;padding:0;transform:none}
 .data.org{color:var(--muted);border-color:var(--line);background:var(--bg2)}
 .facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 14px;margin:0 0 14px;align-items:start}
@@ -577,10 +580,11 @@ def site(L: int) -> str:
             '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
             rvs_section(L),
             f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
-            f'<article class="card lib">{gallery(lib, L)}<h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
+            f'<article class="card lib">{gallery(lib, L, cls=" oscura" if lib.get("dark") else "")}<h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
             f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
             f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
-            f'<div class="actions"><a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
+            '<div class="actions">' + (f'<a href="{PAGE}{lib["repo"]}/">{t(L, "Ver panel", "View dashboard")}</a>' if lib.get("page") else "")
+            + f'<a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']

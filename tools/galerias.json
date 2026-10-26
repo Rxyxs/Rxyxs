@@ -228,12 +228,12 @@
   },
   {
    "src": [
-    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/residuals_arima.png",
-    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/residuals_arima.png"
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_wind_vs_reconstructed.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_wind_vs_reconstructed.png"
    ],
    "cap": [
-    "Residual diagnostics -- ARIMA + Fourier K=12",
-    "Residual diagnostics -- ARIMA + Fourier K=12"
+    "Real hourly wind vs. the weather reconstruction",
+    "Real hourly wind vs. the weather reconstruction"
    ]
   }
  ],
@@ -2248,12 +2248,32 @@
  "datoschile": [
   {
    "src": [
-    "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/ejemplo.png",
-    "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/ejemplo.png"
+    "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/portada.png",
+    "https://cdn.jsdelivr.net/gh/Rxyxs/datoschile@HEAD/docs/portada.png"
    ],
    "cap": [
-    "Fondos A y E en UF, morosidad bancaria y cobre: cada gráfico es una línea de datoschile",
-    "Pension funds A and E in UF, bank delinquency and copper: each chart is one line of datoschile"
+    "Último valor, variación en 12 meses y trayectoria de dos años de ocho indicadores, bajados con datoschile",
+    "Latest value, 12-month change and two-year path of eight indicators, downloaded with datoschile"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/assets/shots/datoschile-panel.png",
+    "https://rxyxs.github.io/assets/shots/datoschile-panel.png"
+   ],
+   "cap": [
+    "Panel interactivo: elige un indicador, un rango de tiempo y pasa el cursor para ver cada dato",
+    "Interactive dashboard: pick an indicator and a time range, and hover to see each data point"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/assets/shots/datoschile-fondos.png",
+    "https://rxyxs.github.io/assets/shots/datoschile-fondos.png"
+   ],
+   "cap": [
+    "Fondos A a E en UF, próximos feriados calculados desde la ley y una calculadora de pesos de hoy",
+    "Pension funds A to E in UF, upcoming holidays computed from the law and a today's-pesos calculator"
    ]
   }
  ],
@@ -2802,22 +2822,22 @@
   },
   {
    "src": [
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_wind_vs_reconstructed.png",
+    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/real_wind_vs_reconstructed.png"
+   ],
+   "cap": [
+    "Real hourly wind vs. the weather reconstruction",
+    "Real hourly wind vs. the weather reconstruction"
+   ]
+  },
+  {
+   "src": [
     "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_forecast_two_weeks.png",
     "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_forecast_two_weeks.png"
    ],
    "cap": [
     "Day-ahead forecast on two weeks of 2025",
     "Day-ahead forecast on two weeks of 2025"
-   ]
-  },
-  {
-   "src": [
-    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_model_comparison.png",
-    "https://rxyxs.github.io/chile-energy-grid-forecasting-r/figures/ml_model_comparison.png"
-   ],
-   "cap": [
-    "Model and loss comparison on 2025",
-    "Model and loss comparison on 2025"
    ]
   }
  ],

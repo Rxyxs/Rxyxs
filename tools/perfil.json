@@ -1305,16 +1305,19 @@
    "datoschile: Chilean public data in one line"
   ],
   "res": [
-   "Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.",
-   "A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed."
+   "Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: UF, dólar, UTM, IPC, TPM, IMACEC, desempleo, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales y días hábiles. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos), valida los feriados contra los días sin dólar observado 2008–2026 y publica un panel interactivo que se actualiza cada semana.",
+   "A Python library that downloads Chile's reference data, clean and in a DataFrame: UF, dollar, UTM, CPI, policy rate, IMACEC, unemployment, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays and business days. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points), checks holidays against the days with no observed dollar in 2008–2026, and publishes an interactive dashboard that updates every week."
   ],
-  "code": "import datoschile as dc\n\ndc.indicadores.uf(desde=2020)\ndc.pensiones.indice(fondos=\"A\", desde=2008, real=True)\ndc.cmf.morosidad(solo_sistema=True)",
+  "code": "import datoschile as dc\n\ndc.resumen()                          # 9 indicadores con su fuente\ndc.cochilco.cobre(desde=2024)         # cobre LME del día\ndc.convertir.deflactar(1_000_000, \"2015-01\")\ndc.calendario.dias_habiles(\"2026-09-01\", \"2026-09-30\")",
   "tags": [
    "python",
    "pandas",
    "open-data",
-   "data-cleaning"
-  ]
+   "data-cleaning",
+   "github-pages"
+  ],
+  "page": true,
+  "dark": true
  },
  "profile": {
   "name": "Pablo Reyes",

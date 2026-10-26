@@ -76,15 +76,18 @@ Doce proyectos partieron con datos simulados y después los corrí, sin cambiar 
 ## Herramienta abierta
 
 **[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
-Librería de Python para bajar la UF, el dólar, el cobre, los valores cuota de las AFP y la morosidad bancaria de la CMF, limpios y en un DataFrame. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los tres formatos de los Excel de la CMF, y cada semana verifica que las fuentes no hayan cambiado.
+Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: UF, dólar, UTM, IPC, TPM, IMACEC, desempleo, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales y días hábiles. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014 o los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos), valida los feriados contra los días sin dólar observado 2008–2026 y publica un panel interactivo que se actualiza cada semana.
 
 ```python
 import datoschile as dc
 
-dc.indicadores.uf(desde=2020)
-dc.pensiones.indice(fondos="A", desde=2008, real=True)
-dc.cmf.morosidad(solo_sistema=True)
+dc.resumen()                          # 9 indicadores con su fuente
+dc.cochilco.cobre(desde=2024)         # cobre LME del día
+dc.convertir.deflactar(1_000_000, "2015-01")
+dc.calendario.dias_habiles("2026-09-01", "2026-09-30")
 ```
+
+[Ver el panel interactivo](https://rxyxs.github.io/datoschile/)
 
 ## Experiencia
 

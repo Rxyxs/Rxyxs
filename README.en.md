@@ -76,15 +76,18 @@ Twelve projects started on simulated data, and I later ran them, with the method
 ## Open-source tool
 
 **[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
-A Python library to download the UF, dollar, copper, pension fund unit values and CMF bank delinquency, clean and in a DataFrame. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CMF Excel files' three layouts, and checks every week that the sources haven't changed.
+A Python library that downloads Chile's reference data, clean and in a DataFrame: UF, dollar, UTM, CPI, policy rate, IMACEC, unemployment, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays and business days. It fixes real source errors, like the dollar leaking into the UF in 2014 or the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points), checks holidays against the days with no observed dollar in 2008–2026, and publishes an interactive dashboard that updates every week.
 
 ```python
 import datoschile as dc
 
-dc.indicadores.uf(desde=2020)
-dc.pensiones.indice(fondos="A", desde=2008, real=True)
-dc.cmf.morosidad(solo_sistema=True)
+dc.resumen()                          # 9 indicadores con su fuente
+dc.cochilco.cobre(desde=2024)         # cobre LME del día
+dc.convertir.deflactar(1_000_000, "2015-01")
+dc.calendario.dias_habiles("2026-09-01", "2026-09-30")
 ```
+
+[Open the interactive dashboard](https://rxyxs.github.io/datoschile/)
 
 ## Experience
 
