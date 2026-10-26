@@ -1,9 +1,11 @@
-"""Dibuja el diagrama del proyecto de la flota de buses (assets/shots/bus-fleet-flow-{es,en}.svg).
+"""Dibuja el mapa del trabajo en Buses Vule (assets/shots/bus-fleet-flow-{es,en}.svg).
 
     python tools/diagrama_flota.py ../Rxyxs.github.io
 
-El proyecto es de trabajo y su repositorio usa datos de ejemplo, así que la tarjeta muestra el
-proceso en cuatro etapas en vez de un gráfico de resultados.
+El cargo fue de analista de datos en abastecimiento y combustibles; el repositorio
+bus-fleet-fuel-efficiency reproduce parte del flujo con datos ficticios. El diagrama junta lo
+que cuenta el README del repositorio y lo que dice el CV: indicadores arriba, cinco etapas de
+izquierda a derecha y, abajo, los problemas de datos que se encontraron y corrigieron.
 """
 from __future__ import annotations
 
@@ -13,49 +15,88 @@ from pathlib import Path
 
 TXT = {
     "es": {
-        "title": "Control de combustible de una flota de buses",
-        "sub": "De 17 planillas sueltas a una base consolidada y una app de registro en terreno",
+        "title": "Buses Vule S.A. · Abastecimiento y combustibles",
+        "sub": "Analista de Datos · Red Metropolitana de Movilidad · enero 2025 a abril 2026",
+        "kpis": [("20", "terminales"), ("2.094", "buses en la app"), ("−70%", "tiempo de procesamiento"),
+                 ("1.754", "cargas reales en la prueba"), ("13", "tests automatizados")],
         "stages": [
-            ("Fuente", "17 planillas Excel", ["Una planilla por terminal", "Cada terminal registraba sus cargas por separado"],
-             ["17 terminales"]),
-            ("Integración", "Consolidación en Python", ["Une las 17 planillas en una sola base", "Comprime los registros y los consolida"],
-             ["Por terminal", "Por día", "Por mes"]),
-            ("Validación", "Control de rendimiento", ["km/L de cada bus contra su carga anterior", "Marca las cargas fuera del rango de su modelo"],
-             ["km/L", "Rango por modelo"]),
-            ("Operación", "App en AppSheet", ["El operador registra cargas, pistolas y estanques desde el celular", "Reemplazó las planillas"],
-             ["Consumo por pistola", "Stock teórico", "AdBlue"]),
+            ("Captura", "App en AppSheet",
+             ["Reemplazó las planillas Excel y el papel", "Formularios de buses y camionetas con lógica condicional",
+              "Lecturas por turno: pistolas, AdBlue y stock", "Validaciones sobre un modelo relacional"],
+             ["Móvil y web", "KPIs automáticos"]),
+            ("Integración", "ETL en Python",
+             ["Consolida las planillas por terminal, día y mes", "Limpia horas, patentes y fechas digitadas a mano",
+              "Automatiza cuadraturas semanales de inventario y reportes de compras"],
+             ["pandas", "regex", "−70% tiempo"]),
+            ("Control", "Rendimiento y estanques",
+             ["km/L de cada bus contra su carga anterior, aunque sea en otro terminal",
+              "Marca BR o CI según el rango de su modelo y norma", "Stock teórico contra el medido en cada estanque"],
+             ["KMACC", "REV", "Stock teórico"]),
+            ("Analítica", "Anomalías y forecast",
+             ["Detección de anomalías: pérdidas y desviaciones de combustible",
+              "Forecast de demanda para abastecer insumos críticos"],
+             ["Anomalías", "Forecast"]),
+            ("Reportes", "Power BI y ERP",
+             ["Dashboards ejecutivos de indicadores de flota", "Excel con fórmulas vivas y colores por rango",
+              "Sincronización con el ERP Softland"],
+             ["Power BI", "Softland"]),
         ],
         "out": "Resultado",
-        "qa": "Control de calidad: errores corregidos al revisar el código",
-        "fixes": ["Fechas mal ordenadas entre meses", "Buses sin rango por cómo estaba escrita la norma",
-                  "Primera carga de cada bus marcada por error"],
-        "note": "Diagrama del proceso. El repositorio usa datos de ejemplo ficticios.",
+        "qa": "Problemas de datos encontrados y corregidos",
+        "fixes": ["Fechas ordenadas como texto: entre meses, los km se calculaban contra la lectura equivocada",
+                  "La norma escrita de dos formas (Euro V / EURO V) dejaba buses sin rango y sin alerta",
+                  "La primera carga de cada bus salía marcada como bajo rango",
+                  "La app tomaba la lectura inicial de otro turno; se amarró por folio, terminal y fecha",
+                  "Una planilla con el mes mal digitado producía 28 kilometrajes negativos"],
+        "note": "El repositorio bus-fleet-fuel-efficiency reproduce la consolidación, el rendimiento y el control de estanques con datos ficticios.",
     },
     "en": {
-        "title": "Fuel control for a bus fleet",
-        "sub": "From 17 separate spreadsheets to one consolidated base and an app for field records",
+        "title": "Buses Vule S.A. · Supply and fuel",
+        "sub": "Data Analyst · Santiago's public bus network (Red) · January 2025 to April 2026",
+        "kpis": [("20", "depots"), ("2,094", "buses in the app"), ("−70%", "processing time"),
+                 ("1,754", "real loads in the test"), ("13", "automated tests")],
         "stages": [
-            ("Source", "17 Excel sheets", ["One sheet per depot", "Each depot recorded its loads separately"],
-             ["17 depots"]),
-            ("Integration", "Consolidation in Python", ["Merges the 17 sheets into one base", "Compresses the records and consolidates them"],
-             ["By depot", "By day", "By month"]),
-            ("Validation", "Efficiency check", ["Each bus's km/L against its previous load", "Flags loads outside its model's range"],
-             ["km/L", "Range per model"]),
-            ("Operation", "AppSheet app", ["Operators record loads, pumps and tanks from their phone", "Replaced the spreadsheets"],
-             ["Per-pump consumption", "Theoretical stock", "AdBlue"]),
+            ("Capture", "AppSheet app",
+             ["Replaced the Excel sheets and paper", "Bus and van forms with conditional logic",
+              "Per-shift readings: pumps, AdBlue and stock", "Validations on a relational model"],
+             ["Mobile and web", "Automatic KPIs"]),
+            ("Integration", "Python ETL",
+             ["Consolidates the sheets by depot, day and month", "Cleans hand-typed times, plates and dates",
+              "Automates weekly inventory reconciliations and purchase reports"],
+             ["pandas", "regex", "−70% time"]),
+            ("Control", "Efficiency and tanks",
+             ["Each bus's km/L against its previous load, even at another depot",
+              "Flags BR or CI by its model and standard's range", "Theoretical stock against the measured stock per tank"],
+             ["KMACC", "REV", "Theoretical stock"]),
+            ("Analytics", "Anomalies and forecast",
+             ["Anomaly detection: fuel losses and deviations", "Demand forecast to supply critical inputs"],
+             ["Anomalies", "Forecast"]),
+            ("Reporting", "Power BI and ERP",
+             ["Executive dashboards of fleet indicators", "Excel with live formulas and range colours",
+              "Sync with the Softland ERP"],
+             ["Power BI", "Softland"]),
         ],
         "out": "Output",
-        "qa": "Quality control: bugs fixed while reviewing the code",
-        "fixes": ["Dates sorted wrongly across months", "Buses left without a range by how the standard was written",
-                  "Every bus's first load flagged by mistake"],
-        "note": "Process diagram. The repository uses fictitious example data.",
+        "qa": "Data problems found and fixed",
+        "fixes": ["Dates sorted as text: across months, km were computed against the wrong reading",
+                  "The standard written two ways (Euro V / EURO V) left buses with no range and no alert",
+                  "Every bus's first load was flagged as below range",
+                  "The app picked another shift's opening reading; now matched by folio, depot and date",
+                  "A sheet with a mistyped month produced 28 negative mileages"],
+        "note": "The bus-fleet-fuel-efficiency repository reproduces the consolidation, efficiency and tank control on fictitious data.",
     },
 }
 
 INK, BODY, MUTED, LINE, SOFT = "#1F2328", "#3D444D", "#6E7781", "#D0D7DE", "#F6F8FA"
 ACC, ACC_SOFT, ACC_LINE = "#1A7F37", "#EEF8F0", "#9BD3AB"
-W, H = 1200, 684
-CW, GAP, X0, Y0, CH = 252, 40, 40, 128, 344
+GOLD, GOLD_INK = "#BF8700", "#9A6700"
+W, X0 = 1280, 40
+N, GAP = 5, 26
+CW = (W - 2 * X0 - (N - 1) * GAP) / N
+KY, SY, SH = 122, 232, 432          # indicadores, etapas y alto de cada etapa
+QY = SY + SH + 30                    # franja de calidad
+QH = 174
+H = QY + QH + 52
 
 
 def wrap(s: str, n: int) -> list[str]:
@@ -70,36 +111,39 @@ def wrap(s: str, n: int) -> list[str]:
 
 
 def text(x, y, s, size=14, weight=400, fill=BODY, anchor="start", extra="") -> str:
-    return (f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
+    return (f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
             f'text-anchor="{anchor}"{extra}>{escape(s)}</text>')
 
 
 def icon(k: int, x: float, y: float) -> str:
-    """Íconos de 44 px dibujados con trazos: planillas, embudo, indicador y teléfono."""
+    """Íconos de 40 px con trazos: teléfono, embudo, indicador, gráfico de tendencia y tablero."""
     s = f'fill="none" stroke="{ACC}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
     if k == 0:
-        return (f'<rect x="{x + 8}" y="{y}" width="30" height="36" rx="3" {s} opacity=".45"/>'
-                f'<rect x="{x + 2}" y="{y + 6}" width="30" height="36" rx="3" fill="#fff" stroke="{ACC}" stroke-width="2"/>'
-                f'<path d="M{x + 2} {y + 18}h30M{x + 2} {y + 30}h30M{x + 14} {y + 6}v36" {s}/>')
+        return (f'<rect x="{x + 9}" y="{y}" width="22" height="38" rx="4" {s}/>'
+                f'<path d="M{x + 16} {y + 5}h8M{x + 14} {y + 13}h12M{x + 14} {y + 19}h12M{x + 14} {y + 25}h8" {s}/>'
+                f'<circle cx="{x + 20}" cy="{y + 33}" r="1.5" fill="{ACC}"/>')
     if k == 1:
-        return (f'<path d="M{x} {y + 6}h44l-16 18v14l-12 6v-20z" {s}/>'
-                f'<path d="M{x + 8} {y}v2M{x + 22} {y - 2}v4M{x + 36} {y}v2" {s}/>')
+        return (f'<path d="M{x} {y + 6}h40l-15 16v12l-10 5v-17z" {s}/>'
+                f'<path d="M{x + 7} {y}v2M{x + 20} {y - 2}v4M{x + 33} {y}v2" {s}/>')
     if k == 2:
-        return (f'<path d="M{x + 4} {y + 32}a18 18 0 1 1 36 0" {s}/>'
-                f'<path d="M{x + 22} {y + 32}l9-12" {s}/><circle cx="{x + 22}" cy="{y + 32}" r="3" fill="{ACC}"/>')
-    return (f'<rect x="{x + 10}" y="{y}" width="24" height="42" rx="4" {s}/>'
-            f'<path d="M{x + 18} {y + 5}h8M{x + 15} {y + 14}h14M{x + 15} {y + 21}h14M{x + 15} {y + 28}h9" {s}/>'
-            f'<circle cx="{x + 22}" cy="{y + 36}" r="1.6" fill="{ACC}"/>')
+        return (f'<path d="M{x + 3} {y + 34}a17 17 0 1 1 34 0" {s}/>'
+                f'<path d="M{x + 20} {y + 34}l8-11" {s}/><circle cx="{x + 20}" cy="{y + 34}" r="3" fill="{ACC}"/>')
+    if k == 3:
+        return (f'<path d="M{x + 2} {y + 36}h36M{x + 2} {y + 2}v34" {s}/>'
+                f'<path d="M{x + 6} {y + 28}l9-9 7 6 13-15" {s}/>'
+                f'<circle cx="{x + 22}" cy="{y + 25}" r="2.4" fill="#fff" stroke="#CF222E" stroke-width="2"/>')
+    return (f'<rect x="{x}" y="{y + 2}" width="40" height="32" rx="4" {s}/>'
+            f'<path d="M{x + 8} {y + 26}v-6M{x + 16} {y + 26}v-12M{x + 24} {y + 26}v-9M{x + 32} {y + 26}v-15" {s}/>')
 
 
 def chips(x: float, y: float, labels: list[str], maxw: float) -> str:
     out, cx, cy = [], x, y
     for lab in labels:
-        w = 18 + len(lab) * 6.6
+        w = 16 + len(lab) * 6.4
         if cx + w > x + maxw:
-            cx, cy = x, cy + 30
-        out.append(f'<rect x="{cx}" y="{cy}" width="{w:.0f}" height="24" rx="12" fill="{ACC_SOFT}" stroke="{ACC_LINE}"/>'
-                   + text(cx + w / 2, cy + 16.5, lab, 12, 600, ACC, "middle"))
+            cx, cy = x, cy + 29
+        out.append(f'<rect x="{cx:.1f}" y="{cy}" width="{w:.0f}" height="23" rx="11.5" fill="{ACC_SOFT}" stroke="{ACC_LINE}"/>'
+                   + text(cx + w / 2, cy + 16, lab, 11.5, 600, ACC, "middle"))
         cx += w + 6
     return "".join(out)
 
@@ -108,46 +152,51 @@ def svg(L: str) -> str:
     T = TXT[L]
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
          'font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">',
-         f'<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">'
+         f'<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
          f'<path d="M0 1L9 5L0 9z" fill="{MUTED}"/></marker></defs>',
          f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>',
-         text(X0, 64, T["title"], 26, 700, INK), text(X0, 94, T["sub"], 15.5, 400, MUTED)]
+         text(X0, 62, T["title"], 26, 700, INK), text(X0, 92, T["sub"], 15.5, 400, MUTED)]
+    # Indicadores.
+    kw = (W - 2 * X0 - 4 * 14) / 5
+    for k, (v, lab) in enumerate(T["kpis"]):
+        x = X0 + k * (kw + 14)
+        p.append(f'<rect x="{x:.1f}" y="{KY}" width="{kw:.1f}" height="78" rx="12" fill="{SOFT}" stroke="{LINE}"/>'
+                 + text(x + 18, KY + 40, v, 26, 700, ACC if k == 2 else INK)
+                 + text(x + 18, KY + 63, lab, 13, 400, MUTED))
+    # Etapas.
     for k, (phase, title, bullets, out) in enumerate(T["stages"]):
         x = X0 + k * (CW + GAP)
-        last = k == len(T["stages"]) - 1
-        p.append(f'<rect x="{x}" y="{Y0}" width="{CW}" height="{CH}" rx="14" fill="#fff" '
-                 f'stroke="{ACC if last else LINE}" stroke-width="{2 if last else 1.4}"/>')
-        p.append(text(x + 22, Y0 + 38, f"{k + 1:02d}  {phase.upper()}", 11.5, 700, ACC, extra=' letter-spacing="1.4"'))
-        p.append(icon(k, x + 22, Y0 + 56))
-        p.append(text(x + 22, Y0 + 132, title, 17.5, 700, INK))
-        y = Y0 + 162
+        p.append(f'<rect x="{x:.1f}" y="{SY}" width="{CW:.1f}" height="{SH}" rx="14" fill="#fff" stroke="{LINE}" stroke-width="1.4"/>')
+        p.append(text(x + 18, SY + 34, f"{k + 1:02d}  {phase.upper()}", 11, 700, ACC, extra=' letter-spacing="1.3"'))
+        p.append(icon(k, x + 18, SY + 52))
+        p.append(text(x + 18, SY + 122, title, 15.5, 700, INK))
+        y = SY + 152
         for b in bullets:
-            for j, ln in enumerate(wrap(b, 31)):
+            for j, ln in enumerate(wrap(b, 27)):
                 if j == 0:
-                    p.append(f'<circle cx="{x + 26}" cy="{y - 4.5}" r="2.6" fill="{MUTED}"/>')
-                p.append(text(x + 36, y, ln, 13.5, 400, BODY))
-                y += 19
-            y += 7
-        p.append(f'<line x1="{x + 22}" y1="{Y0 + 244}" x2="{x + CW - 22}" y2="{Y0 + 244}" stroke="{LINE}"/>')
-        p.append(text(x + 22, Y0 + 266, T["out"].upper(), 11, 700, MUTED, extra=' letter-spacing="1.2"'))
-        p.append(chips(x + 22, Y0 + 278, out, CW - 44))
-        if not last:
-            ax = x + CW + 6
-            p.append(f'<line x1="{ax}" y1="{Y0 + CH / 2}" x2="{ax + GAP - 14}" y2="{Y0 + CH / 2}" '
+                    p.append(f'<circle cx="{x + 22}" cy="{y - 4.5}" r="2.4" fill="{MUTED}"/>')
+                p.append(text(x + 31, y, ln, 13, 400, BODY))
+                y += 18
+            y += 8
+        p.append(f'<line x1="{x + 18}" y1="{SY + SH - 92}" x2="{x + CW - 18}" y2="{SY + SH - 92}" stroke="{LINE}"/>')
+        p.append(text(x + 18, SY + SH - 70, T["out"].upper(), 10.5, 700, MUTED, extra=' letter-spacing="1.2"'))
+        p.append(chips(x + 18, SY + SH - 58, out, CW - 36))
+        if k < N - 1:
+            ax = x + CW + 3
+            p.append(f'<line x1="{ax:.1f}" y1="{SY + SH / 2}" x2="{ax + GAP - 8:.1f}" y2="{SY + SH / 2}" '
                      f'stroke="{MUTED}" stroke-width="2" marker-end="url(#a)"/>')
-    # Control de calidad, debajo del flujo.
-    qy = Y0 + CH + 32
-    p.append(f'<rect x="{X0}" y="{qy}" width="{W - 2 * X0}" height="118" rx="14" fill="{SOFT}" stroke="{LINE}"/>')
-    p.append(f'<path d="M{X0} {qy + 14}v90" stroke="#BF8700" stroke-width="5" stroke-linecap="round"/>')
-    p.append(text(X0 + 28, qy + 34, T["qa"], 15.5, 700, INK))
+    # Problemas de datos, en tres columnas.
+    p.append(f'<rect x="{X0}" y="{QY}" width="{W - 2 * X0}" height="{QH}" rx="14" fill="#FFFBEA" stroke="#EAD39C"/>')
+    p.append(f'<path d="M{X0} {QY + 16}v{QH - 32}" stroke="{GOLD}" stroke-width="5" stroke-linecap="round"/>')
+    p.append(text(X0 + 28, QY + 36, T["qa"], 15.5, 700, INK))
     colw = (W - 2 * X0 - 56) / 3
     for k, s in enumerate(T["fixes"]):
-        cx = X0 + 28 + k * colw
-        p.append(f'<circle cx="{cx + 12}" cy="{qy + 66}" r="12" fill="#fff" stroke="#BF8700" stroke-width="1.6"/>'
-                 + text(cx + 12, qy + 70.5, str(k + 1), 12.5, 700, "#9A6700", "middle"))
-        for j, ln in enumerate(wrap(s, 36)):
-            p.append(text(cx + 34, qy + 71 + j * 19, ln, 14, 400, BODY))
-    p.append(text(X0, H - 26, T["note"], 12.5, 400, MUTED))
+        cx, cy = X0 + 28 + (k % 3) * colw, QY + 70 + (k // 3) * 60
+        p.append(f'<circle cx="{cx + 11:.1f}" cy="{cy - 4}" r="11" fill="#fff" stroke="{GOLD}" stroke-width="1.6"/>'
+                 + text(cx + 11, cy + 0.5, str(k + 1), 12, 700, GOLD_INK, "middle"))
+        for j, ln in enumerate(wrap(s, 50)):
+            p.append(text(cx + 32, cy + j * 18, ln, 13.5, 400, BODY))
+    p.append(text(X0, H - 22, T["note"], 12.5, 400, MUTED))
     p.append("</svg>")
     return "".join(p)
 
