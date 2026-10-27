@@ -94,10 +94,10 @@ def readme(L: int) -> str:
 
     rv = D["real_vs_sim"]
     out += [f"## {rv['title'][L]}", "", rv["intro"][L], "",
-            "| " + " | ".join(rv["head"][L]) + " |", "|---|---|---:|---:|---|"]
+            "| " + " | ".join(rv["head"][L]) + " |", "|---|---|---|---|"]
     for r in rv["rows"]:
         out.append(f"| **[{r['name'][L]}]({GH}{r['repo']})**<br><sub>{r['data'][L]}</sub> | {r['metric'][L]} | "
-                   f"{r['sim'][L]} | **{r['real'][L]}** | {r['why'][L]} |")
+                   f"{r['sim'][L]} → **{r['real'][L]}** | {r['why'][L]} |")
     out.append("")
 
     cats = D["categories"]
@@ -183,7 +183,6 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .card:hover{border-color:var(--hover);transform:translateY(-2px)}
 .gal{position:relative;margin:-6px -8px 14px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
 .feat .gal{aspect-ratio:16/9}
-.rvs .gal{margin:-4px -6px 8px}
 .two{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr))}
 .gal.pic{aspect-ratio:4/5;background:var(--bg2)}
 .gal.oscura{background:#0d1117}.gal.oscura .frames img{padding:0}
@@ -265,15 +264,15 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .actions a{text-decoration:none;font-weight:500}
 .actions a:hover{text-decoration:underline}
 .lib{border-left:3px solid var(--real)}
-.rvs{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
-.rvs h3{font-size:1rem;margin:0}.rvs h3 a{color:var(--ink);text-decoration:none}.rvs h3 a:hover{color:var(--accent)}
-.rvs .metric{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.rvs .vals{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
-.rvs .vals span{display:flex;flex-direction:column;font-size:1.35rem;font-weight:700;line-height:1.1}
-.rvs .vals small{font-size:.7rem;font-weight:500;color:var(--muted)}
-.rvs .vals .sim{color:var(--muted)}.rvs .vals .real{color:var(--ink)}.rvs .arrow{color:var(--muted);font-size:1.1rem}
-.rvs p{margin:2px 0 0;color:var(--body);font-size:.92rem}.rvs .src{font-size:.78rem;color:var(--muted);margin-top:auto}
-.rvsg{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
+.rvt{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.rv-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 18px;border-top:1px solid var(--line);align-items:baseline}
+.rv-h{border-top:0;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:12px;padding-bottom:10px}
+.rv-p a{color:var(--ink);font-weight:600;text-decoration:none}.rv-p a:hover{color:var(--accent)}
+.rv-p span{display:block;font-size:.78rem;color:var(--muted);margin-top:2px}
+.rv-m{font-size:.85rem;color:var(--muted)}
+.rv-v{font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;column-gap:8px;row-gap:2px}.rv-v span,.rv-v b{white-space:nowrap}.rv-v .esp{color:var(--muted)}.rv-v .fl{color:var(--muted)}.rv-v b{color:var(--ink)}
+.rv-w{color:var(--body);font-size:.92rem}
+@media (max-width:760px){.rv-h{display:none}.rv-row{grid-template-columns:1fr;gap:4px}}
 pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;font-size:.85rem;margin:4px 0 12px;color:var(--body)}
 h2.cat{font-size:1.1rem;margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--line)}
 h2.cat .n{color:var(--accent);margin-right:8px;font-variant-numeric:tabular-nums}
@@ -327,7 +326,7 @@ JS = """
   apply();
   if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -40px 0px'});
-    [].forEach.call(document.querySelectorAll('.card,.rvs'),function(c){c.classList.add('reveal');io.observe(c)});}
+    [].forEach.call(document.querySelectorAll(".card,.rv-row:not(.rv-h)"),function(c){c.classList.add('reveal');io.observe(c)});}
 })();
 // Galerías: las figuras avanzan solas mientras la tarjeta está a la vista (la barra de progreso
 // marca el tiempo, así que pasar el mouse la pausa), con flechas, swipe y un visor al hacer clic.
@@ -483,19 +482,21 @@ def card(it: dict, L: int, cls: str = "") -> str:
 
 
 def rvs_section(L: int) -> str:
-    """Simulado contra real: una tarjeta por proyecto con la cifra antes y después."""
+    """Expectativa (datos simulados) contra comportamiento observado (datos reales): una fila
+    por proyecto con la métrica esperada, la observada y la lectura de la diferencia."""
     rv = D["real_vs_sim"]
-    cards = "".join(
-        f'<article class="rvs">{gallery(r, L, GAL.get("rvs/" + r["name"][ES], []))}'
-        f'<h3><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a></h3>'
-        f'<div class="metric">{h(r["metric"][L])}</div>'
-        f'<div class="vals"><span class="sim"><small>{t(L, "Simulado", "Simulated")}</small>{h(r["sim"][L])}</span>'
-        f'<span class="arrow" aria-hidden="true">→</span>'
-        f'<span class="real"><small>{t(L, "Real", "Real")}</small>{h(r["real"][L])}</span></div>'
-        f'<p>{h(r["why"][L])}</p><div class="src">{h(r["data"][L])}</div></article>'
+    hd = rv["head"][L]
+    rows = "".join(
+        f'<div class="rv-row" role="row"><div class="rv-p" role="cell"><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a>'
+        f'<span>{h(r["data"][L])}</span></div>'
+        f'<div class="rv-m" role="cell">{h(r["metric"][L])}</div>'
+        f'<div class="rv-v" role="cell"><span class="esp">{h(r["sim"][L])}</span><span class="fl" aria-hidden="true">→</span>'
+        f'<b>{h(r["real"][L])}</b></div>'
+        f'<div class="rv-w" role="cell">{h(r["why"][L])}</div></div>'
         for r in rv["rows"])
+    head = "".join(f'<div role="columnheader">{h(x)}</div>' for x in hd)
     return (f'<h2 id="real">{h(rv["title"][L])}</h2><p class="sub">{h(rv["intro"][L])}</p>'
-            f'<div class="grid rvsg">{cards}</div>')
+            f'<div class="rvt" role="table"><div class="rv-row rv-h" role="row">{head}</div>{rows}</div>')
 
 
 INSTAGRAM = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'

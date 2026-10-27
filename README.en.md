@@ -54,24 +54,24 @@ Often the result wasn't the one I expected. A hospital readmission model reached
 </tr>
 </table>
 
-## What changed on real data
+## Expected vs. observed data behavior
 
-Twelve projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number.
+Twelve projects were first designed on simulated data, which encodes what each problem is expected to look like, and then evaluated with the same method on real data. The table compares the expected metric with the observed one and summarizes what explains the gap.
 
-| Project | Metric | Simulated | Real | Why |
-|---|---|---:|---:|---|
-| **[E-commerce fraud pipeline](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590k transactions</sub> | PR-AUC | 0.993 | **0.052** | The behavioral features carry almost no signal on real fraud. |
-| **[C + Ruby + Python fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1.000 | **0.098** | Two of its four rules never fire: their lists were invented. |
-| **[Unsupervised graph AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204k Bitcoin transactions</sub> | ROC-AUC | 0.893 | **0.17–0.33** | Illicit flows are typical, not anomalous: it falls below random. |
-| **[Blast fragmentation](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 published blasts, unseen mine</sub> | R² | 0.957 | **−0.59** | A random split lets it recognise the site; at a new mine it is worse than the mean. |
-| **[Order-flow detector (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX and Binance</sub> | Alerts (target 0.27%) | 0.02% | **1.4–24%** | Real tails are far heavier than the assumed Student-t. |
-| **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 | **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
-| **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties | **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
-| **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 | **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
-| **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged | **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
-| **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86k road pairs</sub> | Route plan, km | 572 | **835 driven** | The simulated detour factor falls short: 19% of real trips exceed its maximum. |
-| **[Hourly power demand (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 years of hourly demand</sub> | Hourly MAPE, TBATS vs. naive | 4.28% vs. 6.73% | **7.01% vs. 5.81%** | Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day. |
-| **[Hourly SEN price by bus](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>CEN daily reports, 4 years, 6 buses</sub> | Price WAPE, LightGBM | 8.77% | **18.71%** | Zeros in the north, regime shifts and a north-south split; at Puerto Montt it loses to persistence. |
+| Project | Metric | Expected → observed | Interpretation |
+|---|---|---|---|
+| **[E-commerce fraud pipeline](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590k transactions</sub> | PR-AUC | 0.993 → **0.052** | The behavioral features carry almost no signal on real fraud. |
+| **[C + Ruby + Python fraud engine](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1.000 → **0.098** | Two of its four rules never fire: their lists were invented. |
+| **[Unsupervised graph AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204k Bitcoin transactions</sub> | ROC-AUC | 0.893 → **0.17–0.33** | Illicit flows are typical, not anomalous: it falls below random. |
+| **[Blast fragmentation](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 published blasts, unseen mine</sub> | R² | 0.957 → **−0.59** | A random split lets it recognise the site; at a new mine it is worse than the mean. |
+| **[Order-flow detector (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX and Binance</sub> | Alerts (target 0.27%) | 0.02% → **1.4–24%** | Real tails are far heavier than the assumed Student-t. |
+| **[19 anomaly detectors](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB and IEEE-CIS</sub> | Baseline ROC-AUC | 0.383 → **0.931** | The 'below chance' baseline was a simulator artifact; the ranking barely transfers. |
+| **[Multi-task maintenance network](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23,550 SCANIA trucks</sub> | AUC vs. LightGBM | ties → **0.62 vs. 0.71** | The shared network loses both tasks on real trucks, even after correcting the validation scale. |
+| **[Credit risk lab](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621k loans</sub> | AUC, scorecard vs. boosting | 0.733 vs. 0.716 → **0.647 vs. 0.660** | On the weak signal of a real book boosting wins; the monotonic constraint still costs nothing. |
+| **[A/B experimentation](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14M users</sub> | Effect after CUPED adjustment | unchanged → **−24% to −39%** | SRM passes, but the pre-test features predict the arm: the file was rebalanced and adjustment corrects the estimate. |
+| **[Last-mile logistics](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86k road pairs</sub> | Route plan, km | 572 → **835 driven** | The simulated detour factor falls short: 19% of real trips exceed its maximum. |
+| **[Hourly power demand (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 years of hourly demand</sub> | Hourly MAPE, TBATS vs. naive | 4.28% vs. 6.73% → **7.01% vs. 5.81%** | Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day. |
+| **[Hourly SEN price by bus](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>CEN daily reports, 4 years, 6 buses</sub> | Price WAPE, LightGBM | 8.77% → **18.71%** | Zeros in the north, regime shifts and a north-south split; at Puerto Montt it loses to persistence. |
 
 ## Projects by kind of problem
 
