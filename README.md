@@ -73,28 +73,6 @@ Doce proyectos partieron con datos simulados y después los corrí, sin cambiar 
 | **[Demanda eléctrica horaria (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 años de demanda horaria</sub> | MAPE horario, TBATS vs. ingenuo | 4,28% vs. 6,73% | **7,01% vs. 5,81%** | Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día. |
 | **[Precio horario del SEN por barra](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>Informes diarios del CEN, 4 años, 6 barras</sub> | WAPE del precio, LightGBM | 8,77% | **18,71%** | Precios con ceros en el norte, cambios de régimen y desacople norte-sur; en Puerto Montt pierde contra la persistencia. |
 
-## Herramienta abierta
-
-**[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
-Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: 17 series oficiales del Banco Central sin clave (dólar, TPM, IMACEC, PIB, desempleo, reservas), UF, UTM, IPC, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales y días hábiles. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014, los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos) o el IMACEC de mindicador, que guarda la primera cifra publicada y coincide con la vigente solo el 3,8% de los meses. Publica un panel interactivo que se actualiza cada semana.
-
-```python
-import datoschile as dc
-
-dc.resumen()                          # 9 indicadores con su fuente
-dc.bcentral.serie("imacec")           # serie oficial, sin clave
-dc.cochilco.cobre(desde=2024)         # cobre LME del día
-dc.convertir.deflactar(1_000_000, "2015-01")
-```
-
-[Ver el panel interactivo](https://rxyxs.github.io/datoschile/)
-
-## Experiencia
-
-**[Control de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
-Cada uno de los 20 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
-`python` `pandas` `appsheet` `excel` `data-cleaning`
-
 ## Proyectos por tipo de problema
 
 43 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
@@ -214,7 +192,29 @@ Cada uno de los 20 terminales llevaba el combustible en su propio Excel. Primero
 
 </details>
 
-## Herramientas
+## Experiencia
+
+**[Control de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
+Cada uno de los 20 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
+`python` `pandas` `appsheet` `excel` `data-cleaning`
+
+## Herramienta pública
+
+**[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
+Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: 17 series oficiales del Banco Central sin clave (dólar, TPM, IMACEC, PIB, desempleo, reservas), UF, UTM, IPC, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales y días hábiles. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014, los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos) o el IMACEC de mindicador, que guarda la primera cifra publicada y coincide con la vigente solo el 3,8% de los meses. Publica un panel interactivo que se actualiza cada semana.
+
+```python
+import datoschile as dc
+
+dc.resumen()                          # 9 indicadores con su fuente
+dc.bcentral.serie("imacec")           # serie oficial, sin clave
+dc.cochilco.cobre(desde=2024)         # cobre LME del día
+dc.convertir.deflactar(1_000_000, "2015-01")
+```
+
+[Ver el panel interactivo](https://rxyxs.github.io/datoschile/)
+
+## Stack
 
 <table>
 <tr><td><b>Lenguajes</b></td><td><img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=00FF66" alt="Python"> <img src="https://img.shields.io/badge/SQL-0D1117?style=flat-square&logo=postgresql&logoColor=00FF66" alt="SQL"> <img src="https://img.shields.io/badge/R-0D1117?style=flat-square&logo=r&logoColor=00FF66" alt="R"> <img src="https://img.shields.io/badge/C%2B%2B-0D1117?style=flat-square&logo=cplusplus&logoColor=00FF66" alt="C++"> <img src="https://img.shields.io/badge/C-0D1117?style=flat-square&logo=c&logoColor=00FF66" alt="C"> <img src="https://img.shields.io/badge/C%23-0D1117?style=flat-square&logo=dotnet&logoColor=00FF66" alt="C#"> <img src="https://img.shields.io/badge/Julia-0D1117?style=flat-square&logo=julia&logoColor=00FF66" alt="Julia"> <img src="https://img.shields.io/badge/Go-0D1117?style=flat-square&logo=go&logoColor=00FF66" alt="Go"> <img src="https://img.shields.io/badge/Ruby-0D1117?style=flat-square&logo=ruby&logoColor=00FF66" alt="Ruby"></td></tr>

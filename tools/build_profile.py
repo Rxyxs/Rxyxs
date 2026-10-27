@@ -100,17 +100,6 @@ def readme(L: int) -> str:
                    f"{r['sim'][L]} | **{r['real'][L]}** | {r['why'][L]} |")
     out.append("")
 
-    lib = D["library"]
-    out += [f"## {t(L, 'Herramienta abierta', 'Open-source tool')}", "",
-            f"**[{lib['name'][L]}]({GH}{lib['repo']})**  ", lib["res"][L], "",
-            "```python", lib["code"], "```", ""]
-    if lib.get("page"):
-        out += [f"[{t(L, 'Ver el panel interactivo', 'Open the interactive dashboard')}]({PAGE}{lib['repo']}/)", ""]
-
-    w = D["work"]
-    out += [f"## {t(L, 'Experiencia', 'Experience')}", "",
-            f"**[{w['name'][L]}]({GH}{w['repo']})** · <sub>{label(w, L)}</sub>  ", w["res"][L] + "  ", md_tags(w["tags"]), ""]
-
     cats = D["categories"]
     out += [f"## {t(L, 'Proyectos por tipo de problema', 'Projects by kind of problem')}", "",
             t(L, f"{len(all_items())} proyectos en {len(cats)} tipos de problema; haz clic en una categoría para abrirla, "
@@ -126,7 +115,18 @@ def readme(L: int) -> str:
             out.append(f"| **[{it['name'][L]}]({GH}{it['repo']})**<br><sub>{label(it, L)}{pg}</sub> | {b_to_md(it['res'][L])} | {md_tags(it['tags'])} |")
         out += ["", "</details>", ""]
 
-    out += [f"## {t(L, 'Herramientas', 'Tools')}", "", "<table>"]
+    w = D["work"]
+    out += [f"## {t(L, 'Experiencia', 'Experience')}", "",
+            f"**[{w['name'][L]}]({GH}{w['repo']})** · <sub>{label(w, L)}</sub>  ", w["res"][L] + "  ", md_tags(w["tags"]), ""]
+
+    lib = D["library"]
+    out += [f"## {t(L, 'Herramienta pública', 'Open-source tool')}", "",
+            f"**[{lib['name'][L]}]({GH}{lib['repo']})**  ", lib["res"][L], "",
+            "```python", lib["code"], "```", ""]
+    if lib.get("page"):
+        out += [f"[{t(L, 'Ver el panel interactivo', 'Open the interactive dashboard')}]({PAGE}{lib['repo']}/)", ""]
+
+    out += ["## Stack", "", "<table>"]
     for g in D["tools"]:
         out.append(f"<tr><td><b>{g['group'][L]}</b></td><td>{' '.join(badge(x['label'], x['logo']) for x in g['items'])}</td></tr>")
     out += ["</table>", "", "---", "", '<div align="center">',
@@ -554,9 +554,10 @@ def site(L: int) -> str:
              (len(cats), t(L, "tipos de problema", "kinds of problem")),
              (sum(kind(it) == "real" for it in items), t(L, "con datos reales", "on real data")),
              (sum(bool(it.get("page")) for it in items), t(L, "con página de resultados", "with a results page"))]
-    menu = [("destacados", t(L, "Destacados", "Featured")), ("real", t(L, "Simulado vs. real", "Simulated vs. real")),
-            ("herramienta", t(L, "Herramienta", "Tool")), ("proyectos", t(L, "Proyectos", "Projects")),
-            ("stack", "Stack"), ("experiencia", t(L, "Experiencia", "Experience"))]
+    # Orden de lectura: quién soy, proyectos, experiencia, herramienta pública y stack.
+    menu = [("inicio", t(L, "Quién soy", "About")), ("destacados", t(L, "Proyectos", "Projects")),
+            ("experiencia", t(L, "Experiencia", "Experience")), ("herramienta", t(L, "Herramienta pública", "Open-source tool")),
+            ("stack", "Stack")]
     R = t(L, "", "../")  # la versión en inglés vive en /en/
     # Foto y CV son opcionales: aparecen solo si perfil.json los declara (rutas dentro del sitio).
     photo = (f'<img class="photo" src="{R}{p["photo"]}" alt="{h(p["name"])}" width="112" height="112">'
@@ -568,7 +569,7 @@ def site(L: int) -> str:
             '<nav>' + "".join(f'<a href="#{k}">{v}</a>' for k, v in menu) + '</nav>'
             f'<div class="right"><button class="theme" type="button" aria-label="{theme_lbl}" title="{theme_lbl}">{SUN_MOON}</button>'
             f'<div class="lang">{other}</div></div></div></div><div class="wrap">',
-            f'<header class="hero"><div class="hero-top"><div><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
+            f'<header class="hero" id="inicio"><div class="hero-top"><div><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
             f'<p class="role">{h(p["role"][L])}</p></div>{photo}</div>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>{cv}',
@@ -579,12 +580,6 @@ def site(L: int) -> str:
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
             rvs_section(L),
-            f'<h2 id="herramienta">{t(L, "Herramienta abierta", "Open-source tool")}</h2>',
-            f'<article class="card lib">{gallery(lib, L, cls=" oscura" if lib.get("dark") else "")}<h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
-            f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
-            f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
-            '<div class="actions">' + (f'<a href="{PAGE}{lib["repo"]}/">{t(L, "Ver panel", "View dashboard")}</a>' if lib.get("page") else "")
-            + f'<a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>',
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']
@@ -608,10 +603,15 @@ def site(L: int) -> str:
               if x.get("logo") in ICONS else "")
         return f"<span>{ic}{h(x['label'])}</span>"
     tools = "".join(f"<div><b>{h(g['group'][L])}</b>" + "".join(tool(x) for x in g["items"]) + "</div>" for g in D["tools"])
-    body += [f'<h2 id="stack">{t(L, "Herramientas", "Tools")}</h2><div class="tools">{tools}</div>',
-             # Experiencia va al final, después de los proyectos y las herramientas.
-             f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
+    body += [f'<h2 id="experiencia">{t(L, "Experiencia", "Experience")}</h2>',
              experience(L, R),
+             (f'<h2 id="herramienta">{t(L, "Herramienta pública", "Open-source tool")}</h2>'
+            f'<article class="card lib">{gallery(lib, L, cls=" oscura" if lib.get("dark") else "")}<h3><a href="{GH}{lib["repo"]}">{h(lib["name"][L])}</a></h3>'
+            f'<p>{h(lib["res"][L])}</p><pre><code>{html.escape(lib["code"])}</code></pre>'
+            f'<div class="tags">{"".join(f"<code>{x}</code>" for x in lib["tags"])}</div>'
+            '<div class="actions">' + (f'<a href="{PAGE}{lib["repo"]}/">{t(L, "Ver panel", "View dashboard")}</a>' if lib.get("page") else "")
+            + f'<a href="{GH}{lib["repo"]}">{t(L, "Código e instalación", "Code and install")}</a></div></article>'),
+             f'<h2 id="stack">Stack</h2><div class="tools">{tools}</div>',
              f'<footer><span>{h(p["name"])} · {h(p["role"][L])}</span><span><a href="{p["github"]}">GitHub</a> · '
              f'<a href="{p["linkedin"]}">LinkedIn</a> · <a href="mailto:{p["email"]}">{p["email"]}</a></span></footer>']
     desc = t(L, "Portafolio de ciencia de datos de Pablo Reyes: proyectos ordenados por el tipo de problema que resuelven.",
