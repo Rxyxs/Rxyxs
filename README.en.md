@@ -73,28 +73,6 @@ Twelve projects started on simulated data, and I later ran them, with the method
 | **[Hourly power demand (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 years of hourly demand</sub> | Hourly MAPE, TBATS vs. naive | 4.28% vs. 6.73% | **7.01% vs. 5.81%** | Without a calendar, Christmas and Fiestas Patrias sink the classical models; the naive forecast adapts within a day. |
 | **[Hourly SEN price by bus](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>CEN daily reports, 4 years, 6 buses</sub> | Price WAPE, LightGBM | 8.77% | **18.71%** | Zeros in the north, regime shifts and a north-south split; at Puerto Montt it loses to persistence. |
 
-## Open-source tool
-
-**[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
-A Python library that downloads Chile's reference data, clean and in a DataFrame: 17 official Central Bank series with no key (dollar, policy rate, IMACEC, GDP, unemployment, reserves), UF, UTM, CPI, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays and business days. It fixes real source errors, like the dollar leaking into the UF in 2014, the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points) or mindicador's IMACEC, which keeps the first published figure and matches the current one on only 3.8% of months. It publishes an interactive dashboard that updates every week.
-
-```python
-import datoschile as dc
-
-dc.resumen()                          # 9 indicadores con su fuente
-dc.bcentral.serie("imacec")           # serie oficial, sin clave
-dc.cochilco.cobre(desde=2024)         # cobre LME del día
-dc.convertir.deflactar(1_000_000, "2015-01")
-```
-
-[Open the interactive dashboard](https://rxyxs.github.io/datoschile/)
-
-## Experience
-
-**[Fuel control for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
-Each of the 20 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, compresses them into consolidated tables by depot, day and month, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake.  
-`python` `pandas` `appsheet` `excel` `data-cleaning`
-
 ## Projects by kind of problem
 
 43 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
@@ -214,7 +192,29 @@ Each of the 20 depots tracked fuel in its own Excel file. First I wrote a Python
 
 </details>
 
-## Tools
+## Experience
+
+**[Fuel control for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
+Each of the 20 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, compresses them into consolidated tables by depot, day and month, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake.  
+`python` `pandas` `appsheet` `excel` `data-cleaning`
+
+## Open-source tool
+
+**[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
+A Python library that downloads Chile's reference data, clean and in a DataFrame: 17 official Central Bank series with no key (dollar, policy rate, IMACEC, GDP, unemployment, reserves), UF, UTM, CPI, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays and business days. It fixes real source errors, like the dollar leaking into the UF in 2014, the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points) or mindicador's IMACEC, which keeps the first published figure and matches the current one on only 3.8% of months. It publishes an interactive dashboard that updates every week.
+
+```python
+import datoschile as dc
+
+dc.resumen()                          # 9 indicadores con su fuente
+dc.bcentral.serie("imacec")           # serie oficial, sin clave
+dc.cochilco.cobre(desde=2024)         # cobre LME del día
+dc.convertir.deflactar(1_000_000, "2015-01")
+```
+
+[Open the interactive dashboard](https://rxyxs.github.io/datoschile/)
+
+## Stack
 
 <table>
 <tr><td><b>Languages</b></td><td><img src="https://img.shields.io/badge/Python-0D1117?style=flat-square&logo=python&logoColor=00FF66" alt="Python"> <img src="https://img.shields.io/badge/SQL-0D1117?style=flat-square&logo=postgresql&logoColor=00FF66" alt="SQL"> <img src="https://img.shields.io/badge/R-0D1117?style=flat-square&logo=r&logoColor=00FF66" alt="R"> <img src="https://img.shields.io/badge/C%2B%2B-0D1117?style=flat-square&logo=cplusplus&logoColor=00FF66" alt="C++"> <img src="https://img.shields.io/badge/C-0D1117?style=flat-square&logo=c&logoColor=00FF66" alt="C"> <img src="https://img.shields.io/badge/C%23-0D1117?style=flat-square&logo=dotnet&logoColor=00FF66" alt="C#"> <img src="https://img.shields.io/badge/Julia-0D1117?style=flat-square&logo=julia&logoColor=00FF66" alt="Julia"> <img src="https://img.shields.io/badge/Go-0D1117?style=flat-square&logo=go&logoColor=00FF66" alt="Go"> <img src="https://img.shields.io/badge/Ruby-0D1117?style=flat-square&logo=ruby&logoColor=00FF66" alt="Ruby"></td></tr>
