@@ -297,8 +297,8 @@
      ],
      "data": "real",
      "res": [
-      "4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 18,71% vs 21,88% del ingenuo; en Puerto Montt el modelo pierde.",
-      "4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 18.71% WAPE vs 21.88% naive; at Puerto Montt the model loses."
+      "4 años de datos horarios reales leídos de los gráficos vectoriales de los informes diarios del Coordinador (residuo 0,04 USD/MWh). Precio por barra: WAPE 17,88% vs 21,88% del ingenuo; mezclar con la persistencia arregla Puerto Montt.",
+      "4 years of real hourly data read from the vector charts of the grid coordinator's daily reports (0.04 USD/MWh residual). Price by bus: 17.88% WAPE vs 21.88% naive; blending with persistence fixes Puerto Montt."
      ],
      "tags": [
       "lightgbm",
