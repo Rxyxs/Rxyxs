@@ -54,24 +54,24 @@ En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hosp
 </tr>
 </table>
 
-## Lo que cambió con datos reales
+## Expectativa vs. comportamiento real de los datos
 
-Doce proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.
+Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que se espera de cada problema, y luego se evaluaron sin cambiar el método sobre datos reales. La tabla compara la métrica esperada con la observada y resume qué explica la diferencia.
 
-| Proyecto | Métrica | Simulado | Real | Por qué |
-|---|---|---:|---:|---|
-| **[Pipeline de fraude e-commerce](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590 mil transacciones</sub> | PR-AUC | 0,993 | **0,052** | Las variables de comportamiento casi no tienen señal en fraude real. |
-| **[Motor de fraude C + Ruby + Python](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1,000 | **0,098** | Dos de sus cuatro reglas nunca se disparan: sus listas eran inventadas. |
-| **[AML no supervisado sobre grafo](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204 mil transacciones Bitcoin</sub> | ROC-AUC | 0,893 | **0,17–0,33** | Lo ilícito es típico, no anómalo: queda bajo el azar. |
-| **[Fragmentación de tronadura](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 tronaduras publicadas, mina nueva</sub> | R² | 0,957 | **−0,59** | Con split aleatorio el modelo reconoce la faena; en una mina nueva es peor que el promedio. |
-| **[Detector de order flow (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX y Binance</sub> | Alertas (meta 0,27%) | 0,02% | **1,4–24%** | Las colas reales son mucho más pesadas que la Student-t supuesta. |
-| **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 | **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
-| **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata | **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
-| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621 mil créditos</sub> | AUC, scorecard vs. boosting | 0,733 vs. 0,716 | **0,647 vs. 0,660** | Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada. |
-| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14 millones de usuarios</sub> | Efecto tras ajustar con CUPED | no se mueve | **−24% a −39%** | El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación. |
-| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86 mil pares de calles</sub> | Km del plan de rutas | 572 | **835 manejado** | La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo. |
-| **[Demanda eléctrica horaria (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 años de demanda horaria</sub> | MAPE horario, TBATS vs. ingenuo | 4,28% vs. 6,73% | **7,01% vs. 5,81%** | Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día. |
-| **[Precio horario del SEN por barra](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>Informes diarios del CEN, 4 años, 6 barras</sub> | WAPE del precio, LightGBM | 8,77% | **18,71%** | Precios con ceros en el norte, cambios de régimen y desacople norte-sur; en Puerto Montt pierde contra la persistencia. |
+| Proyecto | Métrica | Esperado → observado | Lectura |
+|---|---|---|---|
+| **[Pipeline de fraude e-commerce](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>IEEE-CIS, 590 mil transacciones</sub> | PR-AUC | 0,993 → **0,052** | Las variables de comportamiento casi no tienen señal en fraude real. |
+| **[Motor de fraude C + Ruby + Python](https://github.com/Rxyxs/chile-polyglot-fraud-engine)**<br><sub>IEEE-CIS</sub> | PR-AUC | 1,000 → **0,098** | Dos de sus cuatro reglas nunca se disparan: sus listas eran inventadas. |
+| **[AML no supervisado sobre grafo](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>Elliptic, 204 mil transacciones Bitcoin</sub> | ROC-AUC | 0,893 → **0,17–0,33** | Lo ilícito es típico, no anómalo: queda bajo el azar. |
+| **[Fragmentación de tronadura](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>97 tronaduras publicadas, mina nueva</sub> | R² | 0,957 → **−0,59** | Con split aleatorio el modelo reconoce la faena; en una mina nueva es peor que el promedio. |
+| **[Detector de order flow (C++)](https://github.com/Rxyxs/lithium-orderbook-imbalance-cpp)**<br><sub>IEX y Binance</sub> | Alertas (meta 0,27%) | 0,02% → **1,4–24%** | Las colas reales son mucho más pesadas que la Student-t supuesta. |
+| **[19 detectores de anomalías](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>ULB e IEEE-CIS</sub> | ROC-AUC del baseline | 0,383 → **0,931** | El baseline 'peor que el azar' era un artefacto del simulador; el ranking casi no se transfiere. |
+| **[Red multi-task de mantenimiento](https://github.com/Rxyxs/failure-prediction-signal-lab)**<br><sub>23.550 camiones SCANIA</sub> | AUC vs. LightGBM | empata → **0,62 vs. 0,71** | La red compartida pierde en las dos tareas con camiones reales, aun corrigiendo la escala de validación. |
+| **[Laboratorio de riesgo crediticio](https://github.com/Rxyxs/credit-risk-scoring-lab)**<br><sub>Lending Club, 621 mil créditos</sub> | AUC, scorecard vs. boosting | 0,733 vs. 0,716 → **0,647 vs. 0,660** | Con la señal débil de una cartera real el boosting gana; la restricción monótona sigue sin costar nada. |
+| **[Experimentación A/B](https://github.com/Rxyxs/chile-fintech-experimentation-lab)**<br><sub>Criteo, 14 millones de usuarios</sub> | Efecto tras ajustar con CUPED | no se mueve → **−24% a −39%** | El SRM pasa, pero las variables previas predicen el brazo: el archivo se rebalanceó y el ajuste corrige la estimación. |
+| **[Logística de última milla](https://github.com/Rxyxs/chile-spatial-logistics-opt)**<br><sub>OSRM, 86 mil pares de calles</sub> | Km del plan de rutas | 572 → **835 manejado** | La circuidad simulada se queda corta: 19% de los trayectos reales supera su máximo. |
+| **[Demanda eléctrica horaria (R)](https://github.com/Rxyxs/chile-energy-grid-forecasting-r)**<br><sub>CEN, 2 años de demanda horaria</sub> | MAPE horario, TBATS vs. ingenuo | 4,28% vs. 6,73% → **7,01% vs. 5,81%** | Sin calendario, Navidad y Fiestas Patrias hunden a los modelos clásicos; el ingenuo se adapta en un día. |
+| **[Precio horario del SEN por barra](https://github.com/Rxyxs/chile-energy-grid-forecasting)**<br><sub>Informes diarios del CEN, 4 años, 6 barras</sub> | WAPE del precio, LightGBM | 8,77% → **18,71%** | Precios con ceros en el norte, cambios de régimen y desacople norte-sur; en Puerto Montt pierde contra la persistencia. |
 
 ## Proyectos por tipo de problema
 

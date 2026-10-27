@@ -1347,27 +1347,25 @@
  },
  "real_vs_sim": {
   "title": [
-   "Lo que cambió con datos reales",
-   "What changed on real data"
+   "Expectativa vs. comportamiento real de los datos",
+   "Expected vs. observed data behavior"
   ],
   "intro": [
-   "Doce proyectos partieron con datos simulados y después los corrí, sin cambiar el método, sobre datos reales. Casi todos perdieron su resultado principal, y entender por qué fue más útil que el número original.",
-   "Twelve projects started on simulated data, and I later ran them, with the method unchanged, on real data. Almost all of them lost their headline result, and understanding why was worth more than the original number."
+   "Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que se espera de cada problema, y luego se evaluaron sin cambiar el método sobre datos reales. La tabla compara la métrica esperada con la observada y resume qué explica la diferencia.",
+   "Twelve projects were first designed on simulated data, which encodes what each problem is expected to look like, and then evaluated with the same method on real data. The table compares the expected metric with the observed one and summarizes what explains the gap."
   ],
   "head": [
    [
     "Proyecto",
     "Métrica",
-    "Simulado",
-    "Real",
-    "Por qué"
+    "Esperado → observado",
+    "Lectura"
    ],
    [
     "Project",
     "Metric",
-    "Simulated",
-    "Real",
-    "Why"
+    "Expected → observed",
+    "Interpretation"
    ]
   ],
   "rows": [
