@@ -201,7 +201,7 @@ Cada uno de los 20 terminales llevaba el combustible en su propio Excel. Primero
 ## Herramienta pública
 
 **[datoschile: datos públicos de Chile en una línea](https://github.com/Rxyxs/datoschile)**  
-Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: 17 series oficiales del Banco Central sin clave (dólar, TPM, IMACEC, PIB, desempleo, reservas), UF, UTM, IPC, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales y días hábiles. Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014, los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos) o el IMACEC de mindicador, que guarda la primera cifra publicada y coincide con la vigente solo el 3,8% de los meses. Publica un panel interactivo que se actualiza cada semana.
+Librería de Python para bajar los datos de referencia de Chile, limpios y en un DataFrame: 17 series oficiales del Banco Central sin clave (dólar, TPM, IMACEC, PIB, desempleo, reservas), UF, UTM, IPC, cobre y metales de Cochilco, fondos de pensiones, morosidad bancaria de la CMF, feriados legales, días hábiles, las 346 comunas con su código CUT y el Censo 2024 por comuna (cuadra exacto con los 18.480.432 habitantes publicados). Corrige errores reales de las fuentes, como el dólar filtrado en la UF en 2014, los cuatro cambios de base del IPC (sin empalmar, la inflación a 12 meses se equivoca hasta 25,8 puntos) o el IMACEC de mindicador, que guarda la primera cifra publicada y coincide con la vigente solo el 3,8% de los meses. Publica un panel interactivo que se actualiza cada semana.
 
 ```python
 import datoschile as dc

@@ -201,7 +201,7 @@ Each of the 20 depots tracked fuel in its own Excel file. First I wrote a Python
 ## Open-source tool
 
 **[datoschile: Chilean public data in one line](https://github.com/Rxyxs/datoschile)**  
-A Python library that downloads Chile's reference data, clean and in a DataFrame: 17 official Central Bank series with no key (dollar, policy rate, IMACEC, GDP, unemployment, reserves), UF, UTM, CPI, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays and business days. It fixes real source errors, like the dollar leaking into the UF in 2014, the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points) or mindicador's IMACEC, which keeps the first published figure and matches the current one on only 3.8% of months. It publishes an interactive dashboard that updates every week.
+A Python library that downloads Chile's reference data, clean and in a DataFrame: 17 official Central Bank series with no key (dollar, policy rate, IMACEC, GDP, unemployment, reserves), UF, UTM, CPI, copper and other metals from Cochilco, pension funds, CMF bank delinquency, legal holidays, business days, all 346 communes with their CUT code and the 2024 Census by commune (it adds up exactly to the 18,480,432 people published). It fixes real source errors, like the dollar leaking into the UF in 2014, the CPI's four base changes (without chain-linking, 12-month inflation is off by up to 25.8 points) or mindicador's IMACEC, which keeps the first published figure and matches the current one on only 3.8% of months. It publishes an interactive dashboard that updates every week.
 
 ```python
 import datoschile as dc
