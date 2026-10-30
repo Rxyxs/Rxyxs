@@ -1794,6 +1794,16 @@
   },
   {
    "src": [
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_energy_cost.png",
+    "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/real_energy_cost.png"
+   ],
+   "cap": [
+    "Copper mining's electricity at the real spot price",
+    "Copper mining's electricity at the real spot price"
+   ]
+  },
+  {
+   "src": [
     "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/cross_domain_safety_oee.png",
     "https://rxyxs.github.io/data-warehouse-analitico-mineria-chile/figures/cross_domain_safety_oee.png"
    ],
@@ -2042,6 +2052,48 @@
    "cap": [
     "Two panels by group: observed vs predicted readmission rates, which match closely for large groups, and the share of readmissions flagged, which is lowest for patients with missing race at about 3%.",
     "Two panels by group: observed vs predicted readmission rates, which match closely for large groups, and the share of readmissions flagged, which is lowest for patients with missing race at about 3%."
+   ]
+  }
+ ],
+ "titanic-survival-kaggle": [
+  {
+   "src": [
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/bets.png",
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/bets.png"
+   ],
+   "cap": [
+    "Bar chart of the share of bets that are right: logistic regression 78% in CV vs 55% on test, ensemble 79% vs 56%, woman-boy rule 97% vs 93%.",
+    "Bar chart of the share of bets that are right: logistic regression 78% in CV vs 55% on test, ensemble 79% vs 56%, woman-boy rule 97% vs 93%."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/validation.png",
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/validation.png"
+   ],
+   "cap": [
+    "Dot plot of CV accuracy per model, all between 83% and 85%, with Kaggle scores as diamonds between 76.6% and 79.7%; the woman-boy rule has the highest Kaggle score.",
+    "Dot plot of CV accuracy per model, all between 83% and 85%, with Kaggle scores as diamonds between 76.6% and 79.7%; the woman-boy rule has the highest Kaggle score."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/leak.png",
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/leak.png"
+   ],
+   "cap": [
+    "Grouped bars of CV accuracy: using training-fold labels only gives 83.7 to 84.1%, all labels except own 84.2 to 84.3%, all labels including own 89.9 to 98.9%.",
+    "Grouped bars of CV accuracy: using training-fold labels only gives 83.7 to 84.1%, all labels except own 84.2 to 84.3%, all labels including own 89.9 to 98.9%."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/eda.png",
+    "https://rxyxs.github.io/titanic-survival-kaggle/img/eda.png"
+   ],
+   "cap": [
+    "Left: survival by sex and class, women 97%, 92%, 50% across classes, men 37%, 16%, 14%. Right: survival by title, Mrs 80%, Miss 70%, Master 57%, Rare 29%, Mr 16%.",
+    "Left: survival by sex and class, women 97%, 92%, 50% across classes, men 37%, 16%, 14%. Right: survival by title, Mrs 80%, Miss 70%, Master 57%, Rare 29%, Mr 16%."
    ]
   }
  ],
