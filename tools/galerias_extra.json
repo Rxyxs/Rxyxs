@@ -9,7 +9,9 @@
   {"src": "assets/shots/datoschile-panel.png",
    "cap": ["Panel interactivo: elige un indicador, un rango de tiempo y pasa el cursor para ver cada dato","Interactive dashboard: pick an indicator and a time range, and hover to see each data point"]},
   {"src": "assets/shots/datoschile-fondos.png",
-   "cap": ["Fondos A a E en UF, próximos feriados calculados desde la ley y una calculadora de pesos de hoy","Pension funds A to E in UF, upcoming holidays computed from the law and a today's-pesos calculator"]}
+   "cap": ["Fondos A a E en UF, próximos feriados calculados desde la ley y una calculadora de pesos de hoy","Pension funds A to E in UF, upcoming holidays computed from the law and a today's-pesos calculator"]},
+  {"src": "assets/shots/datoschile-censo.png",
+   "cap": ["Censo 2024 por comuna: mapa por quintiles de la columna que ordenes, con búsqueda y filtro por región","2024 Census by commune: map in quintiles of the column you sort by, with search and region filter"]}
  ],
  "bus-fleet-fuel-efficiency": [
   {"src": ["assets/shots/bus-fleet-flow-es.svg", "assets/shots/bus-fleet-flow-en.svg"],
