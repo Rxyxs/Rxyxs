@@ -75,7 +75,7 @@ Twelve projects were first designed on simulated data, which encodes what each p
 
 ## Projects by kind of problem
 
-43 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
+44 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
 
 <details>
 <summary><b>1. Forecasting what comes next</b> · 7 projects</summary>
@@ -168,7 +168,7 @@ Twelve projects were first designed on simulated data, which encodes what each p
 </details>
 
 <details>
-<summary><b>8. Classifying and estimating</b> · 4 projects</summary>
+<summary><b>8. Classifying and estimating</b> · 5 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
@@ -176,6 +176,7 @@ Twelve projects were first designed on simulated data, which encodes what each p
 | **[Scientific classification](https://github.com/Rxyxs/scientific-classification-lab)**<br><sub>real data · [page](https://rxyxs.github.io/scientific-classification-lab/)</sub> | Higgs boson (AMS 3.64 vs 3.8–3.9 for the winners) and Kepler exoplanets (79.3% vs 49.8%). | `gradient-boosting` `pytorch` `astronomy` |
 | **[Ore grade and fragmentation (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>real + simulated · [page](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX in a desktop app; on 97 real published blasts the model explains 0.76 with a random split but -0.59 at a new mine, against the synthetic 0.957. | `csharp` `ml-net` `onnx` |
 | **[30-day hospital readmission](https://github.com/Rxyxs/hospital-readmission-risk)**<br><sub>real data · [page](https://rxyxs.github.io/hospital-readmission-risk/)</sub> | 99k real hospital encounters. Counting future visits inflates AUC from 0.67 to **0.80**. Calibrated model with net benefit at 5-39% thresholds; no racial gap, but weaker for patients over 70. | `calibration` `decision-curve` `fairness` |
+| **[Titanic: when the model does not beat the rule](https://github.com/Rxyxs/titanic-survival-kaggle)**<br><sub>real data · [page](https://rxyxs.github.io/titanic-survival-kaggle/)</sub> | A family-group rule (**0.799** on Kaggle) beats every ML model (0.775). The model bets against the rule are right 79% in CV and 56% on test; a leak through the passenger's own label gives CV 0.99 and Kaggle 0.64. | `scikit-learn` `nested-cv` `kaggle` |
 
 </details>
 

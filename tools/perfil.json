@@ -994,6 +994,24 @@
       "fairness"
      ],
      "page": true
+    },
+    {
+     "repo": "titanic-survival-kaggle",
+     "name": [
+      "Titanic: cuándo el modelo no supera a la regla",
+      "Titanic: when the model does not beat the rule"
+     ],
+     "data": "real",
+     "res": [
+      "Una regla por grupos familiares (<b>0,799</b> en Kaggle) le gana a todo modelo de ML (0,775). Las apuestas del modelo contra la regla aciertan 79% en CV y 56% en test; una fuga con la propia etiqueta da CV 0,99 y Kaggle 0,64.",
+      "A family-group rule (<b>0.799</b> on Kaggle) beats every ML model (0.775). The model bets against the rule are right 79% in CV and 56% on test; a leak through the passenger's own label gives CV 0.99 and Kaggle 0.64."
+     ],
+     "tags": [
+      "scikit-learn",
+      "nested-cv",
+      "kaggle"
+     ],
+     "page": true
     }
    ]
   },
