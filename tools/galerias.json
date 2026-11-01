@@ -2097,6 +2097,48 @@
    ]
   }
  ],
+ "airline-satisfaction-kaggle": [
+  {
+   "src": [
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/noise.png",
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/noise.png"
+   ],
+   "cap": [
+    "Line chart: stack AUC on the real survey falls almost linearly from 0.994 with no flipped labels to 0.912 with 8% flipped, crossing the competition CV of 0.961 between 3.0% and 3.5%.",
+    "Line chart: stack AUC on the real survey falls almost linearly from 0.994 with no flipped labels to 0.912 with 8% flipped, crossing the competition CV of 0.961 between 3.0% and 3.5%."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/models.png",
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/models.png"
+   ],
+   "cap": [
+    "Two dot plots. Left: CV and public leaderboard AUC per model, from 0.958 for raw LightGBM to 0.961 for the stack, with leaderboard 0.0003 to 0.0007 below CV. Right: the same models on the real survey, 0.9930 to 0.9937.",
+    "Two dot plots. Left: CV and public leaderboard AUC per model, from 0.958 for raw LightGBM to 0.961 for the stack, with leaderboard 0.0003 to 0.0007 below CV. Right: the same models on the real survey, 0.9930 to 0.9937."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/ablation.png",
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/ablation.png"
+   ],
+   "cap": [
+    "Two lollipop charts of AUC change versus raw LightGBM. Left, competition CV: every group gains between 6 and 18 units of 10^-4. Right, real survey: digits 0, exact-value target encoding -2.5, other groups +1.3 to +2.7.",
+    "Two lollipop charts of AUC change versus raw LightGBM. Left, competition CV: every group gains between 6 and 18 units of 10^-4. Right, real survey: digits 0, exact-value target encoding -2.5, other groups +1.3 to +2.7."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/shift.png",
+    "https://rxyxs.github.io/airline-satisfaction-kaggle/img/shift.png"
+   ],
+   "cap": [
+    "Grouped bars. Left: 91% of competition passengers have zero departure delay vs 56% in the original survey. Right: share satisfied falls with delay in both, to 33% vs 38% for 16-60 minutes and 31% vs 36% above 60 minutes.",
+    "Grouped bars. Left: 91% of competition passengers have zero departure delay vs 56% in the original survey. Right: share satisfied falls with delay in both, to 33% vs 38% for 16-60 minutes and 31% vs 36% above 60 minutes."
+   ]
+  }
+ ],
  "rag-seguridad-minera-chile": [
   {
    "src": [

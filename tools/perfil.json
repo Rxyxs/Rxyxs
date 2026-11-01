@@ -1012,6 +1012,24 @@
       "kaggle"
      ],
      "page": true
+    },
+    {
+     "repo": "airline-satisfaction-kaggle",
+     "name": [
+      "Satisfacción de pasajeros: un 0,961 que en realidad es 0,994",
+      "Airline satisfaction: a 0.961 that is really a 0.994"
+     ],
+     "data": "real",
+     "res": [
+      "Competencia de Kaggle con datos sintéticos: los mismos modelos dan <b>0,994</b> en la encuesta real de 130 mil pasajeros; ~3% de etiquetas invertidas explica la brecha. Algunos trucos populares solo explotan el generador. Privado final 0,96144, en el mismo orden que la CV.",
+      "Kaggle competition on synthetic data: the same models score <b>0.994</b> on the real 130k-passenger survey; ~3% flipped labels explain the gap. Some popular tricks only exploit the generator. Final private 0.96144, in the same order as CV."
+     ],
+     "tags": [
+      "catboost",
+      "stacking",
+      "kaggle"
+     ],
+     "page": true
     }
    ]
   },
