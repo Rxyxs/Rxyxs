@@ -75,7 +75,7 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 
 ## Proyectos por tipo de problema
 
-44 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+45 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
@@ -168,7 +168,7 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 </details>
 
 <details>
-<summary><b>8. Clasificar y estimar</b> · 5 proyectos</summary>
+<summary><b>8. Clasificar y estimar</b> · 6 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
@@ -177,6 +177,7 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 | **[Ley y fragmentación (.NET)](https://github.com/Rxyxs/chile-mining-grade-blast-quality-dotnet)**<br><sub>real + simulado · [página](https://rxyxs.github.io/chile-mining-grade-blast-quality-dotnet/)</sub> | ML.NET + ONNX en app de escritorio; sobre 97 tronaduras reales publicadas el modelo explica 0,76 con split aleatorio pero -0,59 en una mina nueva, frente al 0,957 sintético. | `csharp` `ml-net` `onnx` |
 | **[Reingreso hospitalario a 30 días](https://github.com/Rxyxs/hospital-readmission-risk)**<br><sub>datos reales · [página](https://rxyxs.github.io/hospital-readmission-risk/)</sub> | 99 mil hospitalizaciones reales. Contar visitas futuras infla el AUC de 0,67 a **0,80**. Modelo calibrado con beneficio neto en umbrales de 5% a 39%; sin brecha por raza, pero peor en mayores de 70. | `calibration` `decision-curve` `fairness` |
 | **[Titanic: cuándo el modelo no supera a la regla](https://github.com/Rxyxs/titanic-survival-kaggle)**<br><sub>datos reales · [página](https://rxyxs.github.io/titanic-survival-kaggle/)</sub> | Una regla por grupos familiares (**0,799** en Kaggle) le gana a todo modelo de ML (0,775). Las apuestas del modelo contra la regla aciertan 79% en CV y 56% en test; una fuga con la propia etiqueta da CV 0,99 y Kaggle 0,64. | `scikit-learn` `nested-cv` `kaggle` |
+| **[Satisfacción de pasajeros: un 0,961 que en realidad es 0,994](https://github.com/Rxyxs/airline-satisfaction-kaggle)**<br><sub>datos reales · [página](https://rxyxs.github.io/airline-satisfaction-kaggle/)</sub> | Competencia de Kaggle con datos sintéticos: los mismos modelos dan **0,994** en la encuesta real de 130 mil pasajeros; ~3% de etiquetas invertidas explica la brecha. Algunos trucos populares solo explotan el generador. Privado final 0,96144, en el mismo orden que la CV. | `catboost` `stacking` `kaggle` |
 
 </details>
 
