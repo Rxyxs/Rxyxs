@@ -6,7 +6,7 @@
 
 # Pablo Reyes
 
-**Data Scientist · Machine Learning, forecasting e inferencia causal · Santiago, Chile**
+**Data Scientist · Machine Learning y Deep Learning · Santiago, Chile**
 
 <a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portafolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portafolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
@@ -17,9 +17,7 @@
 
 ---
 
-Científico de datos de la Universidad Mayor. Como analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales. Para eso construí pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI.
-
-En mis proyectos construyo modelos que pronostican, detectan fraude y anomalías, anticipan fallas de equipos y miden el efecto real de una decisión. También trabajo con visión computacional en dispositivos de bajo costo y con agentes basados en modelos de lenguaje locales. Casi todo sobre datos públicos de Chile, con Python, SQL, dbt, DuckDB, FastAPI y Docker.
+Científico de datos de la Universidad Mayor. En mis proyectos construyo modelos que pronostican, detectan fraude y anomalías, anticipan fallas de equipos y miden el efecto real de una decisión. También trabajo con visión computacional en dispositivos de bajo costo y con agentes basados en modelos de lenguaje locales. Casi todo sobre datos públicos de Chile, con Python, SQL, dbt, DuckDB, FastAPI y Docker.
 
 ## Proyectos destacados
 
@@ -197,6 +195,8 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 ## Experiencia
 
 **[Control de combustible de una flota de buses](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>trabajo real, datos de ejemplo ficticios</sub>  
+Como analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales. Para eso construí pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI.
+
 Cada uno de los 20 terminales llevaba el combustible en su propio Excel. Primero hice un script en Python que une las planillas, las comprime en consolidados por terminal, por día y por mes, calcula los km por litro de cada bus contra su carga anterior y marca las que quedan fuera del rango de su modelo. Después, una app en AppSheet que reemplazó las planillas: el operador registra cargas, pistolas y estanques desde el celular, y la app calcula consumo por pistola, stock teórico y AdBlue. Al revisar el código corregí tres errores: fechas mal ordenadas entre meses, buses que quedaban sin rango por cómo estaba escrita la norma, y la primera carga de cada bus marcada por error.  
 `python` `pandas` `appsheet` `excel` `data-cleaning`
 

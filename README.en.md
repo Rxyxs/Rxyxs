@@ -6,7 +6,7 @@
 
 # Pablo Reyes
 
-**Data Scientist · Machine learning, forecasting and causal inference · Santiago, Chile**
+**Data Scientist · Machine Learning and Deep Learning · Santiago, Chile**
 
 <a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portfolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
@@ -17,9 +17,7 @@
 
 ---
 
-Data scientist from Universidad Mayor. As a data analyst at Buses Vule S.A., an operator in Santiago’s public bus network, I automated fuel control and supply reporting for a fleet of 2,094 buses across 20 depots, building Python and SQL pipelines, AppSheet apps and Power BI dashboards.
-
-In my projects I build models that forecast, detect fraud and anomalies, anticipate equipment failures and measure the real effect of a decision. I also work on computer vision for low-cost devices and on agents built on local language models. Almost all of it runs on Chilean public data, with Python, SQL, dbt, DuckDB, FastAPI and Docker.
+Data scientist from Universidad Mayor. In my projects I build models that forecast, detect fraud and anomalies, anticipate equipment failures and measure the real effect of a decision. I also work on computer vision for low-cost devices and on agents built on local language models. Almost all of it runs on Chilean public data, with Python, SQL, dbt, DuckDB, FastAPI and Docker.
 
 ## Featured projects
 
@@ -197,6 +195,8 @@ Twelve projects were first designed on simulated data, which encodes what each p
 ## Experience
 
 **[Fuel control for a bus fleet](https://github.com/Rxyxs/bus-fleet-fuel-efficiency)** · <sub>real job, fictitious sample data</sub>  
+As a data analyst at Buses Vule S.A., an operator in Santiago’s public bus network, I automated fuel control and supply reporting for a fleet of 2,094 buses across 20 depots, building Python and SQL pipelines, AppSheet apps and Power BI dashboards.
+
 Each of the 20 depots tracked fuel in its own Excel file. First I wrote a Python script that merges the sheets, compresses them into consolidated tables by depot, day and month, computes each bus's km per litre against its previous load and flags the ones outside their model's range. Then an AppSheet app that replaced the sheets: operators record loads, pump readings and tanks from their phone, and the app computes per-pump consumption, theoretical stock and AdBlue. Reviewing the code, I fixed three bugs: dates sorted wrongly across months, buses left without a range because of how the standard was written, and every bus's first load flagged by mistake.  
 `python` `pandas` `appsheet` `excel` `data-cleaning`
 
