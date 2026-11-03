@@ -6,7 +6,7 @@
 
 # Pablo Reyes
 
-**Científico de Datos · Universidad Mayor · Santiago, Chile**
+**Data Scientist · Machine Learning, forecasting e inferencia causal · Santiago, Chile**
 
 <a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portafolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portafolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
@@ -17,9 +17,11 @@
 
 ---
 
-Soy científico de datos en Santiago. Lo que más me interesa del trabajo es lo que viene después de entrenar el modelo: comprobar si el resultado se sostiene con datos reales y si sirve para tomar una decisión. Por eso la mayoría de mis proyectos usan datos públicos de Chile, como Cochilco, la CMF, ChileCompra o la CNE, y abordan problemas reales de minería, energía y finanzas.
+Soy científico de datos de la Universidad Mayor. Trabajé como analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, donde automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales, con pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI.
 
-En varios casos el resultado no fue el que esperaba. Un modelo de reingreso hospitalario alcanzaba un AUC de 0,805, pero porque contaba todas las visitas del paciente, incluido el mismo reingreso que debía predecir. Usando solo la información disponible al momento del alta, y evaluándolo con pacientes nuevos, el AUC baja a 0,671. En otro proyecto, cambiarse de fondo de pensiones cuando el mercado está en su punto más bajo parece prudente, pero en 2.000 historias construidas con 24 años de valores cuota reduce la rentabilidad real en 1,9 puntos al año. Publico estos resultados igual que los positivos, y todas las cifras provienen de código que se ejecuta de principio a fin. Y cuando llevé diez proyectos de datos simulados a datos reales, casi todos perdieron su resultado principal; más abajo está cuánto y por qué.
+En mis proyectos aplico forecasting (ARIMA, GARCH, LightGBM, regresión cuantílica), detección de fraude y anomalías (Isolation Forest, autoencoders, EWMA/CUSUM), mantenimiento predictivo (supervivencia y vida útil remanente), inferencia causal (diferencias en diferencias, double ML, A/B testing con mSPRT), visión computacional (YOLOv8 en Raspberry Pi, tema de mi tesis) y LLMs (RAG y agentes con modelos locales). Trabajo con Python, SQL, R, C++ y .NET, y con dbt, DuckDB, Spark, FastAPI, Docker y GitHub Actions, casi siempre sobre datos públicos de Chile (Cochilco, CMF, ChileCompra, CNE, CEN).
+
+Fuera de los datos, hace años soy profesor de enduro en la escuela Ecobike Training, donde cada sábado enseño técnica y preparación física en los cerros de Santiago.
 
 ## Proyectos destacados
 
