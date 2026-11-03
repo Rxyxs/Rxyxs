@@ -6,7 +6,7 @@
 
 # Pablo Reyes
 
-**Data Scientist · Universidad Mayor · Santiago, Chile**
+**Data Scientist · Machine learning, forecasting and causal inference · Santiago, Chile**
 
 <a href="https://rxyxs.github.io/"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=githubpages&logoColor=00FF66" alt="Portfolio"></a>
 <a href="https://www.linkedin.com/in/pablo-reyes-pino"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=00FF66" alt="LinkedIn"></a>
@@ -17,9 +17,11 @@
 
 ---
 
-I'm a data scientist in Santiago, Chile. What interests me is the part of the job after the model is trained: **whether the number holds up on real data and whether someone can make a decision with it**. That's why most of my projects start from Chilean public data, such as Cochilco, the CMF, ChileCompra or the CNE, and from concrete problems in mining, energy and finance.
+I'm a data scientist from Universidad Mayor. I worked as a data analyst at Buses Vule S.A., an operator in Santiago's public bus network, where I automated fuel control and supply reporting for a fleet of 2,094 buses across 20 depots, using Python and SQL pipelines, AppSheet apps and Power BI dashboards.
 
-Often the result wasn't the one I expected. A hospital readmission model reached an AUC of 0.805 because it counted all of a patient's visits, including the very readmission it was meant to predict; using only what the hospital knows at discharge, and testing on new patients, it lands at 0.671. Switching pension funds at the bottom of a crash feels prudent, but across 2,000 histories built from 24 years of daily fund values it costs 1.9 points of real return a year. I publish those findings the same as the positive ones, and every number comes from code that runs end to end. And when I moved ten projects from simulated to real data, almost all of them lost their headline result; how much, and why, is further down.
+In my projects I apply forecasting (ARIMA, GARCH, LightGBM, quantile regression), fraud and anomaly detection (Isolation Forest, autoencoders, EWMA/CUSUM), predictive maintenance (survival and remaining useful life), causal inference (difference-in-differences, double ML, A/B testing with mSPRT), computer vision (YOLOv8 on a Raspberry Pi, my thesis topic) and LLMs (RAG and agents with local models). I work with Python, SQL, R, C++ and .NET, plus dbt, DuckDB, Spark, FastAPI, Docker and GitHub Actions, mostly on Chilean public data (Cochilco, CMF, ChileCompra, CNE, CEN).
+
+Outside of data, I've been an enduro instructor for years at the Ecobike Training school, teaching technique and fitness every Saturday in the hills around Santiago.
 
 ## Featured projects
 
