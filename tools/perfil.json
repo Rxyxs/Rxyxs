@@ -503,8 +503,8 @@
      ],
      "data": "real",
      "res": [
-      "Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41, y calibrar cada serie contra su propia historia deja al gaussiano en <b>45,3</b> con validación cruzada (antes 30,4); en las fallas industriales pasa de 29 a 50.",
-      "NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41, and calibrating each series against its own history brings the Gaussian detector to <b>45.3</b> cross-validated (was 30.4); on industrial failures it goes from 29 to 50."
+      "Scorer de NAB reimplementado y validado 9/9 contra lo publicado. Reportar solo el inicio de cada excursión lleva un detector estacional de 2,4 a 41, y calibrar cada serie contra su propia historia sube las fallas industriales de 29 a 50. El mejor detector logra 49,0 con validación cruzada, pero si la elección del detector también se valida, el número honesto es <b>42,8</b>.",
+      "NAB scorer reimplemented and validated 9/9 against published results. Reporting only the onset of each excursion lifts a seasonal detector from 2.4 to 41, and calibrating each series against its own history lifts industrial failures from 29 to 50. The best detector scores 49.0 cross-validated, but once the choice of detector is cross-validated too, the honest number is <b>42.8</b>."
      ],
      "tags": [
       "anomaly-detection",
