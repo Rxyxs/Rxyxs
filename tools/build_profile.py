@@ -571,7 +571,7 @@ def site(L: int) -> str:
             f'<p class="role">{h(p["role"][L])}</p></div>{photo}</div>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>{cv}',
-            f'<a href="mailto:{p["email"]}">{p["email"]}</a><a href="{GH}{lib["repo"]}">datoschile</a></div>',
+            f'<a href="{GH}{lib["repo"]}">datoschile</a></div>',
             '<div class="stats">' + "".join(f'<div class="stat"><b>{n}</b><span>{s}</span></div>' for n, s in stats)
             + "</div></header>",
             f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
