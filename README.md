@@ -17,9 +17,9 @@
 
 ---
 
-Soy científico de datos de la Universidad Mayor. Trabajé como analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, donde automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales, con pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI.
+Científico de datos de la Universidad Mayor. Como analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales. Para eso construí pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI.
 
-En mis proyectos aplico forecasting (ARIMA, GARCH, LightGBM, regresión cuantílica), detección de fraude y anomalías (Isolation Forest, autoencoders, EWMA/CUSUM), mantenimiento predictivo (supervivencia y vida útil remanente), inferencia causal (diferencias en diferencias, double ML, A/B testing con mSPRT), visión computacional (YOLOv8 en Raspberry Pi, tema de mi tesis) y LLMs (RAG y agentes con modelos locales). Trabajo con Python, SQL, R, C++ y .NET, y con dbt, DuckDB, Spark, FastAPI, Docker y GitHub Actions, casi siempre sobre datos públicos de Chile (Cochilco, CMF, ChileCompra, CNE, CEN).
+En mis proyectos construyo modelos que pronostican, detectan fraude y anomalías, anticipan fallas de equipos y miden el efecto real de una decisión. También trabajo con visión computacional en dispositivos de bajo costo y con agentes basados en modelos de lenguaje locales. Casi todo sobre datos públicos de Chile, con Python, SQL, dbt, DuckDB, FastAPI y Docker.
 
 ## Proyectos destacados
 

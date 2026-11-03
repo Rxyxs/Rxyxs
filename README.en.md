@@ -17,9 +17,9 @@
 
 ---
 
-I'm a data scientist from Universidad Mayor. I worked as a data analyst at Buses Vule S.A., an operator in Santiago's public bus network, where I automated fuel control and supply reporting for a fleet of 2,094 buses across 20 depots, using Python and SQL pipelines, AppSheet apps and Power BI dashboards.
+Data scientist from Universidad Mayor. As a data analyst at Buses Vule S.A., an operator in Santiago’s public bus network, I automated fuel control and supply reporting for a fleet of 2,094 buses across 20 depots, building Python and SQL pipelines, AppSheet apps and Power BI dashboards.
 
-In my projects I apply forecasting (ARIMA, GARCH, LightGBM, quantile regression), fraud and anomaly detection (Isolation Forest, autoencoders, EWMA/CUSUM), predictive maintenance (survival and remaining useful life), causal inference (difference-in-differences, double ML, A/B testing with mSPRT), computer vision (YOLOv8 on a Raspberry Pi, my thesis topic) and LLMs (RAG and agents with local models). I work with Python, SQL, R, C++ and .NET, plus dbt, DuckDB, Spark, FastAPI, Docker and GitHub Actions, mostly on Chilean public data (Cochilco, CMF, ChileCompra, CNE, CEN).
+In my projects I build models that forecast, detect fraud and anomalies, anticipate equipment failures and measure the real effect of a decision. I also work on computer vision for low-cost devices and on agents built on local language models. Almost all of it runs on Chilean public data, with Python, SQL, dbt, DuckDB, FastAPI and Docker.
 
 ## Featured projects
 
