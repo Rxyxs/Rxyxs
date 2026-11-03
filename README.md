@@ -21,8 +21,6 @@ Soy científico de datos de la Universidad Mayor. Trabajé como analista de dato
 
 En mis proyectos aplico forecasting (ARIMA, GARCH, LightGBM, regresión cuantílica), detección de fraude y anomalías (Isolation Forest, autoencoders, EWMA/CUSUM), mantenimiento predictivo (supervivencia y vida útil remanente), inferencia causal (diferencias en diferencias, double ML, A/B testing con mSPRT), visión computacional (YOLOv8 en Raspberry Pi, tema de mi tesis) y LLMs (RAG y agentes con modelos locales). Trabajo con Python, SQL, R, C++ y .NET, y con dbt, DuckDB, Spark, FastAPI, Docker y GitHub Actions, casi siempre sobre datos públicos de Chile (Cochilco, CMF, ChileCompra, CNE, CEN).
 
-Fuera de los datos, hace años soy profesor de enduro en la escuela Ecobike Training, donde cada sábado enseño técnica y preparación física en los cerros de Santiago.
-
 ## Proyectos destacados
 
 <table>

@@ -21,8 +21,6 @@ I'm a data scientist from Universidad Mayor. I worked as a data analyst at Buses
 
 In my projects I apply forecasting (ARIMA, GARCH, LightGBM, quantile regression), fraud and anomaly detection (Isolation Forest, autoencoders, EWMA/CUSUM), predictive maintenance (survival and remaining useful life), causal inference (difference-in-differences, double ML, A/B testing with mSPRT), computer vision (YOLOv8 on a Raspberry Pi, my thesis topic) and LLMs (RAG and agents with local models). I work with Python, SQL, R, C++ and .NET, plus dbt, DuckDB, Spark, FastAPI, Docker and GitHub Actions, mostly on Chilean public data (Cochilco, CMF, ChileCompra, CNE, CEN).
 
-Outside of data, I've been an enduro instructor for years at the Ecobike Training school, teaching technique and fitness every Saturday in the hills around Santiago.
-
 ## Featured projects
 
 <table>
