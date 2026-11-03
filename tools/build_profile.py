@@ -117,7 +117,8 @@ def readme(L: int) -> str:
 
     w = D["work"]
     out += [f"## {t(L, 'Experiencia', 'Experience')}", "",
-            f"**[{w['name'][L]}]({GH}{w['repo']})** · <sub>{label(w, L)}</sub>  ", w["res"][L] + "  ", md_tags(w["tags"]), ""]
+            f"**[{w['name'][L]}]({GH}{w['repo']})** · <sub>{label(w, L)}</sub>  ",
+            *([w["summary"][L], ""] if w.get("summary") else []), w["res"][L] + "  ", md_tags(w["tags"]), ""]
 
     lib = D["library"]
     out += [f"## {t(L, 'Herramienta pública', 'Open-source tool')}", "",
@@ -206,6 +207,8 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .meta span+span::before,.meta b+span::before{content:"·";margin-right:14px;color:var(--line)}
 .meta .data::before{content:none}
 .xp .xb>p{flex:none;margin:0 0 16px}
+.xp .xb>p.lead{color:var(--ink);font-size:1.02rem}
+.banner img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);margin:-24px 0 40px}
 .xf{margin-top:auto;flex-wrap:wrap;align-items:center;gap:8px 18px}
 .ig{display:inline-flex;align-items:center;gap:7px}.ig svg{width:16px;height:16px}
 .xf .note{font-size:.8rem;color:var(--muted)}
@@ -499,6 +502,7 @@ def experience(L: int, R: str) -> str:
             f'<p class="kick">{t(L, "Experiencia laboral", "Work experience")}</p>'
             f'<h3>{h(w.get("role", w["name"])[L])}</h3>'
             f'<div class="meta"><b>{h(w.get("company", ""))}</b>{meta}</div>'
+            + (f'<p class="lead">{h(w["summary"][L])}</p>' if w.get("summary") else "") +
             f'<p>{h(w["res"][L])}</p>{gallery(w, L)}<div class="tags">{"".join(f"<code>{html.escape(x)}</code>" for x in w["tags"])}</div>'
             f'<div class="actions xf">{acts}<span class="data {kind(w)}">{h(label(w, L))}</span></div></div></article>']
     o = D.get("outside")
@@ -547,13 +551,17 @@ def site(L: int) -> str:
     photo = (f'<img class="photo" src="{R}{p["photo"]}" alt="{h(p["name"])}" width="112" height="112">'
              if p.get("photo") else "")
     cv = (f'<a href="{R}{p["cv"][L]}" download>{t(L, "Descargar CV", "Download CV")}</a>' if p.get("cv") else "")
+    # Banner animado arriba del nombre; con movimiento reducido se sirve el cuadro fijo.
+    b = p.get("banner")
+    banner = (f'<picture class="banner"><source media="(prefers-reduced-motion: reduce)" srcset="{R}{b["still"]}">'
+              f'<img src="{R}{b["anim"]}" alt="" width="1600" height="397" fetchpriority="high"></picture>' if b else "")
     theme_lbl = t(L, "Cambiar entre modo claro y oscuro", "Toggle light and dark mode")
     body = ['<div class="top"><div class="in">'
             f'<a class="brand" href="#">{h(p["name"])}</a>'
             '<nav>' + "".join(f'<a href="#{k}">{v}</a>' for k, v in menu) + '</nav>'
             f'<div class="right"><button class="theme" type="button" aria-label="{theme_lbl}" title="{theme_lbl}">{SUN_MOON}</button>'
             f'<div class="lang">{other}</div></div></div></div><div class="wrap">',
-            f'<header class="hero" id="inicio"><div class="hero-top"><div><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
+            f'<header class="hero" id="inicio">{banner}<div class="hero-top"><div><p class="eyebrow">Data Scientist</p><h1>{h(p["name"])}</h1>'
             f'<p class="role">{h(p["role"][L])}</p></div>{photo}</div>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>{cv}',
