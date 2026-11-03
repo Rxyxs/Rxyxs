@@ -481,23 +481,6 @@ def card(it: dict, L: int, cls: str = "") -> str:
             f'<div class="tags">{tags}</div><div class="actions">{"".join(acts)}</div></article>')
 
 
-def rvs_section(L: int) -> str:
-    """Expectativa (datos simulados) contra comportamiento observado (datos reales): una fila
-    por proyecto con la métrica esperada, la observada y la lectura de la diferencia."""
-    rv = D["real_vs_sim"]
-    hd = rv["head"][L]
-    rows = "".join(
-        f'<div class="rv-row" role="row"><div class="rv-p" role="cell"><a href="{GH}{r["repo"]}">{h(r["name"][L])}</a>'
-        f'<span>{h(r["data"][L])}</span></div>'
-        f'<div class="rv-m" role="cell">{h(r["metric"][L])}</div>'
-        f'<div class="rv-v" role="cell"><span class="esp">{h(r["sim"][L])}</span><span class="fl" aria-hidden="true">→</span>'
-        f'<b>{h(r["real"][L])}</b></div>'
-        f'<div class="rv-w" role="cell">{h(r["why"][L])}</div></div>'
-        for r in rv["rows"])
-    head = "".join(f'<div role="columnheader">{h(x)}</div>' for x in hd)
-    return (f'<h2 id="real">{h(rv["title"][L])}</h2><p class="sub">{h(rv["intro"][L])}</p>'
-            f'<div class="rvt" role="table"><div class="rv-row rv-h" role="row">{head}</div>{rows}</div>')
-
 
 INSTAGRAM = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'
              '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>'
@@ -580,7 +563,6 @@ def site(L: int) -> str:
             f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
-            rvs_section(L),
             f'<h2 id="proyectos">{t(L, "Proyectos por tipo de problema", "Projects by kind of problem")}</h2>',
             f'<p class="sub">{t(L, f"{len(items)} proyectos. Cada uno indica si usa datos reales o simulados.", f"{len(items)} projects. Each states whether it uses real or simulated data.")}</p>',
             f'<nav class="toc">{toc}</nav>']
