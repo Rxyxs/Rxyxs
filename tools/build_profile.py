@@ -209,6 +209,7 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .xp .xb>p{flex:none;margin:0 0 16px}
 .xp .xb>p.lead{color:var(--ink);font-size:1.02rem}
 .banner img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);margin:-24px 0 40px}
+@media (max-width:640px){.hero{padding:36px 0 32px}.banner img{margin:-12px 0 28px;border-radius:10px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}.links a{padding:9px 13px}.meta{flex-direction:column;align-items:flex-start;gap:2px}.meta span+span::before,.meta b+span::before{content:none}}
 .xf{margin-top:auto;flex-wrap:wrap;align-items:center;gap:8px 18px}
 .ig{display:inline-flex;align-items:center;gap:7px}.ig svg{width:16px;height:16px}
 .xf .note{font-size:.8rem;color:var(--muted)}
@@ -553,7 +554,12 @@ def site(L: int) -> str:
     cv = (f'<a href="{R}{p["cv"][L]}" download>{t(L, "Descargar CV", "Download CV")}</a>' if p.get("cv") else "")
     # Banner animado arriba del nombre; con movimiento reducido se sirve el cuadro fijo.
     b = p.get("banner")
-    banner = (f'<picture class="banner"><source media="(prefers-reduced-motion: reduce)" srcset="{R}{b["still"]}">'
+    # En teléfonos va un recorte central (sin el correo, que ya está en los botones) y más liviano.
+    M, MR = "(max-width:640px)", "(prefers-reduced-motion: reduce)"
+    banner = (f'<picture class="banner">'
+              f'<source media="{M} and {MR}" srcset="{R}{b["still_m"]}" width="750" height="397">'
+              f'<source media="{MR}" srcset="{R}{b["still"]}" width="1600" height="397">'
+              f'<source media="{M}" srcset="{R}{b["anim_m"]}" width="750" height="397">'
               f'<img src="{R}{b["anim"]}" alt="" width="1600" height="397" fetchpriority="high"></picture>' if b else "")
     theme_lbl = t(L, "Cambiar entre modo claro y oscuro", "Toggle light and dark mode")
     body = ['<div class="top"><div class="in">'
