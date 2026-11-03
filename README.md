@@ -17,7 +17,9 @@
 
 ---
 
-Científico de datos de la Universidad Mayor. En mis proyectos construyo modelos que pronostican, detectan fraude y anomalías, anticipan fallas de equipos y miden el efecto real de una decisión. También trabajo con visión computacional en dispositivos de bajo costo y con agentes basados en modelos de lenguaje locales. Casi todo sobre datos públicos de Chile, con Python, SQL, dbt, DuckDB, FastAPI y Docker.
+Científico de datos de la Universidad Mayor. Durante 1 año y 4 meses fui analista de datos en Buses Vule S.A., operador de la Red Metropolitana de Movilidad, donde automaticé el control de combustible y la reportería de abastecimiento de una flota de 2.094 buses en 20 terminales. Para eso construí pipelines en Python y SQL, aplicaciones en AppSheet y dashboards en Power BI. Antes, en 2022, coordiné el curso de Python del programa MISTI del MIT junto a la Universidad Mayor, donde enseñé fundamentos de programación a más de 100 estudiantes, en inglés y español.
+
+En mis proyectos construyo modelos que pronostican, detectan fraude y anomalías, anticipan fallas de equipos y miden el efecto real de una decisión. También trabajo con visión computacional en dispositivos de bajo costo y con agentes basados en modelos de lenguaje locales. Trabajo sobre datos públicos de Chile, con Python, SQL, dbt, DuckDB, FastAPI y Docker.
 
 ## Proyectos destacados
 
