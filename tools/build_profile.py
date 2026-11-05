@@ -167,10 +167,6 @@ h1{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.08;margin:0 0 8px;letter-spa
 .links a:hover{border-color:var(--accent)}
 .links a.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .links a.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:36px}
-.stat{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.stat b{display:block;font-size:1.7rem;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.stat span{font-size:.82rem;color:var(--muted)}
 h2{font-size:1.45rem;margin:56px 0 6px;letter-spacing:-.015em}
 .sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
 nav.toc{display:flex;flex-wrap:wrap;gap:6px}
@@ -209,7 +205,7 @@ nav.toc a:hover{color:var(--ink);border-color:var(--accent)}
 .xp .xb>p{flex:none;margin:0 0 16px}
 .xp .xb>p.lead{color:var(--ink);font-size:1.02rem}
 .banner img{display:block;width:100%;max-width:70ch;height:auto;border-radius:12px;border:1px solid var(--line);margin:-24px 0 40px}
-@media (max-width:640px){.hero{padding:36px 0 32px}.banner img{margin:-12px 0 28px;border-radius:10px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}.links a{padding:9px 13px}.meta{flex-direction:column;align-items:flex-start;gap:2px}.meta span+span::before,.meta b+span::before{content:none}}
+@media (max-width:640px){.hero{padding:36px 0 32px}.banner img{margin:-12px 0 28px;border-radius:10px}.links a{padding:9px 13px}.meta{flex-direction:column;align-items:flex-start;gap:2px}.meta span+span::before,.meta b+span::before{content:none}}
 .xf{margin-top:auto;flex-wrap:wrap;align-items:center;gap:8px 18px}
 .ig{display:inline-flex;align-items:center;gap:7px}.ig svg{width:16px;height:16px}
 .xf .note{font-size:.8rem;color:var(--muted)}
@@ -539,10 +535,6 @@ def site(L: int) -> str:
     intro = "".join(f"<p>{md_inline(x)}</p>" for x in p["intro"][L])
     toc = "".join(f'<a href="#c{i}">{h(c["name"][L])}</a>' for i, c in enumerate(cats, 1))
     items = all_items()
-    stats = [(len(items), t(L, "proyectos publicados", "published projects")),
-             (len(cats), t(L, "tipos de problema", "kinds of problem")),
-             (sum(kind(it) == "real" for it in items), t(L, "con datos reales", "on real data")),
-             (sum(bool(it.get("page")) for it in items), t(L, "con página de resultados", "with a results page"))]
     # Orden de lectura: quién soy, proyectos, experiencia, herramienta pública y stack.
     menu = [("inicio", t(L, "Quién soy", "About")), ("destacados", t(L, "Proyectos", "Projects")),
             ("experiencia", t(L, "Experiencia", "Experience")), ("herramienta", t(L, "Herramienta pública", "Open-source tool")),
@@ -571,9 +563,7 @@ def site(L: int) -> str:
             f'<p class="role">{h(p["role"][L])}</p></div>{photo}</div>',
             f'<div class="intro">{intro}</div><div class="links">',
             f'<a class="primary" href="{p["github"]}">GitHub</a><a href="{p["linkedin"]}">LinkedIn</a>{cv}',
-            f'<a href="{GH}{lib["repo"]}">datoschile</a></div>',
-            '<div class="stats">' + "".join(f'<div class="stat"><b>{n}</b><span>{s}</span></div>' for n, s in stats)
-            + "</div></header>",
+            f'<a href="{GH}{lib["repo"]}">datoschile</a></div></header>',
             f'<h2 id="destacados">{t(L, "Proyectos destacados", "Featured projects")}</h2>',
             f'<p class="sub">{t(L, "Cuatro proyectos con datos reales y un hallazgo que no era el esperado.", "Four projects on real data with a finding that was not the expected one.")}</p>',
             '<div class="grid feat">' + "".join(card(f, L) for f in D["featured"]) + "</div>",
