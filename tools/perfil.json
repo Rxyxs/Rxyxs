@@ -826,15 +826,15 @@
       "Opciones asiáticas sobre cobre (C++)",
       "Copper Asian options (C++)"
      ],
-     "data": "model",
+     "data": "mix",
      "res": [
-      "Monte Carlo C++20 bajo GBM, Schwartz y Heston: 9,64× con 16 hilos y un sesgo real corregido.",
-      "C++20 Monte Carlo under GBM, Schwartz and Heston: 9.64× on 16 threads and a real bias fixed."
+      "Motor C++20 probado con 30 años del LME: las bandas del 90% cubren 83-87%, Heston gana 1,1%, igual que sin modelo, y la reversión de Schwartz no se distingue de un paseo aleatorio.",
+      "C++20 engine tested on 30 years of LME prices: 90% bands cover 83-87%, Heston gains 1.1%, the same as no model, and Schwartz reversion cannot be told from a random walk."
      ],
      "tags": [
       "cpp20",
       "monte-carlo",
-      "heston-model"
+      "backtesting"
      ],
      "page": true
     }
