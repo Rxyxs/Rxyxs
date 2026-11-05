@@ -68,6 +68,10 @@ def from_page(repo: str, text: str) -> list[dict]:
             out.append({"src": [f"{base}figures/es/{fig}", f"{base}figures/en/{fig}"], "cap": caps})
         elif src and not src.startswith(("http:", "https:", "data:", "//")) and IMG.search(src):
             cap = attr(tag, "alt") or humanize(src)
+            # una misma figura en dos idiomas (<img lang="es"> + <img lang="en">) es una sola entrada
+            if attr(tag, "lang") == "en" and out and out[-1]["src"][0] == f"{base}{src.replace('img/', 'img/es/', 1)}":
+                out[-1]["src"][1], out[-1]["cap"][1] = base + src, cap
+                continue
             out.append({"src": [base + src] * 2, "cap": [cap, cap]})
     return out
 
