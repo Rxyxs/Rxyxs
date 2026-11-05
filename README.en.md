@@ -75,7 +75,7 @@ Twelve projects were first designed on simulated data, which encodes what each p
 
 ## Projects by kind of problem
 
-45 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
+46 projects across 9 kinds of problem; click a category to open it, or see them all in the [portfolio](https://rxyxs.github.io/en/).
 
 <details>
 <summary><b>1. Forecasting what comes next</b> · 7 projects</summary>
@@ -93,10 +93,11 @@ Twelve projects were first designed on simulated data, which encodes what each p
 </details>
 
 <details>
-<summary><b>2. Catching fraud and anomalies</b> · 7 projects</summary>
+<summary><b>2. Catching fraud and anomalies</b> · 8 projects</summary>
 
 | Project | What it solves and what it found | Stack |
 |---|---|---|
+| **[The $6.3B Binance hack](https://github.com/Rxyxs/binance-hack-market-impact)**<br><sub>real data · [page](https://rxyxs.github.io/binance-hack-market-impact/)</sub> | Minute by minute: Nasdaq futures predict 3.4-3.7 of BTC's 5.1-point fall; a market-data alarm fired 42 minutes before the theft was admitted; 36 hacks since 2011 show no average effect; news and war data do not improve forecasts. | `event-study` `anomaly-detection` `lightgbm` |
 | **[Fraud and AML lab](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>real data · [page](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | Four techniques, all with real data: the e-commerce pipeline drops from a synthetic PR-AUC of 0.993 to 0.052 on IEEE-CIS, and the unsupervised AML ensemble falls below random on Elliptic (ROC-AUC 0.17-0.33) because illicit flows are typical, not anomalous. | `fraud-detection` `aml` `xgboost` |
 | **[16 detectors on mobile-money fraud](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>real + simulated · [page](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | 19 detectors on PaySim and on real fraud (ULB cards, IEEE-CIS e-commerce): the ranking barely transfers (Spearman 0.28-0.38) and on e-commerce no detector exceeds PR-AUC 0.22. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Public procurement anomalies](https://github.com/Rxyxs/chile-public-procurement-anomalies)**<br><sub>real data · [page](https://rxyxs.github.io/chile-public-procurement-anomalies/)</sub> | 13.7 M ChileCompra order lines: Compra Ágil orders pile up under the cap and the pile moved with the law, but there is little sign of split purchases. Isolation Forest finds 38.8% of planted anomalies reviewing 5%. | `public-procurement` `bunching` `isolation-forest` |

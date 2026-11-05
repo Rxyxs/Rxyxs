@@ -75,7 +75,7 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 
 ## Proyectos por tipo de problema
 
-45 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
+46 proyectos en 9 tipos de problema; haz clic en una categoría para abrirla, o míralos todos en el [portafolio](https://rxyxs.github.io/).
 
 <details>
 <summary><b>1. Pronosticar lo que viene</b> · 7 proyectos</summary>
@@ -93,10 +93,11 @@ Doce proyectos se diseñaron primero sobre datos simulados, que reflejan lo que 
 </details>
 
 <details>
-<summary><b>2. Detectar fraude y anomalías</b> · 7 proyectos</summary>
+<summary><b>2. Detectar fraude y anomalías</b> · 8 proyectos</summary>
 
 | Proyecto | Qué resuelve y qué encontró | Stack |
 |---|---|---|
+| **[El hackeo de US$6.300 millones a Binance](https://github.com/Rxyxs/binance-hack-market-impact)**<br><sub>datos reales · [página](https://rxyxs.github.io/binance-hack-market-impact/)</sub> | Minuto a minuto: los futuros del Nasdaq predicen 3,4-3,7 de los 5,1 puntos que cayó BTC; una alarma con datos de mercado saltó 42 minutos antes de que se admitiera el robo; 36 hackeos desde 2011 sin efecto promedio; noticias y guerra no mejoran el pronóstico. | `event-study` `anomaly-detection` `lightgbm` |
 | **[Laboratorio de fraude y AML](https://github.com/Rxyxs/fraud-detection-techniques-lab)**<br><sub>datos reales · [página](https://rxyxs.github.io/fraud-detection-techniques-lab/)</sub> | Cuatro técnicas, todas con datos reales: el pipeline de e-commerce cae de PR-AUC 0,993 sintético a 0,052 en IEEE-CIS, y el ensamble AML no supervisado queda bajo el azar en Elliptic (ROC-AUC 0,17-0,33) porque el flujo ilícito es típico, no anómalo. | `fraud-detection` `aml` `xgboost` |
 | **[16 detectores sobre fraude móvil](https://github.com/Rxyxs/paysim-anomaly-detection-benchmark)**<br><sub>real + simulado · [página](https://rxyxs.github.io/paysim-anomaly-detection-benchmark/)</sub> | 19 detectores en PaySim y en fraude real (tarjetas ULB, e-commerce IEEE-CIS): el ranking casi no se transfiere (Spearman 0,28-0,38) y en e-commerce ningún detector supera PR-AUC 0,22. | `isolation-forest` `local-outlier-factor` `imbalanced-data` |
 | **[Anomalías en compras públicas](https://github.com/Rxyxs/chile-public-procurement-anomalies)**<br><sub>datos reales · [página](https://rxyxs.github.io/chile-public-procurement-anomalies/)</sub> | 13,7 M de líneas de ChileCompra: las Compras Ágiles se acumulan bajo el tope y la acumulación se movió con la ley, pero casi no hay señal de compras partidas. Isolation Forest encuentra el 38,8% de las anomalías plantadas revisando el 5%. | `public-procurement` `bunching` `isolation-forest` |

@@ -403,6 +403,88 @@
    ]
   }
  ],
+ "binance-hack-market-impact": [
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/night.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/night.png"
+   ],
+   "cap": [
+    "Minute prices from 20:00 UTC. Grey band: no statement from anyone yet.",
+    "Minute prices from 20:00 UTC. Grey band: no statement from anyone yet."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/decomposition.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/decomposition.png"
+   ],
+   "cap": [
+    "Blue: what Nasdaq futures, the dollar and gold predict. Orange: the rest.",
+    "Blue: what Nasdaq futures, the dollar and gold predict. Orange: the rest."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/detector.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/detector.png"
+   ],
+   "cap": [
+    "Robust z-score of BNB's abnormal move; orange line: alarm threshold.",
+    "Robust z-score of BNB's abnormal move; orange line: alarm threshold."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/cross_section.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/cross_section.png"
+   ],
+   "cap": [
+    "Each coin's return minus beta times Bitcoin, 20:00 Oct 29 to the reopening.",
+    "Each coin's return minus beta times Bitcoin, 20:00 Oct 29 to the reopening."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/flow.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/flow.png"
+   ],
+   "cap": [
+    "Left: cumulative net taker flow. Right: by order size, BTC.",
+    "Left: cumulative net taker flow. Right: by order size, BTC."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/reserve_flows.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/reserve_flows.png"
+   ],
+   "cap": [
+    "Daily net flow on Binance's wallets, price effect removed.",
+    "Daily net flow on Binance's wallets, price effect removed."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/venues.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/venues.png"
+   ],
+   "cap": [
+    "Binance's price gap to Coinbase (BTC) and OKX (BNB).",
+    "Binance's price gap to Coinbase (BTC) and OKX (BNB)."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/stocks.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/stocks.png"
+   ],
+   "cap": [
+    "Abnormal return on Oct 30; bars: 95% range of a normal day.",
+    "Abnormal return on Oct 30; bars: 95% range of a normal day."
+   ]
+  }
+ ],
  "fraud-detection-techniques-lab": [
   {
    "src": [
@@ -722,8 +804,8 @@
     "https://rxyxs.github.io/iot-anomaly-benchmark/img/leaderboard.png"
    ],
    "cap": [
-    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample and 42.4 cross-validated, both above windowedGaussian 39.6.",
-    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample and 42.4 cross-validated, both above windowedGaussian 39.6."
+    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample, 42.4 cross-validated and 42.8 with the detector also chosen inside each fold, all above windowedGaussian 39.6.",
+    "Horizontal bar chart of NAB standard scores: published detectors from expose 16.4 to ARTime 74.9, with this repo at 49.5 in-sample, 42.4 cross-validated and 42.8 with the detector also chosen inside each fold, all above windowedGaussian 39.6."
    ]
   },
   {
@@ -744,6 +826,16 @@
    "cap": [
     "Machine temperature series with four labelled anomaly windows and the detector score below; the score rises inside three windows to about 0.4-0.6, but the corpus threshold of 0.753 is above every value.",
     "Machine temperature series with four labelled anomaly windows and the detector score below; the score rises inside three windows to about 0.4-0.6, but the corpus threshold of 0.753 is above every value."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/calibration.png",
+    "https://rxyxs.github.io/iot-anomaly-benchmark/img/calibration.png"
+   ],
+   "cap": [
+    "Grouped bars for four detectors: Gaussian 44.6 in-sample, 30.4 cross-validated, 29.3 known-cause; Gaussian with calibration 46.2, 45.3, 49.7; seasonal 49.5, 42.4, 27.1; seasonal with calibration 49.1, 37.4, 34.8.",
+    "Grouped bars for four detectors: Gaussian 44.6 in-sample, 30.4 cross-validated, 29.3 known-cause; Gaussian with calibration 46.2, 45.3, 49.7; seasonal 49.5, 42.4, 27.1; seasonal with calibration 49.1, 37.4, 34.8."
    ]
   }
  ],
@@ -1654,8 +1746,8 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_band.svg"
    ],
    "cap": [
-    "Promedio a tres meses contra la banda del 90% dada de antemano",
-    "Three-month average against the 90% band given beforehand"
+    "Realized three-month average against the 90 percent band",
+    "Realized three-month average against the 90 percent band"
    ]
   },
   {
@@ -1664,8 +1756,8 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_coverage.svg"
    ],
    "cap": [
-    "Cobertura de la banda del 90% por modelo, cobre LME real",
-    "Coverage of the 90% band by model, real LME copper"
+    "Coverage of the 90 percent band by model",
+    "Coverage of the 90 percent band by model"
    ]
   },
   {
@@ -1674,8 +1766,8 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_kappa.svg"
    ],
    "cap": [
-    "Velocidad de reversión estimada: el cobre cae en el rango de un paseo aleatorio",
-    "Estimated reversion speed: copper falls in the random-walk range"
+    "Estimated mean reversion speed on synthetic series and on copper",
+    "Estimated mean reversion speed on synthetic series and on copper"
    ]
   },
   {
@@ -2272,18 +2364,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura1_ejemplo_yolo.png"
    ],
    "cap": [
-    "Figure 1: Object detection example (YOLO)",
-    "Figure 1: Object detection example (YOLO)"
-   ]
-  },
-  {
-   "src": [
-    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png",
-    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png"
-   ],
-   "cap": [
-    "Figure 2: YOLOv8 architecture (Backbone-Neck-Head)",
-    "Figure 2: YOLOv8 architecture (Backbone-Neck-Head)"
+    "Segmentación semántica, clasificación y localización, detección de objetos y segmentación de instancias",
+    "Segmentación semántica, clasificación y localización, detección de objetos y segmentación de instancias"
    ]
   },
   {
@@ -2292,8 +2374,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura3_conv2d_vs_separable.png"
    ],
    "cap": [
-    "Figure 3: Conv2D vs SeparableConv2D",
-    "Figure 3: Conv2D vs SeparableConv2D"
+    "Conv2D vs SeparableConv2D",
+    "Conv2D vs SeparableConv2D"
    ]
   },
   {
@@ -2302,8 +2384,18 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura4_procesos_convolucion.png"
    ],
    "cap": [
-    "Figure 4: Standard vs separable convolution processes",
-    "Figure 4: Standard vs separable convolution processes"
+    "Proceso de convolución estándar y separable",
+    "Proceso de convolución estándar y separable"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png",
+    "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura2_arquitectura_yolov8.png"
+   ],
+   "cap": [
+    "Arquitectura de YOLOv8: Backbone, Neck y Head",
+    "Arquitectura de YOLOv8: Backbone, Neck y Head"
    ]
   },
   {
@@ -2312,8 +2404,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura5_proceso_entrenamiento.png"
    ],
    "cap": [
-    "Figure 5: Training/validation process",
-    "Figure 5: Training/validation process"
+    "Flujo: preparación de datos, entrenamiento de dos modelos, validación, inferencia en CPU/GPU/Raspberry Pi, comparación",
+    "Flujo: preparación de datos, entrenamiento de dos modelos, validación, inferencia en CPU/GPU/Raspberry Pi, comparación"
    ]
   },
   {
@@ -2322,8 +2414,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura6_map_epocas.png"
    ],
    "cap": [
-    "Figure 6: mAP evolution every 10 epochs",
-    "Figure 6: mAP evolution every 10 epochs"
+    "mAP cada 10 épocas para ambos modelos",
+    "mAP cada 10 épocas para ambos modelos"
    ]
   },
   {
@@ -2332,8 +2424,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura7_deteccion_conv2d.png"
    ],
    "cap": [
-    "Figure 7: YOLOv8-Conv2D detection model trained for 50 epochs",
-    "Figure 7: YOLOv8-Conv2D detection model trained for 50 epochs"
+    "Detecciones de YOLOv8-Conv2D tras 50 épocas",
+    "Detecciones de YOLOv8-Conv2D tras 50 épocas"
    ]
   },
   {
@@ -2342,8 +2434,8 @@
     "https://rxyxs.github.io/yolov8-separable-convolutions/figures/figura8_deteccion_separable.png"
    ],
    "cap": [
-    "Figure 8: YOLOv8-Separable detection model trained for 100 epochs",
-    "Figure 8: YOLOv8-Separable detection model trained for 100 epochs"
+    "Detecciones de YOLOv8-Separable tras 100 épocas",
+    "Detecciones de YOLOv8-Separable tras 100 épocas"
    ]
   }
  ],
