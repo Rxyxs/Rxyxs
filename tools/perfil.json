@@ -828,8 +828,8 @@
      ],
      "data": "mix",
      "res": [
-      "Motor C++20 probado con 30 años del LME: las bandas del 90% cubren 83-87%, Heston gana 1,1%, igual que sin modelo, y la reversión de Schwartz no se distingue de un paseo aleatorio.",
-      "C++20 engine tested on 30 years of LME prices: 90% bands cover 83-87%, Heston gains 1.1%, the same as no model, and Schwartz reversion cannot be told from a random walk."
+      "Motor C++20 probado con 30 años del LME: las bandas del 90% cubren 83-87%; Heston, saltos y regímenes ganan a lo sumo 1,1%, igual que sin modelo, y la reversión de Schwartz no se distingue del azar.",
+      "C++20 engine tested on 30 years of LME prices: 90% bands cover 83-87%; Heston, jumps and regimes gain at most 1.1%, the same as no model, and Schwartz reversion cannot be told from chance."
      ],
      "tags": [
       "cpp20",
