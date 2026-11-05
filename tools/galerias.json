@@ -1650,6 +1650,36 @@
  "copper-options-montecarlo-cpp": [
   {
    "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_band.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_band.svg"
+   ],
+   "cap": [
+    "Promedio a tres meses contra la banda del 90% dada de antemano",
+    "Three-month average against the 90% band given beforehand"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_coverage.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_coverage.svg"
+   ],
+   "cap": [
+    "Cobertura de la banda del 90% por modelo, cobre LME real",
+    "Coverage of the 90% band by model, real LME copper"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_kappa.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_kappa.svg"
+   ],
+   "cap": [
+    "Velocidad de reversión estimada: el cobre cae en el rango de un paseo aleatorio",
+    "Estimated reversion speed: copper falls in the random-walk range"
+   ]
+  },
+  {
+   "src": [
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/variance_reduction_ab.svg",
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/variance_reduction_ab.svg"
    ],
