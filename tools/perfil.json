@@ -392,6 +392,24 @@
    ],
    "items": [
     {
+     "repo": "binance-hack-market-impact",
+     "name": [
+      "El hackeo de US$6.300 millones a Binance",
+      "The $6.3B Binance hack"
+     ],
+     "data": "real",
+     "res": [
+      "Minuto a minuto: los futuros del Nasdaq predicen 3,4-3,7 de los 5,1 puntos que cayó BTC; una alarma con datos de mercado saltó 42 minutos antes de que se admitiera el robo; 36 hackeos desde 2011 sin efecto promedio; noticias y guerra no mejoran el pronóstico.",
+      "Minute by minute: Nasdaq futures predict 3.4-3.7 of BTC's 5.1-point fall; a market-data alarm fired 42 minutes before the theft was admitted; 36 hacks since 2011 show no average effect; news and war data do not improve forecasts."
+     ],
+     "tags": [
+      "event-study",
+      "anomaly-detection",
+      "lightgbm"
+     ],
+     "page": true
+    },
+    {
      "repo": "fraud-detection-techniques-lab",
      "name": [
       "Laboratorio de fraude y AML",
