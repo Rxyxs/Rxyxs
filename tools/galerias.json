@@ -406,82 +406,82 @@
  "binance-hack-market-impact": [
   {
    "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/night.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/binance_impact.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/binance_impact.png"
+   ],
+   "cap": [
+    "cada vela es 15 minutos: verde sube, roja baja; la mecha es el rango. Las líneas amarillas son los hitos. Abajo, cuánto dinero había apostado en futuros de BTC: cae de golpe cuando la gente cierra posiciones o la liquidan.",
+    "each candle is 15 minutes: green up, red down; the wick is the range. Yellow lines are the milestones. Below, how much money was committed in BTC futures: it drops suddenly when people close or are liquidated."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/night.png",
     "https://rxyxs.github.io/binance-hack-market-impact/img/night.png"
    ],
    "cap": [
-    "Minute prices from 20:00 UTC. Grey band: no statement from anyone yet.",
-    "Minute prices from 20:00 UTC. Grey band: no statement from anyone yet."
+    "todas las líneas parten en 0% a las 20:00 UTC, y muestran cuánto subió o bajó cada una desde ahí. La zona gris es el rato en que nadie había dicho nada todavía. La línea gris clara es la bolsa tecnológica: también caía, por los resultados de Amazon e Intel.",
+    "all lines start at 0% at 20:00 UTC and show how much each rose or fell from there. The grey zone is the time when nobody had said anything yet. The light grey line is tech stocks: also falling, on Amazon's and Intel's earnings."
    ]
   },
   {
    "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/decomposition.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/decomposition.png",
     "https://rxyxs.github.io/binance-hack-market-impact/img/decomposition.png"
    ],
    "cap": [
-    "Blue: what Nasdaq futures, the dollar and gold predict. Orange: the rest.",
-    "Blue: what Nasdaq futures, the dollar and gold predict. Orange: the rest."
+    "gris es lo que BTC habría hecho solo por moverse junto a Nasdaq, dólar y oro, según su relación de la semana previa. Naranjo es el resto, lo propio del hackeo. A la izquierda, la primera hora y cuarto: domina el hackeo. A la derecha, cuatro días después: domina la bolsa, salvo en BNB, que conserva su castigo. ETH terminó mejor de lo esperado.",
+    "grey is what BTC would have done just by moving with the Nasdaq, dollar and gold, using their relationship in the prior week. Orange is the rest, the hack's own. Left, the first 75 minutes: the hack dominates. Right, four days later: the stock market dominates, except BNB, which keeps its punishment. ETH ended better than expected."
    ]
   },
   {
    "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/detector.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/detector.png",
     "https://rxyxs.github.io/binance-hack-market-impact/img/detector.png"
    ],
    "cap": [
-    "Robust z-score of BNB's abnormal move; orange line: alarm threshold.",
-    "Robust z-score of BNB's abnormal move; orange line: alarm threshold."
+    "la línea es BNB dividido por BTC: si baja, BNB cae más que el mercado. La zona gris va desde el robo hasta que se admitió. El punto naranjo es cuando sonó la alarma. En 2026 suena dentro de la zona gris, antes de cualquier aviso; en 2019 BNB casi no se movió hasta el anuncio.",
+    "the line is BNB divided by BTC: when it falls, BNB is falling more than the market. The grey zone runs from the theft until it was admitted. The orange dot is when the alarm rang. In 2026 it rings inside the grey zone, before any notice; in 2019 BNB barely moved until the announcement."
    ]
   },
   {
    "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/cross_section.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/recovery.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/recovery.png"
+   ],
+   "cap": [
+    "el 0% es el precio de cada moneda a las 20:00 UTC, cuando partió el hackeo. El punto rojo es lo peor que llegó a caer y el azul dónde está en el último cierre. Si el azul pasa a la derecha del 0%, ya se recuperó.",
+    "0% is each coin's price at 20:00 UTC, when the hack began. The red dot is the worst it fell and the blue one where it stands at the last close. If blue is right of 0%, it has recovered."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/cross_section.png",
     "https://rxyxs.github.io/binance-hack-market-impact/img/cross_section.png"
    ],
    "cap": [
-    "Each coin's return minus beta times Bitcoin, 20:00 Oct 29 to the reopening.",
-    "Each coin's return minus beta times Bitcoin, 20:00 Oct 29 to the reopening."
+    "cada punto es una moneda. A la derecha del 0% le fue mejor que a Bitcoin; a la izquierda, peor. Si el mercado temiera que el ladrón vendiera, los puntos azules estarían a la izquierda de los verdes. No lo están.",
+    "each dot is a coin. Right of 0% it did better than Bitcoin; left, worse. If the market feared the thief selling, the blue dots would sit left of the green ones. They do not."
    ]
   },
   {
    "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/flow.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/hack_days.png",
+    "https://rxyxs.github.io/binance-hack-market-impact/img/hack_days.png"
+   ],
+   "cap": [
+    "arriba, cuántas veces el volumen normal se transó cada día: 1 es un día corriente. Abajo, qué parte del volumen la iniciaron compradores apurados: bajo la línea de 50% mandan los vendedores. La línea roja es el hackeo.",
+    "top, how many times normal volume traded each day: 1 is an ordinary day. Bottom, what share of volume was started by buyers in a hurry: below the 50% line sellers lead. The red line is the hack."
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/binance-hack-market-impact/img/es/flow.png",
     "https://rxyxs.github.io/binance-hack-market-impact/img/flow.png"
    ],
    "cap": [
-    "Left: cumulative net taker flow. Right: by order size, BTC.",
-    "Left: cumulative net taker flow. Right: by order size, BTC."
-   ]
-  },
-  {
-   "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/reserve_flows.png",
-    "https://rxyxs.github.io/binance-hack-market-impact/img/reserve_flows.png"
-   ],
-   "cap": [
-    "Daily net flow on Binance's wallets, price effect removed.",
-    "Daily net flow on Binance's wallets, price effect removed."
-   ]
-  },
-  {
-   "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/venues.png",
-    "https://rxyxs.github.io/binance-hack-market-impact/img/venues.png"
-   ],
-   "cap": [
-    "Binance's price gap to Coinbase (BTC) and OKX (BNB).",
-    "Binance's price gap to Coinbase (BTC) and OKX (BNB)."
-   ]
-  },
-  {
-   "src": [
-    "https://rxyxs.github.io/binance-hack-market-impact/img/stocks.png",
-    "https://rxyxs.github.io/binance-hack-market-impact/img/stocks.png"
-   ],
-   "cap": [
-    "Abnormal return on Oct 30; bars: 95% range of a normal day.",
-    "Abnormal return on Oct 30; bars: 95% range of a normal day."
+    "izquierda: si la línea baja, se vende a mercado más de lo que se compra; las líneas claras son una noche normal, casi planas. Derecha: la misma venta de BTC según el tamaño de cada orden. Ojo: los algoritmos parten órdenes grandes, así que chica no significa persona común.",
+    "left: when the line falls, more is sold at market than bought; pale lines are a normal night, nearly flat. Right: the same BTC selling by size of order. Note: algorithms split large orders, so small does not mean an ordinary person."
    ]
   }
  ],
@@ -1746,8 +1746,8 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_band.svg"
    ],
    "cap": [
-    "Realized three-month average against the 90 percent band",
-    "Realized three-month average against the 90 percent band"
+    "Backtest band",
+    "Backtest band"
    ]
   },
   {
@@ -1756,8 +1756,8 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_coverage.svg"
    ],
    "cap": [
-    "Coverage of the 90 percent band by model",
-    "Coverage of the 90 percent band by model"
+    "Backtest coverage",
+    "Backtest coverage"
    ]
   },
   {
@@ -1766,8 +1766,18 @@
     "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/backtest_kappa.svg"
    ],
    "cap": [
-    "Estimated mean reversion speed on synthetic series and on copper",
-    "Estimated mean reversion speed on synthetic series and on copper"
+    "Backtest kappa",
+    "Backtest kappa"
+   ]
+  },
+  {
+   "src": [
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/architecture_en.svg",
+    "https://rxyxs.github.io/copper-options-montecarlo-cpp/figures/architecture_en.svg"
+   ],
+   "cap": [
+    "Input, parallel pricing engine, tests and real-data backtest",
+    "Input, parallel pricing engine, tests and real-data backtest"
    ]
   },
   {
